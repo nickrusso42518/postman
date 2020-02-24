@@ -1,0 +1,29 @@
+{
+	"id": "f32e82e4-6c97-49a2-a14b-2451f775711b",
+	"name": "DevNet Latest IOS-XE Always On ",
+	"values": [
+		{
+			"key": "host",
+			"value": "ios-xe-mgmt-latest.cisco.com",
+			"enabled": true
+		},
+		{
+			"key": "port",
+			"value": "9443",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "developer",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "C1sco12345",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-02-24T22:28:57.067Z",
+	"_postman_exported_using": "Postman/7.19.0"
+}
