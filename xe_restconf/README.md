@@ -12,7 +12,7 @@ There are three environments included with the collection:
     "Always On" Stable code CSR1000v, which is publicly available to all.
   * `latest_always_on`: Contains host/credential information for the Cisco DevNet
     "Always On" Latest code CSR1000v, which is publicly available to all.
-  * `reservable_cat9k`: Contains host/credential information for the Cisco DevNet
+  * `cat9k_reservable`: Contains host/credential information for the Cisco DevNet
     reservable Catalyst 9000, which require a DevNet account and
     valid reservation to utilize.
 
