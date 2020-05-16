@@ -8,6 +8,13 @@ format. Note that the MV Sense and external captive portal APIs can be used
 in some DevNet sandboxes, but seeing their impact is difficult without real
 hardware. I've included example responses from DevNet and personal labs.
 
+## Updates
+On 15 May 2020, I discovered that Meraki changed their main API host
+from `dashboard.meraki.com` to `api.meraki.com`. The contents of the URL
+and subsequent REST resources appear to be unchanged. This collection
+now includes example redirection responses, along with updated URLs
+for all other requests.
+
 ## Environments
 There are two environments included with the collection:
   * `always_on`: Contains the API key string for the Cisco DevNet
