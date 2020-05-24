@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c9581302-b258-4884-b69c-304bc8f5142c",
+		"_postman_id": "19b3fef1-18fd-4c92-9e17-aec056854067",
 		"name": "Cisco FTD for SAUTO",
 		"description": "https://developer.cisco.com/site/ftd-api-reference",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -45,6 +45,101 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: wrong password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"{{username}}\",\n    \"password\": \"wrong\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/fdm/token",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"fdm",
+										"token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:03:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Failed to authenticate user\",\n    \"status_code\": 400\n}"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -151,101 +246,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNTc0MjUsInN1YiI6ImFkbWluIiwianRpIjoiNzJmYmMyYTgtNzhiZi0xMWVhLWJiZDgtYjFlOGM3OTJiMmM1IiwibmJmIjoxNTg2MjU3NDI1LCJleHAiOjE1ODYyNTkyMjUsInJlZnJlc2hUb2tlbkV4cGlyZXNBdCI6MTU4NjI1OTgyNTE0MSwidG9rZW5UeXBlIjoiSldUX0FjY2VzcyIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.xEKoTp9jKmpe3c8dsuYorCVcSzRYnSVvO58PvuzE-jY\",\n    \"expires_in\": 1800,\n    \"token_type\": \"Bearer\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNTc0MjUsInN1YiI6ImFkbWluIiwianRpIjoiNzJmYmMyYTgtNzhiZi0xMWVhLWJiZDgtYjFlOGM3OTJiMmM1IiwibmJmIjoxNTg2MjU3NDI1LCJleHAiOjE1ODYyNTk4MjUsImFjY2Vzc1Rva2VuRXhwaXJlc0F0IjoxNTg2MjU5MjI1MTQxLCJyZWZyZXNoQ291bnQiOi0xLCJ0b2tlblR5cGUiOiJKV1RfUmVmcmVzaCIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.XkXUfoFALdQe-iBEreUew8QL2OdIflgFdytMiGKj7Rw\",\n    \"refresh_expires_in\": 2400\n}"
-						},
-						{
-							"name": "Failure: wrong password",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"{{username}}\",\n    \"password\": \"wrong\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/fdm/token",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"fdm",
-										"token"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:03:21 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"Failed to authenticate user\",\n    \"status_code\": 400\n}"
 						}
 					]
 				},
@@ -692,7 +692,7 @@
 					]
 				}
 			],
-			"description": "Start here to obtain an access token (carried in the api_token environment variable) using a username and password. You can also refresh the token for longer sessions.",
+			"description": "Start here to obtain an access token (carried in the api_token environment variable)\nusing a username and password. You can also refresh the token for longer sessions.",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1288,222 +1288,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: invalid body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\"\n    \"type\": \"networkobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networks"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:05:47 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"JsonParseException: Unexpected character ('\\\"' (code 34)): was expecting comma to separate Object entries\\n at [Source: (UnclosableInputStream); line: 6, column: 6]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: duplicate request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"type\": \"networkobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networks"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:05:29 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"NET_VPN_EAST\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -1618,6 +1402,222 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"hwzeu3vgrsndv\",\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"isSystemDefined\": false,\n    \"dnsResolution\": null,\n    \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\",\n    \"type\": \"networkobject\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/networks/a84915ca-78bf-11ea-bbd8-77130b51c299\"\n    }\n}"
+						},
+						{
+							"name": "Failure: duplicate request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"type\": \"networkobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networks"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:05:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"NET_VPN_EAST\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: invalid body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\"\n    \"type\": \"networkobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networks"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:05:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"JsonParseException: Unexpected character ('\\\"' (code 34)): was expecting comma to separate Object entries\\n at [Source: (UnclosableInputStream); line: 6, column: 6]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1821,6 +1821,114 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: invalid body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"All VPN concentrators\",\n    \"name\": \"NETG_VPN_CONCENTRATORS1\",\n    \"objects\": [\n        {\n          \"version\": \"hwzeu3vgrsndv\",\n          \"name\": \"NET_VPN_EAST\",\n          \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\"\n        },\n        {\n          \"version\": \"gw7heyjcxpzo4\",\n          \"name\": \"NET_VPN_WEST\",\n          \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n          \"type\": \"networkobject\"\n        }\n    ],\n    \"type\": \"networkobjectgroup\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networkgroups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:23:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, NetworkObjectBase]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 17, column: 13] (through reference chain: NetworkObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -2044,114 +2152,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"NETG_VPN_CONCENTRATORS\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: invalid body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"All VPN concentrators\",\n    \"name\": \"NETG_VPN_CONCENTRATORS1\",\n    \"objects\": [\n        {\n          \"version\": \"hwzeu3vgrsndv\",\n          \"name\": \"NET_VPN_EAST\",\n          \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\"\n        },\n        {\n          \"version\": \"gw7heyjcxpzo4\",\n          \"name\": \"NET_VPN_WEST\",\n          \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n          \"type\": \"networkobject\"\n        }\n    ],\n    \"type\": \"networkobjectgroup\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networkgroups"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:23:06 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, NetworkObjectBase]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 17, column: 13] (through reference chain: NetworkObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -2858,118 +2858,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: custom groups",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"portgroups"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:46:28 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"items\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"description\": \"All IPsec related ports and protocols\",\n            \"isSystemDefined\": false,\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"objects\": [\n                {\n                    \"version\": \"poddysm4wp42c\",\n                    \"name\": \"PROTO_ESP\",\n                    \"id\": \"d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\",\n                    \"type\": \"protocolobject\"\n                },\n                {\n                    \"version\": \"pjbvk3lo3zxdv\",\n                    \"name\": \"UDP_IKE\",\n                    \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n                    \"type\": \"udpportobject\"\n                },\n                {\n                    \"version\": \"h2li5e3sfj763\",\n                    \"name\": \"UDP_IPSEC_NATT\",\n                    \"id\": \"c470049b-78c4-11ea-bbd8-b59640ff9c44\",\n                    \"type\": \"udpportobject\"\n                }\n            ],\n            \"type\": \"portobjectgroup\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/portgroups/55a505b1-78c5-11ea-bbd8-0145a3bcb648\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 1,\n        \"pages\": 0\n    }\n}"
-						},
-						{
 							"name": "Success: empty",
 							"originalRequest": {
 								"method": "GET",
@@ -3080,6 +2968,118 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"items\": [],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 0,\n        \"pages\": 0\n    }\n}"
+						},
+						{
+							"name": "Success: custom groups",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"portgroups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:46:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"description\": \"All IPsec related ports and protocols\",\n            \"isSystemDefined\": false,\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"objects\": [\n                {\n                    \"version\": \"poddysm4wp42c\",\n                    \"name\": \"PROTO_ESP\",\n                    \"id\": \"d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\",\n                    \"type\": \"protocolobject\"\n                },\n                {\n                    \"version\": \"pjbvk3lo3zxdv\",\n                    \"name\": \"UDP_IKE\",\n                    \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n                    \"type\": \"udpportobject\"\n                },\n                {\n                    \"version\": \"h2li5e3sfj763\",\n                    \"name\": \"UDP_IPSEC_NATT\",\n                    \"id\": \"c470049b-78c4-11ea-bbd8-b59640ff9c44\",\n                    \"type\": \"udpportobject\"\n                }\n            ],\n            \"type\": \"portobjectgroup\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/portgroups/55a505b1-78c5-11ea-bbd8-0145a3bcb648\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 1,\n        \"pages\": 0\n    }\n}"
 						}
 					]
 				},
@@ -3547,118 +3547,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: empty",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/protocols",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"protocols"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:40:36 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"items\": [],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 0,\n        \"pages\": 0\n    }\n}"
-						},
-						{
 							"name": "Success: custom objects",
 							"originalRequest": {
 								"method": "GET",
@@ -3769,6 +3657,118 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"items\": [\n        {\n            \"version\": \"poddysm4wp42c\",\n            \"name\": \"PROTO_ESP\",\n            \"description\": \"Encapsulating Security Payload for IPsec VPNs\",\n            \"isSystemDefined\": false,\n            \"protocol\": \"ESP\",\n            \"id\": \"d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\",\n            \"type\": \"protocolobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/protocols/d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 1,\n        \"pages\": 0\n    }\n}"
+						},
+						{
+							"name": "Success: empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/protocols",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"protocols"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:40:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 0,\n        \"pages\": 0\n    }\n}"
 						}
 					]
 				},
@@ -3813,6 +3813,114 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: duplicate object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"port\": \"500\",\n    \"type\": \"udpportobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"udpports"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:41:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"UDP_IKE\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
+						},
 						{
 							"name": "Failure: invalid port",
 							"originalRequest": {
@@ -4036,114 +4144,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"pjbvk3lo3zxdv\",\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"isSystemDefined\": false,\n    \"port\": \"500\",\n    \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n    \"type\": \"udpportobject\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/a5abe388-78c4-11ea-bbd8-11b10efa3986\"\n    }\n}"
-						},
-						{
-							"name": "Failure: duplicate object",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"port\": \"500\",\n    \"type\": \"udpportobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"udpports"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:41:06 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"UDP_IKE\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -4348,114 +4348,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: missing protocol key",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"PROTO_ESP\",\n    \"description\": \"Encapsulating Security Payload for IPsec VPNs\",\n    \"protocol\": \"ESP\",\n    \"type\": \"protocolobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/protocols",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"protocols"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:42:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"must not be null\",\n                \"code\": null,\n                \"location\": \"protocol\"\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -4570,6 +4462,114 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"poddysm4wp42c\",\n    \"name\": \"PROTO_ESP\",\n    \"description\": \"Encapsulating Security Payload for IPsec VPNs\",\n    \"isSystemDefined\": false,\n    \"protocol\": \"ESP\",\n    \"id\": \"d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\",\n    \"type\": \"protocolobject\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/protocols/d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\"\n    }\n}"
+						},
+						{
+							"name": "Failure: missing protocol key",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"PROTO_ESP\",\n    \"description\": \"Encapsulating Security Payload for IPsec VPNs\",\n    \"protocol\": \"ESP\",\n    \"type\": \"protocolobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/protocols",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"protocols"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:42:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"must not be null\",\n                \"code\": null,\n                \"location\": \"protocol\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -4614,6 +4614,114 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"All IPsec related ports and protocols\",\n    \"name\": \"PORTG_IPSEC\",\n    \"objects\": [\n        \"UDP_IKE\",\n        \"UDP_IPSEC_NATT\",\n        \"PROTO_ESP\"\n    ],\n    \"type\": \"portobjectgroup\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"portgroups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:45:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, GenericPortObject]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 9, column: 13] (through reference chain: PortObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -4837,114 +4945,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"PORTG_IPSEC\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: bad body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"All IPsec related ports and protocols\",\n    \"name\": \"PORTG_IPSEC\",\n    \"objects\": [\n        \"UDP_IKE\",\n        \"UDP_IPSEC_NATT\",\n        \"PROTO_ESP\"\n    ],\n    \"type\": \"portobjectgroup\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"portgroups"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:45:40 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, GenericPortObject]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 9, column: 13] (through reference chain: PortObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -5745,226 +5745,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: duplicate rule",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"name\": \"OUT_TO_IN_VPN\",\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:14:54 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"OUT_TO_IN_VPN\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: invalid body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"logFiles\": true,\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:13:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, AccessRule]: missing type id property 'type'\\n at [Source: (UnclosableInputStream); line: 37, column: 1]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -6081,6 +5861,226 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"gbgesq5ftlsf4\",\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"ruleId\": 268435458,\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"rulePosition\": 10,\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": null,\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\"\n    }\n}"
+						},
+						{
+							"name": "Failure: invalid body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"logFiles\": true,\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:13:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, AccessRule]: missing type id property 'type'\\n at [Source: (UnclosableInputStream); line: 37, column: 1]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: duplicate rule",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"OUT_TO_IN_VPN\",\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:14:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"OUT_TO_IN_VPN\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -6358,7 +6358,7 @@
 					]
 				}
 			],
-			"description": "Create new access rules within the genreal NGFW access policy to allow VPN access and deny blacklisted networks.",
+			"description": "Create new access rules within the genreal NGFW access policy to allow VPN\naccess and deny blacklisted networks.",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -7150,110 +7150,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: already activated",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"compliant\": true,\n    \"count\": 1,\n    \"licenseType\": \"THREAT\",\n    \"type\": \"license\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/license/smartlicenses",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"license",
-										"smartlicenses"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:54:01 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server encountered an unexpected condition which prevented it from fulfilling the request\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"UndeclaredThrowableException\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -7368,6 +7264,110 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"ep7j6btpbtny4\",\n    \"count\": 1,\n    \"compliant\": true,\n    \"id\": \"d1bb9942-78ce-11ea-bbd8-437d3d03a430\",\n    \"licenseType\": \"THREAT\",\n    \"type\": \"license\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/d1bb9942-78ce-11ea-bbd8-437d3d03a430\"\n    }\n}"
+						},
+						{
+							"name": "Failure: already activated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"compliant\": true,\n    \"count\": 1,\n    \"licenseType\": \"THREAT\",\n    \"type\": \"license\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/license/smartlicenses",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"license",
+										"smartlicenses"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:54:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server encountered an unexpected condition which prevented it from fulfilling the request\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"UndeclaredThrowableException\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -7394,10 +7394,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"type\": \"accessrule\",\n    \"version\": \"gbgesq5ftlsf4\",\n    \"ruleId\": 268435458,\n    \"intrusionPolicy\": {\n        \"version\": \"km4fjp32hg4bs\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"7f567b88-384e-11ea-85b7-fb81e49212f6\",\n        \"type\": \"intrusionpolicy\"\n    }\n}"
+							"raw": "{\n  \"version\": \"jvsuqaln6ff2w\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
 						},
 						"url": {
-							"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5c8c75d8-78c9-11ea-bbd8-0557b6e3248d",
+							"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
 							"protocol": "https",
 							"host": [
 								"{{ftd}}"
@@ -7410,13 +7410,13 @@
 								"accesspolicies",
 								"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
 								"accessrules",
-								"5c8c75d8-78c9-11ea-bbd8-0557b6e3248d"
+								"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Success",
+							"name": "Success: no change",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -7438,10 +7438,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"type\": \"accessrule\",\n    \"version\": \"gbgesq5ftlsf4\",\n    \"ruleId\": 268435458,\n    \"intrusionPolicy\": {\n        \"version\": \"km4fjp32hg4bs\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"7f567b88-384e-11ea-85b7-fb81e49212f6\",\n        \"type\": \"intrusionpolicy\"\n    }\n}"
+									"raw": "{\n  \"version\": \"lgjcksh5pvqj7\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5c8c75d8-78c9-11ea-bbd8-0557b6e3248d",
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
 									"protocol": "https",
 									"host": [
 										"{{ftd}}"
@@ -7454,7 +7454,221 @@
 										"accesspolicies",
 										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
 										"accessrules",
-										"5c8c75d8-78c9-11ea-bbd8-0557b6e3248d"
+										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 24 May 2020 22:38:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: version mismatch",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"version\": \"jvsuqaln6ff2w\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules",
+										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 24 May 2020 22:48:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Another user or the system updated this object while you were editing it. Please refresh the browser page and redo your changes.\",\n                \"code\": \"mismatchedVersion\",\n                \"location\": \"\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: updated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"version\": \"jvsuqaln6ff2w\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules",
+										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
 									]
 								}
 							},
@@ -7464,7 +7678,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Tue, 07 Apr 2020 13:12:14 GMT"
+									"value": "Sun, 24 May 2020 22:48:44 GMT"
 								},
 								{
 									"key": "Server",
@@ -7532,10 +7746,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"version\": \"comi3c7qwjo5j\",\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"ruleId\": 268435458,\n    \"sourceZones\": [],\n    \"destinationZones\": [],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [],\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": {\n        \"version\": \"km4fjp32hg4bs\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"7f567b88-384e-11ea-85b7-fb81e49212f6\",\n        \"type\": \"intrusionpolicy\"\n    },\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\"\n    }\n}"
+							"body": "{\n    \"version\": \"mfnd4oxk2mte5\",\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"ruleId\": 268435471,\n    \"sourceZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"kg76nlznpdmym\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [\n        {\n            \"version\": \"ebjufhpogffrp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": {\n        \"version\": \"cdongmehhy7re\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n        \"type\": \"intrusionpolicy\"\n    },\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n    }\n}"
 						},
 						{
-							"name": "Failure: missing threat license",
+							"name": "Failure: missing rule ID",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -7557,10 +7771,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"type\": \"accessrule\",\n    \"intrusionPolicy\": {\n        \"version\": \"km4fjp32hg4bs\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"7f567b88-384e-11ea-85b7-fb81e49212f6\",\n        \"type\": \"intrusionpolicy\"\n    }\n}"
+									"raw": "{\n  \"version\": \"lgjcksh5pvqj7\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c",
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
 									"protocol": "https",
 									"host": [
 										"{{ftd}}"
@@ -7573,7 +7787,7 @@
 										"accesspolicies",
 										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
 										"accessrules",
-										"5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c"
+										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
 									]
 								}
 							},
@@ -7583,7 +7797,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:50:44 GMT"
+									"value": "Sun, 24 May 2020 22:38:45 GMT"
 								},
 								{
 									"key": "Server",
@@ -7627,7 +7841,7 @@
 								},
 								{
 									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
+									"value": "timeout=5, max=97"
 								},
 								{
 									"key": "Connection",
@@ -7643,225 +7857,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Threat license is not enabled\",\n                \"code\": \"invalidThreatLicense\",\n                \"location\": \"intrusionPolicy\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: missing body",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules",
-										"5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:48:35 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"must not be null\",\n                \"code\": null,\n                \"location\": \"updateContained.arg2\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Failure: mismatched version",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"type\": \"accessrule\",\n    \"intrusionPolicy\": {\n        \"version\": \"km4fjp32hg4bs\",\n        \"name\": \"Balanced Security and Connectivity\",\n        \"id\": \"7f567b88-384e-11ea-85b7-fb81e49212f6\",\n        \"type\": \"intrusionpolicy\"\n    }\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules",
-										"5cc89f0d-78ca-11ea-bbd8-c34d5c6f7f7c"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:55:42 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Another user or the system updated this object while you were editing it. Please refresh the browser page and redo your changes.\",\n                \"code\": \"mismatchedVersion\",\n                \"location\": \"\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"The policy rule ID cannot be modified by editing the rule. Current rule-ID in the DB is 268435471, rule-ID from request is null\",\n                \"code\": \"policyRuleIdNotEditable\",\n                \"location\": \"\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -8138,7 +8134,280 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create outbound permit rule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
+						},
+						"url": {
+							"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+							"protocol": "https",
+							"host": [
+								"{{ftd}}"
+							],
+							"path": [
+								"api",
+								"fdm",
+								"latest",
+								"policy",
+								"accesspolicies",
+								"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+								"accessrules"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 24 May 2020 22:43:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"version\": \"lu4xcgrrmhvoi\",\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"ruleId\": 268435474,\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [],\n    \"rulePosition\": 30,\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": null,\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"f1cb4599-9e0f-11ea-b8bb-8fa761981666\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/f1cb4599-9e0f-11ea-b8bb-8fa761981666\"\n    }\n}"
+						},
+						{
+							"name": "Failure: duplicate rule",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 24 May 2020 22:43:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"IN_TO_OUT_GENERAL\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -8483,119 +8752,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: deployed",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/operational/deploy/8697c579-78d2-11ea-bbd8-bfc04613c092",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"operational",
-										"deploy",
-										"8697c579-78d2-11ea-bbd8-bfc04613c092"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 13:22:02 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"8697c579-78d2-11ea-bbd8-bfc04613c092\",\n    \"statusMessage\": \"Deployed successfully\",\n    \"statusMessages\": [\n        \"Deployed successfully\"\n    ],\n    \"modifiedObjects\": {\n        \"All objects\": [\n            \"\"\n        ]\n    },\n    \"cliErrorMessage\": null,\n    \"queuedTime\": 1586265618476,\n    \"startTime\": 1586265620103,\n    \"endTime\": 1586265717740,\n    \"state\": \"DEPLOYED\",\n    \"name\": \"User (admin) Triggered Deployment\",\n    \"deploymentStatusMessages\": [\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265619877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265620037,\n            \"message\": \"Task complete in 160ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620088,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620685,\n            \"message\": \"Task complete in 597ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265620741,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265623295,\n            \"message\": \"Task complete in 2554ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623338,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623842,\n            \"message\": \"Task complete in 504ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623921,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623965,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623994,\n            \"message\": \"Task complete in 29ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624050,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task complete in 34ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624119,\n            \"message\": \"Task complete in 35ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265624155,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265624172,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265626574,\n            \"message\": \"Task complete in 2402ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265658378,\n            \"message\": \"Task complete in 34223ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658422,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658461,\n            \"message\": \"Task complete in 39ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658500,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658564,\n            \"message\": \"Task complete in 64ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658596,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658904,\n            \"message\": \"Task complete in 308ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658936,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658963,\n            \"message\": \"Task complete in 27ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659025,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659069,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659099,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659246,\n            \"message\": \"Task complete in 147ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659296,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659877,\n            \"message\": \"Task complete in 581ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265659909,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265660564,\n            \"message\": \"Task complete in 655ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660614,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660962,\n            \"message\": \"CD currently executing  PREPARE \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265696587,\n            \"message\": \"CD currently executing  SIGNAL \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265710458,\n            \"message\": \"CD currently executing LINA_APPLY\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265711782,\n            \"message\": \"CD currently executing  FINALIZE \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"\",\n            \"timestamp\": 1586265717716,\n            \"message\": \"Deployed successfully\",\n            \"properties\": {},\n            \"taskState\": null,\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265717765,\n            \"message\": \"Task complete in 57151ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"FixPermissionsTask\",\n            \"timestamp\": 1586265717788,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"FixPermissionsTask\",\n            \"timestamp\": 1586265717811,\n            \"message\": \"Task complete in 23ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"UpdateCurrentPolicyBundleForLinaOnlyDeployTask\",\n            \"timestamp\": 1586265717845,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"UpdateCurrentPolicyBundleForLinaOnlyDeployTask\",\n            \"timestamp\": 1586265717872,\n            \"message\": \"Task complete in 27ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployedTask\",\n            \"timestamp\": 1586265717923,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployedTask\",\n            \"timestamp\": 1586265718150,\n            \"message\": \"Task complete in 227ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RefreshRealmTask\",\n            \"timestamp\": 1586265718205,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RefreshRealmTask\",\n            \"timestamp\": 1586265718303,\n            \"message\": \"Task complete in 98ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        }\n    ],\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/operational/deploy/8697c579-78d2-11ea-bbd8-bfc04613c092\"\n    }\n}"
-						},
-						{
 							"name": "Success: deploying",
 							"originalRequest": {
 								"method": "GET",
@@ -8707,11 +8863,124 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": \"8697c579-78d2-11ea-bbd8-bfc04613c092\",\n    \"statusMessage\": null,\n    \"statusMessages\": null,\n    \"modifiedObjects\": {\n        \"All objects\": [\n            \"\"\n        ]\n    },\n    \"cliErrorMessage\": null,\n    \"queuedTime\": 1586265618476,\n    \"startTime\": 1586265620103,\n    \"endTime\": -1,\n    \"state\": \"DEPLOYING\",\n    \"name\": \"User (admin) Triggered Deployment\",\n    \"deploymentStatusMessages\": [\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265619877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265620037,\n            \"message\": \"Task complete in 160ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620088,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620685,\n            \"message\": \"Task complete in 597ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265620741,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265623295,\n            \"message\": \"Task complete in 2554ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623338,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623842,\n            \"message\": \"Task complete in 504ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623921,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623965,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623994,\n            \"message\": \"Task complete in 29ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624050,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task complete in 34ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624119,\n            \"message\": \"Task complete in 35ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265624155,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265624172,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265626574,\n            \"message\": \"Task complete in 2402ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265658378,\n            \"message\": \"Task complete in 34223ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658422,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658461,\n            \"message\": \"Task complete in 39ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658500,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658564,\n            \"message\": \"Task complete in 64ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658596,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658904,\n            \"message\": \"Task complete in 308ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658936,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658963,\n            \"message\": \"Task complete in 27ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659025,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659069,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659099,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659246,\n            \"message\": \"Task complete in 147ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659296,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659877,\n            \"message\": \"Task complete in 581ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265659909,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265660564,\n            \"message\": \"Task complete in 655ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660614,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660962,\n            \"message\": \"CD currently executing  PREPARE \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265696587,\n            \"message\": \"CD currently executing  SIGNAL \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        }\n    ],\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/operational/deploy/8697c579-78d2-11ea-bbd8-bfc04613c092\"\n    }\n}"
+						},
+						{
+							"name": "Success: deployed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/operational/deploy/8697c579-78d2-11ea-bbd8-bfc04613c092",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"operational",
+										"deploy",
+										"8697c579-78d2-11ea-bbd8-bfc04613c092"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 13:22:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"8697c579-78d2-11ea-bbd8-bfc04613c092\",\n    \"statusMessage\": \"Deployed successfully\",\n    \"statusMessages\": [\n        \"Deployed successfully\"\n    ],\n    \"modifiedObjects\": {\n        \"All objects\": [\n            \"\"\n        ]\n    },\n    \"cliErrorMessage\": null,\n    \"queuedTime\": 1586265618476,\n    \"startTime\": 1586265620103,\n    \"endTime\": 1586265717740,\n    \"state\": \"DEPLOYED\",\n    \"name\": \"User (admin) Triggered Deployment\",\n    \"deploymentStatusMessages\": [\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265619877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PendingChangesTask\",\n            \"timestamp\": 1586265620037,\n            \"message\": \"Task complete in 160ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620088,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployingTask\",\n            \"timestamp\": 1586265620685,\n            \"message\": \"Task complete in 597ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265620741,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"InspectDeploymentEntriesTask\",\n            \"timestamp\": 1586265623295,\n            \"message\": \"Task complete in 2554ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623338,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CalculateDeltaTask\",\n            \"timestamp\": 1586265623842,\n            \"message\": \"Task complete in 504ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623877,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PopulateStatusTask\",\n            \"timestamp\": 1586265623921,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623965,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"StageDirectoryTask\",\n            \"timestamp\": 1586265623994,\n            \"message\": \"Task complete in 29ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624050,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HAExportTask\",\n            \"timestamp\": 1586265624084,\n            \"message\": \"Task complete in 34ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaOnlyExportTask\",\n            \"timestamp\": 1586265624119,\n            \"message\": \"Task complete in 35ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265624155,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265624172,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LinaExportTask\",\n            \"timestamp\": 1586265626574,\n            \"message\": \"Task complete in 2402ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"SnortExportTask\",\n            \"timestamp\": 1586265658378,\n            \"message\": \"Task complete in 34223ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658422,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"PushLinaToDbTask\",\n            \"timestamp\": 1586265658461,\n            \"message\": \"Task complete in 39ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658500,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"HADeltaExportTask\",\n            \"timestamp\": 1586265658564,\n            \"message\": \"Task complete in 64ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658596,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RequiredPackagesExportTask\",\n            \"timestamp\": 1586265658904,\n            \"message\": \"Task complete in 308ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658936,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportSSPConfigDeployTask\",\n            \"timestamp\": 1586265658963,\n            \"message\": \"Task complete in 27ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659025,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportMultiDeviceDeployTask\",\n            \"timestamp\": 1586265659069,\n            \"message\": \"Task complete in 44ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659099,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ExportApplyerVersionInfoDeployTask\",\n            \"timestamp\": 1586265659246,\n            \"message\": \"Task complete in 147ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659296,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"LicenseEnforcementTask\",\n            \"timestamp\": 1586265659877,\n            \"message\": \"Task complete in 581ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265659909,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"CreateDeploymentArchiveTask\",\n            \"timestamp\": 1586265660564,\n            \"message\": \"Task complete in 655ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660614,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265660962,\n            \"message\": \"CD currently executing  PREPARE \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265696587,\n            \"message\": \"CD currently executing  SIGNAL \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265710458,\n            \"message\": \"CD currently executing LINA_APPLY\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265711782,\n            \"message\": \"CD currently executing  FINALIZE \",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"IN_PROGRESS\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"\",\n            \"timestamp\": 1586265717716,\n            \"message\": \"Deployed successfully\",\n            \"properties\": {},\n            \"taskState\": null,\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ConfigDispatcherDeploymentTask\",\n            \"timestamp\": 1586265717765,\n            \"message\": \"Task complete in 57151ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"FixPermissionsTask\",\n            \"timestamp\": 1586265717788,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"FixPermissionsTask\",\n            \"timestamp\": 1586265717811,\n            \"message\": \"Task complete in 23ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"UpdateCurrentPolicyBundleForLinaOnlyDeployTask\",\n            \"timestamp\": 1586265717845,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"UpdateCurrentPolicyBundleForLinaOnlyDeployTask\",\n            \"timestamp\": 1586265717872,\n            \"message\": \"Task complete in 27ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployedTask\",\n            \"timestamp\": 1586265717923,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"ChangeStateToDeployedTask\",\n            \"timestamp\": 1586265718150,\n            \"message\": \"Task complete in 227ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RefreshRealmTask\",\n            \"timestamp\": 1586265718205,\n            \"message\": \"Task begin\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"STARTED\",\n            \"type\": \"deploymentstatusmessage\"\n        },\n        {\n            \"taskName\": \"RefreshRealmTask\",\n            \"timestamp\": 1586265718303,\n            \"message\": \"Task complete in 98ms\",\n            \"properties\": {\n                \"hideFromUi\": true\n            },\n            \"taskState\": \"FINISHED\",\n            \"type\": \"deploymentstatusmessage\"\n        }\n    ],\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/operational/deploy/8697c579-78d2-11ea-bbd8-bfc04613c092\"\n    }\n}"
 						}
 					]
 				}
 			],
-			"description": "Delete the default access rule which permits all traffic, then deploy the new configuration changes. Confirm the changes were applied by checking the deployment status.",
+			"description": "Delete the default access rule which permits all traffic and add in a replacement\nrule to permit general in-to-out traffic. Finally, deploy the new configuration\nchanges. Confirm the changes were applied by checking the deployment status.",
 			"event": [
 				{
 					"listen": "prerequest",
