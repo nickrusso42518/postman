@@ -1,0 +1,1606 @@
+{
+	"info": {
+		"_postman_id": "9c3ad258-fb6d-480f-a867-cfa834eefe16",
+		"name": "Cisco SMA for SAUTO",
+		"description": "Contains Email Security Appliances (ESA) and Web Security Appliance (WSA) examples using\nthe Security Management Appliance (SMA) API.\n\ndCloud lab: https://dcloud2-rtp.cisco.com/content/demo/581871?returnPathTitleKey=content-view\n\nAPI documentation:\nhttps://www.cisco.com/c/en/us/td/docs/security/security_management/sma/sma13-0/api_reference_guide/asyncos_api_ref.html",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get cookie (optional)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"userName\": \"{{username_b64}}\",\n        \"passphrase\": \"{{password_b64}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{sma_host}}:6443/sma/api/v2.0/login",
+					"protocol": "https",
+					"host": [
+						"{{sma_host}}"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": \n    {\n        \"userName\":\"{{username_b64}}\",\n        \"passphrase\":\"{{password_b64}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/login",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:05:40 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "658"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"userName\": \"admin\",\n        \"is2FactorRedirectRequired\": \"false\",\n        \"role\": \"Administrator\",\n        \"email\": [],\n        \"jwtToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImFkbWluIiwiaXMyRmFjdG9yQ2hlY2tSZXF1aXJlZCI6ZmFsc2UsImNvb2tpZSI6IlRYcE5OVTVxVlRCTlZFRTlDanRaV0VKM1lrZHNhbGxZVW5CaU1qUjJZVzVPZG1KblBUMEtPMDFVYXpSTWFrVTFUR3BGZDB4cVZYaFBcbmFsa3dUa1JOUFFvN1ZVYzVlbVJITVdoaWJFb3hZbTVTY0dKWFZYWk9lVFI1VG1rMGVBbzdWRlJCZDAxR1dUZE5WRWwxVFVNMGQweFVcblVURk5hbk13VFdwTk5GRnFRWGhTYTAweFRtdE9RbEpxUWtWUFJWWkdUa013ZWs1VVFrUlJhMDVFVWtSWk5VMTZhemNLTzFsWFVuUmhcblZ6UTlDanM9XG4iLCJ1c2VyIjoiTk9ORVVRIiwiZXhwIjoxNTk1MzM0OTQwfQ.NAC-DmcGiocJ-8MQp4gAZWNm2FE6cZlUsloHi4evUlw\"\n    }\n}"
+				},
+				{
+					"name": "Failure: bad body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"userName\": \"{{username_b64}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/login",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"login"
+							]
+						}
+					},
+					"status": "Unsupported attribute",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:07:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Unsupported attribute.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get SMA appliances",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances?device_type=sma",
+					"protocol": "https",
+					"host": [
+						"{{sma_host}}"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"appliances"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: invalid creds",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances?device_type=sma",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"config",
+								"appliances"
+							],
+							"query": [
+								{
+									"key": "device_type",
+									"value": "sma"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 13:29:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Unauthorized.\",\n        \"code\": \"401\",\n        \"explanation\": \"401 = No permission -- see authorization schemes.\"\n    }\n}"
+				},
+				{
+					"name": "Failure: missing query param",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"config",
+								"appliances"
+							],
+							"query": [
+								{
+									"key": "device_type",
+									"value": "sma",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Missing attribute - device_type",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:14:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Missing attribute - device_type.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances?device_type=sma",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"config",
+								"appliances"
+							],
+							"query": [
+								{
+									"key": "device_type",
+									"value": "sma"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:14:44 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "549"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"appliances\": [\n            {\n                \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\": {\n                    \"product_type\": \"WSA\",\n                    \"pvo_enabled\": false,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": false,\n                    \"reporting_enabled\": false,\n                    \"host_name\": \"wsa.dcloud.cisco.com\",\n                    \"spam_enabled\": false,\n                    \"ip_address\": \"198.19.11.10\"\n                }\n            },\n            {\n                \"4238C0F25B8AC071FEBE-FAC362D5AEDC\": {\n                    \"product_type\": \"ESA\",\n                    \"pvo_enabled\": true,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": true,\n                    \"reporting_enabled\": true,\n                    \"host_name\": \"esa.dcloud.cisco.com\",\n                    \"spam_enabled\": true,\n                    \"ip_address\": \"198.19.10.146\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get email messages",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/messages?startDate=2018-01-01T00:00:00.000Z&endDate=2018-11-20T09:36:00.000Z&ciscoHost=All_Hosts&searchOption=messages&offset=0&limit=20",
+					"protocol": "https",
+					"host": [
+						"{{sma_host}}"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"message-tracking",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2018-01-01T00:00:00.000Z"
+						},
+						{
+							"key": "endDate",
+							"value": "2018-11-20T09:36:00.000Z"
+						},
+						{
+							"key": "ciscoHost",
+							"value": "All_Hosts"
+						},
+						{
+							"key": "searchOption",
+							"value": "messages"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/messages?startDate=2018-01-01T00:00:00.000Z&endDate=2018-11-20T09:36:00.000Z&ciscoHost=All_Hosts&searchOption=messages&offset=0&limit=20",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"message-tracking",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2018-01-01T00:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-11-20T09:36:00.000Z"
+								},
+								{
+									"key": "ciscoHost",
+									"value": "All_Hosts"
+								},
+								{
+									"key": "searchOption",
+									"value": "messages"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:17:15 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7549"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"num_bad_records\": 6,\n        \"totalCount\": 14\n    },\n    \"data\": [\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2122,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"detroit@casino.mgmgranddetroit.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"Your Trip to Las Vegas Awaits!\",\n                \"mid\": [\n                    2212\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2212\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2121,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"support@apple.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"ACTION REQUIRED!\",\n                \"mid\": [\n                    2211\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2211\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2120,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"VZWMail@ecrmemail.verizonwireless.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 18:31:12 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"Your bill is past due\",\n                \"mid\": [\n                    2209,\n                    2210\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2210\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2119,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"support@apple.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 18:31:06 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"Important Information About Your Account!\",\n                \"mid\": [\n                    2208\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2208\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2118,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"admin@facebookmail.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 18:31:01 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"Somebody requested a new password for your Facebook account\",\n                \"mid\": [\n                    2207\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2207\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2117,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 17:59:36 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2206\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2206\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2116,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 17:16:35 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2205\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2205\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2115,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:56:35 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2204\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2204\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2114,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:46:35 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2203\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2203\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2113,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:41:35 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2202\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2202\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2112,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"(no sender)\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:40:20 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2201\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2201\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"arpwatch@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2111,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"arpwatch@dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:40:19 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2200\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2200\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"root@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"incoming\",\n                \"icid\": 2110,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"support@apple.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:38:58 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"ACTION REQUIRED!\",\n                \"mid\": [\n                    2199\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2199\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [\n                    \"DEFAULT\"\n                ],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"manager@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"direction\": \"\",\n                \"icid\": 2109,\n                \"senderGroup\": \"N/A\",\n                \"sender\": \"alert@wsa.dcloud.cisco.com\",\n                \"replyTo\": \"N/A\",\n                \"timestamp\": \"26 Apr 2018 16:32:06 (GMT)\",\n                \"hostName\": \"esa.dcloud.cisco.com\",\n                \"subject\": \"(empty subject)\",\n                \"mid\": [\n                    2198\n                ],\n                \"isCompleteData\": \"N/A\",\n                \"messageStatus\": {\n                    \"2198\": \"Last State Not Available\"\n                },\n                \"mailPolicy\": [],\n                \"senderIp\": \"N/A\",\n                \"verdictChart\": {},\n                \"senderDomain\": \"N/A\",\n                \"recipient\": [\n                    \"test@dcloud.cisco.com\"\n                ],\n                \"sbrs\": \"N/A\",\n                \"serialNumber\": \"4238C0F25B8AC071FEBE-FAC362D5AEDC\"\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "Failure: missing start/end date",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/messages?ciscoHost=All_Hosts&searchOption=messages&offset=0&limit=20",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"message-tracking",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2018-01-01T00:00:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2018-11-20T09:36:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "ciscoHost",
+									"value": "All_Hosts"
+								},
+								{
+									"key": "searchOption",
+									"value": "messages"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "Missing attribute - startDate or endDate",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:17:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Missing attribute - startDate or endDate.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get email message details",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/details?startDate=2018-11-16T00:00:00.000Z&endDate=2018-11-16T12:09:00.000Z&icid=2121&mid=2211&serialNumber=4238C0F25B8AC071FEBE-FAC362D5AEDC",
+					"protocol": "https",
+					"host": [
+						"{{sma_host}}"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"message-tracking",
+						"details"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2018-11-16T00:00:00.000Z"
+						},
+						{
+							"key": "endDate",
+							"value": "2018-11-16T12:09:00.000Z"
+						},
+						{
+							"key": "icid",
+							"value": "2121"
+						},
+						{
+							"key": "mid",
+							"value": "2211"
+						},
+						{
+							"key": "serialNumber",
+							"value": "4238C0F25B8AC071FEBE-FAC362D5AEDC"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success: icid 2121",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/details?startDate=2018-11-16T00:00:00.000Z&endDate=2018-11-16T12:09:00.000Z&icid=2121&mid=2211&serialNumber=4238C0F25B8AC071FEBE-FAC362D5AEDC",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"message-tracking",
+								"details"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2018-11-16T00:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-11-16T12:09:00.000Z"
+								},
+								{
+									"key": "icid",
+									"value": "2121"
+								},
+								{
+									"key": "mid",
+									"value": "2211"
+								},
+								{
+									"key": "serialNumber",
+									"value": "4238C0F25B8AC071FEBE-FAC362D5AEDC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:21:29 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3287"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"messages\": {\n            \"direction\": \"incoming\",\n            \"smtpAuthId\": \"\",\n            \"sender\": \"support@apple.com\",\n            \"midHeader\": \"<424.658970104019-sendEmail@attacker>\",\n            \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n            \"showAMP\": false,\n            \"hostName\": \"esa.dcloud.cisco.com (198.19.10.146)\",\n            \"mid\": [\n                2211\n            ],\n            \"sendingHostSummary\": {\n                \"reverseDnsHostname\": \"attacker.dcloud.cisco.com (verified)\",\n                \"ipAddress\": \"198.18.133.110\",\n                \"sbrsScore\": \"not enabled\"\n            },\n            \"summary\": [\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Protocol SMTP interface Management  (IP 198.19.10.146) on incoming connection (ICID 2121) from sender IP 198.18.133.110. Reverse DNS  host attacker.dcloud.cisco.com verified yes.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"(ICID 2121) ACCEPT sender group UNKNOWNLIST match sbrs[none] SBRS not enabled country not enabled\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Start message 2211 on incoming connection (ICID 2121).\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 enqueued on incoming connection (ICID 2121) from support@apple.com.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 on incoming connection (ICID 2121) added recipient (manager@dcloud.cisco.com).\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 contains message ID header '<424.658970104019-sendEmail@attacker>'.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 original subject on injection: ACTION REQUIRED!\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 (6982 bytes) from support@apple.com ready.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 matched per-recipient policy DEFAULT for inbound mail policies.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 scanned by Advanced Malware Protection engine. Final verdict: SKIPPED(no attachment in message)\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 scanned by Outbreak Filters. Verdict: Negative\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"Message 2211 queued for delivery.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:13 (GMT)\",\n                    \"description\": \"(DCID 2260) Delivery started for message 2211 to manager@dcloud.cisco.com.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:14 (GMT)\",\n                    \"description\": \"(DCID 2260) Delivery details: Message 2211 sent to manager@dcloud.cisco.com \",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:34:14 (GMT)\",\n                    \"description\": \"Message 2211 to manager@dcloud.cisco.com received remote SMTP response '2.6.0 <424.658970104019-sendEmail@attacker> [InternalId=34] Queued mail for delivery'.\",\n                    \"lastEvent\": true\n                }\n            ],\n            \"attachments\": [],\n            \"messageSize\": \"6.82 (KB)\",\n            \"isCompleteData\": true,\n            \"showDLP\": false,\n            \"messageStatus\": \"Last State Not Available\",\n            \"showURL\": false,\n            \"mailPolicy\": [\n                \"DEFAULT\"\n            ],\n            \"senderGroup\": \"UNKNOWNLIST\",\n            \"recipient\": [\n                \"manager@dcloud.cisco.com\"\n            ],\n            \"showSummaryTimeBox\": true,\n            \"subject\": \"ACTION REQUIRED!\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Failure: invalid icid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/details?endDate=2018-11-16T12:09:00.000Z&icid=19214&mid=22125&serialNumber=64122536256E-FCH1812V1ST&startDate=2018-11-16T00:00:00.000Z",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"message-tracking",
+								"details"
+							],
+							"query": [
+								{
+									"key": "endDate",
+									"value": "2018-11-16T12:09:00.000Z"
+								},
+								{
+									"key": "icid",
+									"value": "19214"
+								},
+								{
+									"key": "mid",
+									"value": "22125"
+								},
+								{
+									"key": "serialNumber",
+									"value": "64122536256E-FCH1812V1ST"
+								},
+								{
+									"key": "startDate",
+									"value": "2018-11-16T00:00:00.000Z"
+								}
+							]
+						}
+					},
+					"status": "Invalid value for attribute - mid or icid",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:18:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "138"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Invalid value for attribute - mid or icid.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				},
+				{
+					"name": "Success: icid 2122",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/message-tracking/details?startDate=2018-11-16T00:00:00.000Z&endDate=2018-11-16T12:09:00.000Z&icid=2122&mid=2212&serialNumber=4238C0F25B8AC071FEBE-FAC362D5AEDC",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"message-tracking",
+								"details"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2018-11-16T00:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-11-16T12:09:00.000Z"
+								},
+								{
+									"key": "icid",
+									"value": "2122"
+								},
+								{
+									"key": "mid",
+									"value": "2212"
+								},
+								{
+									"key": "serialNumber",
+									"value": "4238C0F25B8AC071FEBE-FAC362D5AEDC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:20:22 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3368"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"messages\": {\n            \"direction\": \"incoming\",\n            \"smtpAuthId\": \"\",\n            \"sender\": \"detroit@casino.mgmgranddetroit.com\",\n            \"midHeader\": \"<221337.382772134-sendEmail@attacker>\",\n            \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n            \"showAMP\": false,\n            \"hostName\": \"esa.dcloud.cisco.com (198.19.10.146)\",\n            \"mid\": [\n                2212\n            ],\n            \"sendingHostSummary\": {\n                \"reverseDnsHostname\": \"attacker.dcloud.cisco.com (verified)\",\n                \"ipAddress\": \"198.18.133.110\",\n                \"sbrsScore\": \"not enabled\"\n            },\n            \"summary\": [\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:05 (GMT)\",\n                    \"description\": \"Protocol SMTP interface Management  (IP 198.19.10.146) on incoming connection (ICID 2122) from sender IP 198.18.133.110. Reverse DNS  host attacker.dcloud.cisco.com verified yes.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:05 (GMT)\",\n                    \"description\": \"(ICID 2122) ACCEPT sender group UNKNOWNLIST match sbrs[none] SBRS not enabled country not enabled\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Start message 2212 on incoming connection (ICID 2122).\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 enqueued on incoming connection (ICID 2122) from detroit@casino.mgmgranddetroit.com.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 on incoming connection (ICID 2122) added recipient (manager@dcloud.cisco.com).\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 contains message ID header '<221337.382772134-sendEmail@attacker>'.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 original subject on injection: Your Trip to Las Vegas Awaits!\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 (10569 bytes) from detroit@casino.mgmgranddetroit.com ready.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:06 (GMT)\",\n                    \"description\": \"Message 2212 matched per-recipient policy DEFAULT for inbound mail policies.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"Message 2212 scanned by Advanced Malware Protection engine. Final verdict: SKIPPED(no attachment in message)\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"Message 2212 scanned by Outbreak Filters. Verdict: Negative\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"Message 2212 queued for delivery.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"(DCID 2261) Delivery started for message 2212 to manager@dcloud.cisco.com.\",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"(DCID 2261) Delivery details: Message 2212 sent to manager@dcloud.cisco.com \",\n                    \"lastEvent\": false\n                },\n                {\n                    \"timestamp\": \"26 Apr 2018 18:35:35 (GMT)\",\n                    \"description\": \"Message 2212 to manager@dcloud.cisco.com received remote SMTP response '2.6.0 <221337.382772134-sendEmail@attacker> [InternalId=35] Queued mail for delivery'.\",\n                    \"lastEvent\": true\n                }\n            ],\n            \"attachments\": [],\n            \"messageSize\": \"10.32 (KB)\",\n            \"isCompleteData\": true,\n            \"showDLP\": false,\n            \"messageStatus\": \"Last State Not Available\",\n            \"showURL\": false,\n            \"mailPolicy\": [\n                \"DEFAULT\"\n            ],\n            \"senderGroup\": \"UNKNOWNLIST\",\n            \"recipient\": [\n                \"manager@dcloud.cisco.com\"\n            ],\n            \"showSummaryTimeBox\": true,\n            \"subject\": \"Your Trip to Las Vegas Awaits!\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get web proxy services",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?startDate=2016-09-30T18:00:00.000Z&endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
+					"protocol": "https",
+					"host": [
+						"{{sma_host}}"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"web-tracking",
+						"web_transaction"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2016-09-30T18:00:00.000Z"
+						},
+						{
+							"key": "endDate",
+							"value": "2018-10-31T19:00:00.000Z"
+						},
+						{
+							"key": "filterBy",
+							"value": "proxy_services",
+							"description": "other options: socks_proxy, l4tm"
+						},
+						{
+							"key": "filterOperator",
+							"value": "is"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "device_type",
+							"value": "wsa"
+						},
+						{
+							"key": "orderBy",
+							"value": "timestamp"
+						},
+						{
+							"key": "orderDir",
+							"value": "desc"
+						},
+						{
+							"key": "transactionStatus",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: missing start date",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"web-tracking",
+								"web_transaction"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2016-09-30T18:00:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2018-10-31T19:00:00.000Z"
+								},
+								{
+									"key": "filterBy",
+									"value": "proxy_services"
+								},
+								{
+									"key": "filterOperator",
+									"value": "is"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "device_type",
+									"value": "wsa"
+								},
+								{
+									"key": "orderBy",
+									"value": "timestamp"
+								},
+								{
+									"key": "orderDir",
+									"value": "desc"
+								},
+								{
+									"key": "transactionStatus",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Missing attribute - duration or startDate or endDate",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 13:03:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Missing attribute - duration or startDate or endDate.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				},
+				{
+					"name": "Failure: only supports 00 minutes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?startDate=2016-09-30T18:01:00.000Z&endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"web-tracking",
+								"web_transaction"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2016-09-30T18:01:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-10-31T19:00:00.000Z"
+								},
+								{
+									"key": "filterBy",
+									"value": "proxy_services",
+									"description": "other options: socks_proxy, l4tm"
+								},
+								{
+									"key": "filterOperator",
+									"value": "is"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "device_type",
+									"value": "wsa"
+								},
+								{
+									"key": "orderBy",
+									"value": "timestamp"
+								},
+								{
+									"key": "orderDir",
+									"value": "desc"
+								},
+								{
+									"key": "transactionStatus",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "duration attribute supports only 00 minutes.",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 15:05:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"duration attribute supports only 00 minutes..\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?startDate=2016-09-30T18:00:00.000Z&endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"web-tracking",
+								"web_transaction"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2016-09-30T18:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-10-31T19:00:00.000Z"
+								},
+								{
+									"key": "filterBy",
+									"value": "proxy_services"
+								},
+								{
+									"key": "filterOperator",
+									"value": "is"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "device_type",
+									"value": "wsa"
+								},
+								{
+									"key": "orderBy",
+									"value": "timestamp"
+								},
+								{
+									"key": "orderDir",
+									"value": "desc"
+								},
+								{
+									"key": "transactionStatus",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 13:03:29 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17951"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"totalCount\": 20\n    },\n    \"data\": [\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768840,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768780,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 963,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768720,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768660,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768600,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768540,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768480,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 955,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768420,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4972,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.219.112\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768379,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768360,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"threatListUpdates%3Afetch\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3637,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"fileSHA\": \"47152232dc717b7d773e6d58300579d7603ecc911b82516b64a7a1288f10dc87\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768352,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Travel\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/s_02.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/facebook.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/spacer.gif,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/twitter.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/instagram.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/16-MLIFE-00353-0002-Update-Banner-with-M-life-Rewards.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/MGM-Detroit-black-wTag.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/aaa_forbes_2016_rev.gif\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 9052,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 9,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"69.162.9.88\",\n                \"wbrsScore\": \"-3.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768314,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"67.215.92.210:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3193,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"67.215.92.210\",\n                \"wbrsScore\": \"7.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"67.215.92.210:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768309,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4940,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.216.248\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768305,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768300,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Infrastructure and Content Delivery Networks\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"GTSGIAG3\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1218,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.78\",\n                \"wbrsScore\": \"0.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"fileSHA\": \"ae940de2593fb2e2cb5c46e7ca97b046a7ae049cd0f2e157ca758c184350a7a7\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768296,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.89.179.237:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4325,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.38.149.111\",\n                \"wbrsScore\": \"8.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.89.179.237:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768275,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computer Security\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.digicert.com/\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1309,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"72.21.91.29\",\n                \"wbrsScore\": \"2.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.digicert.com/\",\n                \"fileSHA\": \"42b238f2fdbf425718b24200d14c60138ef17283b2f212dda488e948bf95b3a1\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768273,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.32.92.108:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 203,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.32.92.108\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.32.92.108:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768272,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"172.217.7.202:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3057,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"172.217.7.202:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768271,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2d7395ca-5f6f-4cca-8d46-3e11a155cc23",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0f7222bb-6d6b-4f14-ad83-7211caf5933e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
