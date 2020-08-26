@@ -8,8 +8,12 @@ format.
 
 ## Environments
 There are two environments included with the collection:
-  * `always_on`: Contains host/credential information for the Cisco DevNet
-    "Always On" SD-WAN instance, which is publicly available to all.
+  * `always_on_old`: Contains host/credential information for the Cisco DevNet
+    "Always On" SD-WAN instance, which is publicly available to all. This
+    is an old version of the sandbox and will likely be decommissioned soon.
+  * `always_on_new`: Contains host/credential information for the Cisco DevNet
+    "Always On" SD-WAN instance, which is publicly available to all. This
+    is a new version of the sandbox and should be used before the old one.
   * `reservable`: Contains host/credential information for the Cisco DevNet
     reservable SD-WAN instance, which require a DevNet account and
     valid reservation to utilize.
