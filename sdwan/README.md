@@ -7,7 +7,7 @@ and note that each request has at least one "example" showing the response
 format.
 
 ## Environments
-There are two environments included with the collection:
+There are three environments included with the collection:
   * `always_on_old`: Contains host/credential information for the Cisco DevNet
     "Always On" SD-WAN instance, which is publicly available to all. This
     is an old version of the sandbox and will likely be decommissioned soon.
