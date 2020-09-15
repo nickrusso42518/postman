@@ -6603,6 +6603,138 @@
 					]
 				},
 				{
+					"name": "Confirm loopback config",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=100",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:devices",
+								"device=dist-rtr01",
+								"config",
+								"tailf-ned-cisco-ios:interface",
+								"Loopback=100"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=100",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01",
+										"config",
+										"tailf-ned-cisco-ios:interface",
+										"Loopback=100"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:18:33 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:17:36 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175856-853585\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios:Loopback\": [\n        {\n            \"name\": \"100\",\n            \"ip\": {\n                \"address\": {\n                    \"primary\": {\n                        \"address\": \"198.51.100.85\",\n                        \"mask\": \"255.255.255.255\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
 					"name": "Delete loopback serv inst",
 					"request": {
 						"auth": {
@@ -6796,7 +6928,7 @@
 					]
 				}
 			],
-			"description": "This only seems to work on the dev instance. Use the correct environment!\n\nCreate a \"loopback-service\" service that creates a loopback using the \"dummy\" value.\n\nThis is process outlined in the DevNet learning labs and various documentation.",
+			"description": "This only seems to work on the dev instance. Use the correct environment!\n\nCreate a \"loopback-service\" service that creates a loopback using the \"dummy\" value.\n\nThis is process outlined in the DevNet learning labs and various documentation.\n\nhttps://developer.cisco.com/learning/lab/learn-nso-the-easy-way/step/1",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -6812,6 +6944,1125 @@
 					"listen": "test",
 					"script": {
 						"id": "467e52e6-0196-4902-83d6-44e25874ea84",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RADIUS Service",
+			"item": [
+				{
+					"name": "Create RADIUS serv inst (AMER)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 998,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services",
+								"radius-service:radius-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: invalid auth port",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 9988888,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:09:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"invalid value for: auth in /ncs:services/radius-service:radius-service[radius-service:region='AMER']/radius-service:port/radius-service:auth: \\\"9988888\\\" is not a valid value.\",\n                \"error-path\": \"/tailf-ncs:services/radius-service:radius-service\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 998,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:09:08 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:09:08 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175348-492642\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create RADIUS serv inst (EMEA)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"EMEA\",\n            \"device\": [\n                \"dist-rtr02\"\n            ],\n            \"ip-address\": \"192.0.2.56\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services",
+								"radius-service:radius-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"EMEA\",\n            \"device\": [\n                \"dist-rtr02\"\n            ],\n            \"ip-address\": \"192.0.2.56\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175500-261554\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: device out of sync",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"EMEA\",\n            \"device\": [\n                \"dist-rtr02\"\n            ],\n            \"ip-address\": \"192.0.2.56\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:11:02 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"Network Element Driver: device dist-rtr02: out of sync\",\n                \"error-path\": \"/tailf-ncs:services/radius-service:radius-service\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get RADIUS serv inst",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services",
+								"radius-service:radius-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:13:01 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175500-261554\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"modified\": {\n                \"devices\": [\n                    \"dist-rtr01\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"dist-rtr01\"\n                ]\n            },\n            \"device-list\": [\n                \"dist-rtr01\"\n            ],\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 998,\n                \"acct\": 999\n            }\n        },\n        {\n            \"region\": \"EMEA\",\n            \"modified\": {\n                \"devices\": [\n                    \"dist-rtr02\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"dist-rtr02\"\n                ]\n            },\n            \"device-list\": [\n                \"dist-rtr02\"\n            ],\n            \"device\": [\n                \"dist-rtr02\"\n            ],\n            \"ip-address\": \"192.0.2.56\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm RADIUS config",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:radius",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:devices",
+								"device=dist-rtr01",
+								"config",
+								"tailf-ned-cisco-ios:radius"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: AMER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:radius",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01",
+										"config",
+										"tailf-ned-cisco-ios:radius"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:14:45 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175500-261554\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios:radius\": {\n        \"server\": [\n            {\n                \"id\": \"AMER\",\n                \"address\": {\n                    \"ipv4\": {\n                        \"host\": \"192.0.2.55\",\n                        \"auth-port\": 998,\n                        \"acct-port\": 999\n                    }\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: EMEA",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr02/config/tailf-ned-cisco-ios:radius",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr02",
+										"config",
+										"tailf-ned-cisco-ios:radius"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:15:01 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175500-261554\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios:radius\": {\n        \"server\": [\n            {\n                \"id\": \"EMEA\",\n                \"address\": {\n                    \"ipv4\": {\n                        \"host\": \"192.0.2.56\",\n                        \"auth-port\": 1812,\n                        \"acct-port\": 1813\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete loopback serv inst",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=AMER",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services",
+								"radius-service:radius-service=AMER"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: EMEA",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service=EMEA"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:16:19 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:16:19 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175779-143883\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success: AMER",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=AMER",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service=AMER"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:15:59 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:15:59 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175759-274500\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service=EMEA"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:16:33 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "This only seems to work on the dev instance. Use the correct environment!\n\nCreate a \"radius-service\" service which is a bit more complex than the \"loopback-service\".\n\nThis is process outlined in the DevNet learning labs and various documentation.\n\nhttps://developer.cisco.com/learning/lab/nso-basics-cisco-it-104/step/1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5a76a22f-63c6-4dad-8780-5110dbf45ddb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5d89a28-7643-4371-8ddb-805584c5f5fd",
 						"type": "text/javascript",
 						"exec": [
 							""
