@@ -1,0 +1,1633 @@
+{
+	"info": {
+		"_postman_id": "9b24d8c6-96c1-4809-b3bd-52fef2fcc9c6",
+		"name": "Kibana",
+		"description": "Public documentation: https://www.elastic.co/guide/en/kibana/current/using-api.html\r\n\r\nQuick start container: https://elk-docker.readthedocs.io/\r\n\r\n\r\n\r\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Object Exploration",
+			"item": [
+				{
+					"name": "Find index patterns",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?type=index-pattern&search_fields=title&search=2020",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"_find"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "index-pattern"
+								},
+								{
+									"key": "search_fields",
+									"value": "title"
+								},
+								{
+									"key": "search",
+									"value": "2020"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?type=index-pattern&search_fields=title&search=2020",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"_find"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "index-pattern"
+										},
+										{
+											"key": "search_fields",
+											"value": "title"
+										},
+										{
+											"key": "search",
+											"value": "2020"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 13:55:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"per_page\": 20,\n    \"total\": 1,\n    \"saved_objects\": [\n        {\n            \"type\": \"index-pattern\",\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"*2020*\",\n                \"timeFieldName\": \"notification.eventTime\",\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\n            },\n            \"references\": [],\n            \"migrationVersion\": {\n                \"index-pattern\": \"7.6.0\"\n            },\n            \"updated_at\": \"2020-12-07T13:13:39.303Z\",\n            \"version\": \"WzMxLDFd\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"score\": 0.2876821\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success: no matched results",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?type=index-pattern&search_fields=title&search=2021",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"_find"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "index-pattern"
+										},
+										{
+											"key": "search_fields",
+											"value": "title"
+										},
+										{
+											"key": "search",
+											"value": "2021"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "53"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 13:55:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"per_page\": 20,\n    \"total\": 0,\n    \"saved_objects\": []\n}"
+						},
+						{
+							"name": "Failure: missing type query param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?search_fields=title&search=2020",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"_find"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "index-pattern",
+											"disabled": true
+										},
+										{
+											"key": "search_fields",
+											"value": "title"
+										},
+										{
+											"key": "search",
+											"value": "2020"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "130"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 13:55:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"[request query.type]: expected at least one defined value but got [undefined]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get 2020 index pattern",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/index-pattern/0575a680-388e-11eb-b27b-179425c893fd",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"index-pattern",
+								"0575a680-388e-11eb-b27b-179425c893fd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/index-pattern/0575a680-388e-11eb-b27b-179425c893fe",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"index-pattern",
+										"0575a680-388e-11eb-b27b-179425c893fe"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "126"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:03:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"Saved object [index-pattern/0575a680-388e-11eb-b27b-179425c893fe] not found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/index-pattern/0575a680-388e-11eb-b27b-179425c893fd",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"index-pattern",
+										"0575a680-388e-11eb-b27b-179425c893fd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:03:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\n    \"type\": \"index-pattern\",\n    \"namespaces\": [\n        \"default\"\n    ],\n    \"updated_at\": \"2020-12-07T13:13:39.303Z\",\n    \"version\": \"WzMxLDFd\",\n    \"attributes\": {\n        \"title\": \"*2020*\",\n        \"timeFieldName\": \"notification.eventTime\",\n        \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\n    },\n    \"references\": [],\n    \"migrationVersion\": {\n        \"index-pattern\": \"7.6.0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find dashboards",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?search_fields=title&search=perf&type=dashboard",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"_find"
+							],
+							"query": [
+								{
+									"key": "search_fields",
+									"value": "title"
+								},
+								{
+									"key": "search",
+									"value": "perf"
+								},
+								{
+									"key": "type",
+									"value": "dashboard"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?search_fields=title&search=perf&type=dashboard",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"_find"
+									],
+									"query": [
+										{
+											"key": "search_fields",
+											"value": "title"
+										},
+										{
+											"key": "search",
+											"value": "perf"
+										},
+										{
+											"key": "type",
+											"value": "dashboard"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 13:59:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"per_page\": 20,\n    \"total\": 1,\n    \"saved_objects\": [\n        {\n            \"type\": \"dashboard\",\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"perf\",\n                \"hits\": 0,\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\n                \"version\": 1,\n                \"timeRestore\": false,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"panel_0\",\n                    \"type\": \"visualization\",\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\n                },\n                {\n                    \"name\": \"panel_1\",\n                    \"type\": \"visualization\",\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"dashboard\": \"7.9.3\"\n            },\n            \"updated_at\": \"2020-12-07T13:59:02.831Z\",\n            \"version\": \"WzE0MywxXQ==\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"score\": 0.2876821\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get perf dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/dashboard/5ccee3f0-3894-11eb-b27b-179425c893fd",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"dashboard",
+								"5ccee3f0-3894-11eb-b27b-179425c893fd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/dashboard/5ccee3f0-3894-11eb-b27b-179425c893fd",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"dashboard",
+										"5ccee3f0-3894-11eb-b27b-179425c893fd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:04:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\n    \"type\": \"dashboard\",\n    \"namespaces\": [\n        \"default\"\n    ],\n    \"updated_at\": \"2020-12-07T13:59:02.831Z\",\n    \"version\": \"WzE0MywxXQ==\",\n    \"attributes\": {\n        \"title\": \"perf\",\n        \"hits\": 0,\n        \"description\": \"CPU and memory performance from Cisco IOS-XE\",\n        \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\n        \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\n        \"version\": 1,\n        \"timeRestore\": false,\n        \"kibanaSavedObjectMeta\": {\n            \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\n        }\n    },\n    \"references\": [\n        {\n            \"name\": \"panel_0\",\n            \"type\": \"visualization\",\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\n        },\n        {\n            \"name\": \"panel_1\",\n            \"type\": \"visualization\",\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\n        }\n    ],\n    \"migrationVersion\": {\n        \"dashboard\": \"7.9.3\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find visualizations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?type=visualization",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"_find"
+							],
+							"query": [
+								{
+									"key": "search_fields",
+									"value": "title",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "memory",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "visualization"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/_find?type=visualization",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"_find"
+									],
+									"query": [
+										{
+											"key": "search_fields",
+											"value": "title",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "memory",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "visualization"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:01:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"per_page\": 20,\n    \"total\": 2,\n    \"saved_objects\": [\n        {\n            \"type\": \"visualization\",\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"cpu5sec\",\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            },\n            \"updated_at\": \"2020-12-07T13:38:11.741Z\",\n            \"version\": \"Wzk5LDFd\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"score\": 0\n        },\n        {\n            \"type\": \"visualization\",\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"memory\",\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            },\n            \"updated_at\": \"2020-12-07T13:41:45.556Z\",\n            \"version\": \"WzExNiwxXQ==\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"score\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get CPU visualization",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/visualization/7319b4d0-3891-11eb-b27b-179425c893fd",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"visualization",
+								"7319b4d0-3891-11eb-b27b-179425c893fd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/visualization/7319b4d0-3891-11eb-b27b-179425c893fd",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"visualization",
+										"7319b4d0-3891-11eb-b27b-179425c893fd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:05:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\n    \"type\": \"visualization\",\n    \"namespaces\": [\n        \"default\"\n    ],\n    \"updated_at\": \"2020-12-07T13:38:11.741Z\",\n    \"version\": \"Wzk5LDFd\",\n    \"attributes\": {\n        \"title\": \"cpu5sec\",\n        \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\n        \"uiStateJSON\": \"{}\",\n        \"description\": \"\",\n        \"version\": 1,\n        \"kibanaSavedObjectMeta\": {\n            \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n        }\n    },\n    \"references\": [\n        {\n            \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n            \"type\": \"index-pattern\",\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n        }\n    ],\n    \"migrationVersion\": {\n        \"visualization\": \"7.10.0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get memory visualization",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/visualization/f28b4940-3891-11eb-b27b-179425c893fd",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"saved_objects",
+								"visualization",
+								"f28b4940-3891-11eb-b27b-179425c893fd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/saved_objects/visualization/f28b4940-3891-11eb-b27b-179425c893fd",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"saved_objects",
+										"visualization",
+										"f28b4940-3891-11eb-b27b-179425c893fd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:05:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\n    \"type\": \"visualization\",\n    \"namespaces\": [\n        \"default\"\n    ],\n    \"updated_at\": \"2020-12-07T13:41:45.556Z\",\n    \"version\": \"WzExNiwxXQ==\",\n    \"attributes\": {\n        \"title\": \"memory\",\n        \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\n        \"uiStateJSON\": \"{}\",\n        \"description\": \"\",\n        \"version\": 1,\n        \"kibanaSavedObjectMeta\": {\n            \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n        }\n    },\n    \"references\": [\n        {\n            \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n            \"type\": \"index-pattern\",\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n        }\n    ],\n    \"migrationVersion\": {\n        \"visualization\": \"7.10.0\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f57eb201-3a15-462f-98df-eae45b790d53",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ee571b8-0329-4925-8b1c-c075a218dbd6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dashboard Import/Export",
+			"item": [
+				{
+					"name": "Export (save) dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/export?dashboard=5ccee3f0-3894-11eb-b27b-179425c893fd",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"kibana",
+								"dashboards",
+								"export"
+							],
+							"query": [
+								{
+									"key": "dashboard",
+									"value": "5ccee3f0-3894-11eb-b27b-179425c893fd"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/export?dashboard=5ccee3f0-3894-11eb-b27b-179425c893fd",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"export"
+									],
+									"query": [
+										{
+											"key": "dashboard",
+											"value": "5ccee3f0-3894-11eb-b27b-179425c893fd"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-disposition",
+									"value": "attachment; filename=\"kibana-dashboards.2020-12-07-14-15-27.json\""
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:15:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"version\": \"7.10.0\",\n    \"objects\": [\n        {\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\n            \"type\": \"dashboard\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"updated_at\": \"2020-12-07T13:59:02.831Z\",\n            \"version\": \"WzE0MywxXQ==\",\n            \"attributes\": {\n                \"title\": \"perf\",\n                \"hits\": 0,\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\n                \"version\": 1,\n                \"timeRestore\": false,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"panel_0\",\n                    \"type\": \"visualization\",\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\n                },\n                {\n                    \"name\": \"panel_1\",\n                    \"type\": \"visualization\",\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"dashboard\": \"7.9.3\"\n            }\n        },\n        {\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\n            \"type\": \"visualization\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"updated_at\": \"2020-12-07T13:38:11.741Z\",\n            \"version\": \"Wzk5LDFd\",\n            \"attributes\": {\n                \"title\": \"cpu5sec\",\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            }\n        },\n        {\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\n            \"type\": \"visualization\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"updated_at\": \"2020-12-07T13:41:45.556Z\",\n            \"version\": \"WzExNiwxXQ==\",\n            \"attributes\": {\n                \"title\": \"memory\",\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            }\n        },\n        {\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\n            \"type\": \"index-pattern\",\n            \"namespaces\": [\n                \"default\"\n            ],\n            \"updated_at\": \"2020-12-07T13:13:39.303Z\",\n            \"version\": \"WzMxLDFd\",\n            \"attributes\": {\n                \"title\": \"*2020*\",\n                \"timeFieldName\": \"notification.eventTime\",\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\n            },\n            \"references\": [],\n            \"migrationVersion\": {\n                \"index-pattern\": \"7.6.0\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure: missing dashboard query param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/export",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"export"
+									],
+									"query": [
+										{
+											"key": "dashboard",
+											"value": "5ccee3f0-3894-11eb-b27b-179425c893fd",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "135"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:11:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"[request query.dashboard]: expected at least one defined value but got [undefined]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Import (load) dashboard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "kbn-xsrf",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": \"7.10.0\",\r\n    \"objects\": [\r\n        {\r\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\r\n            \"type\": \"dashboard\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:59:02.831Z\",\r\n            \"version\": \"WzE0MywxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"perf\",\r\n                \"hits\": 0,\r\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\r\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\r\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\r\n                \"version\": 1,\r\n                \"timeRestore\": false,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"panel_0\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\r\n                },\r\n                {\r\n                    \"name\": \"panel_1\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"dashboard\": \"7.9.3\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:38:11.741Z\",\r\n            \"version\": \"Wzk5LDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"cpu5sec\",\r\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:41:45.556Z\",\r\n            \"version\": \"WzExNiwxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"memory\",\r\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\r\n            \"type\": \"index-pattern\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:13:39.303Z\",\r\n            \"version\": \"WzMxLDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"*2020*\",\r\n                \"timeFieldName\": \"notification.eventTime\",\r\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\r\n            },\r\n            \"references\": [],\r\n            \"migrationVersion\": {\r\n                \"index-pattern\": \"7.6.0\"\r\n            }\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/import",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{kibana}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"kibana",
+								"dashboards",
+								"import"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "kbn-xsrf",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": \"7.10.0\",\r\n    \"objects\": [\r\n        {\r\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\r\n            \"type\": \"dashboard\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:59:02.831Z\",\r\n            \"version\": \"WzE0MywxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"perf\",\r\n                \"hits\": 0,\r\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\r\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\r\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\r\n                \"version\": 1,\r\n                \"timeRestore\": false,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"panel_0\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\r\n                },\r\n                {\r\n                    \"name\": \"panel_1\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"dashboard\": \"7.9.3\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:38:11.741Z\",\r\n            \"version\": \"Wzk5LDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"cpu5sec\",\r\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:41:45.556Z\",\r\n            \"version\": \"WzExNiwxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"memory\",\r\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\r\n            \"type\": \"index-pattern\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:13:39.303Z\",\r\n            \"version\": \"WzMxLDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"*2020*\",\r\n                \"timeFieldName\": \"notification.eventTime\",\r\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\r\n            },\r\n            \"references\": [],\r\n            \"migrationVersion\": {\r\n                \"index-pattern\": \"7.6.0\"\r\n            }\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/import",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"import"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "9db0265d6cbe"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:20:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"objects\": [\n        {\n            \"type\": \"dashboard\",\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"perf\",\n                \"hits\": 0,\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\n                \"version\": 1,\n                \"timeRestore\": false,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"panel_0\",\n                    \"type\": \"visualization\",\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\n                },\n                {\n                    \"name\": \"panel_1\",\n                    \"type\": \"visualization\",\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"dashboard\": \"7.9.3\"\n            },\n            \"updated_at\": \"2020-12-07T14:20:16.912Z\",\n            \"version\": \"WzIsMV0=\",\n            \"namespaces\": [\n                \"default\"\n            ]\n        },\n        {\n            \"type\": \"visualization\",\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"cpu5sec\",\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            },\n            \"updated_at\": \"2020-12-07T14:20:16.912Z\",\n            \"version\": \"WzMsMV0=\",\n            \"namespaces\": [\n                \"default\"\n            ]\n        },\n        {\n            \"type\": \"visualization\",\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"memory\",\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\n                \"uiStateJSON\": \"{}\",\n                \"description\": \"\",\n                \"version\": 1,\n                \"kibanaSavedObjectMeta\": {\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\n                }\n            },\n            \"references\": [\n                {\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\n                    \"type\": \"index-pattern\",\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\n                }\n            ],\n            \"migrationVersion\": {\n                \"visualization\": \"7.10.0\"\n            },\n            \"updated_at\": \"2020-12-07T14:20:16.912Z\",\n            \"version\": \"WzQsMV0=\",\n            \"namespaces\": [\n                \"default\"\n            ]\n        },\n        {\n            \"type\": \"index-pattern\",\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\n            \"attributes\": {\n                \"title\": \"*2020*\",\n                \"timeFieldName\": \"notification.eventTime\",\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\n            },\n            \"references\": [],\n            \"migrationVersion\": {\n                \"index-pattern\": \"7.6.0\"\n            },\n            \"updated_at\": \"2020-12-07T14:20:16.912Z\",\n            \"version\": \"WzUsMV0=\",\n            \"namespaces\": [\n                \"default\"\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure: missing kbn-xsrf header",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/import",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"import"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "92"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:15:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"Request must contain a kbn-xsrf header.\"\n}"
+						},
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "kbn-xsrf",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/import",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"import"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "125"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:16:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"[request body]: expected a plain object value, but found [null] instead.\"\n}"
+						},
+						{
+							"name": "Failiure: objects already exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "kbn-xsrf",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": \"7.10.0\",\r\n    \"objects\": [\r\n        {\r\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\r\n            \"type\": \"dashboard\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:59:02.831Z\",\r\n            \"version\": \"WzE0MywxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"perf\",\r\n                \"hits\": 0,\r\n                \"description\": \"CPU and memory performance from Cisco IOS-XE\",\r\n                \"panelsJSON\": \"[{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"w\\\":24,\\\"x\\\":0,\\\"y\\\":0},\\\"panelIndex\\\":\\\"dd669fc9-f945-4597-ac07-b9152f45d9f6\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_0\\\"},{\\\"embeddableConfig\\\":{},\\\"gridData\\\":{\\\"h\\\":15,\\\"i\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"w\\\":24,\\\"x\\\":24,\\\"y\\\":0},\\\"panelIndex\\\":\\\"392109b0-4061-45f5-8db4-fe5038a2a4fe\\\",\\\"version\\\":\\\"7.10.0\\\",\\\"panelRefName\\\":\\\"panel_1\\\"}]\",\r\n                \"optionsJSON\": \"{\\\"hidePanelTitles\\\":false,\\\"useMargins\\\":true}\",\r\n                \"version\": 1,\r\n                \"timeRestore\": false,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"language\\\":\\\"kuery\\\",\\\"query\\\":\\\"\\\"},\\\"filter\\\":[]}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"panel_0\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\"\r\n                },\r\n                {\r\n                    \"name\": \"panel_1\",\r\n                    \"type\": \"visualization\",\r\n                    \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"dashboard\": \"7.9.3\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:38:11.741Z\",\r\n            \"version\": \"Wzk5LDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"cpu5sec\",\r\n                \"visState\": \"{\\\"title\\\":\\\"cpu5sec\\\",\\\"type\\\":\\\"line\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"customLabel\\\":\\\"CPU 5-second (%)\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"}],\\\"params\\\":{\\\"type\\\":\\\"line\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"CPU 5-second (%)\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"line\\\",\\\"mode\\\":\\\"normal\\\",\\\"data\\\":{\\\"label\\\":\\\"CPU 5-second (%)\\\",\\\"id\\\":\\\"1\\\"},\\\"valueAxis\\\":\\\"ValueAxis-1\\\",\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"interpolate\\\":\\\"linear\\\",\\\"showCircles\\\":true}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"labels\\\":{},\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\r\n            \"type\": \"visualization\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:41:45.556Z\",\r\n            \"version\": \"WzExNiwxXQ==\",\r\n            \"attributes\": {\r\n                \"title\": \"memory\",\r\n                \"visState\": \"{\\\"title\\\":\\\"memory\\\",\\\"type\\\":\\\"area\\\",\\\"aggs\\\":[{\\\"id\\\":\\\"1\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"customLabel\\\":\\\"Free memory\\\"},\\\"schema\\\":\\\"metric\\\"},{\\\"id\\\":\\\"2\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"date_histogram\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.eventTime\\\",\\\"timeRange\\\":{\\\"from\\\":\\\"now-15m\\\",\\\"to\\\":\\\"now\\\"},\\\"useNormalizedEsInterval\\\":true,\\\"scaleMetricValues\\\":false,\\\"interval\\\":\\\"10s\\\",\\\"drop_partials\\\":false,\\\"min_doc_count\\\":1,\\\"extended_bounds\\\":{}},\\\"schema\\\":\\\"segment\\\"},{\\\"id\\\":\\\"3\\\",\\\"enabled\\\":true,\\\"type\\\":\\\"avg\\\",\\\"params\\\":{\\\"field\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"customLabel\\\":\\\"Total memory\\\"},\\\"schema\\\":\\\"metric\\\"}],\\\"params\\\":{\\\"type\\\":\\\"area\\\",\\\"grid\\\":{\\\"categoryLines\\\":false},\\\"categoryAxes\\\":[{\\\"id\\\":\\\"CategoryAxis-1\\\",\\\"type\\\":\\\"category\\\",\\\"position\\\":\\\"bottom\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"filter\\\":true,\\\"truncate\\\":100},\\\"title\\\":{}}],\\\"valueAxes\\\":[{\\\"id\\\":\\\"ValueAxis-1\\\",\\\"name\\\":\\\"LeftAxis-1\\\",\\\"type\\\":\\\"value\\\",\\\"position\\\":\\\"left\\\",\\\"show\\\":true,\\\"style\\\":{},\\\"scale\\\":{\\\"type\\\":\\\"linear\\\",\\\"mode\\\":\\\"normal\\\"},\\\"labels\\\":{\\\"show\\\":true,\\\"rotate\\\":0,\\\"filter\\\":false,\\\"truncate\\\":100},\\\"title\\\":{\\\"text\\\":\\\"Memory\\\"}}],\\\"seriesParams\\\":[{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"label\\\":\\\"Free memory\\\",\\\"id\\\":\\\"1\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"},{\\\"show\\\":true,\\\"type\\\":\\\"area\\\",\\\"mode\\\":\\\"stacked\\\",\\\"data\\\":{\\\"id\\\":\\\"3\\\",\\\"label\\\":\\\"Total memory\\\"},\\\"drawLinesBetweenPoints\\\":true,\\\"lineWidth\\\":2,\\\"showCircles\\\":true,\\\"interpolate\\\":\\\"linear\\\",\\\"valueAxis\\\":\\\"ValueAxis-1\\\"}],\\\"addTooltip\\\":true,\\\"addLegend\\\":true,\\\"legendPosition\\\":\\\"right\\\",\\\"times\\\":[],\\\"addTimeMarker\\\":false,\\\"thresholdLine\\\":{\\\"show\\\":false,\\\"value\\\":10,\\\"width\\\":1,\\\"style\\\":\\\"full\\\",\\\"color\\\":\\\"#E7664C\\\"},\\\"labels\\\":{}}}\",\r\n                \"uiStateJSON\": \"{}\",\r\n                \"description\": \"\",\r\n                \"version\": 1,\r\n                \"kibanaSavedObjectMeta\": {\r\n                    \"searchSourceJSON\": \"{\\\"query\\\":{\\\"query\\\":\\\"\\\",\\\"language\\\":\\\"kuery\\\"},\\\"filter\\\":[],\\\"indexRefName\\\":\\\"kibanaSavedObjectMeta.searchSourceJSON.index\\\"}\"\r\n                }\r\n            },\r\n            \"references\": [\r\n                {\r\n                    \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\",\r\n                    \"type\": \"index-pattern\",\r\n                    \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\"\r\n                }\r\n            ],\r\n            \"migrationVersion\": {\r\n                \"visualization\": \"7.10.0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\r\n            \"type\": \"index-pattern\",\r\n            \"namespaces\": [\r\n                \"default\"\r\n            ],\r\n            \"updated_at\": \"2020-12-07T13:13:39.303Z\",\r\n            \"version\": \"WzMxLDFd\",\r\n            \"attributes\": {\r\n                \"title\": \"*2020*\",\r\n                \"timeFieldName\": \"notification.eventTime\",\r\n                \"fields\": \"[{\\\"count\\\":0,\\\"name\\\":\\\"@timestamp\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"@version\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"@version.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"@version\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"_id\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_id\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_index\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_index\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_score\\\",\\\"type\\\":\\\"number\\\",\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_source\\\",\\\"type\\\":\\\"_source\\\",\\\"esTypes\\\":[\\\"_source\\\"],\\\"scripted\\\":false,\\\"searchable\\\":false,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"_type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"_type\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"host.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"host\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"level\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"level.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"level\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"logger_name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"logger_name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"message\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"message.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"message\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.eventTime\\\",\\\"type\\\":\\\"date\\\",\\\"esTypes\\\":[\\\"date\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.cpu-usage.cpu-utilization.five-seconds\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.@xmlns\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.free-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.highest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.lowest-usage\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.name\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.total-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.datastore-contents-xml.memory-statistics.memory-statistic.used-memory\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"notification.push-update.subscription-id\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"path\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"path.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"path\\\"}}},{\\\"count\\\":0,\\\"name\\\":\\\"port\\\",\\\"type\\\":\\\"number\\\",\\\"esTypes\\\":[\\\"long\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true},{\\\"count\\\":0,\\\"name\\\":\\\"type\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"text\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":false,\\\"readFromDocValues\\\":false},{\\\"count\\\":0,\\\"name\\\":\\\"type.keyword\\\",\\\"type\\\":\\\"string\\\",\\\"esTypes\\\":[\\\"keyword\\\"],\\\"scripted\\\":false,\\\"searchable\\\":true,\\\"aggregatable\\\":true,\\\"readFromDocValues\\\":true,\\\"subType\\\":{\\\"multi\\\":{\\\"parent\\\":\\\"type\\\"}}}]\"\r\n            },\r\n            \"references\": [],\r\n            \"migrationVersion\": {\r\n                \"index-pattern\": \"7.6.0\"\r\n            }\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{protocol}}://{{kibana}}:{{port}}/api/kibana/dashboards/import",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{kibana}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"kibana",
+										"dashboards",
+										"import"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "kbn-name",
+									"value": "52f1aa17a64f"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-length",
+									"value": "813"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Dec 2020 14:17:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"objects\": [\n        {\n            \"id\": \"5ccee3f0-3894-11eb-b27b-179425c893fd\",\n            \"type\": \"dashboard\",\n            \"error\": {\n                \"statusCode\": 409,\n                \"error\": \"Conflict\",\n                \"message\": \"Saved object [dashboard/5ccee3f0-3894-11eb-b27b-179425c893fd] conflict\"\n            }\n        },\n        {\n            \"id\": \"7319b4d0-3891-11eb-b27b-179425c893fd\",\n            \"type\": \"visualization\",\n            \"error\": {\n                \"statusCode\": 409,\n                \"error\": \"Conflict\",\n                \"message\": \"Saved object [visualization/7319b4d0-3891-11eb-b27b-179425c893fd] conflict\"\n            }\n        },\n        {\n            \"id\": \"f28b4940-3891-11eb-b27b-179425c893fd\",\n            \"type\": \"visualization\",\n            \"error\": {\n                \"statusCode\": 409,\n                \"error\": \"Conflict\",\n                \"message\": \"Saved object [visualization/f28b4940-3891-11eb-b27b-179425c893fd] conflict\"\n            }\n        },\n        {\n            \"id\": \"0575a680-388e-11eb-b27b-179425c893fd\",\n            \"type\": \"index-pattern\",\n            \"error\": {\n                \"statusCode\": 409,\n                \"error\": \"Conflict\",\n                \"message\": \"Saved object [index-pattern/0575a680-388e-11eb-b27b-179425c893fd] conflict\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "These will automatically collect/create all relevant objects. Much easier than managing them individually.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7c5d7a6d-bbea-424d-ab98-7391ef1bb550",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d73a6640-2f17-4cd5-a1e5-dbfc34b9852f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f01ed505-a879-409c-b06e-117cca888a34",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "be04ed10-6dca-4ee0-94b3-f0b37d351e22",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
