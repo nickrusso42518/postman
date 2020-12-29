@@ -1,0 +1,3091 @@
+{
+	"info": {
+		"_postman_id": "d3f53f5a-2dae-473f-bb3f-31ccd7b3a19b",
+		"name": "Prometheus",
+		"description": "https://prometheus.io/docs/prometheus/latest/querying/api/\n\nNote that all timestamps must be in one of the following formats:\n\nRFC3339: 2002-10-02T10:00:00-05:00 or 2002-10-02T10:00Z\nUnix: 1609201328 (seconds since 1 Jan 1970)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Data Queries",
+			"item": [
+				{
+					"name": "Instant query with query params",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query?query=counter_orders_total",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"query"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "counter_orders_total",
+									"description": "required"
+								},
+								{
+									"key": "time",
+									"value": "2020-12-29T12:32:28Z",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": "5",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: missing \"query\" parameter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "counter_orders_total",
+											"description": "required",
+											"disabled": true
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:32:28Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:43:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"bad_data\",\n    \"error\": \"invalid parameter 'query': 1:1: parse error: no expression found in input\"\n}"
+						},
+						{
+							"name": "Failure: metric not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query?query=counter_orders_total1",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "time",
+											"value": "2020-12-29T12:32:28Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "counter_orders_total1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:44:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": []\n    }\n}"
+						},
+						{
+							"name": "Success: old time",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query?query=counter_orders_total&time=2020-12-29T12:32:28Z",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "counter_orders_total",
+											"description": "required"
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:32:28Z",
+											"description": "optional"
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:43:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": [\n            {\n                \"metric\": {\n                    \"__name__\": \"counter_orders_total\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\"\n                },\n                \"value\": [\n                    1609245148,\n                    \"5\"\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: current time",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query?query=counter_orders_total",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "counter_orders_total",
+											"description": "required"
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:32:28Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:43:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": [\n            {\n                \"metric\": {\n                    \"__name__\": \"counter_orders_total\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\"\n                },\n                \"value\": [\n                    1609245784.14,\n                    \"5\"\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Instant query with body",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "query",
+									"value": "gauge_fulfillment",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "2020-12-29T12:47:16Z",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": "5",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"query"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: specific time",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "gauge_fulfillment",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:47:16Z",
+											"description": "optional",
+											"type": "text"
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:48:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": [\n            {\n                \"metric\": {\n                    \"__name__\": \"gauge_fulfillment\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\"\n                },\n                \"value\": [\n                    1609246036,\n                    \"2\"\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: current time",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "gauge_fulfillment",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "t",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:45:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": [\n            {\n                \"metric\": {\n                    \"__name__\": \"gauge_fulfillment\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\"\n                },\n                \"value\": [\n                    1609245939.892,\n                    \"0\"\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: metric not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "gauge_fulfillment1",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:47:16Z",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:48:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"vector\",\n        \"result\": []\n    }\n}"
+						},
+						{
+							"name": "Failure: missing \"query\" form field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "gauge_fulfillment",
+											"description": "required",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "time",
+											"value": "2020-12-29T12:47:16Z",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:48:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"bad_data\",\n    \"error\": \"invalid parameter 'query': 1:1: parse error: no expression found in input\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Range query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "query",
+									"value": "histogram_service_bucket",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2020-12-29T12:30:55Z",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "end",
+									"value": "2020-12-29T12:32:13Z",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "step",
+									"value": "10",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "timeout",
+									"value": "5",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query_range",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"query_range"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: query timed out",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "histogram_service_bucket",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "step",
+											"value": "10",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "timeout",
+											"value": "0",
+											"description": "optional",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query_range",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query_range"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:53:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"timeout\",\n    \"error\": \"query timed out in query execution\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "histogram_service_bucket",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "step",
+											"value": "10",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query_range",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query_range"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:51:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "347"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"matrix\",\n        \"result\": [\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"+Inf\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"17\"\n                    ],\n                    [\n                        1609245115,\n                        \"20\"\n                    ],\n                    [\n                        1609245125,\n                        \"20\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.005\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"0\"\n                    ],\n                    [\n                        1609245115,\n                        \"0\"\n                    ],\n                    [\n                        1609245125,\n                        \"0\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.01\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"0\"\n                    ],\n                    [\n                        1609245115,\n                        \"0\"\n                    ],\n                    [\n                        1609245125,\n                        \"0\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.025\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"0\"\n                    ],\n                    [\n                        1609245115,\n                        \"0\"\n                    ],\n                    [\n                        1609245125,\n                        \"0\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.05\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"0\"\n                    ],\n                    [\n                        1609245115,\n                        \"0\"\n                    ],\n                    [\n                        1609245125,\n                        \"0\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.075\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"1\"\n                    ],\n                    [\n                        1609245115,\n                        \"1\"\n                    ],\n                    [\n                        1609245125,\n                        \"1\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.1\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"1\"\n                    ],\n                    [\n                        1609245115,\n                        \"1\"\n                    ],\n                    [\n                        1609245125,\n                        \"1\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.25\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"1\"\n                    ],\n                    [\n                        1609245115,\n                        \"1\"\n                    ],\n                    [\n                        1609245125,\n                        \"1\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.5\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"2\"\n                    ],\n                    [\n                        1609245115,\n                        \"2\"\n                    ],\n                    [\n                        1609245125,\n                        \"2\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"0.75\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"2\"\n                    ],\n                    [\n                        1609245115,\n                        \"2\"\n                    ],\n                    [\n                        1609245125,\n                        \"2\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"1.0\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"3\"\n                    ],\n                    [\n                        1609245115,\n                        \"3\"\n                    ],\n                    [\n                        1609245125,\n                        \"3\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"10.0\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"17\"\n                    ],\n                    [\n                        1609245115,\n                        \"20\"\n                    ],\n                    [\n                        1609245125,\n                        \"20\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"2.5\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"4\"\n                    ],\n                    [\n                        1609245115,\n                        \"4\"\n                    ],\n                    [\n                        1609245125,\n                        \"4\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"5.0\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"12\"\n                    ],\n                    [\n                        1609245115,\n                        \"12\"\n                    ],\n                    [\n                        1609245125,\n                        \"12\"\n                    ]\n                ]\n            },\n            {\n                \"metric\": {\n                    \"__name__\": \"histogram_service_bucket\",\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\",\n                    \"le\": \"7.5\"\n                },\n                \"values\": [\n                    [\n                        1609245055,\n                        \"0\"\n                    ],\n                    [\n                        1609245065,\n                        \"0\"\n                    ],\n                    [\n                        1609245075,\n                        \"0\"\n                    ],\n                    [\n                        1609245085,\n                        \"0\"\n                    ],\n                    [\n                        1609245095,\n                        \"0\"\n                    ],\n                    [\n                        1609245105,\n                        \"17\"\n                    ],\n                    [\n                        1609245115,\n                        \"17\"\n                    ],\n                    [\n                        1609245125,\n                        \"17\"\n                    ]\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: invalid timestamp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "histogram_service_bucket",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:33:55Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "step",
+											"value": "10",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query_range",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query_range"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:52:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"bad_data\",\n    \"error\": \"end timestamp must not be before start time\"\n}"
+						},
+						{
+							"name": "Failure: metric not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "query",
+											"value": "histogram_service_bucket1",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "step",
+											"value": "10",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "timeout",
+											"value": "5",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/query_range",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"query_range"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:52:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"resultType\": \"matrix\",\n        \"result\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Query by labels",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "match[]",
+									"value": "flask_http_request_total{method=\"GET\"}",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "2020-12-29T12:30:55Z",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "2020-12-29T12:32:13Z",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/series",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"series"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "match[]",
+											"value": "flask_http_request_total{method=\"GET\"}",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/series",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"series"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:56:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"__name__\": \"flask_http_request_total\",\n            \"instance\": \"devbox.njrusmc.net:5000\",\n            \"job\": \"etech\",\n            \"method\": \"GET\",\n            \"status\": \"200\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get label names",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "start",
+									"value": "2020-12-29T12:30:55Z",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "2020-12-29T12:32:13Z",
+									"description": "optional",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/labels",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"labels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/labels",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"labels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:57:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "138"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        \"__name__\",\n        \"generation\",\n        \"implementation\",\n        \"instance\",\n        \"job\",\n        \"le\",\n        \"major\",\n        \"method\",\n        \"minor\",\n        \"patchlevel\",\n        \"path\",\n        \"status\",\n        \"version\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get label values",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/label/path/values",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"label",
+								"path",
+								"values"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2020-12-29T12:30:55Z",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "2020-12-29T12:32:13Z",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: HTTP method",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/label/method/values",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"label",
+										"method",
+										"values"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:59:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        \"GET\"\n    ]\n}"
+						},
+						{
+							"name": "Failure: label not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/label/bad/values",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"label",
+										"bad",
+										"values"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:59:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Success: HTTP path",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/label/path/values",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"label",
+										"path",
+										"values"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:58:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        \"/\",\n        \"/fulfillment\",\n        \"/orders\",\n        \"/service\"\n    ]\n}"
+						},
+						{
+							"name": "Success: less or equal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/label/le/values",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"label",
+										"le",
+										"values"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:58:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        \"+Inf\",\n        \"0.005\",\n        \"0.01\",\n        \"0.025\",\n        \"0.05\",\n        \"0.075\",\n        \"0.1\",\n        \"0.25\",\n        \"0.5\",\n        \"0.75\",\n        \"1.0\",\n        \"10.0\",\n        \"2.5\",\n        \"5.0\",\n        \"7.5\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get targets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"targets"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "dropped",
+									"description": "optional. choices: active, dropped, any",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: dropped targets (empty)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets?state=dropped",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"targets"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "dropped",
+											"description": "optional. choices: active, dropped, any"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:31:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"activeTargets\": [],\n        \"droppedTargets\": []\n    }\n}"
+						},
+						{
+							"name": "Success: all targets",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"targets"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "active",
+											"description": "optional. choices: active, dropped, any",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:30:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"activeTargets\": [\n            {\n                \"discoveredLabels\": {\n                    \"__address__\": \"devbox.njrusmc.net:5000\",\n                    \"__metrics_path__\": \"/metrics\",\n                    \"__scheme__\": \"http\",\n                    \"job\": \"etech\"\n                },\n                \"labels\": {\n                    \"instance\": \"devbox.njrusmc.net:5000\",\n                    \"job\": \"etech\"\n                },\n                \"scrapePool\": \"etech\",\n                \"scrapeUrl\": \"http://devbox.njrusmc.net:5000/metrics\",\n                \"globalUrl\": \"http://devbox.njrusmc.net:5000/metrics\",\n                \"lastError\": \"\",\n                \"lastScrape\": \"2020-12-29T12:30:44.340834685Z\",\n                \"lastScrapeDuration\": 0.005385188,\n                \"health\": \"up\"\n            }\n        ],\n        \"droppedTargets\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get target metadata (available metrics)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets/metadata?metric=histogram_service",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"targets",
+								"metadata"
+							],
+							"query": [
+								{
+									"key": "match_target",
+									"value": "labelname",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "metric",
+									"value": "histogram_service",
+									"description": "optional"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: specific metric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets/metadata?metric=histogram_service",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"targets",
+										"metadata"
+									],
+									"query": [
+										{
+											"key": "match_target",
+											"value": "labelname",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "metric",
+											"value": "histogram_service",
+											"description": "optional"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:35:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "155"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"type\": \"histogram\",\n            \"help\": \"Customer service wait times\",\n            \"unit\": \"\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success: all metadata",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/targets/metadata",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"targets",
+										"metadata"
+									],
+									"query": [
+										{
+											"key": "match_target",
+											"value": "t",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "metric",
+											"value": "t",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "t",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:31:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "640"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"python_gc_objects_uncollectable\",\n            \"type\": \"counter\",\n            \"help\": \"Uncollectable object found during GC\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_start_time_seconds\",\n            \"type\": \"gauge\",\n            \"help\": \"Start time of the process since unix epoch in seconds.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"flask_http_request_exceptions\",\n            \"type\": \"counter\",\n            \"help\": \"Total number of HTTP requests which resulted in an exception\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_open_fds\",\n            \"type\": \"gauge\",\n            \"help\": \"Number of open file descriptors.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_max_fds\",\n            \"type\": \"gauge\",\n            \"help\": \"Maximum number of open file descriptors.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"flask_exporter_info\",\n            \"type\": \"gauge\",\n            \"help\": \"Information about the Prometheus Flask exporter\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"flask_http_request\",\n            \"type\": \"counter\",\n            \"help\": \"Total number of HTTP requests\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"python_gc_objects_collected\",\n            \"type\": \"counter\",\n            \"help\": \"Objects collected during gc\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_resident_memory_bytes\",\n            \"type\": \"gauge\",\n            \"help\": \"Resident memory size in bytes.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_cpu_seconds\",\n            \"type\": \"counter\",\n            \"help\": \"Total user and system CPU time spent in seconds.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"counter_orders\",\n            \"type\": \"counter\",\n            \"help\": \"Number of orders placed\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"gauge_fulfillment\",\n            \"type\": \"gauge\",\n            \"help\": \"Concurrent fulfillment processes running\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"python_gc_collections\",\n            \"type\": \"counter\",\n            \"help\": \"Number of times this generation was collected\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"python_info\",\n            \"type\": \"gauge\",\n            \"help\": \"Python platform information\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"flask_http_request_duration_seconds\",\n            \"type\": \"histogram\",\n            \"help\": \"Flask HTTP request duration in seconds\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"process_virtual_memory_bytes\",\n            \"type\": \"gauge\",\n            \"help\": \"Virtual memory size in bytes.\",\n            \"unit\": \"\"\n        },\n        {\n            \"target\": {\n                \"instance\": \"devbox.njrusmc.net:5000\",\n                \"job\": \"etech\"\n            },\n            \"metric\": \"histogram_service\",\n            \"type\": \"histogram\",\n            \"help\": \"Customer service wait times\",\n            \"unit\": \"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get metric metadata",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/metadata?metric=gauge_fulfillment",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"metadata"
+							],
+							"query": [
+								{
+									"key": "metric",
+									"value": "gauge_fulfillment",
+									"description": "optional"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: all data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/metadata",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"metadata"
+									],
+									"query": [
+										{
+											"key": "metric",
+											"value": "t",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "t",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:35:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "571"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"counter_orders\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Number of orders placed\",\n                \"unit\": \"\"\n            }\n        ],\n        \"flask_exporter_info\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Information about the Prometheus Flask exporter\",\n                \"unit\": \"\"\n            }\n        ],\n        \"flask_http_request\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Total number of HTTP requests\",\n                \"unit\": \"\"\n            }\n        ],\n        \"flask_http_request_duration_seconds\": [\n            {\n                \"type\": \"histogram\",\n                \"help\": \"Flask HTTP request duration in seconds\",\n                \"unit\": \"\"\n            }\n        ],\n        \"flask_http_request_exceptions\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Total number of HTTP requests which resulted in an exception\",\n                \"unit\": \"\"\n            }\n        ],\n        \"gauge_fulfillment\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Concurrent fulfillment processes running\",\n                \"unit\": \"\"\n            }\n        ],\n        \"histogram_service\": [\n            {\n                \"type\": \"histogram\",\n                \"help\": \"Customer service wait times\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_cpu_seconds\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Total user and system CPU time spent in seconds.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_max_fds\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Maximum number of open file descriptors.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_open_fds\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Number of open file descriptors.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_resident_memory_bytes\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Resident memory size in bytes.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_start_time_seconds\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Start time of the process since unix epoch in seconds.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"process_virtual_memory_bytes\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Virtual memory size in bytes.\",\n                \"unit\": \"\"\n            }\n        ],\n        \"python_gc_collections\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Number of times this generation was collected\",\n                \"unit\": \"\"\n            }\n        ],\n        \"python_gc_objects_collected\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Objects collected during gc\",\n                \"unit\": \"\"\n            }\n        ],\n        \"python_gc_objects_uncollectable\": [\n            {\n                \"type\": \"counter\",\n                \"help\": \"Uncollectable object found during GC\",\n                \"unit\": \"\"\n            }\n        ],\n        \"python_info\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Python platform information\",\n                \"unit\": \"\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: specific data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/metadata?metric=gauge_fulfillment",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"metadata"
+									],
+									"query": [
+										{
+											"key": "metric",
+											"value": "gauge_fulfillment",
+											"description": "optional"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:36:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"gauge_fulfillment\": [\n            {\n                \"type\": \"gauge\",\n                \"help\": \"Concurrent fulfillment processes running\",\n                \"unit\": \"\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "System Management",
+			"item": [
+				{
+					"name": "Get configuration",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/config",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"status",
+								"config"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/config",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"status",
+										"config"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:39:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "210"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"yaml\": \"global:\\n  scrape_interval: 5s\\n  scrape_timeout: 5s\\n  evaluation_interval: 5s\\nscrape_configs:\\n- job_name: etech\\n  honor_timestamps: true\\n  scrape_interval: 5s\\n  scrape_timeout: 5s\\n  metrics_path: /metrics\\n  scheme: http\\n  static_configs:\\n  - targets:\\n    - devbox.njrusmc.net:5000\\n\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get flags",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/flags",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"status",
+								"flags"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/flags",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"status",
+										"flags"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:39:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "634"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"alertmanager.notification-queue-capacity\": \"10000\",\n        \"alertmanager.timeout\": \"10s\",\n        \"config.file\": \"/etc/prometheus/prometheus.yml\",\n        \"log.format\": \"logfmt\",\n        \"log.level\": \"info\",\n        \"query.lookback-delta\": \"5m\",\n        \"query.max-concurrency\": \"20\",\n        \"query.max-samples\": \"50000000\",\n        \"query.timeout\": \"2m\",\n        \"rules.alert.for-grace-period\": \"10m\",\n        \"rules.alert.for-outage-tolerance\": \"1h\",\n        \"rules.alert.resend-delay\": \"1m\",\n        \"scrape.adjust-timestamps\": \"true\",\n        \"storage.remote.flush-deadline\": \"1m\",\n        \"storage.remote.read-concurrent-limit\": \"10\",\n        \"storage.remote.read-max-bytes-in-frame\": \"1048576\",\n        \"storage.remote.read-sample-limit\": \"50000000\",\n        \"storage.tsdb.allow-overlapping-blocks\": \"false\",\n        \"storage.tsdb.max-block-duration\": \"1d12h\",\n        \"storage.tsdb.min-block-duration\": \"2h\",\n        \"storage.tsdb.no-lockfile\": \"false\",\n        \"storage.tsdb.path\": \"/prometheus\",\n        \"storage.tsdb.retention\": \"0s\",\n        \"storage.tsdb.retention.size\": \"0B\",\n        \"storage.tsdb.retention.time\": \"0s\",\n        \"storage.tsdb.wal-compression\": \"true\",\n        \"storage.tsdb.wal-segment-size\": \"0B\",\n        \"web.console.libraries\": \"/usr/share/prometheus/console_libraries\",\n        \"web.console.templates\": \"/usr/share/prometheus/consoles\",\n        \"web.cors.origin\": \".*\",\n        \"web.enable-admin-api\": \"false\",\n        \"web.enable-lifecycle\": \"false\",\n        \"web.external-url\": \"\",\n        \"web.listen-address\": \"0.0.0.0:9090\",\n        \"web.max-connections\": \"512\",\n        \"web.page-title\": \"Prometheus Time Series Collection and Processing Server\",\n        \"web.read-timeout\": \"5m\",\n        \"web.route-prefix\": \"/\",\n        \"web.user-assets\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get runtime information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/runtimeinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"status",
+								"runtimeinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/runtimeinfo",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"status",
+										"runtimeinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:39:32 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"startTime\": \"2020-12-29T12:29:51.014835627Z\",\n        \"CWD\": \"/prometheus\",\n        \"reloadConfigSuccess\": true,\n        \"lastConfigTime\": \"2020-12-29T12:29:51Z\",\n        \"corruptionCount\": 0,\n        \"goroutineCount\": 25,\n        \"GOMAXPROCS\": 1,\n        \"GOGC\": \"\",\n        \"GODEBUG\": \"\",\n        \"storageRetention\": \"15d\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get build information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/buildinfo",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"status",
+								"buildinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/buildinfo",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"status",
+										"buildinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:39:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"version\": \"2.23.0\",\n        \"revision\": \"26d89b4b0776fe4cd5a3656dfa520f119a375273\",\n        \"branch\": \"HEAD\",\n        \"buildUser\": \"root@37609b3a0a21\",\n        \"buildDate\": \"20201126-10:56:17\",\n        \"goVersion\": \"go1.15.5\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get time-series database statistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/tsdb",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"status",
+								"tsdb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/status/tsdb",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"status",
+										"tsdb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 12:39:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "536"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"headStats\": {\n            \"numSeries\": 117,\n            \"chunkCount\": 117,\n            \"minTime\": 1609244999340,\n            \"maxTime\": 1609245589340\n        },\n        \"seriesCountByMetricName\": [\n            {\n                \"name\": \"flask_http_request_duration_seconds_bucket\",\n                \"value\": 60\n            },\n            {\n                \"name\": \"histogram_service_bucket\",\n                \"value\": 15\n            },\n            {\n                \"name\": \"flask_http_request_duration_seconds_created\",\n                \"value\": 4\n            },\n            {\n                \"name\": \"flask_http_request_duration_seconds_sum\",\n                \"value\": 4\n            },\n            {\n                \"name\": \"flask_http_request_duration_seconds_count\",\n                \"value\": 4\n            },\n            {\n                \"name\": \"python_gc_objects_uncollectable_total\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"python_gc_objects_collected_total\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"python_gc_collections_total\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"histogram_service_sum\",\n                \"value\": 1\n            },\n            {\n                \"name\": \"flask_http_request_created\",\n                \"value\": 1\n            }\n        ],\n        \"labelValueCountByLabelName\": [\n            {\n                \"name\": \"__name__\",\n                \"value\": 29\n            },\n            {\n                \"name\": \"le\",\n                \"value\": 15\n            },\n            {\n                \"name\": \"path\",\n                \"value\": 4\n            },\n            {\n                \"name\": \"generation\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"version\",\n                \"value\": 2\n            },\n            {\n                \"name\": \"job\",\n                \"value\": 1\n            },\n            {\n                \"name\": \"implementation\",\n                \"value\": 1\n            },\n            {\n                \"name\": \"method\",\n                \"value\": 1\n            },\n            {\n                \"name\": \"patchlevel\",\n                \"value\": 1\n            },\n            {\n                \"name\": \"major\",\n                \"value\": 1\n            }\n        ],\n        \"memoryInBytesByLabelName\": [\n            {\n                \"name\": \"__name__\",\n                \"value\": 736\n            },\n            {\n                \"name\": \"le\",\n                \"value\": 57\n            },\n            {\n                \"name\": \"path\",\n                \"value\": 28\n            },\n            {\n                \"name\": \"instance\",\n                \"value\": 23\n            },\n            {\n                \"name\": \"version\",\n                \"value\": 11\n            },\n            {\n                \"name\": \"implementation\",\n                \"value\": 7\n            },\n            {\n                \"name\": \"job\",\n                \"value\": 5\n            },\n            {\n                \"name\": \"status\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"method\",\n                \"value\": 3\n            },\n            {\n                \"name\": \"generation\",\n                \"value\": 3\n            }\n        ],\n        \"seriesCountByLabelValuePair\": [\n            {\n                \"name\": \"instance=devbox.njrusmc.net:5000\",\n                \"value\": 117\n            },\n            {\n                \"name\": \"job=etech\",\n                \"value\": 117\n            },\n            {\n                \"name\": \"method=GET\",\n                \"value\": 74\n            },\n            {\n                \"name\": \"status=200\",\n                \"value\": 74\n            },\n            {\n                \"name\": \"__name__=flask_http_request_duration_seconds_bucket\",\n                \"value\": 60\n            },\n            {\n                \"name\": \"path=/\",\n                \"value\": 18\n            },\n            {\n                \"name\": \"path=/fulfillment\",\n                \"value\": 18\n            },\n            {\n                \"name\": \"path=/orders\",\n                \"value\": 18\n            },\n            {\n                \"name\": \"path=/service\",\n                \"value\": 18\n            },\n            {\n                \"name\": \"__name__=histogram_service_bucket\",\n                \"value\": 15\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Database Administration",
+			"item": [
+				{
+					"name": "Create snapshot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/snapshot",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tsdb",
+								"snapshot"
+							],
+							"query": [
+								{
+									"key": "skip_head",
+									"value": "true",
+									"description": "optional. choices: true, false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/snapshot",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tsdb",
+										"snapshot"
+									],
+									"query": [
+										{
+											"key": "skip_head",
+											"value": "true",
+											"description": "optional. choices: true, false",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 13:26:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"20201229T132639Z-17f7ae24e9174548\"\n    }\n}"
+						},
+						{
+							"name": "Failure: admin API disabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/snapshot",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tsdb",
+										"snapshot"
+									],
+									"query": [
+										{
+											"key": "skip_head",
+											"value": "true",
+											"description": "optional. choices: true, false",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 13:00:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"unavailable\",\n    \"error\": \"admin APIs disabled\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete series",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/delete_series?match[]=counter_orders_created",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tsdb",
+								"delete_series"
+							],
+							"query": [
+								{
+									"key": "match[]",
+									"value": "counter_orders_created",
+									"description": "required"
+								},
+								{
+									"key": "start",
+									"value": "2020-12-29T12:30:55Z",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "2020-12-29T12:32:13Z",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/delete_series?match[]=counter_orders_created",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tsdb",
+										"delete_series"
+									],
+									"query": [
+										{
+											"key": "match[]",
+											"value": "counter_orders_created",
+											"description": "required"
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 13:28:12 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: missing match[] parameter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/delete_series",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tsdb",
+										"delete_series"
+									],
+									"query": [
+										{
+											"key": "match[]",
+											"value": "counter_orders_created",
+											"description": "required",
+											"disabled": true
+										},
+										{
+											"key": "start",
+											"value": "2020-12-29T12:30:55Z",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "end",
+											"value": "2020-12-29T12:32:13Z",
+											"description": "optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 13:28:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"errorType\": \"bad_data\",\n    \"error\": \"no match[] parameter provided\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Clean tombstones",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/clean_tombstones",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tsdb",
+								"clean_tombstones"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/v1/admin/tsdb/clean_tombstones",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tsdb",
+										"clean_tombstones"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Dec 2020 13:29:09 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "From the documentation:\n\nThese are APIs that expose database functionalities for the advanced user.\nThese APIs are not enabled unless the --web.enable-admin-api is set. Extend the\nofficial Prometheus container like so:\n\nFROM prom/prometheus\n\nENTRYPOINT [ \"/bin/prometheus\" ]\nCMD        [ \"--config.file=/etc/prometheus/prometheus.yml\", \\\n             \"--storage.tsdb.path=/prometheus\", \\\n             \"--web.console.libraries=/usr/share/prometheus/console_libraries\", \\\n             \"--web.console.templates=/usr/share/prometheus/consoles\", \\\n             \"--web.enable-admin-api\" ]",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9079cc16-2200-458d-95f2-80d729b38feb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b71efbf-2ef8-4a76-b170-153048e1f65b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "78f6d54a-54b4-4d8f-a0c8-c8ea4e337964",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b5ccf02e-02a5-4a54-bf07-aeb7c2d7c9e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
