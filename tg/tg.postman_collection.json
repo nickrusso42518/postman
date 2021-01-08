@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "691c2a66-5629-4c68-919f-44904385cfa4",
-		"name": "Cisco ThreatGrid for SAUTO",
+		"_postman_id": "91f6bda7-40d6-4f56-9a8e-bd5d2add865a",
+		"name": "Cisco ThreatGrid",
 		"description": "https://panacea.threatgrid.com/mask/doc/mask/api-getting-started",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1384,7 +1384,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "0d72992f-4040-4b2a-892e-a223dbc58aa1",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1394,15 +1393,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4d6f5139-8806-4013-95d8-23c9903bce6d",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "IOCs and Threats",
@@ -2016,7 +2013,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "40b0a4b3-bfde-4827-8219-5388cfd7212b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2026,15 +2022,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8cd28938-ad49-45c4-b39c-82733cd084e6",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Search",
@@ -2315,7 +2309,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "4fc3b2f4-40ff-4383-8f13-cf5f05147c97",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2325,16 +2318,33 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "97490a9f-9c46-4948-9b35-03f39a35be4a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
-	"protocolProfileBehavior": {}
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }

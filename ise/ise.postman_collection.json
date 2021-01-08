@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "71b46323-5bc9-4ddd-8a0d-c56a363ef8e9",
-		"name": "Cisco ISE for SAUTO",
+		"_postman_id": "b5710b27-6ce7-4c9c-a217-e64daf75be30",
+		"name": "Cisco ISE",
 		"description": "ISE supports two different APIs: ERS and pxGrid.\nCheck the subfolder descriptions for the appropriate documentation links.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -371,7 +371,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -421,76 +421,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: bad creds",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "9060",
-									"path": [
-										"ers",
-										"config",
-										"networkdevice"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "WWW-Authenticate",
-									"value": "Basic realm=\"ERSRealm\""
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html;charset=utf-8"
-								},
-								{
-									"key": "Content-Language",
-									"value": "en"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1014"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:13:45 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -584,6 +514,76 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"SearchResult\": {\n        \"total\": 3,\n        \"resources\": [\n            {\n                \"id\": \"8fbcf650-c710-11e8-86bf-005056bb442b\",\n                \"name\": \"ISE_EST_Local_Host\",\n                \"description\": \"\",\n                \"link\": {\n                    \"rel\": \"self\",\n                    \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/8fbcf650-c710-11e8-86bf-005056bb442b\",\n                    \"type\": \"application/json\"\n                }\n            },\n            {\n                \"id\": \"a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n                \"name\": \"RAVPN\",\n                \"description\": \"Simulated Globomantics switches\",\n                \"link\": {\n                    \"rel\": \"self\",\n                    \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n                    \"type\": \"application/json\"\n                }\n            },\n            {\n                \"id\": \"92877fd0-d85a-11e8-9f06-c695051da9cd\",\n                \"name\": \"rave-sw\",\n                \"description\": \"Network Switch\",\n                \"link\": {\n                    \"rel\": \"self\",\n                    \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/92877fd0-d85a-11e8-9f06-c695051da9cd\",\n                    \"type\": \"application/json\"\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: bad creds",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "9060",
+									"path": [
+										"ers",
+										"config",
+										"networkdevice"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Basic realm=\"ERSRealm\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1014"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:13:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
 						}
 					]
 				},
@@ -783,6 +783,101 @@
 					},
 					"response": [
 						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "9060",
+									"path": [
+										"ers",
+										"config",
+										"networkdevice",
+										"a17e61a0-c6c6-11ea-b0f0-02ad37c1e915"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-WebKit-CSP",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:16:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"DELETE-delete-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"The specified resource does not exist\",\n                \"type\": \"ERROR\",\n                \"code\": \"Resource not found exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "DELETE",
@@ -883,102 +978,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
-						},
-						{
-							"name": "Failure: already deleted",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "9060",
-									"path": [
-										"ers",
-										"config",
-										"networkdevice",
-										"a17e61a0-c6c6-11ea-b0f0-02ad37c1e915"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, must-revalidate"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-WebKit-CSP",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:16:22 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"DELETE-delete-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"The specified resource does not exist\",\n                \"type\": \"ERROR\",\n                \"code\": \"Resource not found exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
+							"body": ""
 						}
 					]
 				}
@@ -988,7 +988,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "03fa288c-ac1d-400d-9a97-5c052d5b71e7",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -998,15 +997,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d585734c-6ed9-4f0e-94a5-8bec3a2d364c",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "pxGrid Services",
@@ -1046,92 +1043,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: missing nodeName",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountCreate",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"control",
-										"AccountCreate"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 17:58:13 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -1217,6 +1128,92 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"nodeName\": \"testuser\",\n    \"password\": \"06Q3srvh3l66vXKX\",\n    \"userName\": \"testuser\"\n}"
+						},
+						{
+							"name": "Failure: missing nodeName",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountCreate",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"AccountCreate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 17:58:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				},
@@ -2225,6 +2222,89 @@
 							"body": "{\"failures\":[{\"id\":\"1594815525760379\",\"timestamp\":\"2020-07-15T18:07:02.245Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":2,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"},{\"id\":\"1594815525760377\",\"timestamp\":\"2020-07-15T18:07:02.156Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":3,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"},{\"id\":\"1594815525760375\",\"timestamp\":\"2020-07-15T18:07:02.07Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":4,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"}]}"
 						},
 						{
+							"name": "Success: empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"ise",
+										"radius",
+										"getFailures"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:06:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\"failures\":[]}"
+						},
+						{
 							"name": "Failure: bad creds",
 							"originalRequest": {
 								"method": "POST",
@@ -2318,89 +2398,6 @@
 							],
 							"cookie": [],
 							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Message</b> Unauthorized</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
-						},
-						{
-							"name": "Success: empty",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"ise",
-										"radius",
-										"getFailures"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:06:38 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\"failures\":[]}"
 						}
 					]
 				}
@@ -2410,7 +2407,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a4d352ef-ae2a-4707-8319-431c96465654",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2420,22 +2416,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d4f2d71d-da41-4952-950b-0c28fc990217",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "00ddf255-6711-48a6-aea0-bf6889c81918",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2445,13 +2438,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5f5ad3a1-8ef1-4af4-9bcc-1e7cf5fa0232",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

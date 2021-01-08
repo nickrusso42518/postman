@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "c5a12425-f5b2-4a9f-95e7-3cc2aa6bdea3",
-		"name": "Cisco SD-WAN for ENAUTO",
-		"description": "Built around the Automating Cisco Enterprise Solutions (ENAUTO 300-435) exam, although these requests are useful far beyond the certification.",
+		"_postman_id": "91cea869-b497-4ff0-85c5-9cb80cc34013",
+		"name": "Cisco SD-WAN",
+		"description": "https://(vmanage_ip):8443/apidocs/#/",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -63,95 +63,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/x-www-form-urlencoded",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "j_username",
-											"value": "admin",
-											"type": "text"
-										},
-										{
-											"key": "j_password",
-											"value": "admin",
-											"type": "text"
-										}
-									],
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://10.10.20.90:8443/j_security_check",
-									"protocol": "https",
-									"host": [
-										"10",
-										"10",
-										"20",
-										"90"
-									],
-									"port": "8443",
-									"path": [
-										"j_security_check"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=MJ2RVznsPDuej7o-krC-d4XNHG-D77JuR9m33woX.e85cd6d5-4dea-46a1-affb-38fd4cd8debd; path=/; secure; HttpOnly"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 11 Jan 2020 13:50:17 GMT"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
 						{
 							"name": "Failure",
 							"originalRequest": {
@@ -264,11 +175,99 @@
 							],
 							"cookie": [],
 							"body": "<html>\n    <head>\n        <title>Cisco vManage</title>\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"login.css\">\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"fonts/font-awesome-4.2.0/css/font-awesome.min.css\">\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap.min.css\">\n        <script type=\"text/javascript\" src=\"javascript/jquery.js\"></script>\n        <link rel=\"icon\" type=\"image/ico\" href=\"images/favicon.ico\"/>\n        <script>\n\t\t\tfunction validateForm() {\n\t\t\t  if(loginForm.j_username.value.length==0 || loginForm.j_username.value==\"\")\n\t\t\t  {\n\t\t\t\t  showErrorMessage(\"Invalid Username.\");\n\t\t\t\t  document.getElementById(\"j_username\").className=\"login-input-error\";\n\t\t\t\t  return false;\n\t\t\t  } else if(loginForm.j_password.value.length == 0 || loginForm.j_password.value==\"\")\n\t\t\t  {\n\t\t\t\t  showErrorMessage(\"Invalid Password.\")\n\t\t\t\t  document.getElementById(\"j_password\").className=\"login-input-error\";\n\t\t\t\t  return false;\n\t\t\t  } else {\n\t\t\t\t  hideErrorMessage();\n\t\t\t\t  return true;\n\t\t\t  }\n\t\t\t}\n\n\t\t\tfunction showErrorMessage(msg) {\n\t\t\t\tdocument.getElementById(\"errorMessageBox\").innerHTML=msg;\n\t\t\t};\n\n\t\t\tfunction hideErrorMessage() {\n\t\t\t\tdocument.getElementById(\"errorMessageBox\").innerHTML=' ';\n\t\t\t\tdocument.getElementById(\"j_username\").className=\"login-input-value\";\n\t\t\t\tdocument.getElementById(\"j_password\").className=\"login-input-value\";\n\t\t\t}\n\t\t</script>\n    </head>\n    <body>\n        <div name=\"Login\" class=\"loginContainer\">\n            <div class=\"loginInnerContainer\">\n                <div class=\"productCategory\">Cisco SD-WAN</div>\n                <form class=\"loginFormStyle\"  name=\"loginForm\" id=\"loginForm\" method=\"POST\" action=\"j_security_check\" onsubmit=\"return validateForm()\">\n                    <div name=\"logoMainContainer\"  class=\"logoMainContainer\"></div>\n                    <div class=\"brand-logo-text\">\n                        <span>Cisco vManage</span>\n                    </div>\n                    <p id=\"errorMessageBox\" name=\"errorMessageBox\" class='errorMessageBox '>Invalid User or Password</p>\n                    <div class='onyx-groupbox login-wrap' name=\"inputFields\">\n                        <div class=\"onyx-input-decorator login-input\">\n                            <input type=\"text\" class=\"login-input-value\"  size=\"18\"\n\t\t\t\t\t\t\t\tid=\"j_username\" name=\"j_username\" maxlength=\"32\" placeholder=\"Username\" value=\"\" onfocus=\"hideErrorMessage()\">\n\t\t\t\t\t\t\t</input>\n                        </div>\n                        <div class=\"onyx-input-decorator login-input\">\n                            <input type=\"password\" class=\"login-input-value\"  size=\"18\"\n\t\t\t\t\t\t\t\tid=\"j_password\" name=\"j_password\" placeholder=\"Password\"  value=\"\" onfocus=\"hideErrorMessage()\">\n\t\t\t\t\t\t\t</input>\n                        </div>\n                    </div>\n                    <div class='onyx-sample-tools login-wrap'>\n                        <input type=\"submit\"  name=\"submit\"  value=\"Log In\" class=\"login-button\" >\n\t\t\t\t\t\t</input>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </body>\n</html>"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "j_username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "j_password",
+											"value": "admin",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://10.10.20.90:8443/j_security_check",
+									"protocol": "https",
+									"host": [
+										"10",
+										"10",
+										"20",
+										"90"
+									],
+									"port": "8443",
+									"path": [
+										"j_security_check"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=MJ2RVznsPDuej7o-krC-d4XNHG-D77JuR9m33woX.e85cd6d5-4dea-46a1-affb-38fd4cd8debd; path=/; secure; HttpOnly"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2020 13:50:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "vSmart Template",
@@ -1219,7 +1218,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3333998b-788a-440a-bb7a-9ae540d74402",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1229,15 +1227,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4209be72-2f36-4741-8112-dfe7cd9af28e",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "vSmart Policy",
@@ -1842,15 +1838,6 @@
 										"value": "application/json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/mesh/b9210572-4b81-4aef-ae1e-3b4c9b1410fe",
 									"protocol": "https",
@@ -2115,15 +2102,6 @@
 										"value": "application/json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/approute/ffe8d6a6-40e7-4554-ab7c-f3ccdcebc0e2",
 									"protocol": "https",
@@ -2312,7 +2290,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -2379,15 +2357,6 @@
 										"value": "application/json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://10.10.20.90:8443/dataservice/template/policy/vsmart/",
 									"protocol": "https",
@@ -2803,7 +2772,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "7b9a1726-f921-4bd5-b58b-0f6d6ac3166f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2813,15 +2781,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c5679827-ddbf-4d5b-a3bf-2cf6df995539",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Admin Tasks",
@@ -2981,6 +2947,93 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Wrong body format",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"groupName\": \"newdevice\",\n    \"items\": [\n        {\n            \"feature\": \"Interface\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Routing\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Security\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"System\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Alarms\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Audit Log\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Monitoring\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Certificates\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Inventory\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Template Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Template Deploy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Security Policy Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy Deploy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Cloud OnRamp\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Software Upgrade\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Reboot\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Manage Users\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Tools\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Settings\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Cluster\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"vAnalytics\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Events\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://10.10.20.90:8443/dataservice/admin/usergroup",
+									"protocol": "https",
+									"host": [
+										"10",
+										"10",
+										"20",
+										"90"
+									],
+									"port": "8443",
+									"path": [
+										"dataservice",
+										"admin",
+										"usergroup"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2020 12:30:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"unknwon\",\n        \"details\": \"unknown\",\n        \"code\": \"unknown\"\n    }\n}"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -3154,93 +3207,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"message\": \"create user group request failed\",\n        \"details\": \"userGroup : device already exists in the database\",\n        \"code\": \"USERGR0003\"\n    }\n}"
-						},
-						{
-							"name": "Wrong body format",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"groupName\": \"newdevice\",\n    \"items\": [\n        {\n            \"feature\": \"Interface\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Routing\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Security\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"System\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Alarms\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Audit Log\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Monitoring\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Certificates\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Inventory\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Template Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Template Deploy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Security Policy Configuration\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Policy Deploy\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Cloud OnRamp\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Software Upgrade\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Device Reboot\",\n            \"read\": true,\n            \"enabled\": true,\n            \"write\": true\n        },\n        {\n            \"feature\": \"Manage Users\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Tools\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Settings\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Cluster\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"vAnalytics\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        },\n        {\n            \"feature\": \"Events\",\n            \"read\": false,\n            \"enabled\": false,\n            \"write\": false\n        }\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://10.10.20.90:8443/dataservice/admin/usergroup",
-									"protocol": "https",
-									"host": [
-										"10",
-										"10",
-										"20",
-										"90"
-									],
-									"port": "8443",
-									"path": [
-										"dataservice",
-										"admin",
-										"usergroup"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, must-revalidate"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 11 Jan 2020 12:30:41 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "71"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"unknwon\",\n        \"details\": \"unknown\",\n        \"code\": \"unknown\"\n    }\n}"
 						}
 					]
 				},
@@ -3286,7 +3252,7 @@
 					},
 					"response": [
 						{
-							"name": "Already exists",
+							"name": "Bad body",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3304,7 +3270,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"group\": [\n        \"device\"\n    ],\n    \"description\": \"jane doe\",\n    \"userName\": \"jdoe\",\n    \"password\": \"abc123\"\n}",
+									"raw": "{\n    \"test\": [\n        \"device\"\n    ],\n    \"description\": \"jane doe\",\n    \"userName\": \"test\",\n    \"password\": \"abc123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3346,7 +3312,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 11 Jan 2020 12:33:37 GMT"
+									"value": "Sat, 11 Jan 2020 12:34:00 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3366,11 +3332,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "109"
+									"value": "71"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"Create user request failed\",\n        \"details\": \"jdoe already exists\",\n        \"code\": \"USER0004\"\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"message\": \"unknwon\",\n        \"details\": \"unknown\",\n        \"code\": \"unknown\"\n    }\n}"
 						},
 						{
 							"name": "Success",
@@ -3460,7 +3426,7 @@
 							"body": "{}"
 						},
 						{
-							"name": "Bad body",
+							"name": "Already exists",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3478,7 +3444,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"test\": [\n        \"device\"\n    ],\n    \"description\": \"jane doe\",\n    \"userName\": \"test\",\n    \"password\": \"abc123\"\n}",
+									"raw": "{\n    \"group\": [\n        \"device\"\n    ],\n    \"description\": \"jane doe\",\n    \"userName\": \"jdoe\",\n    \"password\": \"abc123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3520,7 +3486,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 11 Jan 2020 12:34:00 GMT"
+									"value": "Sat, 11 Jan 2020 12:33:37 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3540,11 +3506,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "71"
+									"value": "109"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"unknwon\",\n        \"details\": \"unknown\",\n        \"code\": \"unknown\"\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"message\": \"Create user request failed\",\n        \"details\": \"jdoe already exists\",\n        \"code\": \"USER0004\"\n    }\n}"
 						}
 					]
 				},
@@ -3887,7 +3853,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a2b65ad3-5b0b-4ad0-8d48-2145b645d145",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3897,15 +3862,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8ce89da5-6a36-4ec6-9ddf-0bd6955c390c",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Data collection",
@@ -4820,7 +4783,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "793a0750-7af4-41a3-bc9b-0b77b034a2b1",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4830,15 +4792,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5f2cd7be-e8d3-4d8d-ac14-a7f6c01fd5cc",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Certificate management",
@@ -5021,7 +4981,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5d3eb03f-d536-4152-85be-07b02ca056ac",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -5031,22 +4990,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b2345772-409c-4f3c-b49a-a11942e6c76a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "385c5821-27c2-4bb6-af89-00ab060c4e93",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -5056,13 +5012,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "863a5511-ce32-43bb-ba52-8cb817e3eb10",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

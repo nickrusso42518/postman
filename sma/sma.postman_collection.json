@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "9c3ad258-fb6d-480f-a867-cfa834eefe16",
-		"name": "Cisco SMA for SAUTO",
+		"_postman_id": "09e81803-450c-4808-a7cb-8a5cbad5e4c5",
+		"name": "Cisco SMA",
 		"description": "Contains Email Security Appliances (ESA) and Web Security Appliance (WSA) examples using\nthe Security Management Appliance (SMA) API.\n\ndCloud lab: https://dcloud2-rtp.cisco.com/content/demo/581871?returnPathTitleKey=content-view\n\nAPI documentation:\nhttps://www.cisco.com/c/en/us/td/docs/security/security_management/sma/sma13-0/api_reference_guide/asyncos_api_ref.html",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -260,6 +260,87 @@
 			},
 			"response": [
 				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances?device_type=sma",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"config",
+								"appliances"
+							],
+							"query": [
+								{
+									"key": "device_type",
+									"value": "sma"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 12:14:44 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "549"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"appliances\": [\n            {\n                \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\": {\n                    \"product_type\": \"WSA\",\n                    \"pvo_enabled\": false,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": false,\n                    \"reporting_enabled\": false,\n                    \"host_name\": \"wsa.dcloud.cisco.com\",\n                    \"spam_enabled\": false,\n                    \"ip_address\": \"198.19.11.10\"\n                }\n            },\n            {\n                \"4238C0F25B8AC071FEBE-FAC362D5AEDC\": {\n                    \"product_type\": \"ESA\",\n                    \"pvo_enabled\": true,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": true,\n                    \"reporting_enabled\": true,\n                    \"host_name\": \"esa.dcloud.cisco.com\",\n                    \"spam_enabled\": true,\n                    \"ip_address\": \"198.19.10.146\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
 					"name": "Failure: invalid creds",
 					"originalRequest": {
 						"method": "GET",
@@ -421,87 +502,6 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"error\": {\n        \"message\": \"Missing attribute - device_type.\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
-				},
-				{
-					"name": "Success",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/config/appliances?device_type=sma",
-							"protocol": "https",
-							"host": [
-								"{{sma_host}}"
-							],
-							"port": "6443",
-							"path": [
-								"sma",
-								"api",
-								"v2.0",
-								"config",
-								"appliances"
-							],
-							"query": [
-								{
-									"key": "device_type",
-									"value": "sma"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Server",
-							"value": "API/2.0"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 21 Jul 2020 12:14:44 GMT"
-						},
-						{
-							"key": "Content-type",
-							"value": "application/json"
-						},
-						{
-							"key": "Content-Length",
-							"value": "549"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Access-Control-Allow-Headers",
-							"value": "content-type, jwttoken, mid, h, email"
-						},
-						{
-							"key": "Access-Control-Allow-Credentials",
-							"value": "true"
-						},
-						{
-							"key": "Access-Control-Allow-Methods",
-							"value": "GET, POST, DELETE, OPTIONS"
-						},
-						{
-							"key": "Access-Control-Expose-Headers",
-							"value": "Content-Disposition, jwtToken"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"appliances\": [\n            {\n                \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\": {\n                    \"product_type\": \"WSA\",\n                    \"pvo_enabled\": false,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": false,\n                    \"reporting_enabled\": false,\n                    \"host_name\": \"wsa.dcloud.cisco.com\",\n                    \"spam_enabled\": false,\n                    \"ip_address\": \"198.19.11.10\"\n                }\n            },\n            {\n                \"4238C0F25B8AC071FEBE-FAC362D5AEDC\": {\n                    \"product_type\": \"ESA\",\n                    \"pvo_enabled\": true,\n                    \"connection_established\": true,\n                    \"tracking_enabled\": true,\n                    \"reporting_enabled\": true,\n                    \"host_name\": \"esa.dcloud.cisco.com\",\n                    \"spam_enabled\": true,\n                    \"ip_address\": \"198.19.10.146\"\n                }\n            }\n        ]\n    }\n}"
 				}
 			]
 		},
@@ -1225,6 +1225,123 @@
 			},
 			"response": [
 				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?startDate=2016-09-30T18:00:00.000Z&endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
+							"protocol": "https",
+							"host": [
+								"{{sma_host}}"
+							],
+							"port": "6443",
+							"path": [
+								"sma",
+								"api",
+								"v2.0",
+								"web-tracking",
+								"web_transaction"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2016-09-30T18:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2018-10-31T19:00:00.000Z"
+								},
+								{
+									"key": "filterBy",
+									"value": "proxy_services"
+								},
+								{
+									"key": "filterOperator",
+									"value": "is"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "device_type",
+									"value": "wsa"
+								},
+								{
+									"key": "orderBy",
+									"value": "timestamp"
+								},
+								{
+									"key": "orderDir",
+									"value": "desc"
+								},
+								{
+									"key": "transactionStatus",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "API/2.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Jul 2020 13:03:29 GMT"
+						},
+						{
+							"key": "Content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17951"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "content-type, jwttoken, mid, h, email"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Content-Disposition, jwtToken"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"totalCount\": 20\n    },\n    \"data\": [\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768840,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768780,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 963,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768720,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768660,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768600,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768540,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768480,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 955,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768420,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4972,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.219.112\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768379,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768360,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"threatListUpdates%3Afetch\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3637,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"fileSHA\": \"47152232dc717b7d773e6d58300579d7603ecc911b82516b64a7a1288f10dc87\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768352,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Travel\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/s_02.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/facebook.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/spacer.gif,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/twitter.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/instagram.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/16-MLIFE-00353-0002-Update-Banner-with-M-life-Rewards.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/MGM-Detroit-black-wTag.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/aaa_forbes_2016_rev.gif\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 9052,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 9,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"69.162.9.88\",\n                \"wbrsScore\": \"-3.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768314,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"67.215.92.210:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3193,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"67.215.92.210\",\n                \"wbrsScore\": \"7.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"67.215.92.210:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768309,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4940,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.216.248\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768305,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768300,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Infrastructure and Content Delivery Networks\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"GTSGIAG3\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1218,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.78\",\n                \"wbrsScore\": \"0.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"fileSHA\": \"ae940de2593fb2e2cb5c46e7ca97b046a7ae049cd0f2e157ca758c184350a7a7\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768296,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.89.179.237:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4325,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.38.149.111\",\n                \"wbrsScore\": \"8.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.89.179.237:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768275,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computer Security\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.digicert.com/\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1309,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"72.21.91.29\",\n                \"wbrsScore\": \"2.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.digicert.com/\",\n                \"fileSHA\": \"42b238f2fdbf425718b24200d14c60138ef17283b2f212dda488e948bf95b3a1\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768273,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.32.92.108:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 203,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.32.92.108\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.32.92.108:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768272,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"172.217.7.202:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3057,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"172.217.7.202:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768271,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        }\n    ]\n}"
+				},
+				{
 					"name": "Failure: missing start date",
 					"originalRequest": {
 						"method": "GET",
@@ -1459,123 +1576,6 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"error\": {\n        \"message\": \"duration attribute supports only 00 minutes..\",\n        \"code\": \"404\",\n        \"explanation\": \"404 = Nothing matches the given URI.\"\n    }\n}"
-				},
-				{
-					"name": "Success",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://{{sma_host}}:6443/sma/api/v2.0/web-tracking/web_transaction?startDate=2016-09-30T18:00:00.000Z&endDate=2018-10-31T19:00:00.000Z&filterBy=proxy_services&filterOperator=is&limit=20&offset=0&device_type=wsa&orderBy=timestamp&orderDir=desc&transactionStatus=all",
-							"protocol": "https",
-							"host": [
-								"{{sma_host}}"
-							],
-							"port": "6443",
-							"path": [
-								"sma",
-								"api",
-								"v2.0",
-								"web-tracking",
-								"web_transaction"
-							],
-							"query": [
-								{
-									"key": "startDate",
-									"value": "2016-09-30T18:00:00.000Z"
-								},
-								{
-									"key": "endDate",
-									"value": "2018-10-31T19:00:00.000Z"
-								},
-								{
-									"key": "filterBy",
-									"value": "proxy_services"
-								},
-								{
-									"key": "filterOperator",
-									"value": "is"
-								},
-								{
-									"key": "limit",
-									"value": "20"
-								},
-								{
-									"key": "offset",
-									"value": "0"
-								},
-								{
-									"key": "device_type",
-									"value": "wsa"
-								},
-								{
-									"key": "orderBy",
-									"value": "timestamp"
-								},
-								{
-									"key": "orderDir",
-									"value": "desc"
-								},
-								{
-									"key": "transactionStatus",
-									"value": "all"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Server",
-							"value": "API/2.0"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 21 Jul 2020 13:03:29 GMT"
-						},
-						{
-							"key": "Content-type",
-							"value": "application/json"
-						},
-						{
-							"key": "Content-Length",
-							"value": "17951"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Access-Control-Allow-Headers",
-							"value": "content-type, jwttoken, mid, h, email"
-						},
-						{
-							"key": "Access-Control-Allow-Credentials",
-							"value": "true"
-						},
-						{
-							"key": "Access-Control-Allow-Methods",
-							"value": "GET, POST, DELETE, OPTIONS"
-						},
-						{
-							"key": "Access-Control-Expose-Headers",
-							"value": "Content-Disposition, jwtToken"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"meta\": {\n        \"totalCount\": 20\n    },\n    \"data\": [\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768840,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768780,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 963,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768720,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768660,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768600,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768540,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 964,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768480,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 955,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"96.16.12.139\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768420,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4972,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.219.112\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768379,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768360,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"threatListUpdates%3Afetch\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3637,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"https://safebrowsing.googleapis.com:443/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=AIzaSyD_Drzahe4dBzGCZ9ArvowCvrPx_yFrlCM&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARCyngQaAhgKRrcJdyICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIeVBBoCGAqllFT6IgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQhYYEGgIYCgm20skiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCcigMaAhgKMxjuuSICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABEAoaAhgKqc0WvyICIAIoAQ==\",\n                \"fileSHA\": \"47152232dc717b7d773e6d58300579d7603ecc911b82516b64a7a1288f10dc87\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768352,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Travel\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/s_02.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/facebook.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/spacer.gif,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/twitter.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/instagram.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/16-MLIFE-00353-0002-Update-Banner-with-M-life-Rewards.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/MGM-Detroit-black-wTag.jpg,http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/aaa_forbes_2016_rev.gif\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 9052,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 9,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"69.162.9.88\",\n                \"wbrsScore\": \"-3.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://email.mgmgrand.com/offers/detroit/2016/08_vegas_getaway/images/mgmd-top.jpg\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768314,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"67.215.92.210:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3193,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"67.215.92.210\",\n                \"wbrsScore\": \"7.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"67.215.92.210:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768309,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"23.253.22.115:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4940,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"104.130.216.248\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"23.253.22.115:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768305,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"text/plain\",\n                \"pageResources\": \"http://downloads.ironport.com/vtl/meter.txt,http://downloads.ironport.com/vtl/vof_history_year.tgz\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 965,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.51\",\n                \"srcIP\": \"198.19.10.51\",\n                \"relatedTransCount\": 2,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"-\",\n                \"wbrsScore\": \"9.2\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://downloads.ironport.com/vtl/meter.txt\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768300,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"1\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Infrastructure and Content Delivery Networks\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"GTSGIAG3\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1218,\n                \"policyType\": \"Access\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Employee_Access_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"172.217.15.78\",\n                \"wbrsScore\": \"0.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.pki.goog/GTSGIAG3\",\n                \"fileSHA\": \"ae940de2593fb2e2cb5c46e7ca97b046a7ae049cd0f2e157ca758c184350a7a7\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768296,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.89.179.237:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 4325,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.38.149.111\",\n                \"wbrsScore\": \"8.0\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.89.179.237:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768275,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computer Security\",\n                \"contentType\": \"application/octet-stream\",\n                \"pageResources\": \"http://ocsp.digicert.com/\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 1309,\n                \"policyType\": \"Access\",\n                \"user\": \"198.19.10.1\",\n                \"srcIP\": \"198.19.10.1\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"DefaultGroup\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": 1,\n                \"destinationIP\": \"72.21.91.29\",\n                \"wbrsScore\": \"2.8\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"DEFAULT\",\n                \"url\": \"http://ocsp.digicert.com/\",\n                \"fileSHA\": \"42b238f2fdbf425718b24200d14c60138ef17283b2f212dda488e948bf95b3a1\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768273,\n                \"transactionStatus\": \"ALLOW_DEFAULT\",\n                \"ampVerdict\": \"0\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Computers and Internet\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"52.32.92.108:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 203,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"52.32.92.108\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"52.32.92.108:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768272,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        },\n        {\n            \"attributes\": {\n                \"webCategory\": \"Search Engines and Portals\",\n                \"contentType\": \"-\",\n                \"pageResources\": \"172.217.7.202:443\",\n                \"applicationBehavior\": \"-\",\n                \"malwareCategory\": \"-\",\n                \"fileName\": \"-\",\n                \"userType\": \"[-]\",\n                \"bandwidth\": 3057,\n                \"policyType\": \"Decryption\",\n                \"user\": \"manager\",\n                \"srcIP\": \"198.19.19.100\",\n                \"relatedTransCount\": 1,\n                \"malwareName\": \"-\",\n                \"applicationName\": \"-\",\n                \"policyName\": \"dCloud_Decryption_Policy\",\n                \"threatType\": \"-\",\n                \"ampFileVerdict\": \"-\",\n                \"destinationIP\": \"172.217.15.74\",\n                \"wbrsScore\": \"1.5\",\n                \"threatReason\": \"-\",\n                \"serialNo\": \"4238A607D1BA8F8C40A7-B0F5AEE67FEA\",\n                \"decisionSrc\": \"WEBCAT\",\n                \"url\": \"172.217.7.202:443\",\n                \"fileSHA\": \"-\",\n                \"applicationType\": \"-\",\n                \"timestamp\": 1524768271,\n                \"transactionStatus\": \"ALLOW\",\n                \"ampVerdict\": \"-\"\n            }\n        }\n    ]\n}"
 				}
 			]
 		}
@@ -1584,7 +1584,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2d7395ca-5f6f-4cca-8d46-3e11a155cc23",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1594,13 +1593,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0f7222bb-6d6b-4f14-ad83-7211caf5933e",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

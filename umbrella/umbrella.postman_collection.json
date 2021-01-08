@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "10fb0be4-1f7b-4741-8e35-4a25daeb0786",
-		"name": "Cisco Umbrella for SAUTO",
+		"_postman_id": "dee35985-afd1-4a36-b791-bd2afbfce36e",
+		"name": "Cisco Umbrella",
 		"description": "Umbrella has 3 completely separate APIs, with individual documentation.\nThey also use different authentication/authorization schemes. See\neach folder for the relevant documentation link. Main login:\nhttps://login.umbrella.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -443,7 +443,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5aed0a4b-6b4b-4a09-8aac-a86137b68acf",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -453,15 +452,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "75e36679-8e8b-4c81-a893-603683ff3c5a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Enforcement API",
@@ -494,12 +491,12 @@
 					},
 					"response": [
 						{
-							"name": "Success: empty",
+							"name": "Failure: bad creds",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}",
+									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}A",
 									"protocol": "https",
 									"host": [
 										"s-platform",
@@ -514,13 +511,13 @@
 									"query": [
 										{
 											"key": "customerKey",
-											"value": "{{enforce_cust_key}}"
+											"value": "{{enforce_cust_key}}A"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Unauthorized",
+							"code": 401,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -529,7 +526,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 19 Jun 2020 19:40:37 GMT"
+									"value": "Fri, 19 Jun 2020 19:41:54 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -537,7 +534,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "67"
+									"value": "117"
 								},
 								{
 									"key": "Connection",
@@ -546,18 +543,10 @@
 								{
 									"key": "Strict-Transport-Security",
 									"value": "max-age=2628000"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 200,\n        \"prev\": false,\n        \"next\": false\n    },\n    \"data\": []\n}"
+							"body": "{\n    \"code\": \"InvalidCredentials\",\n    \"message\": \"Invalid credentials supplied (Event failed to be recorded)\",\n    \"statusCode\": 401\n}"
 						},
 						{
 							"name": "Success: new domains",
@@ -626,12 +615,12 @@
 							"body": "{\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 200,\n        \"prev\": false,\n        \"next\": false\n    },\n    \"data\": [\n        {\n            \"id\": 30916,\n            \"name\": \"internetbadguys.com\",\n            \"lastSeenAt\": 1592596765\n        },\n        {\n            \"id\": 50213434,\n            \"name\": \"malware4less.com\",\n            \"lastSeenAt\": 1592596765\n        }\n    ]\n}"
 						},
 						{
-							"name": "Failure: bad creds",
+							"name": "Success: empty",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}A",
+									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}",
 									"protocol": "https",
 									"host": [
 										"s-platform",
@@ -646,13 +635,13 @@
 									"query": [
 										{
 											"key": "customerKey",
-											"value": "{{enforce_cust_key}}A"
+											"value": "{{enforce_cust_key}}"
 										}
 									]
 								}
 							},
-							"status": "Unauthorized",
-							"code": 401,
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -661,7 +650,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 19 Jun 2020 19:41:54 GMT"
+									"value": "Fri, 19 Jun 2020 19:40:37 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -669,7 +658,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "117"
+									"value": "67"
 								},
 								{
 									"key": "Connection",
@@ -678,10 +667,18 @@
 								{
 									"key": "Strict-Transport-Security",
 									"value": "max-age=2628000"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"code\": \"InvalidCredentials\",\n    \"message\": \"Invalid credentials supplied (Event failed to be recorded)\",\n    \"statusCode\": 401\n}"
+							"body": "{\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 200,\n        \"prev\": false,\n        \"next\": false\n    },\n    \"data\": []\n}"
 						}
 					]
 				},
@@ -831,65 +828,6 @@
 					},
 					"response": [
 						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "https://s-platform.api.opendns.com/1.0/domains/30916?customerKey={{enforce_cust_key}}",
-									"protocol": "https",
-									"host": [
-										"s-platform",
-										"api",
-										"opendns",
-										"com"
-									],
-									"path": [
-										"1.0",
-										"domains",
-										"30916"
-									],
-									"query": [
-										{
-											"key": "customerKey",
-											"value": "{{enforce_cust_key}}"
-										}
-									]
-								}
-							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx/1.17.4"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 19 Jun 2020 19:51:47 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=2628000"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
-						{
 							"name": "Failure: not found",
 							"originalRequest": {
 								"method": "DELETE",
@@ -947,6 +885,65 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"code\": \"NotFoundError\",\n    \"message\": \"Not Found\",\n    \"statusCode\": 404\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://s-platform.api.opendns.com/1.0/domains/30916?customerKey={{enforce_cust_key}}",
+									"protocol": "https",
+									"host": [
+										"s-platform",
+										"api",
+										"opendns",
+										"com"
+									],
+									"path": [
+										"1.0",
+										"domains",
+										"30916"
+									],
+									"query": [
+										{
+											"key": "customerKey",
+											"value": "{{enforce_cust_key}}"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.17.4"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 19:51:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=2628000"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
@@ -956,7 +953,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "501e5e15-a029-4b82-82bc-02c237b1b55a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -966,15 +962,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6d5eb70f-f707-4469-bd1d-db29f9f42cc0",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Investigate API",
@@ -1013,58 +1007,6 @@
 								}
 							},
 							"response": [
-								{
-									"name": "Failure: bad creds",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/domains/categories",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"domains",
-												"categories"
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "raw",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 19:03:24 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/octet-stream"
-										},
-										{
-											"key": "Content-Length",
-											"value": "25"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\"error\":\"unauthorized\"}\n"
-								},
 								{
 									"name": "Success",
 									"originalRequest": {
@@ -1152,6 +1094,58 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"0\": \"Adware\",\n    \"1\": \"Alcohol\",\n    \"2\": \"Auctions\",\n    \"3\": \"Blogs\",\n    \"4\": \"Chat\",\n    \"5\": \"Classifieds\",\n    \"6\": \"Dating\",\n    \"7\": \"Drugs\",\n    \"8\": \"Ecommerce/Shopping\",\n    \"9\": \"File Storage\",\n    \"10\": \"Gambling\",\n    \"11\": \"Games\",\n    \"12\": \"Hate/Discrimination\",\n    \"13\": \"Health and Fitness\",\n    \"14\": \"Humor\",\n    \"15\": \"Instant Messaging\",\n    \"16\": \"Jobs/Employment\",\n    \"17\": \"Movies\",\n    \"18\": \"News/Media\",\n    \"19\": \"P2P/File sharing\",\n    \"20\": \"Photo Sharing\",\n    \"21\": \"Portals\",\n    \"22\": \"Radio\",\n    \"23\": \"Search Engines\",\n    \"24\": \"Social Networking\",\n    \"25\": \"Software/Technology\",\n    \"26\": \"Television\",\n    \"28\": \"Video Sharing\",\n    \"29\": \"Visual Search Engines\",\n    \"30\": \"Weapons\",\n    \"31\": \"Webmail\",\n    \"32\": \"Business Services\",\n    \"33\": \"Educational Institutions\",\n    \"34\": \"Financial Institutions\",\n    \"35\": \"Government\",\n    \"36\": \"Music\",\n    \"37\": \"Parked Domains\",\n    \"38\": \"Tobacco\",\n    \"39\": \"Sports\",\n    \"40\": \"Adult Themes\",\n    \"41\": \"Lingerie/Bikini\",\n    \"42\": \"Nudity\",\n    \"43\": \"Proxy/Anonymizer\",\n    \"44\": \"Pornography\",\n    \"45\": \"Sexuality\",\n    \"46\": \"Tasteless\",\n    \"47\": \"Academic Fraud\",\n    \"48\": \"Automotive\",\n    \"49\": \"Forums/Message boards\",\n    \"50\": \"Non-Profits\",\n    \"51\": \"Podcasts\",\n    \"52\": \"Politics\",\n    \"53\": \"Religious\",\n    \"54\": \"Research/Reference\",\n    \"55\": \"Travel\",\n    \"57\": \"Anime/Manga/Webcomic\",\n    \"58\": \"Web Spam\",\n    \"59\": \"Typo Squatting\",\n    \"60\": \"Drive-by Downloads/Exploits\",\n    \"61\": \"Dynamic DNS\",\n    \"62\": \"Mobile Threats\",\n    \"63\": \"High Risk Sites and Locations\",\n    \"64\": \"Command and Control\",\n    \"65\": \"Command and Control\",\n    \"66\": \"Malware\",\n    \"67\": \"Malware\",\n    \"68\": \"Phishing\",\n    \"108\": \"Newly Seen Domains\",\n    \"109\": \"Potentially Harmful\",\n    \"110\": \"DNS Tunneling VPN\",\n    \"111\": \"Arts\",\n    \"112\": \"Astrology\",\n    \"113\": \"Computer Security\",\n    \"114\": \"Digital Postcards\",\n    \"115\": \"Dining and Drinking\",\n    \"116\": \"Dynamic and Residential\",\n    \"117\": \"Fashion\",\n    \"118\": \"File Transfer Services\",\n    \"119\": \"Freeware and Shareware\",\n    \"120\": \"Hacking\",\n    \"121\": \"Illegal Activities\",\n    \"122\": \"Illegal Downloads\",\n    \"123\": \"Infrastructure\",\n    \"124\": \"Internet Telephony\",\n    \"125\": \"Lotteries\",\n    \"126\": \"Mobile Phones\",\n    \"127\": \"Nature\",\n    \"128\": \"Online Trading\",\n    \"129\": \"Personal Sites\",\n    \"130\": \"Professional Networking\",\n    \"131\": \"Real Estate\",\n    \"132\": \"SaaS and B2B\",\n    \"133\": \"Safe for Kids\",\n    \"134\": \"Science and Technology\",\n    \"135\": \"Sex Education\",\n    \"136\": \"Social Science\",\n    \"137\": \"Society and Culture\",\n    \"138\": \"Software Updates\",\n    \"139\": \"Web Hosting\",\n    \"140\": \"Web Page Translation\",\n    \"141\": \"Organization Email\",\n    \"142\": \"Online Meetings\",\n    \"143\": \"Paranormal\",\n    \"144\": \"Personal VPN\",\n    \"145\": \"DIY Projects\",\n    \"146\": \"Hunting\",\n    \"147\": \"Military\",\n    \"150\": \"Cryptomining\"\n}"
+								},
+								{
+									"name": "Failure: bad creds",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/domains/categories",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"domains",
+												"categories"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 19:03:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\"error\":\"unauthorized\"}\n"
 								}
 							]
 						},
@@ -1289,9 +1283,7 @@
 							]
 						}
 					],
-					"description": "These requests are not domain-specific.",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "These requests are not domain-specific."
 				},
 				{
 					"name": "www.njrusmc.net",
@@ -1518,6 +1510,101 @@
 							},
 							"response": [
 								{
+									"name": "Success: text label",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/domains/categorization/www.njrusmc.net?showLabels",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"domains",
+												"categorization",
+												"www.njrusmc.net"
+											],
+											"query": [
+												{
+													"key": "showLabels",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 18:32:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://try.readme.io"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "Content-Length,Content-Range"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"www.njrusmc.net\": {\n        \"status\": 0,\n        \"security_categories\": [],\n        \"content_categories\": [\n            \"Personal Sites\"\n        ]\n    }\n}"
+								},
+								{
 									"name": "Success: numeric label",
 									"originalRequest": {
 										"method": "GET",
@@ -1612,101 +1699,6 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"www.njrusmc.net\": {\n        \"status\": 0,\n        \"security_categories\": [],\n        \"content_categories\": [\n            \"129\"\n        ]\n    }\n}"
-								},
-								{
-									"name": "Success: text label",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/domains/categorization/www.njrusmc.net?showLabels",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"domains",
-												"categorization",
-												"www.njrusmc.net"
-											],
-											"query": [
-												{
-													"key": "showLabels",
-													"value": null
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 18:32:06 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "https://try.readme.io"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "Content-Length,Content-Range"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"www.njrusmc.net\": {\n        \"status\": 0,\n        \"security_categories\": [],\n        \"content_categories\": [\n            \"Personal Sites\"\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -1873,95 +1865,6 @@
 							},
 							"response": [
 								{
-									"name": "Success: base domain",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/security/name/njrusmc.net",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"security",
-												"name",
-												"njrusmc.net"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 18:57:10 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "https://try.readme.io"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "Content-Length,Content-Range"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"dga_score\": -12.042856842694217,\n    \"perplexity\": 1.2440874108632427,\n    \"entropy\": 2.8073549220576037,\n    \"securerank2\": -0.004467847816217263,\n    \"pagerank\": 3.4081004,\n    \"asn_score\": -0.23931414563623055,\n    \"prefix_score\": -1.1004301892860855,\n    \"rip_score\": -1.5919954003852856,\n    \"popularity\": 0,\n    \"fastflux\": false,\n    \"geodiversity\": [\n        [\n            \"US\",\n            0.3243\n        ],\n        [\n            \"IN\",\n            0.1081\n        ],\n        [\n            \"SG\",\n            0.0811\n        ],\n        [\n            \"NL\",\n            0.0811\n        ],\n        [\n            \"UA\",\n            0.0541\n        ],\n        [\n            \"AU\",\n            0.0541\n        ],\n        [\n            \"EC\",\n            0.027\n        ],\n        [\n            \"DE\",\n            0.027\n        ],\n        [\n            \"GB\",\n            0.027\n        ],\n        [\n            \"FR\",\n            0.027\n        ],\n        [\n            \"CH\",\n            0.027\n        ],\n        [\n            \"SA\",\n            0.027\n        ],\n        [\n            \"CL\",\n            0.027\n        ],\n        [\n            \"PL\",\n            0.027\n        ],\n        [\n            \"ID\",\n            0.027\n        ],\n        [\n            \"IL\",\n            0.027\n        ],\n        [\n            \"IT\",\n            0.027\n        ]\n    ],\n    \"geodiversity_normalized\": [\n        [\n            \"SG\",\n            0.26011429212352993\n        ],\n        [\n            \"IL\",\n            0.1624849146066588\n        ],\n        [\n            \"SA\",\n            0.12248126766079429\n        ],\n        [\n            \"EC\",\n            0.10103720243957486\n        ],\n        [\n            \"CH\",\n            0.0728438603439382\n        ],\n        [\n            \"CL\",\n            0.0627641447482796\n        ],\n        [\n            \"AU\",\n            0.05925799971970505\n        ],\n        [\n            \"NL\",\n            0.05232852011508209\n        ],\n        [\n            \"UA\",\n            0.025188908377457124\n        ],\n        [\n            \"IN\",\n            0.021546571003885448\n        ],\n        [\n            \"DE\",\n            0.013857857739215888\n        ],\n        [\n            \"PL\",\n            0.013138857576255488\n        ],\n        [\n            \"FR\",\n            0.011200359666746157\n        ],\n        [\n            \"ID\",\n            0.0085422319913136\n        ],\n        [\n            \"US\",\n            0.005305493257085579\n        ],\n        [\n            \"IT\",\n            0.0045892232760508765\n        ],\n        [\n            \"GB\",\n            0.003318295354426996\n        ]\n    ],\n    \"tld_geodiversity\": [],\n    \"geoscore\": 0,\n    \"ks_test\": 0,\n    \"attack\": \"\",\n    \"threat_type\": \"\",\n    \"found\": true\n}"
-								},
-								{
 									"name": "Success: www specifically",
 									"originalRequest": {
 										"method": "GET",
@@ -2049,12 +1952,99 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"dga_score\": -28.149021063562717,\n    \"perplexity\": 1.2440874108632427,\n    \"entropy\": 2.8073549220576037,\n    \"securerank2\": 0,\n    \"pagerank\": 0,\n    \"asn_score\": -0.16148563385792292,\n    \"prefix_score\": -1.1806884562296227,\n    \"rip_score\": -2.041400029988277,\n    \"popularity\": 0,\n    \"fastflux\": false,\n    \"geodiversity\": [\n        [\n            \"JP\",\n            1\n        ]\n    ],\n    \"geodiversity_normalized\": [\n        [\n            \"JP\",\n            1\n        ]\n    ],\n    \"tld_geodiversity\": [],\n    \"geoscore\": 0,\n    \"ks_test\": 0,\n    \"attack\": \"\",\n    \"threat_type\": \"\",\n    \"found\": true\n}"
+								},
+								{
+									"name": "Success: base domain",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/security/name/njrusmc.net",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"security",
+												"name",
+												"njrusmc.net"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 18:57:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://try.readme.io"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "Content-Length,Content-Range"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"dga_score\": -12.042856842694217,\n    \"perplexity\": 1.2440874108632427,\n    \"entropy\": 2.8073549220576037,\n    \"securerank2\": -0.004467847816217263,\n    \"pagerank\": 3.4081004,\n    \"asn_score\": -0.23931414563623055,\n    \"prefix_score\": -1.1004301892860855,\n    \"rip_score\": -1.5919954003852856,\n    \"popularity\": 0,\n    \"fastflux\": false,\n    \"geodiversity\": [\n        [\n            \"US\",\n            0.3243\n        ],\n        [\n            \"IN\",\n            0.1081\n        ],\n        [\n            \"SG\",\n            0.0811\n        ],\n        [\n            \"NL\",\n            0.0811\n        ],\n        [\n            \"UA\",\n            0.0541\n        ],\n        [\n            \"AU\",\n            0.0541\n        ],\n        [\n            \"EC\",\n            0.027\n        ],\n        [\n            \"DE\",\n            0.027\n        ],\n        [\n            \"GB\",\n            0.027\n        ],\n        [\n            \"FR\",\n            0.027\n        ],\n        [\n            \"CH\",\n            0.027\n        ],\n        [\n            \"SA\",\n            0.027\n        ],\n        [\n            \"CL\",\n            0.027\n        ],\n        [\n            \"PL\",\n            0.027\n        ],\n        [\n            \"ID\",\n            0.027\n        ],\n        [\n            \"IL\",\n            0.027\n        ],\n        [\n            \"IT\",\n            0.027\n        ]\n    ],\n    \"geodiversity_normalized\": [\n        [\n            \"SG\",\n            0.26011429212352993\n        ],\n        [\n            \"IL\",\n            0.1624849146066588\n        ],\n        [\n            \"SA\",\n            0.12248126766079429\n        ],\n        [\n            \"EC\",\n            0.10103720243957486\n        ],\n        [\n            \"CH\",\n            0.0728438603439382\n        ],\n        [\n            \"CL\",\n            0.0627641447482796\n        ],\n        [\n            \"AU\",\n            0.05925799971970505\n        ],\n        [\n            \"NL\",\n            0.05232852011508209\n        ],\n        [\n            \"UA\",\n            0.025188908377457124\n        ],\n        [\n            \"IN\",\n            0.021546571003885448\n        ],\n        [\n            \"DE\",\n            0.013857857739215888\n        ],\n        [\n            \"PL\",\n            0.013138857576255488\n        ],\n        [\n            \"FR\",\n            0.011200359666746157\n        ],\n        [\n            \"ID\",\n            0.0085422319913136\n        ],\n        [\n            \"US\",\n            0.005305493257085579\n        ],\n        [\n            \"IT\",\n            0.0045892232760508765\n        ],\n        [\n            \"GB\",\n            0.003318295354426996\n        ]\n    ],\n    \"tld_geodiversity\": [],\n    \"geoscore\": 0,\n    \"ks_test\": 0,\n    \"attack\": \"\",\n    \"threat_type\": \"\",\n    \"found\": true\n}"
 								}
 							]
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "www.internetbadguys.com",
@@ -2669,9 +2659,7 @@
 							]
 						}
 					],
-					"description": "Phony \"malicious\" site for testing. Hosted by the Cisco Umbrella team.",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Phony \"malicious\" site for testing. Hosted by the Cisco Umbrella team."
 				}
 			],
 			"description": "https://docs.umbrella.com/investigate-api/docs/introduction-to-cisco-investigate",
@@ -2679,7 +2667,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3de05d2d-f1d9-4b02-9924-9172daecdb75",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2689,22 +2676,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9e7b2ed8-9d7d-4c4b-a2fb-f67bef323a25",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bd820e3a-2db1-4b5d-a060-da66a08c3a73",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2714,13 +2698,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b06de2d6-dcd6-4c87-8a5e-6159a7fc29c3",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

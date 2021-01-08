@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "19b3fef1-18fd-4c92-9e17-aec056854067",
-		"name": "Cisco FTD for SAUTO",
+		"_postman_id": "a7c28f50-ea95-44c2-ad63-0521b2182870",
+		"name": "Cisco FTD",
 		"description": "https://developer.cisco.com/site/ftd-api-reference",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -303,6 +303,113 @@
 								],
 								"body": {
 									"mode": "raw",
+									"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAyODUsInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMjg1LCJleHAiOjE1ODYyNjI2ODUsImFjY2Vzc1Rva2VuRXhwaXJlc0F0IjoxNTg2MjYyMDg1MTEyLCJyZWZyZXNoQ291bnQiOi0xLCJ0b2tlblR5cGUiOiJKV1RfUmVmcmVzaCIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.tFcPjjp3J0Oe-2dqiV0HfC9F-lXneiIXMRxBap2tXqg\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/fdm/token",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"fdm",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:53:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAzOTksInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMzk5LCJleHAiOjE1ODYyNjIxOTksInJlZnJlc2hUb2tlbkV4cGlyZXNBdCI6MTU4NjI2Mjc5OTI5OSwidG9rZW5UeXBlIjoiSldUX0FjY2VzcyIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.wFPL8VHdNC0VWSK3XW5j4xEnI13POjZ1kHwWBYOKck8\",\n    \"expires_in\": 1800,\n    \"token_type\": \"Bearer\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAzOTksInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMzk5LCJleHAiOjE1ODYyNjI3OTksImFjY2Vzc1Rva2VuRXhwaXJlc0F0IjoxNTg2MjYyMTk5NDExLCJyZWZyZXNoQ291bnQiOi0xLCJ0b2tlblR5cGUiOiJKV1RfUmVmcmVzaCIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.VkZXEAR1wSShqZa2XUytCVN34THqn874vm_9QVyONJY\",\n    \"refresh_expires_in\": 2400\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
 									"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}"
 								},
 								"url": {
@@ -488,113 +595,6 @@
 							"body": "{\n    \"message\": \"Cannot refresh a password-token with a revoked or obsolete refresh token\",\n    \"status_code\": 400\n}"
 						},
 						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAyODUsInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMjg1LCJleHAiOjE1ODYyNjI2ODUsImFjY2Vzc1Rva2VuRXhwaXJlc0F0IjoxNTg2MjYyMDg1MTEyLCJyZWZyZXNoQ291bnQiOi0xLCJ0b2tlblR5cGUiOiJKV1RfUmVmcmVzaCIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.tFcPjjp3J0Oe-2dqiV0HfC9F-lXneiIXMRxBap2tXqg\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/fdm/token",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"fdm",
-										"token"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:53:19 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAzOTksInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMzk5LCJleHAiOjE1ODYyNjIxOTksInJlZnJlc2hUb2tlbkV4cGlyZXNBdCI6MTU4NjI2Mjc5OTI5OSwidG9rZW5UeXBlIjoiSldUX0FjY2VzcyIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.wFPL8VHdNC0VWSK3XW5j4xEnI13POjZ1kHwWBYOKck8\",\n    \"expires_in\": 1800,\n    \"token_type\": \"Bearer\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNjAzOTksInN1YiI6ImFkbWluIiwianRpIjoiMWJhOGI0MDQtNzhjNi0xMWVhLWJiZDgtMjVmYWExMTlmODkxIiwibmJmIjoxNTg2MjYwMzk5LCJleHAiOjE1ODYyNjI3OTksImFjY2Vzc1Rva2VuRXhwaXJlc0F0IjoxNTg2MjYyMTk5NDExLCJyZWZyZXNoQ291bnQiOi0xLCJ0b2tlblR5cGUiOiJKV1RfUmVmcmVzaCIsInVzZXJVdWlkIjoiOTY4ZTE1OTEtMzg0ZS0xMWVhLTg1YjctMTNmMDc2ZWE3Mjg3IiwidXNlclJvbGUiOiJST0xFX0FETUlOIiwib3JpZ2luIjoicGFzc3dvcmQiLCJ1c2VybmFtZSI6ImFkbWluIn0.VkZXEAR1wSShqZa2XUytCVN34THqn874vm_9QVyONJY\",\n    \"refresh_expires_in\": 2400\n}"
-						},
-						{
 							"name": "Failure: wrong password",
 							"originalRequest": {
 								"method": "POST",
@@ -697,7 +697,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "92a2af64-0366-49cd-8c92-ae54b5c766a4",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -707,15 +706,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "01d731c0-5405-4507-8a68-9840f0f2a40b",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Network Object Management",
@@ -757,118 +754,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success: empty",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networkgroups"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:04:14 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"items\": [],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 0,\n        \"pages\": 0\n    }\n}"
-						},
 						{
 							"name": "Success: new custom groups",
 							"originalRequest": {
@@ -980,6 +865,118 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"items\": [\n        {\n            \"version\": \"jywqhbkiwu76a\",\n            \"name\": \"NETG_BLACKLIST\",\n            \"description\": \"in-to-out blacklist\",\n            \"isSystemDefined\": false,\n            \"id\": \"6fe2c623-78c3-11ea-bbd8-d736dc4d5726\",\n            \"objects\": [\n                {\n                    \"version\": \"jprzba2ysip4q\",\n                    \"name\": \"NET_TEST_1\",\n                    \"id\": \"21bc848a-78c3-11ea-bbd8-13b81196b0e5\",\n                    \"type\": \"networkobject\"\n                },\n                {\n                    \"version\": \"mczkq64j73txd\",\n                    \"name\": \"NET_TEST_2\",\n                    \"id\": \"2aab5a3d-78c3-11ea-bbd8-3b0203c345b0\",\n                    \"type\": \"networkobject\"\n                },\n                {\n                    \"version\": \"jhdpn36vujmhy\",\n                    \"name\": \"NET_TEST_3\",\n                    \"id\": \"2fc31040-78c3-11ea-bbd8-c33e939b0ab9\",\n                    \"type\": \"networkobject\"\n                }\n            ],\n            \"type\": \"networkobjectgroup\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/networkgroups/6fe2c623-78c3-11ea-bbd8-d736dc4d5726\"\n            }\n        },\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"description\": \"All VPN concentrators\",\n            \"isSystemDefined\": false,\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"objects\": [\n                {\n                    \"version\": \"hwzeu3vgrsndv\",\n                    \"name\": \"NET_VPN_EAST\",\n                    \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\",\n                    \"type\": \"networkobject\"\n                },\n                {\n                    \"version\": \"gw7heyjcxpzo4\",\n                    \"name\": \"NET_VPN_WEST\",\n                    \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n                    \"type\": \"networkobject\"\n                }\n            ],\n            \"type\": \"networkobjectgroup\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/networkgroups/0b27af25-78c2-11ea-bbd8-8937d6a75cde\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 2,\n        \"pages\": 0\n    }\n}"
+						},
+						{
+							"name": "Success: empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networkgroups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:04:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 0,\n        \"pages\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1288,6 +1285,114 @@
 					},
 					"response": [
 						{
+							"name": "Failure: duplicate request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"type\": \"networkobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networks"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:05:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"NET_VPN_EAST\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -1402,114 +1507,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"hwzeu3vgrsndv\",\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"isSystemDefined\": false,\n    \"dnsResolution\": null,\n    \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\",\n    \"type\": \"networkobject\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/networks/a84915ca-78bf-11ea-bbd8-77130b51c299\"\n    }\n}"
-						},
-						{
-							"name": "Failure: duplicate request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"NET_VPN_EAST\",\n    \"description\": \"VPN concentrator in Baltimore\",\n    \"subType\": \"HOST\",\n    \"value\": \"192.168.5.10\",\n    \"type\": \"networkobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networks",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networks"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:05:29 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"NET_VPN_EAST\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Failure: invalid body",
@@ -1822,114 +1819,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: invalid body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"All VPN concentrators\",\n    \"name\": \"NETG_VPN_CONCENTRATORS1\",\n    \"objects\": [\n        {\n          \"version\": \"hwzeu3vgrsndv\",\n          \"name\": \"NET_VPN_EAST\",\n          \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\"\n        },\n        {\n          \"version\": \"gw7heyjcxpzo4\",\n          \"name\": \"NET_VPN_WEST\",\n          \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n          \"type\": \"networkobject\"\n        }\n    ],\n    \"type\": \"networkobjectgroup\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"networkgroups"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:23:06 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, NetworkObjectBase]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 17, column: 13] (through reference chain: NetworkObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -2044,6 +1933,114 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"moga7ftm2nrny\",\n    \"name\": \"NETG_VPN_CONCENTRATORS\",\n    \"description\": \"All VPN concentrators\",\n    \"isSystemDefined\": false,\n    \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n    \"objects\": [\n        {\n            \"version\": \"hwzeu3vgrsndv\",\n            \"name\": \"NET_VPN_EAST\",\n            \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\",\n            \"type\": \"networkobject\"\n        },\n        {\n            \"version\": \"gw7heyjcxpzo4\",\n            \"name\": \"NET_VPN_WEST\",\n            \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n            \"type\": \"networkobject\"\n        }\n    ],\n    \"type\": \"networkobjectgroup\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/networkgroups/0b27af25-78c2-11ea-bbd8-8937d6a75cde\"\n    }\n}"
+						},
+						{
+							"name": "Failure: invalid body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"All VPN concentrators\",\n    \"name\": \"NETG_VPN_CONCENTRATORS1\",\n    \"objects\": [\n        {\n          \"version\": \"hwzeu3vgrsndv\",\n          \"name\": \"NET_VPN_EAST\",\n          \"id\": \"a84915ca-78bf-11ea-bbd8-77130b51c299\"\n        },\n        {\n          \"version\": \"gw7heyjcxpzo4\",\n          \"name\": \"NET_VPN_WEST\",\n          \"id\": \"cbf1a7dd-78bf-11ea-bbd8-bd0af2990f93\",\n          \"type\": \"networkobject\"\n        }\n    ],\n    \"type\": \"networkobjectgroup\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/networkgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"networkgroups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:23:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, NetworkObjectBase]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 17, column: 13] (through reference chain: NetworkObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Failure: duplicate group",
@@ -2797,7 +2794,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "fc7c6cfc-df7e-47b8-bc59-627b2619cacf",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2807,15 +2803,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "39fb8895-27a6-4c43-87b6-fccdcb1bfb2f",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Port/Protocol Object Management",
@@ -3278,6 +3272,118 @@
 					},
 					"response": [
 						{
+							"name": "Success: default entries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"udpports"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:40:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"version\": \"hok35q5pwxpfc\",\n            \"name\": \"DNS over UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"53\",\n            \"id\": \"1834e8ca-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834e8ca-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"lmxhm22nclepw\",\n            \"name\": \"NFSD-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"2049\",\n            \"id\": \"1834caac-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834caac-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"gn37codek2aru\",\n            \"name\": \"NTP-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"123\",\n            \"id\": \"1834cc96-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834cc96-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"fp54alwmt2zeg\",\n            \"name\": \"RADIUS\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"1645\",\n            \"id\": \"1834ce94-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834ce94-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"pblxvuvfxrowo\",\n            \"name\": \"RIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"520\",\n            \"id\": \"1834d114-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d114-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"h7a6vd2a7vqdr\",\n            \"name\": \"SIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5060\",\n            \"id\": \"1834d204-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d204-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nlvd3vdh724rr\",\n            \"name\": \"SNMP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"161\",\n            \"id\": \"1834c264-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834c264-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nbqyvfrucylxk\",\n            \"name\": \"SYSLOG\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"514\",\n            \"id\": \"1834d6e6-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d6e6-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"ebnrsp2t66bxl\",\n            \"name\": \"TFTP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"69\",\n            \"id\": \"1834d5e2-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d5e2-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"dxbpuqubolles\",\n            \"name\": \"Yahoo Messenger Voice Chat UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5000-5010\",\n            \"id\": \"1834dc86-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834dc86-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 10,\n        \"pages\": 0\n    }\n}"
+						},
+						{
 							"name": "Success: custom objects (limit 20)",
 							"originalRequest": {
 								"method": "GET",
@@ -3394,118 +3500,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"items\": [\n        {\n            \"version\": \"hok35q5pwxpfc\",\n            \"name\": \"DNS over UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"53\",\n            \"id\": \"1834e8ca-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834e8ca-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"lmxhm22nclepw\",\n            \"name\": \"NFSD-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"2049\",\n            \"id\": \"1834caac-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834caac-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"gn37codek2aru\",\n            \"name\": \"NTP-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"123\",\n            \"id\": \"1834cc96-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834cc96-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"fp54alwmt2zeg\",\n            \"name\": \"RADIUS\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"1645\",\n            \"id\": \"1834ce94-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834ce94-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"pblxvuvfxrowo\",\n            \"name\": \"RIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"520\",\n            \"id\": \"1834d114-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d114-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"h7a6vd2a7vqdr\",\n            \"name\": \"SIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5060\",\n            \"id\": \"1834d204-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d204-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nlvd3vdh724rr\",\n            \"name\": \"SNMP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"161\",\n            \"id\": \"1834c264-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834c264-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nbqyvfrucylxk\",\n            \"name\": \"SYSLOG\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"514\",\n            \"id\": \"1834d6e6-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d6e6-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"ebnrsp2t66bxl\",\n            \"name\": \"TFTP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"69\",\n            \"id\": \"1834d5e2-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d5e2-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"pjbvk3lo3zxdv\",\n            \"name\": \"UDP_IKE\",\n            \"description\": \"Internet Key Exchange for IPsec VPNs\",\n            \"isSystemDefined\": false,\n            \"port\": \"500\",\n            \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/a5abe388-78c4-11ea-bbd8-11b10efa3986\"\n            }\n        },\n        {\n            \"version\": \"h2li5e3sfj763\",\n            \"name\": \"UDP_IPSEC_NATT\",\n            \"description\": \"ESP encapsulated in UDP for NAT Traversal IPsec\",\n            \"isSystemDefined\": false,\n            \"port\": \"4500\",\n            \"id\": \"c470049b-78c4-11ea-bbd8-b59640ff9c44\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/c470049b-78c4-11ea-bbd8-b59640ff9c44\"\n            }\n        },\n        {\n            \"version\": \"dxbpuqubolles\",\n            \"name\": \"Yahoo Messenger Voice Chat UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5000-5010\",\n            \"id\": \"1834dc86-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834dc86-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 20,\n        \"offset\": 0,\n        \"count\": 12,\n        \"pages\": 0\n    }\n}"
-						},
-						{
-							"name": "Success: default entries",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"udpports"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:40:13 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"items\": [\n        {\n            \"version\": \"hok35q5pwxpfc\",\n            \"name\": \"DNS over UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"53\",\n            \"id\": \"1834e8ca-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834e8ca-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"lmxhm22nclepw\",\n            \"name\": \"NFSD-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"2049\",\n            \"id\": \"1834caac-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834caac-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"gn37codek2aru\",\n            \"name\": \"NTP-UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"123\",\n            \"id\": \"1834cc96-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834cc96-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"fp54alwmt2zeg\",\n            \"name\": \"RADIUS\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"1645\",\n            \"id\": \"1834ce94-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834ce94-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"pblxvuvfxrowo\",\n            \"name\": \"RIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"520\",\n            \"id\": \"1834d114-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d114-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"h7a6vd2a7vqdr\",\n            \"name\": \"SIP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5060\",\n            \"id\": \"1834d204-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d204-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nlvd3vdh724rr\",\n            \"name\": \"SNMP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"161\",\n            \"id\": \"1834c264-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834c264-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"nbqyvfrucylxk\",\n            \"name\": \"SYSLOG\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"514\",\n            \"id\": \"1834d6e6-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d6e6-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"ebnrsp2t66bxl\",\n            \"name\": \"TFTP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"69\",\n            \"id\": \"1834d5e2-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834d5e2-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        },\n        {\n            \"version\": \"dxbpuqubolles\",\n            \"name\": \"Yahoo Messenger Voice Chat UDP\",\n            \"description\": null,\n            \"isSystemDefined\": true,\n            \"port\": \"5000-5010\",\n            \"id\": \"1834dc86-38bb-11e2-86aa-62f0c593a59a\",\n            \"type\": \"udpportobject\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/1834dc86-38bb-11e2-86aa-62f0c593a59a\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 10,\n        \"pages\": 0\n    }\n}"
 						}
 					]
 				},
@@ -3814,114 +3808,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: duplicate object",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"port\": \"500\",\n    \"type\": \"udpportobject\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"udpports"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:41:06 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"UDP_IKE\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Failure: invalid port",
 							"originalRequest": {
 								"method": "POST",
@@ -4144,6 +4030,114 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"pjbvk3lo3zxdv\",\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"isSystemDefined\": false,\n    \"port\": \"500\",\n    \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n    \"type\": \"udpportobject\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/udpports/a5abe388-78c4-11ea-bbd8-11b10efa3986\"\n    }\n}"
+						},
+						{
+							"name": "Failure: duplicate object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"UDP_IKE\",\n    \"description\": \"Internet Key Exchange for IPsec VPNs\",\n    \"port\": \"500\",\n    \"type\": \"udpportobject\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/udpports",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"udpports"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:41:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"UDP_IKE\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -4615,114 +4609,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: bad body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"All IPsec related ports and protocols\",\n    \"name\": \"PORTG_IPSEC\",\n    \"objects\": [\n        \"UDP_IKE\",\n        \"UDP_IPSEC_NATT\",\n        \"PROTO_ESP\"\n    ],\n    \"type\": \"portobjectgroup\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"object",
-										"portgroups"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 11:45:40 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, GenericPortObject]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 9, column: 13] (through reference chain: PortObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -4837,6 +4723,114 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"hybuqusy3iwxp\",\n    \"name\": \"PORTG_IPSEC\",\n    \"description\": \"All IPsec related ports and protocols\",\n    \"isSystemDefined\": false,\n    \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n    \"objects\": [\n        {\n            \"version\": \"poddysm4wp42c\",\n            \"name\": \"PROTO_ESP\",\n            \"id\": \"d827ee3e-78c4-11ea-bbd8-db615bf8ad9d\",\n            \"type\": \"protocolobject\"\n        },\n        {\n            \"version\": \"pjbvk3lo3zxdv\",\n            \"name\": \"UDP_IKE\",\n            \"id\": \"a5abe388-78c4-11ea-bbd8-11b10efa3986\",\n            \"type\": \"udpportobject\"\n        },\n        {\n            \"version\": \"h2li5e3sfj763\",\n            \"name\": \"UDP_IPSEC_NATT\",\n            \"id\": \"c470049b-78c4-11ea-bbd8-b59640ff9c44\",\n            \"type\": \"udpportobject\"\n        }\n    ],\n    \"type\": \"portobjectgroup\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/object/portgroups/55a505b1-78c5-11ea-bbd8-0145a3bcb648\"\n    }\n}"
+						},
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"All IPsec related ports and protocols\",\n    \"name\": \"PORTG_IPSEC\",\n    \"objects\": [\n        \"UDP_IKE\",\n        \"UDP_IPSEC_NATT\",\n        \"PROTO_ESP\"\n    ],\n    \"type\": \"portobjectgroup\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/object/portgroups",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"object",
+										"portgroups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 11:45:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, GenericPortObject]: missing type id property 'type' (for POJO property 'objects')\\n at [Source: (UnclosableInputStream); line: 9, column: 13] (through reference chain: PortObjectGroup[\\\"objects\\\"]->TreeSet[0])\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Failure: duplicate group",
@@ -4954,7 +4948,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "04969234-5302-4f44-9c9c-345d091155e4",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4964,15 +4957,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "172ba76e-a25c-417e-9999-fe1238bf44ce",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Access Policies",
@@ -5745,6 +5736,116 @@
 					},
 					"response": [
 						{
+							"name": "Failure: invalid body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"logFiles\": true,\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:13:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, AccessRule]: missing type id property 'type'\\n at [Source: (UnclosableInputStream); line: 37, column: 1]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -5861,116 +5962,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"gbgesq5ftlsf4\",\n    \"name\": \"OUT_TO_IN_VPN\",\n    \"ruleId\": 268435458,\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"rulePosition\": 10,\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": null,\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/5c8c75d8-78c9-11ea-bbd8-0557b6e3248d\"\n    }\n}"
-						},
-						{
-							"name": "Failure: invalid body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"sourceZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationNetworks\": [\n        {\n            \"version\": \"moga7ftm2nrny\",\n            \"name\": \"NETG_VPN_CONCENTRATORS\",\n            \"id\": \"0b27af25-78c2-11ea-bbd8-8937d6a75cde\",\n            \"type\": \"networkobjectgroup\"\n        }\n    ],\n    \"destinationPorts\": [\n        {\n            \"version\": \"hybuqusy3iwxp\",\n            \"name\": \"PORTG_IPSEC\",\n            \"id\": \"55a505b1-78c5-11ea-bbd8-0145a3bcb648\",\n            \"type\": \"portobjectgroup\"\n        }\n    ],\n    \"logFiles\": true,\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 10,\n    \"type\": \"accessrule\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:13:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"General\",\n        \"messages\": [\n            {\n                \"description\": \"The server understands the content type of the request entity and the syntax of the request entity is correct but was unable to process the contained instructions\",\n                \"code\": null,\n                \"location\": null\n            },\n            {\n                \"description\": \"InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, AccessRule]: missing type id property 'type'\\n at [Source: (UnclosableInputStream); line: 37, column: 1]\",\n                \"code\": null,\n                \"location\": null\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Failure: duplicate rule",
@@ -6363,7 +6354,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "bb945f38-8818-4765-85f0-0d4d72ec8075",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -6373,15 +6363,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a5337eee-06d7-4cc7-9530-9714c73c93ee",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Instrusion Policies",
@@ -6883,118 +6871,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: BASE and THREAT",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/license/smartlicenses",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"license",
-										"smartlicenses"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:54:20 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"items\": [\n        {\n            \"version\": \"ep7j6btpbtny4\",\n            \"count\": 1,\n            \"compliant\": true,\n            \"id\": \"d1bb9942-78ce-11ea-bbd8-437d3d03a430\",\n            \"licenseType\": \"THREAT\",\n            \"type\": \"license\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/d1bb9942-78ce-11ea-bbd8-437d3d03a430\"\n            }\n        },\n        {\n            \"version\": \"fu7p3cjrlzayg\",\n            \"count\": 1,\n            \"compliant\": true,\n            \"id\": \"a31ba0b5-384f-11ea-8aa5-91b09549d3e8\",\n            \"licenseType\": \"BASE\",\n            \"type\": \"license\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/a31ba0b5-384f-11ea-8aa5-91b09549d3e8\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 2,\n        \"pages\": 0\n    }\n}"
-						},
-						{
 							"name": "Success: default BASE",
 							"originalRequest": {
 								"method": "GET",
@@ -7105,6 +6981,118 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"items\": [\n        {\n            \"version\": \"fu7p3cjrlzayg\",\n            \"count\": 1,\n            \"compliant\": true,\n            \"id\": \"a31ba0b5-384f-11ea-8aa5-91b09549d3e8\",\n            \"licenseType\": \"BASE\",\n            \"type\": \"license\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/a31ba0b5-384f-11ea-8aa5-91b09549d3e8\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 1,\n        \"pages\": 0\n    }\n}"
+						},
+						{
+							"name": "Success: BASE and THREAT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/license/smartlicenses",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"license",
+										"smartlicenses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:54:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"version\": \"ep7j6btpbtny4\",\n            \"count\": 1,\n            \"compliant\": true,\n            \"id\": \"d1bb9942-78ce-11ea-bbd8-437d3d03a430\",\n            \"licenseType\": \"THREAT\",\n            \"type\": \"license\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/d1bb9942-78ce-11ea-bbd8-437d3d03a430\"\n            }\n        },\n        {\n            \"version\": \"fu7p3cjrlzayg\",\n            \"count\": 1,\n            \"compliant\": true,\n            \"id\": \"a31ba0b5-384f-11ea-8aa5-91b09549d3e8\",\n            \"licenseType\": \"BASE\",\n            \"type\": \"license\",\n            \"links\": {\n                \"self\": \"https://10.10.20.65/api/fdm/latest/license/smartlicenses/a31ba0b5-384f-11ea-8aa5-91b09549d3e8\"\n            }\n        }\n    ],\n    \"paging\": {\n        \"prev\": [],\n        \"next\": [],\n        \"limit\": 10,\n        \"offset\": 0,\n        \"count\": 2,\n        \"pages\": 0\n    }\n}"
 						}
 					]
 				},
@@ -7415,109 +7403,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success: no change",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"version\": \"lgjcksh5pvqj7\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules",
-										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
-									]
-								}
-							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Sun, 24 May 2020 22:38:20 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
 						{
 							"name": "Failure: version mismatch",
 							"originalRequest": {
@@ -7858,6 +7743,109 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"The policy rule ID cannot be modified by editing the rule. Current rule-ID in the DB is 268435471, rule-ID from request is null\",\n                \"code\": \"policyRuleIdNotEditable\",\n                \"location\": \"\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: no change",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"version\": \"lgjcksh5pvqj7\",\n  \"name\": \"OUT_TO_IN_VPN\",\n  \"ruleId\": 268435471,\n  \"sourceZones\": [\n    {\n      \"version\": \"nb3xioyndbyfp\",\n      \"name\": \"outside_zone\",\n      \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"destinationZones\": [\n    {\n      \"version\": \"f2pirv6ffutzh\",\n      \"name\": \"inside_zone\",\n      \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n      \"type\": \"securityzone\"\n    }\n  ],\n  \"sourceNetworks\": [],\n  \"destinationNetworks\": [\n    {\n      \"version\": \"kg76nlznpdmym\",\n      \"name\": \"NETG_VPN_CONCENTRATORS\",\n      \"id\": \"c5582401-9e0e-11ea-b8bb-7100e7f840fb\",\n      \"type\": \"networkobjectgroup\"\n    }\n  ],\n  \"sourcePorts\": [],\n  \"destinationPorts\": [\n    {\n      \"version\": \"ebjufhpogffrp\",\n      \"name\": \"PORTG_IPSEC\",\n      \"id\": \"c5dc964d-9e0e-11ea-b8bb-f7f38e4a9fc9\",\n      \"type\": \"portobjectgroup\"\n    }\n  ],\n  \"ruleAction\": \"PERMIT\",\n  \"eventLogAction\": \"LOG_BOTH\",\n  \"identitySources\": [],\n  \"users\": [],\n  \"embeddedAppFilter\": null,\n  \"urlFilter\": null,\n  \"intrusionPolicy\": {\n    \"version\": \"cdongmehhy7re\",\n    \"name\": \"Balanced Security and Connectivity\",\n    \"id\": \"93a735a1-9b4c-11ea-95ce-bb199e75725f\",\n    \"type\": \"intrusionpolicy\"\n  },\n  \"filePolicy\": null,\n  \"logFiles\": false,\n  \"syslogServer\": null,\n  \"destinationDynamicObjects\": [],\n  \"sourceDynamicObjects\": [],\n  \"id\": \"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\",\n  \"type\": \"accessrule\",\n  \"links\": {\n    \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules",
+										"c6fe811c-9e0e-11ea-b8bb-e1182eb65d0d"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 24 May 2020 22:38:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
@@ -7867,7 +7855,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9cc7a3bb-d3cf-47ce-8eb1-796d5945e17b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -7877,15 +7864,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c3ea5211-aa23-460c-9b33-a326a63968a9",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Cleanup and Deployment",
@@ -7930,6 +7915,105 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/0136ef2f-b570-11e5-ac18-29a4a2c9797d",
+									"protocol": "https",
+									"host": [
+										"{{ftd}}"
+									],
+									"path": [
+										"api",
+										"fdm",
+										"latest",
+										"policy",
+										"accesspolicies",
+										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+										"accessrules",
+										"0136ef2f-b570-11e5-ac18-29a4a2c9797d"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2020 12:16:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
 						{
 							"name": "Failure: rule already absent",
 							"originalRequest": {
@@ -8036,11 +8120,56 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to an invalid UUID: \\\"0136ef2f-b570-11e5-ac18-29a4a2c9797d\\\"\",\n                \"code\": \"invalidUuid\",\n                \"location\": \"\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create outbound permit rule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
 						},
+						"url": {
+							"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
+							"protocol": "https",
+							"host": [
+								"{{ftd}}"
+							],
+							"path": [
+								"api",
+								"fdm",
+								"latest",
+								"policy",
+								"accesspolicies",
+								"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
+								"accessrules"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "Success",
+							"name": "Failure: duplicate rule",
 							"originalRequest": {
-								"method": "DELETE",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
@@ -8058,8 +8187,12 @@
 										"value": "Bearer {{api_token}}"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
+								},
 								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/0136ef2f-b570-11e5-ac18-29a4a2c9797d",
+									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
 									"protocol": "https",
 									"host": [
 										"{{ftd}}"
@@ -8071,18 +8204,17 @@
 										"policy",
 										"accesspolicies",
 										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules",
-										"0136ef2f-b570-11e5-ac18-29a4a2c9797d"
+										"accessrules"
 									]
 								}
 							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "plain",
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Tue, 07 Apr 2020 12:16:23 GMT"
+									"value": "Sun, 24 May 2020 22:43:33 GMT"
 								},
 								{
 									"key": "Server",
@@ -8131,56 +8263,19 @@
 								{
 									"key": "Connection",
 									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
 								}
 							],
 							"cookie": [],
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "Create outbound permit rule",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{api_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"jizgtde7g4pmt\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"c6f4ggllotk2f\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
+							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"IN_TO_OUT_GENERAL\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						},
-						"url": {
-							"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
-							"protocol": "https",
-							"host": [
-								"{{ftd}}"
-							],
-							"path": [
-								"api",
-								"fdm",
-								"latest",
-								"policy",
-								"accesspolicies",
-								"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-								"accessrules"
-							]
-						}
-					},
-					"response": [
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -8298,116 +8393,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"version\": \"lu4xcgrrmhvoi\",\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"ruleId\": 268435474,\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"sourceNetworks\": [],\n    \"destinationNetworks\": [],\n    \"sourcePorts\": [],\n    \"destinationPorts\": [],\n    \"rulePosition\": 30,\n    \"ruleAction\": \"PERMIT\",\n    \"eventLogAction\": \"LOG_BOTH\",\n    \"identitySources\": [],\n    \"users\": [],\n    \"embeddedAppFilter\": null,\n    \"urlFilter\": null,\n    \"intrusionPolicy\": null,\n    \"filePolicy\": null,\n    \"logFiles\": false,\n    \"syslogServer\": null,\n    \"destinationDynamicObjects\": [],\n    \"sourceDynamicObjects\": [],\n    \"id\": \"f1cb4599-9e0f-11ea-b8bb-8fa761981666\",\n    \"type\": \"accessrule\",\n    \"links\": {\n        \"self\": \"https://10.10.20.65/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules/f1cb4599-9e0f-11ea-b8bb-8fa761981666\"\n    }\n}"
-						},
-						{
-							"name": "Failure: duplicate rule",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"IN_TO_OUT_GENERAL\",\n    \"sourceZones\": [\n        {\n            \"version\": \"f2pirv6ffutzh\",\n            \"name\": \"inside_zone\",\n            \"id\": \"90c377e0-b3e5-11e5-8db8-651556da7898\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"destinationZones\": [\n        {\n            \"version\": \"nb3xioyndbyfp\",\n            \"name\": \"outside_zone\",\n            \"id\": \"b1af33e1-b3e5-11e5-8db8-afdc0be5453e\",\n            \"type\": \"securityzone\"\n        }\n    ],\n    \"ruleAction\": \"PERMIT\",\n    \"rulePosition\": 30,\n    \"type\": \"accessrule\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ftd}}/api/fdm/latest/policy/accesspolicies/c78e66bc-cb57-43fe-bcbf-96b79b3475b3/accessrules",
-									"protocol": "https",
-									"host": [
-										"{{ftd}}"
-									],
-									"path": [
-										"api",
-										"fdm",
-										"latest",
-										"policy",
-										"accesspolicies",
-										"c78e66bc-cb57-43fe-bcbf-96b79b3475b3",
-										"accessrules"
-									]
-								}
-							},
-							"status": "Unprocessable Entity",
-							"code": 422,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Sun, 24 May 2020 22:43:33 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Apache"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Accept-Ranges",
-									"value": "bytes"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5, max=100"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"severity\": \"ERROR\",\n        \"key\": \"Validation\",\n        \"messages\": [\n            {\n                \"description\": \"Validation failed due to a duplicate name: \\\"IN_TO_OUT_GENERAL\\\"\",\n                \"code\": \"duplicateName\",\n                \"location\": \"name\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -8985,7 +8970,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "295e2842-4030-42b7-b17a-d534398ece5c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -8995,22 +8979,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e8059f7f-8bed-4c33-ae16-29007bf262cb",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "88caf79c-6e11-43c1-b1ff-cb11524abc29",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -9020,13 +9001,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "96e555a7-ef5e-4e6a-bc01-b2dc7bc4783d",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

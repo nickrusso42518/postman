@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "232a1131-249f-4488-a0dc-c7c6c608a530",
-		"name": "Cisco NSO for SPAUTO",
+		"_postman_id": "a6b02d0b-7e73-4559-9655-9318d018b8b0",
+		"name": "Cisco NSO",
 		"description": "https://developer.cisco.com/docs/nso/#!cisco-nso-swagger-api-docs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -51,6 +51,148 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: bad creds",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{nso}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
+									"protocol": "https",
+									"host": [
+										"{{nso}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Sep 2020 11:51:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Basic realm=\"restconf\""
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-tag\": \"access-denied\",\n                \"error-type\": \"protocol\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 13:07:43 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
 						{
 							"name": "Failure: invalid Accept header",
 							"originalRequest": {
@@ -123,75 +265,6 @@
 							],
 							"cookie": [],
 							"body": "<errors xmlns=\"urn:ietf:params:xml:ns:yang:ietf-restconf\">\n    <error>\n        <error-message>No acceptable mime-type supported. Got: application/json ; Should be one of: application/yang-data+xml, application/yang-data+json, application/vnd.yang.collection+xml, application/vnd.yang.collection+json, application/yang-patch+xml, application/yang-patch+json.</error-message>\n        <error-tag>invalid-value</error-tag>\n        <error-type>application</error-type>\n    </error>\n</errors>"
-						},
-						{
-							"name": "Failure: bad creds",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{nso}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
-									"protocol": "https",
-									"host": [
-										"{{nso}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device=dist-rtr01"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Sun, 13 Sep 2020 11:51:09 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "130"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "WWW-Authenticate",
-									"value": "Basic realm=\"restconf\""
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-tag\": \"access-denied\",\n                \"error-type\": \"protocol\"\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Success (SSH)",
@@ -354,79 +427,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"tailf-ncs:device\": [\n        {\n            \"name\": \"dist-rtr01\",\n            \"address\": \"10.10.20.175\",\n            \"ssh\": {\n                \"host-key-verification\": \"none\"\n            },\n            \"authgroup\": \"labadmin\",\n            \"device-type\": {\n                \"cli\": {\n                    \"ned-id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\",\n                    \"protocol\": \"telnet\"\n                }\n            },\n            \"commit-queue\": {\n                \"queue-length\": 0\n            },\n            \"active-settings\": {\n                \"connect-timeout\": 20,\n                \"read-timeout\": 20,\n                \"write-timeout\": 20,\n                \"ssh-keep-alive\": {\n                    \"interval\": 20,\n                    \"count\": 3\n                },\n                \"ned-keep-alive\": {\n                    \"count\": 3\n                },\n                \"connect-retries\": {\n                    \"attempts\": 0,\n                    \"timeout\": 3\n                },\n                \"trace\": \"false\",\n                \"trace-output\": \"file\",\n                \"ned-settings\": {\n                    \"use-junos-rollback\": false\n                },\n                \"commit-queue\": {\n                    \"enabled-by-default\": false\n                },\n                \"session-pool\": {\n                    \"idle-time\": 30\n                },\n                \"no-overwrite\": {\n                    \"enabled-by-default\": false\n                },\n                \"out-of-sync-commit-behaviour\": \"reject\"\n            },\n            \"state\": {\n                \"oper-state\": \"enabled\",\n                \"transaction-mode\": \"ned\",\n                \"last-transaction-id\": \"67dff9f52b9ac2df4f813ebb63f0378a\",\n                \"admin-state\": \"unlocked\"\n            },\n            \"capability\": [\n                {\n                    \"uri\": \"http://tail-f.com/ns/ncs-ned/cli-allow-abbrev-keys\"\n                },\n                {\n                    \"uri\": \"http://tail-f.com/ns/ncs-ned/show-partial?path-format=key-path\"\n                },\n                {\n                    \"uri\": \"http://tail-f.com/ns/ncs-ned/show-stats-path\"\n                },\n                {\n                    \"uri\": \"urn:ietf:params:netconf:capability:with-defaults:1.0?basic-mode=trim\"\n                },\n                {\n                    \"uri\": \"urn:ietf:params:xml:ns:yang:ietf-interfaces\",\n                    \"revision\": \"2014-05-08\",\n                    \"module\": \"ietf-interfaces\"\n                },\n                {\n                    \"uri\": \"urn:ietf:params:xml:ns:yang:ietf-ip\",\n                    \"revision\": \"2014-06-16\",\n                    \"module\": \"ietf-ip\"\n                },\n                {\n                    \"uri\": \"urn:ios\",\n                    \"revision\": \"2020-02-14\",\n                    \"module\": \"tailf-ned-cisco-ios\"\n                },\n                {\n                    \"uri\": \"urn:ios-stats\",\n                    \"revision\": \"2020-02-14\",\n                    \"module\": \"tailf-ned-cisco-ios-stats\"\n                }\n            ],\n            \"module\": [\n                {\n                    \"name\": \"ietf-interfaces\",\n                    \"revision\": \"2014-05-08\"\n                },\n                {\n                    \"name\": \"ietf-ip\",\n                    \"revision\": \"2014-06-16\"\n                },\n                {\n                    \"name\": \"tailf-ned-cisco-ios\",\n                    \"revision\": \"2020-02-14\"\n                },\n                {\n                    \"name\": \"tailf-ned-cisco-ios-stats\",\n                    \"revision\": \"2020-02-14\"\n                }\n            ],\n            \"platform\": {\n                \"name\": \"ios-xe\",\n                \"version\": \"16.11.1b\",\n                \"model\": \"CSR1000V\",\n                \"serial-number\": \"9UUZ5GU80EE\"\n            },\n            \"config\": {\n                \"tailf-ned-cisco-ios:tailfned\": {\n                    \"police\": \"cirmode\"\n                },\n                \"tailf-ned-cisco-ios:version\": \"16.11\",\n                \"tailf-ned-cisco-ios:service\": {\n                    \"timestamps\": {\n                        \"debug\": {\n                            \"datetime\": {\n                                \"msec\": [\n                                    null\n                                ]\n                            }\n                        },\n                        \"log\": {\n                            \"datetime\": {\n                                \"msec\": [\n                                    null\n                                ]\n                            }\n                        }\n                    },\n                    \"call-home\": [\n                        null\n                    ]\n                },\n                \"tailf-ned-cisco-ios:login\": {\n                    \"on-success\": {\n                        \"log\": [\n                            null\n                        ]\n                    }\n                },\n                \"tailf-ned-cisco-ios:platform\": {\n                    \"console\": \"serial\",\n                    \"punt-keepalive\": {\n                        \"disable-kernel-core\": false\n                    },\n                    \"qfp\": {\n                        \"utilization\": {\n                            \"monitor\": {\n                                \"load\": 80\n                            }\n                        }\n                    }\n                },\n                \"tailf-ned-cisco-ios:hostname\": \"dist-rtr01\",\n                \"tailf-ned-cisco-ios:vrf\": {\n                    \"definition\": [\n                        {\n                            \"name\": \"Mgmt-intf\",\n                            \"address-family\": {\n                                \"ipv4\": {},\n                                \"ipv6\": {}\n                            }\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios:enable\": {\n                    \"password\": {\n                        \"secret\": \"cisco\"\n                    }\n                },\n                \"tailf-ned-cisco-ios:call-home\": {\n                    \"contact-email-addr\": \"sch-smart-licensing@cisco.com\",\n                    \"profile\": [\n                        {\n                            \"name\": \"CiscoTAC-1\",\n                            \"active\": true,\n                            \"reporting\": {\n                                \"smart-licensing-data\": true\n                            },\n                            \"destination\": {\n                                \"transport-method\": {\n                                    \"http\": [\n                                        null\n                                    ],\n                                    \"email\": false\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios:ip\": {\n                    \"domain\": {\n                        \"lookup-conf\": {\n                            \"lookup\": false\n                        },\n                        \"name\": \"virl.info\"\n                    },\n                    \"ssh\": {\n                        \"server\": {\n                            \"algorithm\": {\n                                \"authentication\": [\n                                    \"password\"\n                                ]\n                            }\n                        }\n                    },\n                    \"forward-protocol\": {\n                        \"nd\": [\n                            null\n                        ]\n                    },\n                    \"http\": {\n                        \"server\": false,\n                        \"secure-server\": true\n                    },\n                    \"route\": {\n                        \"vrf\": [\n                            {\n                                \"name\": \"Mgmt-intf\",\n                                \"ip-route-forwarding-list\": [\n                                    {\n                                        \"prefix\": \"0.0.0.0\",\n                                        \"mask\": \"0.0.0.0\",\n                                        \"forwarding-address\": \"10.10.20.254\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                },\n                \"tailf-ned-cisco-ios:subscriber\": {\n                    \"templating\": true\n                },\n                \"tailf-ned-cisco-ios:multilink\": {\n                    \"bundle-name\": \"authenticated\"\n                },\n                \"tailf-ned-cisco-ios:username\": [\n                    {\n                        \"name\": \"cisco\",\n                        \"privilege\": 15,\n                        \"secret\": {\n                            \"type\": \"9\",\n                            \"secret\": \"$9$iVecEqVTUJzHUk$EO2BfGoo4I8.wW.QanPw2rSxwy9NJt6kc3xFNEFLYSA\"\n                        }\n                    }\n                ],\n                \"tailf-ned-cisco-ios:redundancy\": {},\n                \"tailf-ned-cisco-ios:crypto\": {\n                    \"pki\": {\n                        \"trustpoint\": [\n                            {\n                                \"id\": \"SLA-TrustPoint\",\n                                \"enrollment\": {\n                                    \"pkcs12\": [\n                                        null\n                                    ]\n                                },\n                                \"revocation-check\": [\n                                    \"crl\"\n                                ]\n                            },\n                            {\n                                \"id\": \"TP-self-signed-2621492086\",\n                                \"enrollment\": {\n                                    \"selfsigned\": [\n                                        null\n                                    ]\n                                },\n                                \"subject-name\": \"cn=IOS-Self-Signed-Certificate-2621492086\",\n                                \"revocation-check\": [\n                                    \"none\"\n                                ],\n                                \"rsakeypair\": {\n                                    \"key-label\": \"TP-self-signed-2621492086\"\n                                }\n                            }\n                        ],\n                        \"certificate\": {\n                            \"chain\": [\n                                {\n                                    \"name\": \"SLA-TrustPoint\",\n                                    \"certificate\": [\n                                        {\n                                            \"serial\": \"01\",\n                                            \"cert-type\": \"ca\",\n                                            \"cert\": \"  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \\r\\n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \\r\\n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \\r\\n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \\r\\n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \\r\\n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \\r\\n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \\r\\n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \\r\\n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \\r\\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \\r\\n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \\r\\n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \\r\\n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \\r\\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \\r\\n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \\r\\n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \\r\\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \\r\\n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \\r\\n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \\r\\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \\r\\n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \\r\\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \\r\\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \\r\\n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \\r\\n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \\r\\n  D697DF7F 28\\r\\n\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"name\": \"TP-self-signed-2621492086\",\n                                    \"certificate\": [\n                                        {\n                                            \"serial\": \"01\",\n                                            \"cert-type\": \"self-signed\",\n                                            \"cert\": \"  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \\r\\n  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 \\r\\n  69666963 6174652D 32363231 34393230 3836301E 170D3230 30393133 31313333 \\r\\n  35355A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 \\r\\n  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 36323134 \\r\\n  39323038 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 \\r\\n  0A028201 0100C941 03267E27 990B2552 22E3E237 13F22D16 40EC8872 8916ED13 \\r\\n  4D75CA5D 7841F222 508AEE86 64587A9A 7A407CC6 8D8E6575 5E535072 34D286D7 \\r\\n  EAFABB17 0A6206DE 3C7D9617 46672A31 5D095086 A33D49A3 A9C0337A 981E7F54 \\r\\n  740AE22D 66A7C4BA 3864BA70 8A2808A3 90973020 3328040D D139D471 354C924B \\r\\n  F0B089C9 812F26FA 2B988385 CC8C0FF2 C0B33DF2 0BD25014 7A1A1A4C 90AC2634 \\r\\n  F401809A F6CC5F26 D9B6DDCB 4367B9C2 80E350C6 3EF92AF1 9A752E45 B79096F6 \\r\\n  97703BC8 35442A21 91BD0F56 963C96FA 3243E1C9 12B14A9E A400B106 F62A2649 \\r\\n  AD9E6ECA DE05B6B1 D1B87050 465B4253 B2DEC1FA 6BAC8DD4 102E82E3 14D852F3 \\r\\n  117E5555 F7ED0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF \\r\\n  301F0603 551D2304 18301680 14A2718F BF15AFA4 213A83E0 73FE2D93 3DBD78E9 \\r\\n  08301D06 03551D0E 04160414 A2718FBF 15AFA421 3A83E073 FE2D933D BD78E908 \\r\\n  300D0609 2A864886 F70D0101 05050003 82010100 5D50E961 E008D1FC 17FF5C4E \\r\\n  5A290CAF C63D8EDF BC9584F0 CF7187F7 389FC6E0 D80747EB B5FFA8A0 776D88E5 \\r\\n  F06E45E1 BBCE7758 687C2A3E 41866456 40B0EB6F 41BCC56A 85FE83FB 9D99006B \\r\\n  B32AE69D 679E6A5C 6AA60C36 EB554383 60433EE7 5ECF53D3 9D7A7B6E FFF61407 \\r\\n  A2B6AB12 8B747BC1 C8FB7D70 5CB9C0BD 727243DC DD270352 C2C2F2C2 C2AD135C \\r\\n  535D75C3 939ECEF8 B837F72C 7832913A 3D70D949 B2B396B6 3FAA5405 7560A97F \\r\\n  288A4B46 DB827A64 5E28167B E9D3B1AE CCD606BF E4B18BA8 BE78F3CE DABD10BE \\r\\n  969677A6 A839C0AB 559B4DE8 90BBD008 CEE98EF0 52691B88 F74F0567 5DB1A847 \\r\\n  A3067491 3549CAF4 BE7FFB64 4886C092 51140B77\\r\\n\"\n                                        }\n                                    ]\n                                }\n                            ]\n                        }\n                    }\n                },\n                \"tailf-ned-cisco-ios:interface\": {\n                    \"Loopback\": [\n                        {\n                            \"name\": \"0\",\n                            \"description\": \"to\",\n                            \"ip\": {\n                                \"no-address\": {\n                                    \"address\": false\n                                }\n                            },\n                            \"shutdown\": [\n                                null\n                            ]\n                        }\n                    ],\n                    \"GigabitEthernet\": [\n                        {\n                            \"name\": \"1\",\n                            \"description\": \"to port6.sandbox-backend\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"vrf\": {\n                                \"forwarding\": \"Mgmt-intf\"\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"10.10.20.175\",\n                                        \"mask\": \"255.255.255.0\"\n                                    }\n                                }\n                            }\n                        },\n                        {\n                            \"name\": \"2\",\n                            \"description\": \"L3 Link to core-rtr01\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"172.16.252.21\",\n                                        \"mask\": \"255.255.255.252\"\n                                    }\n                                }\n                            }\n                        },\n                        {\n                            \"name\": \"3\",\n                            \"description\": \"L3 Link to core-rtr02\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"172.16.252.25\",\n                                        \"mask\": \"255.255.255.252\"\n                                    }\n                                }\n                            }\n                        },\n                        {\n                            \"name\": \"4\",\n                            \"description\": \"L3 Link to dist-sw01\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"172.16.252.2\",\n                                        \"mask\": \"255.255.255.252\"\n                                    }\n                                }\n                            }\n                        },\n                        {\n                            \"name\": \"5\",\n                            \"description\": \"L3 Link to dist-sw02\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"172.16.252.10\",\n                                        \"mask\": \"255.255.255.252\"\n                                    }\n                                }\n                            }\n                        },\n                        {\n                            \"name\": \"6\",\n                            \"description\": \"L3 Link to dist-rtr02\",\n                            \"negotiation\": {\n                                \"auto\": true\n                            },\n                            \"mop\": {\n                                \"xenabled\": false,\n                                \"sysid\": false\n                            },\n                            \"ip\": {\n                                \"address\": {\n                                    \"primary\": {\n                                        \"address\": \"172.16.252.17\",\n                                        \"mask\": \"255.255.255.252\"\n                                    }\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios:control-plane\": {},\n                \"tailf-ned-cisco-ios:line\": {\n                    \"console\": [\n                        {\n                            \"first\": \"0\",\n                            \"exec-timeout\": {\n                                \"minutes\": 0\n                            },\n                            \"password\": {\n                                \"secret\": \"cisco\"\n                            },\n                            \"stopbits\": \"1\"\n                        }\n                    ],\n                    \"vty\": [\n                        {\n                            \"first\": 0,\n                            \"last\": 4,\n                            \"exec-timeout\": {\n                                \"minutes\": 720\n                            },\n                            \"login\": {\n                                \"local\": [\n                                    null\n                                ]\n                            },\n                            \"password\": {\n                                \"secret\": \"cisco\"\n                            },\n                            \"transport\": {\n                                \"input\": [\n                                    \"ssh\",\n                                    \"telnet\"\n                                ]\n                            }\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios:logging\": {\n                    \"buffered\": {\n                        \"severity-level\": \"debugging\"\n                    },\n                    \"monitor\": {\n                        \"severity-level\": \"debugging\"\n                    }\n                },\n                \"tailf-ned-cisco-ios:spanning-tree\": {\n                    \"extend\": {\n                        \"system-id\": [\n                            null\n                        ]\n                    }\n                },\n                \"tailf-ned-cisco-ios:diagnostic\": {\n                    \"bootup\": {\n                        \"level\": \"minimal\"\n                    }\n                },\n                \"tailf-ned-cisco-ios:router\": {\n                    \"ospf\": [\n                        {\n                            \"id\": 1,\n                            \"network\": [\n                                {\n                                    \"ip\": \"172.16.252.0\",\n                                    \"mask\": \"0.0.3.255\",\n                                    \"area\": 0\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios:memory\": {\n                    \"free\": {\n                        \"low-watermark\": {\n                            \"processor\": 80526\n                        }\n                    }\n                },\n                \"ietf-yang-library:yang-library\": {\n                    \"module-set\": [\n                        {\n                            \"name\": \"common\",\n                            \"module\": [\n                                {\n                                    \"name\": \"ietf-interfaces\",\n                                    \"revision\": \"2014-05-08\",\n                                    \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-interfaces\",\n                                    \"feature\": [\n                                        \"arbitrary-names\",\n                                        \"if-mib\",\n                                        \"pre-provisioning\"\n                                    ]\n                                },\n                                {\n                                    \"name\": \"ietf-ip\",\n                                    \"revision\": \"2014-06-16\",\n                                    \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-ip\",\n                                    \"feature\": [\n                                        \"ipv4-non-contiguous-netmasks\",\n                                        \"ipv6-privacy-autoconf\"\n                                    ]\n                                },\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios\",\n                                    \"revision\": \"2020-02-14\",\n                                    \"namespace\": \"urn:ios\"\n                                },\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios-stats\",\n                                    \"namespace\": \"urn:ios-stats\"\n                                }\n                            ],\n                            \"import-only-module\": [\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios-id\",\n                                    \"revision\": \"\",\n                                    \"namespace\": \"urn:ios-id\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"schema\": [\n                        {\n                            \"name\": \"common\",\n                            \"module-set\": [\n                                \"common\"\n                            ]\n                        }\n                    ],\n                    \"datastore\": [\n                        {\n                            \"name\": \"ietf-datastores:running\",\n                            \"schema\": \"common\"\n                        },\n                        {\n                            \"name\": \"ietf-datastores:intended\",\n                            \"schema\": \"common\"\n                        },\n                        {\n                            \"name\": \"ietf-datastores:operational\",\n                            \"schema\": \"common\"\n                        }\n                    ],\n                    \"content-id\": \"6997dfc36a18679f43c55c43b7873b15\"\n                },\n                \"ietf-yang-library:modules-state\": {\n                    \"module-set-id\": \"6997dfc36a18679f43c55c43b7873b15\",\n                    \"module\": [\n                        {\n                            \"name\": \"ietf-interfaces\",\n                            \"revision\": \"2014-05-08\",\n                            \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-interfaces\",\n                            \"feature\": [\n                                \"arbitrary-names\",\n                                \"if-mib\",\n                                \"pre-provisioning\"\n                            ],\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"ietf-ip\",\n                            \"revision\": \"2014-06-16\",\n                            \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-ip\",\n                            \"feature\": [\n                                \"ipv4-non-contiguous-netmasks\",\n                                \"ipv6-privacy-autoconf\"\n                            ],\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios\",\n                            \"revision\": \"2020-02-14\",\n                            \"namespace\": \"urn:ios\",\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios-id\",\n                            \"revision\": \"\",\n                            \"namespace\": \"urn:ios-id\",\n                            \"conformance-type\": \"import\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios-stats\",\n                            \"revision\": \"\",\n                            \"namespace\": \"urn:ios-stats\",\n                            \"conformance-type\": \"implement\"\n                        }\n                    ]\n                }\n            },\n            \"live-status\": {\n                \"ietf-interfaces:interfaces-state\": {\n                    \"interface\": [\n                        {\n                            \"name\": \"GigabitEthernet1\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:0b:ea:2e\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"257235\",\n                                \"in-unicast-pkts\": \"4057\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"530357\",\n                                \"out-unicast-pkts\": \"6775\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"10.10.20.175\",\n                                        \"netmask\": \"255.255.255.0\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"GigabitEthernet2\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:06:fa:c4\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"14228\",\n                                \"in-unicast-pkts\": \"126\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"19426\",\n                                \"out-unicast-pkts\": \"149\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"172.16.252.21\",\n                                        \"netmask\": \"255.255.255.252\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"GigabitEthernet3\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:11:b8:89\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"13900\",\n                                \"in-unicast-pkts\": \"126\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"19524\",\n                                \"out-unicast-pkts\": \"148\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"172.16.252.25\",\n                                        \"netmask\": \"255.255.255.252\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"GigabitEthernet4\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:12:bc:1b\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"16987\",\n                                \"in-unicast-pkts\": \"171\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"17258\",\n                                \"out-unicast-pkts\": \"131\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"172.16.252.2\",\n                                        \"netmask\": \"255.255.255.252\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"GigabitEthernet5\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:00:6a:18\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"16257\",\n                                \"in-unicast-pkts\": \"166\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"15972\",\n                                \"out-unicast-pkts\": \"120\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"172.16.252.10\",\n                                        \"netmask\": \"255.255.255.252\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"GigabitEthernet6\",\n                            \"admin-status\": \"up\",\n                            \"phys-address\": \"52:54:00:15:57:ca\",\n                            \"speed\": \"1000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"17152\",\n                                \"in-unicast-pkts\": \"148\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-multicast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"19608\",\n                                \"out-unicast-pkts\": \"152\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500,\n                                \"address\": [\n                                    {\n                                        \"ip\": \"172.16.252.17\",\n                                        \"netmask\": \"255.255.255.252\",\n                                        \"origin\": \"other\"\n                                    }\n                                ]\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1500\n                            }\n                        },\n                        {\n                            \"name\": \"Loopback0\",\n                            \"admin-status\": \"down\",\n                            \"speed\": \"8000000000\",\n                            \"statistics\": {\n                                \"in-octets\": \"0\",\n                                \"in-unicast-pkts\": \"0\",\n                                \"in-broadcast-pkts\": \"0\",\n                                \"in-errors\": 0,\n                                \"out-octets\": \"0\",\n                                \"out-unicast-pkts\": \"0\",\n                                \"out-errors\": 0\n                            },\n                            \"ietf-ip:ipv4\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1514\n                            },\n                            \"ietf-ip:ipv6\": {\n                                \"forwarding\": true,\n                                \"mtu\": 1514\n                            }\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios-stats:arp\": {\n                    \"address\": [\n                        {\n                            \"ip\": \"172.16.252.1\",\n                            \"protocol\": \"Internet\",\n                            \"age-mins\": 13,\n                            \"hardware-addr\": \"5254.0012.8df0\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet4\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.10\",\n                            \"protocol\": \"Internet\",\n                            \"hardware-addr\": \"5254.0000.6a18\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet5\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.17\",\n                            \"protocol\": \"Internet\",\n                            \"hardware-addr\": \"5254.0015.57ca\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet6\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.18\",\n                            \"protocol\": \"Internet\",\n                            \"age-mins\": 16,\n                            \"hardware-addr\": \"5254.000a.90ee\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet6\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.2\",\n                            \"protocol\": \"Internet\",\n                            \"hardware-addr\": \"5254.0012.bc1b\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet4\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.21\",\n                            \"protocol\": \"Internet\",\n                            \"hardware-addr\": \"5254.0006.fac4\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet2\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.22\",\n                            \"protocol\": \"Internet\",\n                            \"age-mins\": 14,\n                            \"hardware-addr\": \"5254.001e.8df0\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet2\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.25\",\n                            \"protocol\": \"Internet\",\n                            \"hardware-addr\": \"5254.0011.b889\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet3\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.26\",\n                            \"protocol\": \"Internet\",\n                            \"age-mins\": 14,\n                            \"hardware-addr\": \"5254.000e.674d\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet3\"\n                        },\n                        {\n                            \"ip\": \"172.16.252.9\",\n                            \"protocol\": \"Internet\",\n                            \"age-mins\": 13,\n                            \"hardware-addr\": \"5254.0014.429b\",\n                            \"type\": \"ARPA\",\n                            \"interface\": \"GigabitEthernet5\"\n                        }\n                    ],\n                    \"vrf\": [\n                        {\n                            \"name\": \"Mgmt-intf\",\n                            \"address\": [\n                                {\n                                    \"ip\": \"10.10.20.175\",\n                                    \"protocol\": \"Internet\",\n                                    \"hardware-addr\": \"5254.000b.ea2e\",\n                                    \"type\": \"ARPA\",\n                                    \"interface\": \"GigabitEthernet1\"\n                                },\n                                {\n                                    \"ip\": \"10.10.20.254\",\n                                    \"protocol\": \"Internet\",\n                                    \"age-mins\": 16,\n                                    \"hardware-addr\": \"0050.56bf.3ad3\",\n                                    \"type\": \"ARPA\",\n                                    \"interface\": \"GigabitEthernet1\"\n                                },\n                                {\n                                    \"ip\": \"10.10.20.49\",\n                                    \"protocol\": \"Internet\",\n                                    \"age-mins\": 2,\n                                    \"hardware-addr\": \"0050.56bf.e6b4\",\n                                    \"type\": \"ARPA\",\n                                    \"interface\": \"GigabitEthernet1\"\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"tailf-ned-cisco-ios-stats:interfaces\": [\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"1\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"10.10.20.175/24\",\n                        \"mac-address\": \"5254.000b.ea2e\"\n                    },\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"2\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"172.16.252.21/30\",\n                        \"mac-address\": \"5254.0006.fac4\"\n                    },\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"3\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"172.16.252.25/30\",\n                        \"mac-address\": \"5254.0011.b889\"\n                    },\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"4\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"172.16.252.2/30\",\n                        \"mac-address\": \"5254.0012.bc1b\"\n                    },\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"5\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"172.16.252.10/30\",\n                        \"mac-address\": \"5254.0000.6a18\"\n                    },\n                    {\n                        \"type\": \"GigabitEthernet\",\n                        \"name\": \"6\",\n                        \"admin-status\": \"up\",\n                        \"ip-address\": \"172.16.252.17/30\",\n                        \"mac-address\": \"5254.0015.57ca\"\n                    },\n                    {\n                        \"type\": \"Loopback\",\n                        \"name\": \"0\",\n                        \"admin-status\": \"down\"\n                    }\n                ],\n                \"tailf-ned-cisco-ios-stats:inventory\": [\n                    {\n                        \"name\": \"Chassis\",\n                        \"descr\": \"Cisco CSR1000V Chassis\",\n                        \"sn\": \"9UUZ5GU80EE\"\n                    },\n                    {\n                        \"name\": \"module F0\",\n                        \"descr\": \"Cisco CSR1000V Embedded Services Processor\"\n                    },\n                    {\n                        \"name\": \"module R0\",\n                        \"descr\": \"Cisco CSR1000V Route Processor\",\n                        \"sn\": \"JAB1303001C\"\n                    }\n                ],\n                \"tailf-ned-cisco-ios-stats:running-config\": {\n                    \"license\": {\n                        \"udi\": {\n                            \"pid\": \"CSR1000V\",\n                            \"sn\": \"9UUZ5GU80EE\"\n                        }\n                    }\n                },\n                \"tailf-ned-cisco-ios-stats:version\": {\n                    \"name\": \"ios\",\n                    \"version\": \"16.11.01b\",\n                    \"model\": \"CSR1000V\",\n                    \"serial-number\": \"9UUZ5GU80EE\",\n                    \"license\": {\n                        \"level\": \"ax\",\n                        \"type\": \"N/A(Smart\"\n                    }\n                },\n                \"tailf-ned-cisco-ios-stats:vrf\": [\n                    {\n                        \"name\": \"Mgmt-intf\"\n                    }\n                ],\n                \"ietf-yang-library:yang-library\": {\n                    \"module-set\": [\n                        {\n                            \"name\": \"common\",\n                            \"module\": [\n                                {\n                                    \"name\": \"ietf-interfaces\",\n                                    \"revision\": \"2014-05-08\",\n                                    \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-interfaces\",\n                                    \"feature\": [\n                                        \"arbitrary-names\",\n                                        \"if-mib\",\n                                        \"pre-provisioning\"\n                                    ]\n                                },\n                                {\n                                    \"name\": \"ietf-ip\",\n                                    \"revision\": \"2014-06-16\",\n                                    \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-ip\",\n                                    \"feature\": [\n                                        \"ipv4-non-contiguous-netmasks\",\n                                        \"ipv6-privacy-autoconf\"\n                                    ]\n                                },\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios\",\n                                    \"revision\": \"2020-02-14\",\n                                    \"namespace\": \"urn:ios\"\n                                },\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios-stats\",\n                                    \"namespace\": \"urn:ios-stats\"\n                                }\n                            ],\n                            \"import-only-module\": [\n                                {\n                                    \"name\": \"tailf-ned-cisco-ios-id\",\n                                    \"revision\": \"\",\n                                    \"namespace\": \"urn:ios-id\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"schema\": [\n                        {\n                            \"name\": \"common\",\n                            \"module-set\": [\n                                \"common\"\n                            ]\n                        }\n                    ],\n                    \"datastore\": [\n                        {\n                            \"name\": \"ietf-datastores:running\",\n                            \"schema\": \"common\"\n                        },\n                        {\n                            \"name\": \"ietf-datastores:intended\",\n                            \"schema\": \"common\"\n                        },\n                        {\n                            \"name\": \"ietf-datastores:operational\",\n                            \"schema\": \"common\"\n                        }\n                    ],\n                    \"content-id\": \"6997dfc36a18679f43c55c43b7873b15\"\n                },\n                \"ietf-yang-library:modules-state\": {\n                    \"module-set-id\": \"6997dfc36a18679f43c55c43b7873b15\",\n                    \"module\": [\n                        {\n                            \"name\": \"ietf-interfaces\",\n                            \"revision\": \"2014-05-08\",\n                            \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-interfaces\",\n                            \"feature\": [\n                                \"arbitrary-names\",\n                                \"if-mib\",\n                                \"pre-provisioning\"\n                            ],\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"ietf-ip\",\n                            \"revision\": \"2014-06-16\",\n                            \"namespace\": \"urn:ietf:params:xml:ns:yang:ietf-ip\",\n                            \"feature\": [\n                                \"ipv4-non-contiguous-netmasks\",\n                                \"ipv6-privacy-autoconf\"\n                            ],\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios\",\n                            \"revision\": \"2020-02-14\",\n                            \"namespace\": \"urn:ios\",\n                            \"conformance-type\": \"implement\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios-id\",\n                            \"revision\": \"\",\n                            \"namespace\": \"urn:ios-id\",\n                            \"conformance-type\": \"import\"\n                        },\n                        {\n                            \"name\": \"tailf-ned-cisco-ios-stats\",\n                            \"revision\": \"\",\n                            \"namespace\": \"urn:ios-stats\",\n                            \"conformance-type\": \"implement\"\n                        }\n                    ]\n                }\n            },\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        }\n    ]\n}"
-						},
-						{
-							"name": "Failure: not found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device=dist-rtr01"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:07:43 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=UTF-8"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": null
 						}
 					]
 				},
@@ -951,7 +951,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "91b23dc4-8c4e-4341-91c1-59e256b50355",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -961,15 +960,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "36c326b2-6ead-4a4f-bd7b-ff264e3c2b5a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Device Management",
@@ -1016,79 +1013,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: not found",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device=dist-rtr01"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:02:09 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=UTF-8"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -1164,7 +1088,80 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 13:02:09 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				},
@@ -1218,87 +1215,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/yang-data+json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"dist-rtr01\",\n  \"address\": \"10.10.20.175\",\n  \"ssh\": {\n      \"host-key-verification\": \"none\"\n  },\n  \"authgroup\": \"labadmin\",\n  \"device-type\": {\n      \"cli\": {\n          \"ned-id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\",\n          \"protocol\": \"telnet\"\n      }\n  },\n  \"state\": {\n      \"oper-state\": \"enabled\",\n      \"transaction-mode\": \"ned\",\n      \"admin-state\": \"unlocked\"\n  }\n}"
-								},
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:05:53 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "256"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"unknown element: name in /ncs:devices/ncs:name\",\n                \"error-path\": \"/tailf-ncs:devices\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -1390,7 +1306,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: already exists",
@@ -1472,6 +1388,87 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:devices/ncs:device[ncs:name='dist-rtr01']\",\n                \"error-path\": \"/tailf-ncs:devices\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dist-rtr01\",\n  \"address\": \"10.10.20.175\",\n  \"ssh\": {\n      \"host-key-verification\": \"none\"\n  },\n  \"authgroup\": \"labadmin\",\n  \"device-type\": {\n      \"cli\": {\n          \"ned-id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\",\n          \"protocol\": \"telnet\"\n      }\n  },\n  \"state\": {\n      \"oper-state\": \"enabled\",\n      \"transaction-mode\": \"ned\",\n      \"admin-state\": \"unlocked\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 13:05:53 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"unknown element: name in /ncs:devices/ncs:name\",\n                \"error-path\": \"/tailf-ncs:devices\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1735,7 +1732,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: invalid protocol",
@@ -2191,8 +2188,7 @@
 						}
 					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Device Groups",
@@ -2239,87 +2235,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success: after distro group",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device-group",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device-group"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 14:16:09 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Mon, 14 Sep 2020 14:15:50 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Etag",
-									"value": "\"1600-92950-362823\""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"tailf-ncs:device-group\": [\n        {\n            \"name\": \"ALL\",\n            \"device-group\": [\n                \"ASA-DEVICES\",\n                \"IOS-DEVICES\",\n                \"NXOS-DEVICES\",\n                \"XR-DEVICES\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\",\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"dist-sw01\",\n                \"dist-sw02\",\n                \"edge-firewall01\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                },\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                },\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                },\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"ASA-DEVICES\",\n            \"device-name\": [\n                \"edge-firewall01\"\n            ],\n            \"member\": [\n                \"edge-firewall01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"DISTRO-ONLY\",\n            \"device-name\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\"\n            ],\n            \"member\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"IOS-DEVICES\",\n            \"device-name\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"member\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"NXOS-DEVICES\",\n            \"device-name\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"member\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"XR-DEVICES\",\n            \"device-name\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        }\n    ]\n}"
-						},
 						{
 							"name": "Success: before distro group",
 							"originalRequest": {
@@ -2400,6 +2315,87 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"tailf-ncs:device-group\": [\n        {\n            \"name\": \"ALL\",\n            \"device-group\": [\n                \"ASA-DEVICES\",\n                \"IOS-DEVICES\",\n                \"NXOS-DEVICES\",\n                \"XR-DEVICES\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\",\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"dist-sw01\",\n                \"dist-sw02\",\n                \"edge-firewall01\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                },\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                },\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                },\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"ASA-DEVICES\",\n            \"device-name\": [\n                \"edge-firewall01\"\n            ],\n            \"member\": [\n                \"edge-firewall01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"IOS-DEVICES\",\n            \"device-name\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"member\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"NXOS-DEVICES\",\n            \"device-name\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"member\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"XR-DEVICES\",\n            \"device-name\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success: after distro group",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device-group",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device-group"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 14:16:09 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 14 Sep 2020 14:15:50 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-92950-362823\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ncs:device-group\": [\n        {\n            \"name\": \"ALL\",\n            \"device-group\": [\n                \"ASA-DEVICES\",\n                \"IOS-DEVICES\",\n                \"NXOS-DEVICES\",\n                \"XR-DEVICES\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\",\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"dist-sw01\",\n                \"dist-sw02\",\n                \"edge-firewall01\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                },\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                },\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                },\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"ASA-DEVICES\",\n            \"device-name\": [\n                \"edge-firewall01\"\n            ],\n            \"member\": [\n                \"edge-firewall01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"DISTRO-ONLY\",\n            \"device-name\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\"\n            ],\n            \"member\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"IOS-DEVICES\",\n            \"device-name\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"member\": [\n                \"dist-rtr01\",\n                \"dist-rtr02\",\n                \"internet-rtr01\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"NXOS-DEVICES\",\n            \"device-name\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"member\": [\n                \"dist-sw01\",\n                \"dist-sw02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        },\n        {\n            \"name\": \"XR-DEVICES\",\n            \"device-name\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"member\": [\n                \"core-rtr01\",\n                \"core-rtr02\"\n            ],\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\"\n                }\n            ],\n            \"tailf-ncs-alarms:alarm-summary\": {\n                \"indeterminates\": 0,\n                \"criticals\": 0,\n                \"majors\": 0,\n                \"minors\": 0,\n                \"warnings\": 0\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -2516,7 +2512,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Success",
@@ -2752,7 +2748,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: already exists",
@@ -2959,7 +2955,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: not found",
@@ -3032,12 +3028,11 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Config Management",
@@ -3190,6 +3185,90 @@
 							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:devices/ncs:device[ncs:name='dist-rtr01']/ncs:config/ios:interface/ios:Loopback[ios:name='42518']\",\n                \"error-path\": \"/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
 						},
 						{
+							"name": "Failure: bad content-type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Loopback\": [\n        {\n            \"name\": \"42518\",\n            \"description\": \"RESTCONF TEST LOOPBACK\",\n            \"ip\": {\n                \"address\": {\n                    \"primary\": {\n                        \"address\": \"203.0.113.99\",\n                        \"mask\": \"255.255.255.255\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01",
+										"config",
+										"tailf-ned-cisco-ios:interface"
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 13:35:47 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "281"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"Unsupported media type: application/json ; Should be one of: application/yang-data+xml, application/yang-data+json.\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -3288,91 +3367,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
-						},
-						{
-							"name": "Failure: bad content-type",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"Loopback\": [\n        {\n            \"name\": \"42518\",\n            \"description\": \"RESTCONF TEST LOOPBACK\",\n            \"ip\": {\n                \"address\": {\n                    \"primary\": {\n                        \"address\": \"203.0.113.99\",\n                        \"mask\": \"255.255.255.255\"\n                    }\n                }\n            }\n        }\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device=dist-rtr01",
-										"config",
-										"tailf-ned-cisco-ios:interface"
-									]
-								}
-							},
-							"status": "Unsupported Media Type",
-							"code": 415,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:35:47 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "281"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"Unsupported media type: application/json ; Should be one of: application/yang-data+xml, application/yang-data+json.\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+							"body": ""
 						}
 					]
 				},
@@ -3444,7 +3439,7 @@
 					},
 					"response": [
 						{
-							"name": "Success: true commit",
+							"name": "Success: 99 to 100",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -3469,7 +3464,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=42518/ip",
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=42518/ip?dry-run=native",
 									"protocol": "https",
 									"host": [
 										"{{nso_premade}}"
@@ -3488,23 +3483,22 @@
 										{
 											"key": "dry-run",
 											"value": "native",
-											"description": "uncheck to actually commit",
-											"disabled": true
+											"description": "uncheck to actually commit"
 										}
 									]
 								}
 							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "html",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:47:44 GMT"
+									"value": "Mon, 14 Sep 2020 13:47:25 GMT"
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 14 Sep 2020 13:47:44 GMT"
+									"value": "Mon, 14 Sep 2020 13:36:12 GMT"
 								},
 								{
 									"key": "Cache-Control",
@@ -3512,11 +3506,15 @@
 								},
 								{
 									"key": "Etag",
-									"value": "\"1600-91264-345123\""
+									"value": "\"1600-90572-167270\""
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
 								},
 								{
 									"key": "Content-Type",
-									"value": "text/html; charset=UTF-8"
+									"value": "application/yang-data+json"
 								},
 								{
 									"key": "Pragma",
@@ -3544,7 +3542,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": "{\n    \"dry-run-result\": {\n        \"native\": {\n            \"device\": [\n                {\n                    \"name\": \"dist-rtr01\",\n                    \"data\": \"interface Loopback42518\\n ip address 203.0.113.100 255.255.255.255\\nexit\\n\"\n                }\n            ]\n        }\n    }\n}"
 						},
 						{
 							"name": "Success: no change",
@@ -3750,7 +3748,7 @@
 							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"unknown element: ip in /ncs:devices/ncs:device[ncs:name='dist-rtr01']/ncs:config/ios:interface/ios:ip\",\n                \"error-path\": \"/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=42518\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
 						},
 						{
-							"name": "Success: 99 to 100",
+							"name": "Success: true commit",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -3775,7 +3773,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=42518/ip?dry-run=native",
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface/Loopback=42518/ip",
 									"protocol": "https",
 									"host": [
 										"{{nso_premade}}"
@@ -3794,22 +3792,23 @@
 										{
 											"key": "dry-run",
 											"value": "native",
-											"description": "uncheck to actually commit"
+											"description": "uncheck to actually commit",
+											"disabled": true
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:47:25 GMT"
+									"value": "Mon, 14 Sep 2020 13:47:44 GMT"
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 14 Sep 2020 13:36:12 GMT"
+									"value": "Mon, 14 Sep 2020 13:47:44 GMT"
 								},
 								{
 									"key": "Cache-Control",
@@ -3817,15 +3816,11 @@
 								},
 								{
 									"key": "Etag",
-									"value": "\"1600-90572-167270\""
-								},
-								{
-									"key": "Content-Length",
-									"value": "160"
+									"value": "\"1600-91264-345123\""
 								},
 								{
 									"key": "Content-Type",
-									"value": "application/yang-data+json"
+									"value": "text/html; charset=UTF-8"
 								},
 								{
 									"key": "Pragma",
@@ -3853,7 +3848,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"dry-run-result\": {\n        \"native\": {\n            \"device\": [\n                {\n                    \"name\": \"dist-rtr01\",\n                    \"data\": \"interface Loopback42518\\n ip address 203.0.113.100 255.255.255.255\\nexit\\n\"\n                }\n            ]\n        }\n    }\n}"
+							"body": ""
 						}
 					]
 				},
@@ -3997,7 +3992,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Success: dry run",
@@ -4145,7 +4140,7 @@
 					},
 					"response": [
 						{
-							"name": "Success: after edit",
+							"name": "Success: after delete",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -4178,33 +4173,21 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "No Content",
+							"code": 204,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:50:36 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Mon, 14 Sep 2020 13:50:27 GMT"
+									"value": "Mon, 14 Sep 2020 13:49:35 GMT"
 								},
 								{
 									"key": "Cache-Control",
 									"value": "private, no-cache, must-revalidate, proxy-revalidate"
 								},
 								{
-									"key": "Etag",
-									"value": "\"1600-91427-654292\""
-								},
-								{
 									"key": "Content-Type",
 									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
 								},
 								{
 									"key": "Pragma",
@@ -4232,7 +4215,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"tailf-ned-cisco-ios:ip\": {\n        \"address\": {\n            \"primary\": {\n                \"address\": \"203.0.113.100\",\n                \"mask\": \"255.255.255.255\"\n            }\n        }\n    }\n}"
+							"body": ""
 						},
 						{
 							"name": "Success: after add",
@@ -4325,7 +4308,7 @@
 							"body": "{\n    \"tailf-ned-cisco-ios:ip\": {\n        \"address\": {\n            \"primary\": {\n                \"address\": \"203.0.113.99\",\n                \"mask\": \"255.255.255.255\"\n            }\n        }\n    }\n}"
 						},
 						{
-							"name": "Success: after delete",
+							"name": "Success: after edit",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -4358,21 +4341,33 @@
 									]
 								}
 							},
-							"status": "No Content",
-							"code": 204,
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Sep 2020 13:49:35 GMT"
+									"value": "Mon, 14 Sep 2020 13:50:36 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 14 Sep 2020 13:50:27 GMT"
 								},
 								{
 									"key": "Cache-Control",
 									"value": "private, no-cache, must-revalidate, proxy-revalidate"
 								},
 								{
+									"key": "Etag",
+									"value": "\"1600-91427-654292\""
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
 								},
 								{
 									"key": "Pragma",
@@ -4400,7 +4395,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": "{\n    \"tailf-ned-cisco-ios:ip\": {\n        \"address\": {\n            \"primary\": {\n                \"address\": \"203.0.113.100\",\n                \"mask\": \"255.255.255.255\"\n            }\n        }\n    }\n}"
 						}
 					]
 				},
@@ -4459,6 +4454,92 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tailf-ncs:template\": [\n        {\n            \"name\": \"SET-DNS-SERVER\",\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\",\n                    \"config\": {\n                        \"tailf-ned-cisco-ios-xr:domain\": {\n                            \"name-server\": [\n                                {\n                                    \"address\": \"208.67.222.222\"\n                                },\n                                {\n                                    \"address\": \"208.67.220.220\"\n                                }\n                            ]\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\",\n                    \"config\": {\n                        \"tailf-ned-cisco-asa:dns\": {\n                            \"domain-lookup\": [\n                                {\n                                    \"name\": \"mgmt\"\n                                }\n                            ],\n                            \"server-group\": [\n                                {\n                                    \"name\": \"DefaultDNS\",\n                                    \"name-server\": [\n                                        \"208.67.220.220\",\n                                        \"208.67.222.222\"\n                                    ]\n                                }\n                            ]\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\",\n                    \"config\": {\n                        \"tailf-ned-cisco-ios:ip\": {\n                            \"name-server\": {\n                                \"name-server-list\": [\n                                    {\n                                        \"address\": \"208.67.222.222\"\n                                    },\n                                    {\n                                        \"address\": \"208.67.220.220\"\n                                    }\n                                ]\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\",\n                    \"config\": {\n                        \"tailf-ned-cisco-nx:ip\": {\n                            \"name-server\": {\n                                \"servers\": [\n                                    \"208.67.222.222\",\n                                    \"208.67.220.220\"\n                                ]\n                            }\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 14:06:35 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:devices/ncs:template[ncs:name='SET-DNS-SERVER']\",\n                \"error-path\": \"/tailf-ncs:devices\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -4555,93 +4636,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
-						},
-						{
-							"name": "Failure: already exists",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/yang-data+json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"tailf-ncs:template\": [\n        {\n            \"name\": \"SET-DNS-SERVER\",\n            \"ned-id\": [\n                {\n                    \"id\": \"cisco-iosxr-cli-7.20:cisco-iosxr-cli-7.20\",\n                    \"config\": {\n                        \"tailf-ned-cisco-ios-xr:domain\": {\n                            \"name-server\": [\n                                {\n                                    \"address\": \"208.67.222.222\"\n                                },\n                                {\n                                    \"address\": \"208.67.220.220\"\n                                }\n                            ]\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-asa-cli-6.8:cisco-asa-cli-6.8\",\n                    \"config\": {\n                        \"tailf-ned-cisco-asa:dns\": {\n                            \"domain-lookup\": [\n                                {\n                                    \"name\": \"mgmt\"\n                                }\n                            ],\n                            \"server-group\": [\n                                {\n                                    \"name\": \"DefaultDNS\",\n                                    \"name-server\": [\n                                        \"208.67.220.220\",\n                                        \"208.67.222.222\"\n                                    ]\n                                }\n                            ]\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-ios-cli-6.44:cisco-ios-cli-6.44\",\n                    \"config\": {\n                        \"tailf-ned-cisco-ios:ip\": {\n                            \"name-server\": {\n                                \"name-server-list\": [\n                                    {\n                                        \"address\": \"208.67.222.222\"\n                                    },\n                                    {\n                                        \"address\": \"208.67.220.220\"\n                                    }\n                                ]\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": \"cisco-nx-cli-5.15:cisco-nx-cli-5.15\",\n                    \"config\": {\n                        \"tailf-ned-cisco-nx:ip\": {\n                            \"name-server\": {\n                                \"servers\": [\n                                    \"208.67.222.222\",\n                                    \"208.67.220.220\"\n                                ]\n                            }\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:devices",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices"
-									]
-								}
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 14:06:35 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "279"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:devices/ncs:template[ncs:name='SET-DNS-SERVER']\",\n                \"error-path\": \"/tailf-ncs:devices\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
+							"body": ""
 						},
 						{
 							"name": "Failure: internal error",
@@ -5113,8 +5108,7 @@
 						}
 					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Compliance Reporting",
@@ -5321,7 +5315,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -5381,93 +5375,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: already exists",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/yang-data+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"tailf-ncs:report\": [\n        {\n            \"name\": \"DNS-COMPLIANCE\",\n            \"compare-template\": [\n                {\n                    \"template-name\": \"SET-DNS-SERVER\",\n                    \"device-group\": \"DISTRO-ONLY\"\n                }\n            ]\n        }\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:compliance/reports",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:compliance",
-										"reports"
-									]
-								}
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 14:41:48 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "303"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:compliance/ncs:reports/ncs:report[ncs:name='DNS-COMPLIANCE']\",\n                \"error-path\": \"/tailf-ncs:compliance/reports\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -5565,7 +5472,94 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
+						},
+						{
+							"name": "Failure: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/yang-data+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tailf-ncs:report\": [\n        {\n            \"name\": \"DNS-COMPLIANCE\",\n            \"compare-template\": [\n                {\n                    \"template-name\": \"SET-DNS-SERVER\",\n                    \"device-group\": \"DISTRO-ONLY\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{nso_premade}}/restconf/data/tailf-ncs:compliance/reports",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:compliance",
+										"reports"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 14:41:48 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"object already exists: /ncs:compliance/ncs:reports/ncs:report[ncs:name='DNS-COMPLIANCE']\",\n                \"error-path\": \"/tailf-ncs:compliance/reports\",\n                \"error-tag\": \"data-exists\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -5882,93 +5876,9 @@
 								}
 							},
 							"_postman_previewlanguage": "html",
-							"header": null,
+							"header": [],
 							"cookie": [],
 							"body": "<html>\n    <head>\n        <style>h1 {margin: 20;} h2 {margin: 0.6em 60 0.6em;} h3 {margin: 0.5em 100 0.5em;} h4,h5,h6 {margin: 0.5em 140 0.5em;} pre,p,table {margin: 0.4em 140 0.4em;}</style>\n    </head>\n    <body>\n        <meta name=\"ncs\" content=\"reportcookie : g2gCbQAAAABtAAAADkROUy1DT01QTElBTkNF\">\n        <h1></h1>\n        <p>Publication date : 2020-9-14 7:52:20</p>\n        <p>Produced by user : developer</p>\n        <h1>\n            <h1>Summary</h1>\n            <p>Compliance result titled \"\" defined by report \"DNS-COMPLIANCE\"</p>\n            <p>Resulting in \n                <b>violations</b>\n            </p>\n            <p>Checking 2 devices and no services</p>\n            <p>Produced 2020-9-14 7:52:20</p>\n            <p>From : Oldest available information</p>\n            <p>To : 2020-9-14 7:52:20</p>\n            <h2>Template discrepancies</h2>\n            <h3>SET-DNS-SERVER</h3>\n            <p>Discrepancies in device</p>\n            <p>dist-rtr01</p>\n        </h1>\n        <h1>\n            <h1>Details</h1>\n            <h2>Template discrepancies details</h2>\n            <h3>SET-DNS-SERVER</h3>\n            <h4>Device dist-rtr01</h4>\n            <pre> config {\n     ip {\n         name-server {\n+            # first\n+            name-server-list 208.67.222.222;\n+            name-server-list 208.67.220.220;\n         }\n     }\n }\n</pre>\n        </h1>\n    </body>\n</html>"
-						},
-						{
-							"name": "Report text: xml",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/yang-data+json"
-									}
-								],
-								"url": {
-									"raw": "https://{{nso_premade}}/compliance-reports/report_2_developer_0_2020-9-14T7:48:37:0.xml",
-									"protocol": "https",
-									"host": [
-										"{{nso_premade}}"
-									],
-									"path": [
-										"compliance-reports",
-										"report_2_developer_0_2020-9-14T7:48:37:0.xml"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 14:50:58 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Mon, 14 Sep 2020 14:43:46 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Etag",
-									"value": "\"1600-94626-216564\""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<article xmlns=\"http://docbook.org/ns/docbook\" version=\"5.0\">\n    <articleinfo>\n        <modespec>\n            <![CDATA[reportcookie : g2gCbQAAAABtAAAADkROUy1DT01QTElBTkNF]]>\n        </modespec>\n    </articleinfo>\n    <info>\n        <title />\n        <pubdate>2020-9-14 7:48:37</pubdate>\n        <author>\n            <firstname>developer</firstname>\n        </author>\n    </info>\n    <sect1>\n        <title>Summary</title>\n        <para>Compliance result titled \"\" defined by report \"DNS-COMPLIANCE\"</para>\n        <para>\n      Resulting in\n      \n            <command>no-violation</command>\n        </para>\n        <para>Checking 2 devices and no services</para>\n        <para>Produced 2020-9-14 7:48:37</para>\n        <para>From : Oldest available information</para>\n        <para>To : 2020-9-14 7:48:37</para>\n        <sect2>\n            <title>Template discrepancies</title>\n            <sect3>\n                <title>SET-DNS-SERVER</title>\n                <para>No discrepancies found</para>\n            </sect3>\n        </sect2>\n    </sect1>\n    <sect1>\n        <title>Details</title>\n        <sect2>\n            <title>Template discrepancies details</title>\n            <sect3>\n                <title>SET-DNS-SERVER</title>\n                <para>No device diffs found</para>\n            </sect3>\n        </sect2>\n    </sect1>\n</article>"
 						},
 						{
 							"name": "Success: result items",
@@ -6055,6 +5965,90 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"tailf-ncs:report-results\": {\n        \"report\": [\n            {\n                \"id\": 1,\n                \"name\": \"DNS-COMPLIANCE\",\n                \"title\": \"\",\n                \"time\": \"2020-09-14T07:45:09+00:00\",\n                \"who\": \"developer\",\n                \"compliance-status\": \"no-violation\",\n                \"location\": \"https://localhost:443/compliance-reports/report_1_developer_0_2020-9-14T7:45:9:0.html\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"DNS-COMPLIANCE\",\n                \"title\": \"\",\n                \"time\": \"2020-09-14T07:48:37+00:00\",\n                \"who\": \"developer\",\n                \"compliance-status\": \"no-violation\",\n                \"location\": \"https://localhost:443/compliance-reports/report_2_developer_0_2020-9-14T7:48:37:0.xml\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Report text: xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{nso_premade}}/compliance-reports/report_2_developer_0_2020-9-14T7:48:37:0.xml",
+									"protocol": "https",
+									"host": [
+										"{{nso_premade}}"
+									],
+									"path": [
+										"compliance-reports",
+										"report_2_developer_0_2020-9-14T7:48:37:0.xml"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 14:50:58 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 14 Sep 2020 14:43:46 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-94626-216564\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<article xmlns=\"http://docbook.org/ns/docbook\" version=\"5.0\">\n    <articleinfo>\n        <modespec>\n            <![CDATA[reportcookie : g2gCbQAAAABtAAAADkROUy1DT01QTElBTkNF]]>\n        </modespec>\n    </articleinfo>\n    <info>\n        <title />\n        <pubdate>2020-9-14 7:48:37</pubdate>\n        <author>\n            <firstname>developer</firstname>\n        </author>\n    </info>\n    <sect1>\n        <title>Summary</title>\n        <para>Compliance result titled \"\" defined by report \"DNS-COMPLIANCE\"</para>\n        <para>\n      Resulting in\n      \n            <command>no-violation</command>\n        </para>\n        <para>Checking 2 devices and no services</para>\n        <para>Produced 2020-9-14 7:48:37</para>\n        <para>From : Oldest available information</para>\n        <para>To : 2020-9-14 7:48:37</para>\n        <sect2>\n            <title>Template discrepancies</title>\n            <sect3>\n                <title>SET-DNS-SERVER</title>\n                <para>No discrepancies found</para>\n            </sect3>\n        </sect2>\n    </sect1>\n    <sect1>\n        <title>Details</title>\n        <sect2>\n            <title>Template discrepancies details</title>\n            <sect3>\n                <title>SET-DNS-SERVER</title>\n                <para>No device diffs found</para>\n            </sect3>\n        </sect2>\n    </sect1>\n</article>"
 						}
 					]
 				},
@@ -6177,7 +6171,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: not found",
@@ -6251,12 +6245,11 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Loopback Service",
@@ -6405,7 +6398,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -6598,7 +6591,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -6776,79 +6769,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: not found",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/loopback-service:loopback-service=ANYCAST",
-									"protocol": "{{proto}}",
-									"host": [
-										"{{nso}}"
-									],
-									"port": "{{port}}",
-									"path": [
-										"restconf",
-										"data",
-										"loopback-service:loopback-service=ANYCAST"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 14 Sep 2020 15:46:43 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=UTF-8"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "DELETE",
@@ -6923,7 +6843,80 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/loopback-service:loopback-service=ANYCAST",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"loopback-service:loopback-service=ANYCAST"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Sep 2020 15:46:43 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
@@ -6933,7 +6926,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9e5d1afa-d8f2-4451-a67c-6466f591ddd0",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -6943,15 +6935,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "467e52e6-0196-4902-83d6-44e25874ea84",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "RADIUS Service",
@@ -7012,94 +7002,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: invalid auth port",
-							"originalRequest": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/yang-data+json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 9988888,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
-									"protocol": "{{proto}}",
-									"host": [
-										"{{nso}}"
-									],
-									"port": "{{port}}",
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:services",
-										"radius-service:radius-service"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 15 Sep 2020 13:09:40 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "416"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"invalid value for: auth in /ncs:services/radius-service:radius-service[radius-service:region='AMER']/radius-service:port/radius-service:auth: \\\"9988888\\\" is not a valid value.\",\n                \"error-path\": \"/tailf-ncs:services/radius-service:radius-service\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -7190,7 +7092,95 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
+						},
+						{
+							"name": "Failure: invalid auth port",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 9988888,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:09:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"error\": [\n            {\n                \"error-message\": \"invalid value for: auth in /ncs:services/radius-service:radius-service[radius-service:region='AMER']/radius-service:port/radius-service:auth: \\\"9988888\\\" is not a valid value.\",\n                \"error-path\": \"/tailf-ncs:services/radius-service:radius-service\",\n                \"error-tag\": \"malformed-message\",\n                \"error-type\": \"application\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -7340,7 +7330,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Failure: device out of sync",
@@ -7603,90 +7593,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: AMER",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:radius",
-									"protocol": "{{proto}}",
-									"host": [
-										"{{nso}}"
-									],
-									"port": "{{port}}",
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:devices",
-										"device=dist-rtr01",
-										"config",
-										"tailf-ned-cisco-ios:radius"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 15 Sep 2020 13:14:45 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Etag",
-									"value": "\"1600-175500-261554\""
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/yang-data+json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"tailf-ned-cisco-ios:radius\": {\n        \"server\": [\n            {\n                \"id\": \"AMER\",\n                \"address\": {\n                    \"ipv4\": {\n                        \"host\": \"192.0.2.55\",\n                        \"auth-port\": 998,\n                        \"acct-port\": 999\n                    }\n                }\n            }\n        ]\n    }\n}"
-						},
-						{
 							"name": "Success: EMEA",
 							"originalRequest": {
 								"method": "GET",
@@ -7769,6 +7675,90 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"tailf-ned-cisco-ios:radius\": {\n        \"server\": [\n            {\n                \"id\": \"EMEA\",\n                \"address\": {\n                    \"ipv4\": {\n                        \"host\": \"192.0.2.56\",\n                        \"auth-port\": 1812,\n                        \"acct-port\": 1813\n                    }\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success: AMER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:radius",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=dist-rtr01",
+										"config",
+										"tailf-ned-cisco-ios:radius"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:14:45 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 15 Sep 2020 13:11:40 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1600-175500-261554\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios:radius\": {\n        \"server\": [\n            {\n                \"id\": \"AMER\",\n                \"address\": {\n                    \"ipv4\": {\n                        \"host\": \"192.0.2.55\",\n                        \"auth-port\": 998,\n                        \"acct-port\": 999\n                    }\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -7814,6 +7804,80 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"radius-service:radius-service=EMEA"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 13:16:33 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
 						{
 							"name": "Success: EMEA",
 							"originalRequest": {
@@ -7890,7 +7954,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						},
 						{
 							"name": "Success: AMER",
@@ -7968,81 +8032,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
-						},
-						{
-							"name": "Failure: not found",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
-									}
-								],
-								"url": {
-									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
-									"protocol": "{{proto}}",
-									"host": [
-										"{{nso}}"
-									],
-									"port": "{{port}}",
-									"path": [
-										"restconf",
-										"data",
-										"tailf-ncs:services",
-										"radius-service:radius-service=EMEA"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 15 Sep 2020 13:16:33 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, must-revalidate, proxy-revalidate"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=UTF-8"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				}
@@ -8052,7 +8042,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5a76a22f-63c6-4dad-8780-5110dbf45ddb",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -8062,16 +8051,33 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b5d89a28-7643-4371-8ddb-805584c5f5fd",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
-	"protocolProfileBehavior": {}
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }

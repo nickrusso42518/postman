@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "e2503f8c-f3de-422a-a28e-1bffa97d74b2",
-		"name": "Cisco DNAC for ENAUTO",
+		"_postman_id": "d3b4d8ce-d56f-4a99-8e8e-52771d728679",
+		"name": "Cisco DNAC",
+		"description": "https://developer.cisco.com/docs/dna-center/api/1-3-3-x/",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -57,98 +58,6 @@
 						"description": "DNAC 1.2.6 and later"
 					},
 					"response": [
-						{
-							"name": "Failure",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/system/api/v1/auth/token",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"system",
-										"api",
-										"v1",
-										"auth",
-										"token"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "72"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 18 Jan 2020 12:13:33 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"Authentication has failed. Please provide valid credentials.\"\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -244,6 +153,98 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"Token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1YmU1NDBhNDA3MDBiMzAwNGMyNWVhOTgiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjViZTU0MGEzMDcwMGIzMDA0YzI1ZWE5NyJdLCJ0ZW5hbnRJZCI6IjViZTU0MGEyMDcwMGIzMDA0YzI1ZWE5NSIsImV4cCI6MTU3OTIxMzc0MSwiaWF0IjoxNTc5MjEwMTQxLCJqdGkiOiI1ZjQzYzBhMi1jYmVlLTQ1YjEtOThiYy1hMmIxMzlhYmM2N2IiLCJ1c2VybmFtZSI6ImFkbWluIn0.Vt4okOwFRGHTSYp-qx56XaFKeGEkSfygg9UQYLNXSwYpjXqQopRfoHuM2VkOuYFQrv6wDVQa-2v9Bl96C2V5bSusUrB4ax-EOXVGN8D_xVC5tFSadJvC11o7gIIaySb6YdeXZjWyOXfzWdThLKg2UbriM9mVZeiqiK6MTdyGR2FPIIUG60YmqRdQ5TiMQFICQNhrPzqQzkr8Ku5MNBTU8wW8T1M8nDpdFUKEgjVADUrDwdk9hz4NAo4XExQLKbOzmMmLhX3piMWbSFA2ZoYR1piR8rFxnWj3ANgj-6iGx7VBEeKA2z2qolgCrtWuC7d-HVZu04A2bqJyOgZtSV2D1A\"\n}"
+						},
+						{
+							"name": "Failure",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/system/api/v1/auth/token",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"system",
+										"api",
+										"v1",
+										"auth",
+										"token"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 12:13:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Authentication has failed. Please provide valid credentials.\"\n}"
 						}
 					]
 				},
@@ -434,7 +435,7 @@
 					},
 					"response": [
 						{
-							"name": "Success: add new device",
+							"name": "Command runner success",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -455,7 +456,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/task/f35d9448-a7d0-4a0a-873b-80ca62119e32",
+									"raw": "https://{{dnac}}/dna/intent/api/v1/task/530136f2-d0e8-439f-bc92-34f8a65bf3d9",
 									"protocol": "https",
 									"host": [
 										"{{dnac}}"
@@ -466,7 +467,7 @@
 										"api",
 										"v1",
 										"task",
-										"f35d9448-a7d0-4a0a-873b-80ca62119e32"
+										"530136f2-d0e8-439f-bc92-34f8a65bf3d9"
 									]
 								}
 							},
@@ -488,11 +489,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 17 Jan 2020 00:10:11 GMT"
+									"value": "Thu, 16 Jan 2020 21:44:59 GMT"
 								},
 								{
 									"key": "Set-Cookie",
-									"value": "JSESSIONID=1g8z6ze5wvbmwrvs11silqr5f;Path=/; Secure; HttpOnly; SameSite=Strict"
+									"value": "JSESSIONID=pf7huth0iuai16trjcsof15gs;Path=/; Secure; HttpOnly; SameSite=Strict"
 								},
 								{
 									"key": "Expires",
@@ -536,112 +537,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"startTime\": 1579219797635,\n        \"endTime\": 1579219797691,\n        \"version\": 1579219797635,\n        \"progress\": \"{\\\"url\\\":\\\"/task/f35d9448-a7d0-4a0a-873b-80ca62119e32/tree\\\"}\",\n        \"rootId\": \"f35d9448-a7d0-4a0a-873b-80ca62119e32\",\n        \"serviceType\": \"Inventory service\",\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"f35d9448-a7d0-4a0a-873b-80ca62119e32\"\n    },\n    \"version\": \"1.0\"\n}"
-						},
-						{
-							"name": "Path trace created success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "X-Auth-Token",
-										"value": "{{api_token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/task/5792d62a-ef0a-4504-a66e-229dfd2bb15f",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"task",
-										"5792d62a-ef0a-4504-a66e-229dfd2bb15f"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 22:48:00 GMT"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=1drdsqyrauo0lr6vnccirn2at;Path=/; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"startTime\": 1579214827243,\n        \"endTime\": 1579214829792,\n        \"version\": 1579214829624,\n        \"progress\": \"43af409c-bdf3-48f0-8731-69f4cb5c6abb\",\n        \"rootId\": \"5792d62a-ef0a-4504-a66e-229dfd2bb15f\",\n        \"serviceType\": \"Policy Analysis Service\",\n        \"lastUpdate\": 1579214829624,\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"5792d62a-ef0a-4504-a66e-229dfd2bb15f\"\n    },\n    \"version\": \"1.0\"\n}"
+							"body": "{\n    \"response\": {\n        \"startTime\": 1579211057903,\n        \"endTime\": 1579211059202,\n        \"version\": 1579211058830,\n        \"progress\": \"{\\\"fileId\\\":\\\"d891ce9a-360e-47f5-9bf9-4ef307d045de\\\"}\",\n        \"rootId\": \"530136f2-d0e8-439f-bc92-34f8a65bf3d9\",\n        \"serviceType\": \"Command Runner Service\",\n        \"lastUpdate\": 1579211058830,\n        \"isError\": false,\n        \"username\": \"admin\",\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"530136f2-d0e8-439f-bc92-34f8a65bf3d9\"\n    },\n    \"version\": \"1.0\"\n}"
 						},
 						{
 							"name": "Create template success",
@@ -749,216 +645,6 @@
 							"body": "{\n    \"response\": {\n        \"startTime\": 1579212612292,\n        \"endTime\": 1579212612792,\n        \"data\": \"ed52f79e-e391-4685-922a-77e3f34f20e2\",\n        \"version\": 1579212612292,\n        \"progress\": \"Successfully created template with name simple_temp\",\n        \"rootId\": \"f4e2a614-ed0a-4791-9c4e-92ff198d863d\",\n        \"serviceType\": \"NCTP\",\n        \"isError\": false,\n        \"username\": \"admin\",\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"f4e2a614-ed0a-4791-9c4e-92ff198d863d\"\n    },\n    \"version\": \"1.0\"\n}"
 						},
 						{
-							"name": "Command runner success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "X-Auth-Token",
-										"value": "{{api_token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/task/530136f2-d0e8-439f-bc92-34f8a65bf3d9",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"task",
-										"530136f2-d0e8-439f-bc92-34f8a65bf3d9"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 21:44:59 GMT"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=pf7huth0iuai16trjcsof15gs;Path=/; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"startTime\": 1579211057903,\n        \"endTime\": 1579211059202,\n        \"version\": 1579211058830,\n        \"progress\": \"{\\\"fileId\\\":\\\"d891ce9a-360e-47f5-9bf9-4ef307d045de\\\"}\",\n        \"rootId\": \"530136f2-d0e8-439f-bc92-34f8a65bf3d9\",\n        \"serviceType\": \"Command Runner Service\",\n        \"lastUpdate\": 1579211058830,\n        \"isError\": false,\n        \"username\": \"admin\",\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"530136f2-d0e8-439f-bc92-34f8a65bf3d9\"\n    },\n    \"version\": \"1.0\"\n}"
-						},
-						{
-							"name": "Discovery started success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "X-Auth-Token",
-										"value": "{{api_token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/task/0f7cbaad-d767-4788-afc9-37ef29ff94a6",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"task",
-										"0f7cbaad-d767-4788-afc9-37ef29ff94a6"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 22:22:20 GMT"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=9dad6wcb28t1xr67skve3guk;Path=/; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"startTime\": 1579213322018,\n        \"endTime\": 1579213324188,\n        \"version\": 1579213324182,\n        \"progress\": \"849\",\n        \"rootId\": \"0f7cbaad-d767-4788-afc9-37ef29ff94a6\",\n        \"serviceType\": \"Discovery Service\",\n        \"lastUpdate\": 1579213324182,\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"0f7cbaad-d767-4788-afc9-37ef29ff94a6\"\n    },\n    \"version\": \"1.0\"\n}"
-						},
-						{
 							"name": "Create template project success",
 							"originalRequest": {
 								"method": "GET",
@@ -1064,6 +750,216 @@
 							"body": "{\n    \"response\": {\n        \"startTime\": 1579212521405,\n        \"endTime\": 1579212521600,\n        \"data\": \"c79f12c6-fcae-4c25-a567-c5aefedfec88\",\n        \"version\": 1579212521405,\n        \"progress\": \"Successfully created project with name postman_proj\",\n        \"rootId\": \"981d0e57-e42c-4f6c-a270-0d79e91644bb\",\n        \"serviceType\": \"NCTP\",\n        \"isError\": false,\n        \"username\": \"admin\",\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"981d0e57-e42c-4f6c-a270-0d79e91644bb\"\n    },\n    \"version\": \"1.0\"\n}"
 						},
 						{
+							"name": "Path trace created success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Auth-Token",
+										"value": "{{api_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/task/5792d62a-ef0a-4504-a66e-229dfd2bb15f",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"task",
+										"5792d62a-ef0a-4504-a66e-229dfd2bb15f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 22:48:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=1drdsqyrauo0lr6vnccirn2at;Path=/; Secure; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"startTime\": 1579214827243,\n        \"endTime\": 1579214829792,\n        \"version\": 1579214829624,\n        \"progress\": \"43af409c-bdf3-48f0-8731-69f4cb5c6abb\",\n        \"rootId\": \"5792d62a-ef0a-4504-a66e-229dfd2bb15f\",\n        \"serviceType\": \"Policy Analysis Service\",\n        \"lastUpdate\": 1579214829624,\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"5792d62a-ef0a-4504-a66e-229dfd2bb15f\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "Success: add new device",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Auth-Token",
+										"value": "{{api_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/task/f35d9448-a7d0-4a0a-873b-80ca62119e32",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"task",
+										"f35d9448-a7d0-4a0a-873b-80ca62119e32"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Jan 2020 00:10:11 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=1g8z6ze5wvbmwrvs11silqr5f;Path=/; Secure; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"startTime\": 1579219797635,\n        \"endTime\": 1579219797691,\n        \"version\": 1579219797635,\n        \"progress\": \"{\\\"url\\\":\\\"/task/f35d9448-a7d0-4a0a-873b-80ca62119e32/tree\\\"}\",\n        \"rootId\": \"f35d9448-a7d0-4a0a-873b-80ca62119e32\",\n        \"serviceType\": \"Inventory service\",\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"f35d9448-a7d0-4a0a-873b-80ca62119e32\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
 							"name": "Versioned template",
 							"originalRequest": {
 								"method": "GET",
@@ -1167,6 +1063,111 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"response\": {\n        \"progress\": \"Successfully versioned template to version 2\",\n        \"endTime\": 1580512200184,\n        \"startTime\": 1580512200166,\n        \"data\": \"2\",\n        \"version\": 1580512200166,\n        \"serviceType\": \"NCTP\",\n        \"isError\": false,\n        \"username\": \"nickrus\",\n        \"rootId\": \"8f707c71-16d1-4bdd-941f-c2f55fc79f1c\",\n        \"instanceTenantId\": \"5a8d14f0ae788e008ec14ecb\",\n        \"id\": \"8f707c71-16d1-4bdd-941f-c2f55fc79f1c\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "Discovery started success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Auth-Token",
+										"value": "{{api_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/task/0f7cbaad-d767-4788-afc9-37ef29ff94a6",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"task",
+										"0f7cbaad-d767-4788-afc9-37ef29ff94a6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 22:22:20 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=9dad6wcb28t1xr67skve3guk;Path=/; Secure; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"startTime\": 1579213322018,\n        \"endTime\": 1579213324188,\n        \"version\": 1579213324182,\n        \"progress\": \"849\",\n        \"rootId\": \"0f7cbaad-d767-4788-afc9-37ef29ff94a6\",\n        \"serviceType\": \"Discovery Service\",\n        \"lastUpdate\": 1579213324182,\n        \"isError\": false,\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"0f7cbaad-d767-4788-afc9-37ef29ff94a6\"\n    },\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				},
@@ -1332,7 +1333,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d1ba689d-65fb-4675-9975-8bf91eaa215f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1342,15 +1342,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8df79ab2-41d9-422f-977d-58039822975e",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Network Discovery",
@@ -2161,107 +2159,6 @@
 					},
 					"response": [
 						{
-							"name": "CDP in progress",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/862",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"discovery",
-										"862"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=7166C2370BE07EEBE1F3BB62851E1C5F; Path=/apic-em-inventory-manager-service; HttpOnly; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 22:26:26 GMT"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"name\": \"using_cdp\",\n        \"discoveryType\": \"CDP\",\n        \"ipAddressList\": \"10.10.20.80\",\n        \"cdpLevel\": 1,\n        \"deviceIds\": \"86b2642f-cb36-496b-aeb4-cb04759cef99,4bfa2ba5-ef19-417a-b189-d28b8f84d9a4,47e0bd5c-e984-4324-ae2f-fd647c74cc65\",\n        \"passwordList\": \"\",\n        \"ipFilterList\": \"\",\n        \"snmpRoCommunity\": \"\",\n        \"snmpRwCommunity\": \"\",\n        \"protocolOrder\": \"ssh\",\n        \"discoveryCondition\": \"In Progress\",\n        \"discoveryStatus\": \"Active\",\n        \"timeOut\": 5,\n        \"numDevices\": 3,\n        \"retryCount\": 3,\n        \"isAutoCdp\": true,\n        \"globalCredentialIdList\": [\n            \"e65085f1-3a4b-47b7-af15-62b7d6088f5c\",\n            \"a1c7c1a8-006a-4023-890e-3807af319563\",\n            \"ae7bd26c-eab5-4d57-a8dc-c68fb06b3149\"\n        ],\n        \"preferredMgmtIPMethod\": \"None\",\n        \"id\": \"862\"\n    },\n    \"version\": \"1.0\"\n}"
-						},
-						{
 							"name": "IP range success",
 							"originalRequest": {
 								"method": "GET",
@@ -2462,6 +2359,107 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"response\": {\n        \"name\": \"using_cdp\",\n        \"discoveryType\": \"CDP\",\n        \"ipAddressList\": \"10.10.20.80\",\n        \"cdpLevel\": 1,\n        \"deviceIds\": \"86b2642f-cb36-496b-aeb4-cb04759cef99,4bfa2ba5-ef19-417a-b189-d28b8f84d9a4,47e0bd5c-e984-4324-ae2f-fd647c74cc65\",\n        \"passwordList\": \"\",\n        \"ipFilterList\": \"\",\n        \"snmpRoCommunity\": \"\",\n        \"snmpRwCommunity\": \"\",\n        \"protocolOrder\": \"ssh\",\n        \"discoveryCondition\": \"Complete\",\n        \"discoveryStatus\": \"Inactive\",\n        \"timeOut\": 5,\n        \"numDevices\": 3,\n        \"retryCount\": 3,\n        \"isAutoCdp\": true,\n        \"globalCredentialIdList\": [\n            \"e65085f1-3a4b-47b7-af15-62b7d6088f5c\",\n            \"a1c7c1a8-006a-4023-890e-3807af319563\",\n            \"ae7bd26c-eab5-4d57-a8dc-c68fb06b3149\"\n        ],\n        \"preferredMgmtIPMethod\": \"None\",\n        \"id\": \"862\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "CDP in progress",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/862",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"discovery",
+										"862"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=7166C2370BE07EEBE1F3BB62851E1C5F; Path=/apic-em-inventory-manager-service; HttpOnly; Secure; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 22:26:26 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"name\": \"using_cdp\",\n        \"discoveryType\": \"CDP\",\n        \"ipAddressList\": \"10.10.20.80\",\n        \"cdpLevel\": 1,\n        \"deviceIds\": \"86b2642f-cb36-496b-aeb4-cb04759cef99,4bfa2ba5-ef19-417a-b189-d28b8f84d9a4,47e0bd5c-e984-4324-ae2f-fd647c74cc65\",\n        \"passwordList\": \"\",\n        \"ipFilterList\": \"\",\n        \"snmpRoCommunity\": \"\",\n        \"snmpRwCommunity\": \"\",\n        \"protocolOrder\": \"ssh\",\n        \"discoveryCondition\": \"In Progress\",\n        \"discoveryStatus\": \"Active\",\n        \"timeOut\": 5,\n        \"numDevices\": 3,\n        \"retryCount\": 3,\n        \"isAutoCdp\": true,\n        \"globalCredentialIdList\": [\n            \"e65085f1-3a4b-47b7-af15-62b7d6088f5c\",\n            \"a1c7c1a8-006a-4023-890e-3807af319563\",\n            \"ae7bd26c-eab5-4d57-a8dc-c68fb06b3149\"\n        ],\n        \"preferredMgmtIPMethod\": \"None\",\n        \"id\": \"862\"\n    },\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				},
@@ -2507,108 +2505,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "CDP success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/862/network-device",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"discovery",
-										"862",
-										"network-device"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=536DEBA447C2D4B91AF3B1D48CD704D0; Path=/apic-em-inventory-manager-service; HttpOnly; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 22:33:04 GMT"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": [\n        {\n            \"hostname\": \"C3850-SW01.testlab.com\",\n            \"managementIpAddress\": \"10.10.20.80\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"86b2642f-cb36-496b-aeb4-cb04759cef99\"\n        },\n        {\n            \"hostname\": \"C9300-SW02\",\n            \"managementIpAddress\": \"10.10.20.82\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"4bfa2ba5-ef19-417a-b189-d28b8f84d9a4\"\n        },\n        {\n            \"hostname\": \"C9300-SW01\",\n            \"managementIpAddress\": \"10.10.20.81\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"47e0bd5c-e984-4324-ae2f-fd647c74cc65\"\n        },\n        {\n            \"managementIpAddress\": \"10.10.2.105\",\n            \"reachabilityStatus\": \"Unreachable\",\n            \"reachabilityFailureReason\": \"Device with ip 10.10.2.105 is ping reachable. SSH/Telnet not enabled on device or SSH/Telnet credentials are invalid hence can not configure SNMP.\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"FAILURE\",\n            \"cliStatus\": \"FAILURE\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"NOT-AVAILABLE\",\n            \"inventoryReachabilityStatus\": \"NOT-AVAILABLE\"\n        }\n    ],\n    \"version\": \"1.0\"\n}"
-						},
 						{
 							"name": "IP range success",
 							"originalRequest": {
@@ -2710,6 +2606,108 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"response\": [\n        {\n            \"hostname\": \"C9300-SW01\",\n            \"managementIpAddress\": \"10.10.20.81\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"47e0bd5c-e984-4324-ae2f-fd647c74cc65\"\n        },\n        {\n            \"hostname\": \"C9300-SW02\",\n            \"managementIpAddress\": \"10.10.20.82\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"4bfa2ba5-ef19-417a-b189-d28b8f84d9a4\"\n        },\n        {\n            \"hostname\": \"C3850-SW01.testlab.com\",\n            \"managementIpAddress\": \"10.10.20.80\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"86b2642f-cb36-496b-aeb4-cb04759cef99\"\n        },\n        {\n            \"hostname\": \"C3560X-SW02.testlab.com\",\n            \"managementIpAddress\": \"10.10.20.84\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"cbd28b13-41fe-457b-8b2f-b360bcc006d2\"\n        },\n        {\n            \"hostname\": \"C3560X-SW01\",\n            \"managementIpAddress\": \"10.10.20.83\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"3f875c23-58fc-4b3f-8c19-50a6540fe83a\"\n        }\n    ],\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "CDP success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/862/network-device",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"discovery",
+										"862",
+										"network-device"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=536DEBA447C2D4B91AF3B1D48CD704D0; Path=/apic-em-inventory-manager-service; HttpOnly; Secure; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 22:33:04 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": [\n        {\n            \"hostname\": \"C3850-SW01.testlab.com\",\n            \"managementIpAddress\": \"10.10.20.80\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"86b2642f-cb36-496b-aeb4-cb04759cef99\"\n        },\n        {\n            \"hostname\": \"C9300-SW02\",\n            \"managementIpAddress\": \"10.10.20.82\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"4bfa2ba5-ef19-417a-b189-d28b8f84d9a4\"\n        },\n        {\n            \"hostname\": \"C9300-SW01\",\n            \"managementIpAddress\": \"10.10.20.81\",\n            \"reachabilityStatus\": \"Success\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"SUCCESS\",\n            \"cliStatus\": \"SUCCESS\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"Managed\",\n            \"inventoryReachabilityStatus\": \"Reachable\",\n            \"id\": \"47e0bd5c-e984-4324-ae2f-fd647c74cc65\"\n        },\n        {\n            \"managementIpAddress\": \"10.10.2.105\",\n            \"reachabilityStatus\": \"Unreachable\",\n            \"reachabilityFailureReason\": \"Device with ip 10.10.2.105 is ping reachable. SSH/Telnet not enabled on device or SSH/Telnet credentials are invalid hence can not configure SNMP.\",\n            \"pingStatus\": \"SUCCESS\",\n            \"snmpStatus\": \"FAILURE\",\n            \"cliStatus\": \"FAILURE\",\n            \"httpStatus\": \"NOT-PROVIDED\",\n            \"netconfStatus\": \"NOT-PROVIDED\",\n            \"inventoryCollectionStatus\": \"NOT-AVAILABLE\",\n            \"inventoryReachabilityStatus\": \"NOT-AVAILABLE\"\n        }\n    ],\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				},
@@ -2863,7 +2861,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a35d8932-c2c1-4ac8-a80c-9e04d37224b4",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2873,15 +2870,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e6876c81-5e59-40a6-90bb-8bdb76ed4dbc",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Template Programmer",
@@ -3249,108 +3244,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure; missing mandatory data",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
-								},
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"template-programmer",
-										"template",
-										"preview"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 18 Jan 2020 11:46:38 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": \"hostname ROUTER1\\nip ssh version $ssh_ver\",\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"DATA_MISSING\",\n            \"message\": \"Mandatory param missing ssh_ver\"\n        }\n    ]\n}"
-						},
-						{
 							"name": "Failure; missing template ID",
 							"originalRequest": {
 								"method": "PUT",
@@ -3555,108 +3448,6 @@
 							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": null\n        }\n    ]\n}"
 						},
 						{
-							"name": "Failure; wrong data type",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": \"two\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
-								},
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"template-programmer",
-										"template",
-										"preview"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 18 Jan 2020 11:47:26 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": \"NCTP10031: Integer value is not passed to parameter ssh_ver\"\n        }\n    ]\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "PUT",
@@ -3765,6 +3556,210 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"templateId\": \"ed52f79e-e391-4685-922a-77e3f34f20e2\",\n    \"cliPreview\": \"hostname ROUTER1\\nip ssh version 2\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
+						},
+						{
+							"name": "Failure; wrong data type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": \"two\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:47:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": \"NCTP10031: Integer value is not passed to parameter ssh_ver\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure; missing mandatory data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:46:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": \"hostname ROUTER1\\nip ssh version $ssh_ver\",\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"DATA_MISSING\",\n            \"message\": \"Mandatory param missing ssh_ver\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -4078,108 +4073,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: if statement true",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"true\"\n    },\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\"\n}"
-								},
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"template-programmer",
-										"template",
-										"preview"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 18 Jan 2020 12:18:13 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
-						},
-						{
 							"name": "Success: if statement false",
 							"originalRequest": {
 								"method": "PUT",
@@ -4280,6 +4173,108 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"no ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
+						},
+						{
+							"name": "Success: if statement true",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"true\"\n    },\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 12:18:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
 						}
 					]
 				},
@@ -4582,6 +4577,210 @@
 					},
 					"response": [
 						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"unknown\": null,\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"deploy"
+									]
+								}
+							},
+							"status": "Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:11:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"errorCode\": \"UNEXPECTED_ERROR\",\n        \"message\": \"JSON parse error: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable; nested exception is com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable (5 known properties: \\\"type\\\", \\\"id\\\", \\\"versionedTemplateId\\\", \\\"params\\\", \\\"hostName\\\"])\\n at [Source: java.io.PushbackInputStream@2f0a337f; line: 6, column: 28] (through reference chain: com.cisco.apicem.template.programmer.service.dto.TemplateDeploymentInfo[\\\"targetInfo\\\"]->java.util.ArrayList[0]->com.cisco.apicem.template.programmer.service.dto.TargetInfo[\\\"unknown\\\"])\",\n        \"detail\": \"An error occurred while invoking a REST API\",\n        \"href\": \"\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "Success: already deployed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"deploy"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:11:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deploymentId\": \"Deployment of  Template: 317fabac-b5a2-458a-adf3-373b91c119bc.ApplicableTargets: [100.118.1.69],Template simple_temp:2 is already deployed with same params,. Not deploying it.None of the targets are applicable for the template. Hence not deploying\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"duration\": \"0 seconds\"\n}"
+						},
+						{
 							"name": "Success; first deploy",
 							"originalRequest": {
 								"method": "POST",
@@ -4690,210 +4889,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"deploymentId\": \"Deployment of  Template: 317fabac-b5a2-458a-adf3-373b91c119bc.ApplicableTargets: [100.118.1.69]Template Deployemnt Id: d5a0b0f2-6b75-4ff0-8789-08e3c3017a08\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"duration\": \"0 seconds\"\n}"
-						},
-						{
-							"name": "Success: already deployed",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
-								},
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"template-programmer",
-										"template",
-										"deploy"
-									]
-								}
-							},
-							"status": "Accepted",
-							"code": 202,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 31 Jan 2020 23:11:59 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.14.0 (Ubuntu)"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"deploymentId\": \"Deployment of  Template: 317fabac-b5a2-458a-adf3-373b91c119bc.ApplicableTargets: [100.118.1.69],Template simple_temp:2 is already deployed with same params,. Not deploying it.None of the targets are applicable for the template. Hence not deploying\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"duration\": \"0 seconds\"\n}"
-						},
-						{
-							"name": "Failure: bad body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"unknown\": null,\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
-								},
-								"url": {
-									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"intent",
-										"api",
-										"v1",
-										"template-programmer",
-										"template",
-										"deploy"
-									]
-								}
-							},
-							"status": "Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 31 Jan 2020 23:11:41 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.14.0 (Ubuntu)"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"errorCode\": \"UNEXPECTED_ERROR\",\n        \"message\": \"JSON parse error: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable; nested exception is com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable (5 known properties: \\\"type\\\", \\\"id\\\", \\\"versionedTemplateId\\\", \\\"params\\\", \\\"hostName\\\"])\\n at [Source: java.io.PushbackInputStream@2f0a337f; line: 6, column: 28] (through reference chain: com.cisco.apicem.template.programmer.service.dto.TemplateDeploymentInfo[\\\"targetInfo\\\"]->java.util.ArrayList[0]->com.cisco.apicem.template.programmer.service.dto.TargetInfo[\\\"unknown\\\"])\",\n        \"detail\": \"An error occurred while invoking a REST API\",\n        \"href\": \"\"\n    },\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				}
@@ -4903,7 +4898,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "1794ae56-c515-4df6-8dd4-252bd191b37f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4913,15 +4907,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e63b4f47-a7c1-4b41-a90a-7bf0ac45ab71",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Command Runner",
@@ -5250,7 +5242,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "00bdaf58-3f57-4a77-a345-71f9dc41a111",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -5260,15 +5251,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e74b85bd-d1c5-495e-a39d-316bb0edd1ef",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Event Notification",
@@ -6206,7 +6195,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "c1568576-2275-486d-b62e-f46b20ab2418",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -6216,15 +6204,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "89c33dfb-1893-4c9a-b6ea-d33143b0b5b6",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Assurance",
@@ -6697,7 +6683,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "84ff2be5-254a-4e57-9c7c-d607fe876f64",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -6707,15 +6692,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "89923426-f591-4723-afda-6877fe8d7149",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Site Management",
@@ -8232,108 +8215,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: building",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/90904331-c83c-45e5-89e1-d6132d8e9a68",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"platform",
-										"management",
-										"business-api",
-										"v1",
-										"execution-status",
-										"90904331-c83c-45e5-89e1-d6132d8e9a68"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "443"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Info",
-									"value": "This API is deprecated. Please use the URI : /dnacaap/management/executions/status/{bapiExecutionId}"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 23:33:38 GMT"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"90904331-c83c-45e5-89e1-d6132d8e9a68\",\n    \"startTime\": \"Thu Jan 16 23:33:17 UTC 2020\",\n    \"startTimeEpoch\": 1579217597506,\n    \"endTime\": \"Thu Jan 16 23:33:18 UTC 2020\",\n    \"endTimeEpoch\": 1579217598604,\n    \"timeDuration\": 1098,\n    \"status\": \"FAILURE\",\n    \"bapiError\": \"{\\\"message\\\":\\\"Area : Maryland not available in system.\\\",\\\"status\\\":\\\"False\\\"}\"\n}"
-						},
-						{
 							"name": "Success: building",
 							"originalRequest": {
 								"method": "GET",
@@ -8436,7 +8317,7 @@
 							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"1c2d4512-593d-431d-8113-af040b964251\",\n    \"startTime\": \"Thu Jan 16 23:34:21 UTC 2020\",\n    \"startTimeEpoch\": 1579217661098,\n    \"endTime\": \"Thu Jan 16 23:34:21 UTC 2020\",\n    \"endTimeEpoch\": 1579217661439,\n    \"timeDuration\": 341,\n    \"status\": \"SUCCESS\"\n}"
 						},
 						{
-							"name": "Failure: assign devices",
+							"name": "Success: floor",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -8457,7 +8338,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/f243b914-1669-4a9c-9795-bbcefff7b639",
+									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9",
 									"protocol": "https",
 									"host": [
 										"{{dnac}}"
@@ -8469,7 +8350,7 @@
 										"business-api",
 										"v1",
 										"execution-status",
-										"f243b914-1669-4a9c-9795-bbcefff7b639"
+										"2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9"
 									]
 								}
 							},
@@ -8483,7 +8364,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "618"
+									"value": "344"
 								},
 								{
 									"key": "Connection",
@@ -8499,7 +8380,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 16 Jan 2020 23:59:25 GMT"
+									"value": "Thu, 16 Jan 2020 23:41:54 GMT"
 								},
 								{
 									"key": "Via",
@@ -8535,7 +8416,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"bapiKey\": \"98a8-aa5e-40cb-b90b\",\n    \"bapiName\": \"Assign Device To Site\",\n    \"bapiExecutionId\": \"f243b914-1669-4a9c-9795-bbcefff7b639\",\n    \"startTime\": \"Thu Jan 16 23:59:15 UTC 2020\",\n    \"startTimeEpoch\": 1579219155309,\n    \"endTime\": \"Thu Jan 16 23:59:22 UTC 2020\",\n    \"endTimeEpoch\": 1579219162702,\n    \"timeDuration\": 7393,\n    \"status\": \"FAILURE\",\n    \"bapiError\": \"{\\\"device_ips\\\":[\\\"10.10.20.241\\\",\\\"10.10.20.242\\\"],\\\"result\\\":\\\"NCGR10078: 31899100-9269-4188-949e-222f9ac30ef2 is already associated with site - Floor.Network Devices can be associated to only one site(Building/Floor).\\\",\\\"status\\\":\\\"False\\\"}\"\n}"
+							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9\",\n    \"startTime\": \"Thu Jan 16 23:41:44 UTC 2020\",\n    \"startTimeEpoch\": 1579218104733,\n    \"endTime\": \"Thu Jan 16 23:41:48 UTC 2020\",\n    \"endTimeEpoch\": 1579218108503,\n    \"timeDuration\": 3770,\n    \"status\": \"SUCCESS\"\n}"
 						},
 						{
 							"name": "Success: area",
@@ -8640,6 +8521,210 @@
 							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"a1962493-59db-4c1a-9cda-007b83b73254\",\n    \"startTime\": \"Thu Jan 16 23:30:09 UTC 2020\",\n    \"startTimeEpoch\": 1579217409595,\n    \"endTime\": \"Thu Jan 16 23:30:14 UTC 2020\",\n    \"endTimeEpoch\": 1579217414313,\n    \"timeDuration\": 4718,\n    \"status\": \"SUCCESS\"\n}"
 						},
 						{
+							"name": "Failure: assign devices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/f243b914-1669-4a9c-9795-bbcefff7b639",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"platform",
+										"management",
+										"business-api",
+										"v1",
+										"execution-status",
+										"f243b914-1669-4a9c-9795-bbcefff7b639"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "618"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Info",
+									"value": "This API is deprecated. Please use the URI : /dnacaap/management/executions/status/{bapiExecutionId}"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 23:59:25 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bapiKey\": \"98a8-aa5e-40cb-b90b\",\n    \"bapiName\": \"Assign Device To Site\",\n    \"bapiExecutionId\": \"f243b914-1669-4a9c-9795-bbcefff7b639\",\n    \"startTime\": \"Thu Jan 16 23:59:15 UTC 2020\",\n    \"startTimeEpoch\": 1579219155309,\n    \"endTime\": \"Thu Jan 16 23:59:22 UTC 2020\",\n    \"endTimeEpoch\": 1579219162702,\n    \"timeDuration\": 7393,\n    \"status\": \"FAILURE\",\n    \"bapiError\": \"{\\\"device_ips\\\":[\\\"10.10.20.241\\\",\\\"10.10.20.242\\\"],\\\"result\\\":\\\"NCGR10078: 31899100-9269-4188-949e-222f9ac30ef2 is already associated with site - Floor.Network Devices can be associated to only one site(Building/Floor).\\\",\\\"status\\\":\\\"False\\\"}\"\n}"
+						},
+						{
+							"name": "Failure: building",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/90904331-c83c-45e5-89e1-d6132d8e9a68",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"platform",
+										"management",
+										"business-api",
+										"v1",
+										"execution-status",
+										"90904331-c83c-45e5-89e1-d6132d8e9a68"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "443"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Info",
+									"value": "This API is deprecated. Please use the URI : /dnacaap/management/executions/status/{bapiExecutionId}"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Jan 2020 23:33:38 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"90904331-c83c-45e5-89e1-d6132d8e9a68\",\n    \"startTime\": \"Thu Jan 16 23:33:17 UTC 2020\",\n    \"startTimeEpoch\": 1579217597506,\n    \"endTime\": \"Thu Jan 16 23:33:18 UTC 2020\",\n    \"endTimeEpoch\": 1579217598604,\n    \"timeDuration\": 1098,\n    \"status\": \"FAILURE\",\n    \"bapiError\": \"{\\\"message\\\":\\\"Area : Maryland not available in system.\\\",\\\"status\\\":\\\"False\\\"}\"\n}"
+						},
+						{
 							"name": "Success; assign devices",
 							"originalRequest": {
 								"method": "GET",
@@ -8740,108 +8825,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"bapiKey\": \"98a8-aa5e-40cb-b90b\",\n    \"bapiName\": \"Assign Device To Site\",\n    \"bapiExecutionId\": \"3a3018fd-77e1-4c29-a132-5d2b6b4701ad\",\n    \"startTime\": \"Fri Jan 17 00:14:18 UTC 2020\",\n    \"startTimeEpoch\": 1579220058616,\n    \"endTime\": \"Fri Jan 17 00:14:19 UTC 2020\",\n    \"endTimeEpoch\": 1579220059228,\n    \"timeDuration\": 612,\n    \"status\": \"SUCCESS\"\n}"
-						},
-						{
-							"name": "Success: floor",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Auth-Token",
-										"type": "text",
-										"value": "{{api_token}}"
-									}
-								],
-								"url": {
-									"raw": "https://{{dnac}}/dna/platform/management/business-api/v1/execution-status/2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9",
-									"protocol": "https",
-									"host": [
-										"{{dnac}}"
-									],
-									"path": [
-										"dna",
-										"platform",
-										"management",
-										"business-api",
-										"v1",
-										"execution-status",
-										"2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "344"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Info",
-									"value": "This API is deprecated. Please use the URI : /dnacaap/management/executions/status/{bapiExecutionId}"
-								},
-								{
-									"key": "Server",
-									"value": "webserver"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 16 Jan 2020 23:41:54 GMT"
-								},
-								{
-									"key": "Via",
-									"value": "api-gateway"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-store"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"bapiKey\": \"50b5-89fd-4c7a-930a\",\n    \"bapiName\": \"Create Site\",\n    \"bapiExecutionId\": \"2d496efc-ac0b-4b6a-a07e-f3d6584ba3b9\",\n    \"startTime\": \"Thu Jan 16 23:41:44 UTC 2020\",\n    \"startTimeEpoch\": 1579218104733,\n    \"endTime\": \"Thu Jan 16 23:41:48 UTC 2020\",\n    \"endTimeEpoch\": 1579218108503,\n    \"timeDuration\": 3770,\n    \"status\": \"SUCCESS\"\n}"
 						}
 					]
 				}
@@ -8851,7 +8834,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "98733707-7380-4d42-9a61-92893af2a877",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -8861,15 +8843,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b373ae30-0858-49c8-9aa1-0bb915bc42b3",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Path Trace",
@@ -9095,10 +9075,6 @@
 										"value": "{{api_token}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"sourceIP\": \"10.10.20.81\",\n    \"destIP\": \"10.10.20.82\",\n    \"inclusions\": [\n        \"INTERFACE-STATS\",\n        \"DEVICE-STATS\",\n        \"QOS-STATS\"\n    ],\n    \"controlPath\": false,\n    \"periodicRefresh\": false\n}"
-								},
 								"url": {
 									"raw": "https://{{dnac}}/api/v1/flow-analysis/43af409c-bdf3-48f0-8731-69f4cb5c6abb",
 									"protocol": "https",
@@ -9181,7 +9157,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "1307a113-a457-4b7e-8c01-bf52d1a764af",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -9191,22 +9166,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5657cc7b-1633-47a6-9fd9-667b51061f78",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3bcb956a-d565-43d9-b7c4-4ef8e2b39ac6",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -9216,7 +9188,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "acffef8f-ce82-4daf-affc-01e958e7dc6c",
 				"type": "text/javascript",
 				"exec": [
 					""
