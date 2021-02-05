@@ -1,0 +1,5313 @@
+{
+	"info": {
+		"_postman_id": "8ecc26af-1104-45fe-920b-0516cebf7173",
+		"name": "Sonatype Nexus",
+		"description": "Online REST API documentation: https://help.sonatype.com/repomanager3/rest-and-integration-api\r\n\r\nOn-box REST API documentation: http://(nexu_host):(nexus_port)/#admin/system/api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administration and General",
+			"item": [
+				{
+					"name": "Check server read request processing",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 21:56:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Check server read/write request processing",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status/writable",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"status",
+								"writable"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: read-only enabled",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status/writable",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"status",
+										"writable"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:59:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status/writable",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"status",
+										"writable"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 21:56:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get license",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/system/license",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"system",
+								"license"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: missing license",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/system/license",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"system",
+										"license"
+									]
+								}
+							},
+							"status": "Payment Required",
+							"code": 402,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:50:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "\"Missing or invalid license\""
+						},
+						{
+							"name": "Failure: missing creds",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/system/license",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"system",
+										"license"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:50:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "4c8673f1-d17f-4b90-b15e-c36db231a70f"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Check server health",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status/check",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"status",
+								"check"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/status/check",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"status",
+										"check"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:57:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2528"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Available CPUs\": {\n        \"healthy\": false,\n        \"message\": \"The host system is allocating a maximum of 2 cores to the application. A minimum of 4 is recommended.\",\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"Blob Stores\": {\n        \"healthy\": true,\n        \"message\": \"0/1 blob stores violating their quota<br>\",\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440289,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.289-08:00\"\n    },\n    \"Default Admin Credentials\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 1,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"DefaultRoleRealm\": {\n        \"healthy\": true,\n        \"message\": \"Default Role Realm not in use.\",\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"File Blob Stores Path\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"File Descriptors\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440292,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.292-08:00\"\n    },\n    \"Lifecycle Phase\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"Read-Only Detector\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440294,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.294-08:00\"\n    },\n    \"Scheduler\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440292,\n        \"duration\": 2,\n        \"timestamp\": \"2021-02-04T14:57:20.292-08:00\"\n    },\n    \"Thread Deadlock Detector\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440289,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.289-08:00\"\n    },\n    \"Transactions\": {\n        \"healthy\": true,\n        \"message\": null,\n        \"error\": null,\n        \"details\": null,\n        \"time\": 1612479440289,\n        \"duration\": 0,\n        \"timestamp\": \"2021-02-04T14:57:20.289-08:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get support zip path",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"systemInformation\": true,\r\n    \"threadDump\": true,\r\n    \"metrics\": true,\r\n    \"configuration\": true,\r\n    \"security\": true,\r\n    \"log\": true,\r\n    \"taskLog\": true,\r\n    \"auditLog\": true,\r\n    \"jmx\": true,\r\n    \"limitFileSizes\": true,\r\n    \"limitZipSize\": true\r\n}"
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/support/supportzippath",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"support",
+								"supportzippath"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"systemInformation\": true,\r\n    \"threadDump\": true,\r\n    \"metrics\": true,\r\n    \"configuration\": true,\r\n    \"security\": true,\r\n    \"log\": true,\r\n    \"taskLog\": true,\r\n    \"auditLog\": true,\r\n    \"jmx\": true,\r\n    \"limitFileSizes\": true,\r\n    \"limitZipSize\": true\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/support/supportzippath",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"support",
+										"supportzippath"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:54:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"file\": \"/app/sonatype-work/nexus3/downloads/support-20210204-145431-1.zip\",\n    \"name\": \"support-20210204-145431-1.zip\",\n    \"size\": \"201345\",\n    \"truncated\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Enable read-only mode",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/freeze",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"read-only",
+								"freeze"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already enabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/freeze",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"read-only",
+										"freeze"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:59:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "7fef564c-ab8b-45c7-8f3d-416608eb3863"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/freeze",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"read-only",
+										"freeze"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:58:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Disable read-only mode",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/release",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"read-only",
+								"release"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already disabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/release",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"read-only",
+										"release"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:59:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "ae6086c8-1b3c-494c-b7ba-c2ce09a731e3"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/read-only/release",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"read-only",
+										"release"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:59:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Repositories and File Uploads",
+			"item": [
+				{
+					"name": "Get all repositories",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"repositories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:07:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1464"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"nuget-group\",\n        \"format\": \"nuget\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-group\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-snapshots\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-snapshots\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-central\",\n        \"format\": \"maven2\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-central\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://repo1.maven.org/maven2/\"\n            }\n        }\n    },\n    {\n        \"name\": \"nuget.org-proxy\",\n        \"format\": \"nuget\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget.org-proxy\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://api.nuget.org/v3/index.json\"\n            }\n        }\n    },\n    {\n        \"name\": \"maven-releases\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-releases\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"nuget-hosted\",\n        \"format\": \"nuget\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-hosted\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-public\",\n        \"format\": \"maven2\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-public\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"network-data\",\n        \"format\": \"raw\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/network-data\",\n        \"attributes\": {}\n    }\n]"
+						},
+						{
+							"name": "Success: after addition",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:09:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1625"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"nuget-group\",\n        \"format\": \"nuget\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-group\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-snapshots\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-snapshots\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-central\",\n        \"format\": \"maven2\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-central\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://repo1.maven.org/maven2/\"\n            }\n        }\n    },\n    {\n        \"name\": \"nuget.org-proxy\",\n        \"format\": \"nuget\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget.org-proxy\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://api.nuget.org/v3/index.json\"\n            }\n        }\n    },\n    {\n        \"name\": \"maven-releases\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-releases\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"nuget-hosted\",\n        \"format\": \"nuget\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-hosted\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-public\",\n        \"format\": \"maven2\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-public\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"network-data\",\n        \"format\": \"raw\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/network-data\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"postman-files\",\n        \"format\": \"raw\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/postman-files\",\n        \"attributes\": {}\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create raw hosted repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"postman-files\",\r\n    \"online\": true,\r\n    \"storage\": {\r\n        \"blobStoreName\": \"default\",\r\n        \"strictContentTypeValidation\": false,\r\n        \"writePolicy\": \"allow\"\r\n    },\r\n    \"raw\": {\r\n        \"contentDisposition\": \"ATTACHMENT\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"repositories",
+								"raw",
+								"hosted"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: missing name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"online\": true,\r\n    \"storage\": {\r\n        \"blobStoreName\": \"default\",\r\n        \"strictContentTypeValidation\": false,\r\n        \"writePolicy\": \"allow\"\r\n    },\r\n    \"raw\": {\r\n        \"contentDisposition\": \"ATTACHMENT\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"raw",
+										"hosted"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:08:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "061f18ba-61fb-4c44-b88d-d26b554ff1c6"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"PARAMETER name\",\n        \"message\": \"may not be empty\"\n    }\n]"
+						},
+						{
+							"name": "Failure: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"postman-files\",\r\n    \"online\": true,\r\n    \"storage\": {\r\n        \"blobStoreName\": \"default\",\r\n        \"strictContentTypeValidation\": false,\r\n        \"writePolicy\": \"allow\"\r\n    },\r\n    \"raw\": {\r\n        \"contentDisposition\": \"ATTACHMENT\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"raw",
+										"hosted"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:08:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								}
+							],
+							"cookie": [],
+							"body": "\"Cannot index record #17:5: found duplicated key 'postman-files' in index 'repository_repository_name_idx' previously assigned to the record #18:4\r\n\tDB name=\"config\"\""
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"postman-files\",\r\n    \"online\": true,\r\n    \"storage\": {\r\n        \"blobStoreName\": \"default\",\r\n        \"strictContentTypeValidation\": false,\r\n        \"writePolicy\": \"allow\"\r\n    },\r\n    \"raw\": {\r\n        \"contentDisposition\": \"ATTACHMENT\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"raw",
+										"hosted"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:08:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get newly added repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted/postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"repositories",
+								"raw",
+								"hosted",
+								"postman-files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted/postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"raw",
+										"hosted",
+										"postman-files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:09:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"postman-files\",\n    \"format\": \"raw\",\n    \"url\": \"http://192.168.201.132:8081/repository/postman-files\",\n    \"online\": true,\n    \"storage\": {\n        \"blobStoreName\": \"default\",\n        \"strictContentTypeValidation\": false,\n        \"writePolicy\": \"allow\"\n    },\n    \"cleanup\": null,\n    \"type\": \"hosted\"\n}"
+						},
+						{
+							"name": "Success: default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:07:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1464"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"nuget-group\",\n        \"format\": \"nuget\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-group\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-snapshots\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-snapshots\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-central\",\n        \"format\": \"maven2\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-central\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://repo1.maven.org/maven2/\"\n            }\n        }\n    },\n    {\n        \"name\": \"nuget.org-proxy\",\n        \"format\": \"nuget\",\n        \"type\": \"proxy\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget.org-proxy\",\n        \"attributes\": {\n            \"proxy\": {\n                \"remoteUrl\": \"https://api.nuget.org/v3/index.json\"\n            }\n        }\n    },\n    {\n        \"name\": \"maven-releases\",\n        \"format\": \"maven2\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-releases\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"nuget-hosted\",\n        \"format\": \"nuget\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/nuget-hosted\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"maven-public\",\n        \"format\": \"maven2\",\n        \"type\": \"group\",\n        \"url\": \"http://192.168.201.132:8081/repository/maven-public\",\n        \"attributes\": {}\n    },\n    {\n        \"name\": \"network-data\",\n        \"format\": \"raw\",\n        \"type\": \"hosted\",\n        \"url\": \"http://192.168.201.132:8081/repository/network-data\",\n        \"attributes\": {}\n    }\n]"
+						},
+						{
+							"name": "Failure: invalid URL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/postman-files1",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"postman-files1"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:11:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "54c30c8b-9fc4-4a44-894b-73f39d5f4bef"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/raw/hosted/postman-files1",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"raw",
+										"hosted",
+										"postman-files1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:09:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "22"
+								}
+							],
+							"cookie": [],
+							"body": "\"Repository not found\""
+						}
+					]
+				},
+				{
+					"name": "Delete repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"repositories",
+								"postman-files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"postman-files"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:12:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/repositories/postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"repositories",
+										"postman-files"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:12:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get files in repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"components"
+							],
+							"query": [
+								{
+									"key": "repository",
+									"value": "postman-files",
+									"description": "required"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: after addition",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"description": "required"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:23:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1168"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"id\": \"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw\",\n            \"repository\": \"postman-files\",\n            \"format\": \"raw\",\n            \"group\": \"/files/configs\",\n            \"name\": \"files/configs/helloworld.txt\",\n            \"version\": null,\n            \"assets\": [\n                {\n                    \"downloadUrl\": \"http://192.168.201.132:8081/repository/postman-files/files/configs/helloworld.txt\",\n                    \"path\": \"files/configs/helloworld.txt\",\n                    \"id\": \"cG9zdG1hbi1maWxlczo5MTJkMGZlN2I4MTkyMzkyOGE5ZjBlZDNkYjk0MWFlMQ\",\n                    \"repository\": \"postman-files\",\n                    \"format\": \"raw\",\n                    \"checksum\": {\n                        \"sha1\": \"d3486ae9136e7856bc42212385ea797094475802\",\n                        \"sha512\": \"f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6\",\n                        \"sha256\": \"c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a\",\n                        \"md5\": \"86fb269d190d2c85f6e0468ceca42a20\"\n                    },\n                    \"contentType\": \"text/plain\",\n                    \"lastModified\": \"2021-02-04T22:23:30.749+00:00\",\n                    \"blobCreated\": \"2021-02-04T22:23:30.749+00:00\",\n                    \"lastDownloaded\": null\n                }\n            ]\n        }\n    ],\n    \"continuationToken\": null\n}"
+						},
+						{
+							"name": "Success: empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"description": "required"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:19:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [],\n    \"continuationToken\": null\n}"
+						},
+						{
+							"name": "Failure: missing repository param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"description": "required"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:19:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "3cb7d312-c688-468a-b550-6ec0ab58b6ae"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Upload file to repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "postman overrides it",
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/form-data",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "raw.directory",
+									"value": "files/configs/",
+									"type": "text"
+								},
+								{
+									"key": "raw.asset1",
+									"type": "file",
+									"src": "/C:/Users/nickrus/Desktop/helloworld.txt"
+								},
+								{
+									"key": "raw.asset1.filename",
+									"value": "helloworld.txt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"components"
+							],
+							"query": [
+								{
+									"key": "repository",
+									"value": "postman-files",
+									"description": "required"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"description": "postman overrides it",
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "raw.directory",
+											"value": "files/configs/",
+											"type": "text"
+										},
+										{
+											"key": "raw.asset1",
+											"type": "file",
+											"src": "/C:/Users/nickrus/Desktop/helloworld.txt"
+										},
+										{
+											"key": "raw.asset1.filename",
+											"value": "helloworld.txt",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"description": "required"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:23:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: repository is param, not form data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"description": "postman overrides it",
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"type": "text"
+										},
+										{
+											"key": "raw.directory",
+											"value": "files/configs/",
+											"type": "text"
+										},
+										{
+											"key": "raw.asset1",
+											"type": "file",
+											"src": "/C:/Users/nickrus/Desktop/helloworld.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:20:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "8a7cfc17-16cd-40c5-8979-65cf4535a68b"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: missing explicit filename",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"description": "postman overrides it",
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "raw.directory",
+											"value": "files/configs/",
+											"type": "text"
+										},
+										{
+											"key": "raw.asset1",
+											"type": "file",
+											"src": "/C:/Users/nickrus/Desktop/helloworld.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"description": "required"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:22:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "180bfa0f-0e91-47e9-bc06-9196f784bbef"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"filename\",\n        \"message\": \"Missing required asset field 'Filename' on '1'\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get newly uploaded file",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"components",
+								"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNl",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components",
+										"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNl"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:24:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "5ff6ee33-f4b7-4900-9f21-3b8724345435"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components",
+										"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:24:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1070"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw\",\n    \"repository\": \"postman-files\",\n    \"format\": \"raw\",\n    \"group\": \"/files/configs\",\n    \"name\": \"files/configs/helloworld.txt\",\n    \"version\": null,\n    \"assets\": [\n        {\n            \"downloadUrl\": \"http://192.168.201.132:8081/repository/postman-files/files/configs/helloworld.txt\",\n            \"path\": \"files/configs/helloworld.txt\",\n            \"id\": \"cG9zdG1hbi1maWxlczo5MTJkMGZlN2I4MTkyMzkyOGE5ZjBlZDNkYjk0MWFlMQ\",\n            \"repository\": \"postman-files\",\n            \"format\": \"raw\",\n            \"checksum\": {\n                \"sha1\": \"d3486ae9136e7856bc42212385ea797094475802\",\n                \"sha512\": \"f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6\",\n                \"sha256\": \"c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a\",\n                \"md5\": \"86fb269d190d2c85f6e0468ceca42a20\"\n            },\n            \"contentType\": \"text/plain\",\n            \"lastModified\": \"2021-02-04T22:23:30.749+00:00\",\n            \"blobCreated\": \"2021-02-04T22:23:30.749+00:00\",\n            \"lastDownloaded\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete component",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"components",
+								"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components",
+										"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:25:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "7fb324d0-4360-477b-b79e-7f31d290514c"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/components/cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"components",
+										"cG9zdG1hbi1maWxlczo3MWFmZWE1NDBlMjNkZGU1YjJkODRmN2ZhODA5OTEzNw"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:25:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users and Roles",
+			"item": [
+				{
+					"name": "Get roles",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:27:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "421"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"nx-admin\",\n        \"source\": \"default\",\n        \"name\": \"nx-admin\",\n        \"description\": \"Administrator Role\",\n        \"privileges\": [\n            \"nx-all\"\n        ],\n        \"roles\": []\n    },\n    {\n        \"id\": \"nx-anonymous\",\n        \"source\": \"default\",\n        \"name\": \"nx-anonymous\",\n        \"description\": \"Anonymous Role\",\n        \"privileges\": [\n            \"nx-healthcheck-read\",\n            \"nx-search-read\",\n            \"nx-repository-view-*-*-read\",\n            \"nx-repository-view-*-*-browse\"\n        ],\n        \"roles\": []\n    }\n]"
+						},
+						{
+							"name": "Success: after addition",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:29:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "698"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"netops\",\n        \"source\": \"default\",\n        \"name\": \"netops\",\n        \"description\": \"Network Operations; read-only service\",\n        \"privileges\": [\n            \"nx-repository-view-raw-postman-files-browse\",\n            \"nx-repository-view-raw-postman-files-read\",\n            \"nx-userschangepw\"\n        ],\n        \"roles\": []\n    },\n    {\n        \"id\": \"nx-admin\",\n        \"source\": \"default\",\n        \"name\": \"nx-admin\",\n        \"description\": \"Administrator Role\",\n        \"privileges\": [\n            \"nx-all\"\n        ],\n        \"roles\": []\n    },\n    {\n        \"id\": \"nx-anonymous\",\n        \"source\": \"default\",\n        \"name\": \"nx-anonymous\",\n        \"description\": \"Anonymous Role\",\n        \"privileges\": [\n            \"nx-healthcheck-read\",\n            \"nx-search-read\",\n            \"nx-repository-view-*-*-read\",\n            \"nx-repository-view-*-*-browse\"\n        ],\n        \"roles\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create netops role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"netops\",\r\n    \"name\": \"netops\",\r\n    \"description\": \"Network Operations; read-only service\",\r\n    \"privileges\": [\r\n        \"nx-repository-view-raw-postman-files-read\",\r\n        \"nx-repository-view-raw-postman-files-browse\",\r\n        \"nx-userschangepw\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: missing id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"netops\",\r\n    \"description\": \"Network Operations; read-only service\",\r\n    \"privileges\": [\r\n        \"nx-repository-view-raw-postman-files-read\",\r\n        \"nx-repository-view-raw-postman-files-browse\",\r\n        \"nx-userschangepw\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:29:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "e45b57ea-3db1-4864-8dcb-5ccdf9cc08a1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"PARAMETER id\",\n        \"message\": \"may not be empty\"\n    }\n]"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"netops\",\r\n    \"name\": \"netops\",\r\n    \"description\": \"Network Operations; read-only service\",\r\n    \"privileges\": [\r\n        \"nx-repository-view-raw-postman-files-read\",\r\n        \"nx-repository-view-raw-postman-files-browse\",\r\n        \"nx-userschangepw\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:28:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"netops\",\n    \"source\": \"default\",\n    \"name\": \"netops\",\n    \"description\": \"Network Operations; read-only service\",\n    \"privileges\": [\n        \"nx-repository-view-raw-postman-files-browse\",\n        \"nx-repository-view-raw-postman-files-read\",\n        \"nx-userschangepw\"\n    ],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "Failure: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"netops\",\r\n    \"name\": \"netops\",\r\n    \"description\": \"Network Operations; read-only service\",\r\n    \"privileges\": [\r\n        \"nx-repository-view-raw-postman-files-read\",\r\n        \"nx-repository-view-raw-postman-files-browse\",\r\n        \"nx-userschangepw\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:28:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "\"Role 'netops' already exists, use a unique roleId.\""
+						}
+					]
+				},
+				{
+					"name": "Get newly added role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"roles",
+								"netops"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles",
+										"netops"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:29:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"netops\",\n    \"source\": \"default\",\n    \"name\": \"netops\",\n    \"description\": \"Network Operations; read-only service\",\n    \"privileges\": [\n        \"nx-repository-view-raw-postman-files-browse\",\n        \"nx-repository-view-raw-postman-files-read\",\n        \"nx-userschangepw\"\n    ],\n    \"roles\": []\n}"
+						},
+						{
+							"name": "Failure: not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops1",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles",
+										"netops1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:29:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "\"Role 'netops1' not found.\""
+						}
+					]
+				},
+				{
+					"name": "Delete role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"roles",
+								"netops"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles",
+										"netops"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:30:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/roles/netops",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"roles",
+										"netops"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:30:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "\"Role 'netops' not found.\""
+						}
+					]
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 21:59:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "498"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": \"anonymous\",\n        \"firstName\": \"Anonymous\",\n        \"lastName\": \"User\",\n        \"emailAddress\": \"anonymous@example.org\",\n        \"source\": \"default\",\n        \"status\": \"active\",\n        \"readOnly\": false,\n        \"roles\": [\n            \"nx-anonymous\"\n        ],\n        \"externalRoles\": []\n    },\n    {\n        \"userId\": \"admin\",\n        \"firstName\": \"Administrator\",\n        \"lastName\": \"User\",\n        \"emailAddress\": \"admin@example.org\",\n        \"source\": \"default\",\n        \"status\": \"active\",\n        \"readOnly\": false,\n        \"roles\": [\n            \"nx-admin\"\n        ],\n        \"externalRoles\": []\n    }\n]"
+						},
+						{
+							"name": "Success: after addition",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:32:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "728"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": \"anonymous\",\n        \"firstName\": \"Anonymous\",\n        \"lastName\": \"User\",\n        \"emailAddress\": \"anonymous@example.org\",\n        \"source\": \"default\",\n        \"status\": \"active\",\n        \"readOnly\": false,\n        \"roles\": [\n            \"nx-anonymous\"\n        ],\n        \"externalRoles\": []\n    },\n    {\n        \"userId\": \"jdoe\",\n        \"firstName\": \"Jane\",\n        \"lastName\": \"Doe\",\n        \"emailAddress\": \"jdoe@njrusmc.net\",\n        \"source\": \"default\",\n        \"status\": \"active\",\n        \"readOnly\": false,\n        \"roles\": [\n            \"netops\"\n        ],\n        \"externalRoles\": []\n    },\n    {\n        \"userId\": \"admin\",\n        \"firstName\": \"Administrator\",\n        \"lastName\": \"User\",\n        \"emailAddress\": \"admin@example.org\",\n        \"source\": \"default\",\n        \"status\": \"active\",\n        \"readOnly\": false,\n        \"roles\": [\n            \"nx-admin\"\n        ],\n        \"externalRoles\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create new user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"jdoe\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"jdoe@njrusmc.net\",\r\n    \"password\": \"password123\",\r\n    \"status\": \"active\",\r\n    \"roles\": [\r\n        \"netops\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"jdoe\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"jdoe@njrusmc.net\",\r\n    \"password\": \"password123\",\r\n    \"status\": \"active\",\r\n    \"roles\": [\r\n        \"netops\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users"
+									]
+								}
+							},
+							"status": "Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:31:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=utf-8"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "6c7bd259-a45a-4456-b842-941909a952bd"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								}
+							],
+							"cookie": [],
+							"body": "ERROR: (ID 6c7bd259-a45a-4456-b842-941909a952bd) com.orientechnologies.orient.core.storage.ORecordDuplicatedException: Cannot index record #14:2: found duplicated key 'jdoe' in index 'user_id_idx' previously assigned to the record #15:1\r\n\tDB name=\"security\" INDEX=user_id_idx RID=#15:1"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"jdoe\",\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"jdoe@njrusmc.net\",\r\n    \"password\": \"password123\",\r\n    \"status\": \"active\",\r\n    \"roles\": [\r\n        \"netops\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:31:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "228"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": \"jdoe\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"emailAddress\": \"jdoe@njrusmc.net\",\n    \"source\": \"default\",\n    \"status\": \"active\",\n    \"readOnly\": false,\n    \"roles\": [\n        \"netops\"\n    ],\n    \"externalRoles\": []\n}"
+						},
+						{
+							"name": "Failure: missing userId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"jdoe@njrusmc.net\",\r\n    \"password\": \"password123\",\r\n    \"status\": \"active\",\r\n    \"roles\": [\r\n        \"netops\"\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:31:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "32e90039-6268-4871-b298-5a2c72d1db0e"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"PARAMETER userId\",\n        \"message\": \"may not be empty\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update user password",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "password321"
+						},
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users/jdoe/change-password",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"users",
+								"jdoe",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "password321"
+								},
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users/jdoe/change-password",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users",
+										"jdoe",
+										"change-password"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:36:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users/jdoe",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"security",
+								"users",
+								"jdoe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users/jdoe",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users",
+										"jdoe"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:35:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								}
+							],
+							"cookie": [],
+							"body": "\"User 'jdoe' not found.\""
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/security/users/jdoe",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"security",
+										"users",
+										"jdoe"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:34:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Searches and File Downloads",
+			"item": [
+				{
+					"name": "Get files in new repository",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/assets?repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "repository",
+									"value": "postman-files"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: missing repository param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/assets",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:45:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Siesta-FaultId",
+									"value": "22e5385b-c452-41d7-bc04-5fcbc84a3dcf"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/assets?repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:45:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "904"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"downloadUrl\": \"http://192.168.201.132:8081/repository/postman-files/files/configs/helloworld.txt\",\n            \"path\": \"files/configs/helloworld.txt\",\n            \"id\": \"cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ\",\n            \"repository\": \"postman-files\",\n            \"format\": \"raw\",\n            \"checksum\": {\n                \"sha1\": \"d3486ae9136e7856bc42212385ea797094475802\",\n                \"sha512\": \"f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6\",\n                \"sha256\": \"c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a\",\n                \"md5\": \"86fb269d190d2c85f6e0468ceca42a20\"\n            },\n            \"contentType\": \"text/plain\",\n            \"lastModified\": \"2021-02-04T22:26:04.034+00:00\",\n            \"blobCreated\": \"2021-02-04T22:26:04.034+00:00\",\n            \"lastDownloaded\": \"2021-02-04T22:43:31.202+00:00\"\n        }\n    ],\n    \"continuationToken\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get specific file",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/assets/cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"assets",
+								"cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/assets/cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"assets",
+										"cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:46:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "822"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"downloadUrl\": \"http://192.168.201.132:8081/repository/postman-files/files/configs/helloworld.txt\",\n    \"path\": \"files/configs/helloworld.txt\",\n    \"id\": \"cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ\",\n    \"repository\": \"postman-files\",\n    \"format\": \"raw\",\n    \"checksum\": {\n        \"sha1\": \"d3486ae9136e7856bc42212385ea797094475802\",\n        \"sha512\": \"f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6\",\n        \"sha256\": \"c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a\",\n        \"md5\": \"86fb269d190d2c85f6e0468ceca42a20\"\n    },\n    \"contentType\": \"text/plain\",\n    \"lastModified\": \"2021-02-04T22:26:04.034+00:00\",\n    \"blobCreated\": \"2021-02-04T22:26:04.034+00:00\",\n    \"lastDownloaded\": \"2021-02-04T22:43:31.202+00:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Download specific file (non-API) as admin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/repository/postman-files/files/configs/helloworld.txt",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"repository",
+								"postman-files",
+								"files",
+								"configs",
+								"helloworld.txt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/repository/postman-files/files/configs/helloworld.txt",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"repository",
+										"postman-files",
+										"files",
+										"configs",
+										"helloworld.txt"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:47:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 04 Feb 2021 22:26:04 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Hello world!"
+						},
+						{
+							"name": "Failure: file not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/repository/postman-files/files/configs/helloworld.txt1",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"repository",
+										"postman-files",
+										"files",
+										"configs",
+										"helloworld.txt1"
+									]
+								}
+							},
+							"status": "files/configs/helloworld.txt1",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1974"
+								}
+							],
+							"cookie": [],
+							"body": "\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>404 - Nexus Repository Manager</title>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n        <!--[if lt IE 9]>\n        <script>(new Image).src=\"http://192.168.201.132:8081/favicon.ico?3.29.2-02\"</script>\n        <![endif]-->\n        <link rel=\"icon\" type=\"image/png\" href=\"http://192.168.201.132:8081/favicon-32x32.png?3.29.2-02\" sizes=\"32x32\">\n        <link rel=\"mask-icon\" href=\"http://192.168.201.132:8081/safari-pinned-tab.svg?3.29.2-02\" color=\"#5bbad5\">\n        <link rel=\"icon\" type=\"image/png\" href=\"http://192.168.201.132:8081/favicon-16x16.png?3.29.2-02\" sizes=\"16x16\">\n        <link rel=\"shortcut icon\" href=\"http://192.168.201.132:8081/favicon.ico?3.29.2-02\">\n        <meta name=\"msapplication-TileImage\" content=\"http://192.168.201.132:8081/mstile-144x144.png?3.29.2-02\">\n        <meta name=\"msapplication-TileColor\" content=\"#00a300\">\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"http://192.168.201.132:8081/static/css/nexus-content.css?3.29.2-02\"/>\n    </head>\n    <body>\n        <div class=\"nexus-header\">\n            <a href=\"http://192.168.201.132:8081\">\n                <div class=\"product-logo\">\n                    <img src=\"http://192.168.201.132:8081/static/rapture/resources/icons/x32/nexus-white.png?3.29.2-02\" alt=\"Product logo\"/>\n                </div>\n                <div class=\"product-id\">\n                    <div class=\"product-id__line-1\">\n                        <span class=\"product-name\">Nexus Repository Manager</span>\n                    </div>\n                    <div class=\"product-id__line-2\">\n                        <span class=\"product-spec\">OSS 3.29.2-02</span>\n                    </div>\n                </div>\n            </a>\n        </div>\n        <div class=\"nexus-body\">\n            <div class=\"content-header\">\n                <img src=\"http://192.168.201.132:8081/static/rapture/resources/icons/x32/exclamation.png?3.29.2-02\" alt=\"Exclamation point\" aria-role=\"presentation\"/>\n                <span class=\"title\">Error 404</span>\n                <span class=\"description\">Not Found</span>\n            </div>\n            <div class=\"content-body\">\n                <div class=\"content-section\">\n      files/configs/helloworld.txt1\n    </div>\n            </div>\n        </div>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Download specific file (non-API) as test user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "jdoe",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password321",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/repository/postman-files/files/configs/helloworld.txt",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"repository",
+								"postman-files",
+								"files",
+								"configs",
+								"helloworld.txt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/repository/postman-files/files/configs/helloworld.txt",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"repository",
+										"postman-files",
+										"files",
+										"configs",
+										"helloworld.txt"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 05 Feb 2021 13:44:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 04 Feb 2021 22:26:04 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Hello world!"
+						}
+					]
+				},
+				{
+					"name": "Search files by parameter",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"search",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "sha1",
+									"value": "d3486ae9136e7856bc42212385ea797094475802",
+									"disabled": true
+								},
+								{
+									"key": "sha256",
+									"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+									"disabled": true
+								},
+								{
+									"key": "sha512",
+									"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+									"disabled": true
+								},
+								{
+									"key": "md5",
+									"value": "86fb269d190d2c85f6e0468ceca42a20"
+								},
+								{
+									"key": "sort",
+									"value": "name"
+								},
+								{
+									"key": "repository",
+									"value": "postman-files"
+								},
+								{
+									"key": "name",
+									"value": "files/configs/helloworld.txt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: found helloworld",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"search",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "sha1",
+											"value": "d3486ae9136e7856bc42212385ea797094475802",
+											"disabled": true
+										},
+										{
+											"key": "sha256",
+											"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+											"disabled": true
+										},
+										{
+											"key": "sha512",
+											"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+											"disabled": true
+										},
+										{
+											"key": "md5",
+											"value": "86fb269d190d2c85f6e0468ceca42a20"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										},
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:42:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "795"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"downloadUrl\": \"http://192.168.201.132:8081/repository/postman-files/files/configs/helloworld.txt\",\n            \"path\": \"files/configs/helloworld.txt\",\n            \"id\": \"cG9zdG1hbi1maWxlczo3ZjYzNzlkMzJmOGRkNzhmMmM2MDg1NTU2ZDJjODViNQ\",\n            \"repository\": \"postman-files\",\n            \"format\": \"raw\",\n            \"checksum\": {\n                \"sha1\": \"d3486ae9136e7856bc42212385ea797094475802\",\n                \"sha256\": \"c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a\",\n                \"sha512\": \"f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6\",\n                \"md5\": \"86fb269d190d2c85f6e0468ceca42a20\"\n            },\n            \"contentType\": \"text/plain\",\n            \"lastModified\": \"2021-02-04T22:26:04.026+00:00\"\n        }\n    ],\n    \"continuationToken\": null\n}"
+						},
+						{
+							"name": "Failure: no results",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets?md5=86fb269d190d2c85f6e0468ceca42a21&sort=name&repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"search",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "sha1",
+											"value": "d3486ae9136e7856bc42212385ea797094475802",
+											"disabled": true
+										},
+										{
+											"key": "sha256",
+											"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+											"disabled": true
+										},
+										{
+											"key": "sha512",
+											"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+											"disabled": true
+										},
+										{
+											"key": "md5",
+											"value": "86fb269d190d2c85f6e0468ceca42a21"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										},
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:42:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [],\n    \"continuationToken\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Search and download files as admin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets/download?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"search",
+								"assets",
+								"download"
+							],
+							"query": [
+								{
+									"key": "sha1",
+									"value": "d3486ae9136e7856bc42212385ea797094475802",
+									"disabled": true
+								},
+								{
+									"key": "sha256",
+									"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+									"disabled": true
+								},
+								{
+									"key": "sha512",
+									"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+									"disabled": true
+								},
+								{
+									"key": "md5",
+									"value": "86fb269d190d2c85f6e0468ceca42a20"
+								},
+								{
+									"key": "sort",
+									"value": "name"
+								},
+								{
+									"key": "repository",
+									"value": "postman-files"
+								},
+								{
+									"key": "name",
+									"value": "files/configs/helloworld.txt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets/download?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"search",
+										"assets",
+										"download"
+									],
+									"query": [
+										{
+											"key": "sha1",
+											"value": "d3486ae9136e7856bc42212385ea797094475802",
+											"disabled": true
+										},
+										{
+											"key": "sha256",
+											"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+											"disabled": true
+										},
+										{
+											"key": "sha512",
+											"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+											"disabled": true
+										},
+										{
+											"key": "md5",
+											"value": "86fb269d190d2c85f6e0468ceca42a20"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										},
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:48:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 04 Feb 2021 22:26:04 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Hello world!"
+						},
+						{
+							"name": "Failure: no results",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets/download?md5=86fb269d190d2c85f6e0468ceca42a21&sort=name&repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"search",
+										"assets",
+										"download"
+									],
+									"query": [
+										{
+											"key": "sha1",
+											"value": "d3486ae9136e7856bc42212385ea797094475802",
+											"disabled": true
+										},
+										{
+											"key": "sha256",
+											"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+											"disabled": true
+										},
+										{
+											"key": "sha512",
+											"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+											"disabled": true
+										},
+										{
+											"key": "md5",
+											"value": "86fb269d190d2c85f6e0468ceca42a21"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										},
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Feb 2021 22:49:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								}
+							],
+							"cookie": [],
+							"body": "Asset search returned no results"
+						}
+					]
+				},
+				{
+					"name": "Search and download files as test user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "jdoe",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password321",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets/download?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+							"protocol": "http",
+							"host": [
+								"{{nexus_host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"rest",
+								"{{version}}",
+								"search",
+								"assets",
+								"download"
+							],
+							"query": [
+								{
+									"key": "sha1",
+									"value": "d3486ae9136e7856bc42212385ea797094475802",
+									"disabled": true
+								},
+								{
+									"key": "sha256",
+									"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+									"disabled": true
+								},
+								{
+									"key": "sha512",
+									"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+									"disabled": true
+								},
+								{
+									"key": "md5",
+									"value": "86fb269d190d2c85f6e0468ceca42a20"
+								},
+								{
+									"key": "sort",
+									"value": "name"
+								},
+								{
+									"key": "repository",
+									"value": "postman-files"
+								},
+								{
+									"key": "name",
+									"value": "files/configs/helloworld.txt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{nexus_host}}:{{port}}/service/rest/{{version}}/search/assets/download?md5=86fb269d190d2c85f6e0468ceca42a20&sort=name&repository=postman-files",
+									"protocol": "http",
+									"host": [
+										"{{nexus_host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"service",
+										"rest",
+										"{{version}}",
+										"search",
+										"assets",
+										"download"
+									],
+									"query": [
+										{
+											"key": "sha1",
+											"value": "d3486ae9136e7856bc42212385ea797094475802",
+											"disabled": true
+										},
+										{
+											"key": "sha256",
+											"value": "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a",
+											"disabled": true
+										},
+										{
+											"key": "sha512",
+											"value": "f6cde2a0f819314cdde55fc227d8d7dae3d28cc556222a0a8ad66d91ccad4aad6094f517a2182360c9aacf6a3dc323162cb6fd8cdffedb0fe038f55e85ffb5b6",
+											"disabled": true
+										},
+										{
+											"key": "md5",
+											"value": "86fb269d190d2c85f6e0468ceca42a20"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										},
+										{
+											"key": "repository",
+											"value": "postman-files"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 05 Feb 2021 13:44:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Nexus/3.29.2-02 (OSS)"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 04 Feb 2021 22:26:04 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								}
+							],
+							"cookie": [],
+							"body": "Hello world!"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
