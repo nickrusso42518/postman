@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "dee35985-afd1-4a36-b791-bd2afbfce36e",
+		"_postman_id": "070c4063-0cf7-403a-898f-766ace28799b",
 		"name": "Cisco Umbrella",
-		"description": "Umbrella has 3 completely separate APIs, with individual documentation.\nThey also use different authentication/authorization schemes. See\neach folder for the relevant documentation link. Main login:\nhttps://login.umbrella.com",
+		"description": "Umbrella has 3 completely separate APIs, with individual documentation.\nThey also use different authentication/authorization schemes. See\neach folder for the relevant documentation link. Main login:\nhttps://login.umbrella.com\n\nGeneral reference:\nhttps://docs.umbrella.com/umbrella-api/reference",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -491,64 +491,6 @@
 					},
 					"response": [
 						{
-							"name": "Failure: bad creds",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}A",
-									"protocol": "https",
-									"host": [
-										"s-platform",
-										"api",
-										"opendns",
-										"com"
-									],
-									"path": [
-										"1.0",
-										"domains"
-									],
-									"query": [
-										{
-											"key": "customerKey",
-											"value": "{{enforce_cust_key}}A"
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx/1.17.4"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 19 Jun 2020 19:41:54 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "117"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=2628000"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"code\": \"InvalidCredentials\",\n    \"message\": \"Invalid credentials supplied (Event failed to be recorded)\",\n    \"statusCode\": 401\n}"
-						},
-						{
 							"name": "Success: new domains",
 							"originalRequest": {
 								"method": "GET",
@@ -679,6 +621,64 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 200,\n        \"prev\": false,\n        \"next\": false\n    },\n    \"data\": []\n}"
+						},
+						{
+							"name": "Failure: bad creds",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey={{enforce_cust_key}}A",
+									"protocol": "https",
+									"host": [
+										"s-platform",
+										"api",
+										"opendns",
+										"com"
+									],
+									"path": [
+										"1.0",
+										"domains"
+									],
+									"query": [
+										{
+											"key": "customerKey",
+											"value": "{{enforce_cust_key}}A"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.17.4"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 19:41:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=2628000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"InvalidCredentials\",\n    \"message\": \"Invalid credentials supplied (Event failed to be recorded)\",\n    \"statusCode\": 401\n}"
 						}
 					]
 				},
@@ -1008,6 +1008,58 @@
 							},
 							"response": [
 								{
+									"name": "Failure: bad creds",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/domains/categories",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"domains",
+												"categories"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 19:03:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\"error\":\"unauthorized\"}\n"
+								},
+								{
 									"name": "Success",
 									"originalRequest": {
 										"method": "GET",
@@ -1094,58 +1146,6 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"0\": \"Adware\",\n    \"1\": \"Alcohol\",\n    \"2\": \"Auctions\",\n    \"3\": \"Blogs\",\n    \"4\": \"Chat\",\n    \"5\": \"Classifieds\",\n    \"6\": \"Dating\",\n    \"7\": \"Drugs\",\n    \"8\": \"Ecommerce/Shopping\",\n    \"9\": \"File Storage\",\n    \"10\": \"Gambling\",\n    \"11\": \"Games\",\n    \"12\": \"Hate/Discrimination\",\n    \"13\": \"Health and Fitness\",\n    \"14\": \"Humor\",\n    \"15\": \"Instant Messaging\",\n    \"16\": \"Jobs/Employment\",\n    \"17\": \"Movies\",\n    \"18\": \"News/Media\",\n    \"19\": \"P2P/File sharing\",\n    \"20\": \"Photo Sharing\",\n    \"21\": \"Portals\",\n    \"22\": \"Radio\",\n    \"23\": \"Search Engines\",\n    \"24\": \"Social Networking\",\n    \"25\": \"Software/Technology\",\n    \"26\": \"Television\",\n    \"28\": \"Video Sharing\",\n    \"29\": \"Visual Search Engines\",\n    \"30\": \"Weapons\",\n    \"31\": \"Webmail\",\n    \"32\": \"Business Services\",\n    \"33\": \"Educational Institutions\",\n    \"34\": \"Financial Institutions\",\n    \"35\": \"Government\",\n    \"36\": \"Music\",\n    \"37\": \"Parked Domains\",\n    \"38\": \"Tobacco\",\n    \"39\": \"Sports\",\n    \"40\": \"Adult Themes\",\n    \"41\": \"Lingerie/Bikini\",\n    \"42\": \"Nudity\",\n    \"43\": \"Proxy/Anonymizer\",\n    \"44\": \"Pornography\",\n    \"45\": \"Sexuality\",\n    \"46\": \"Tasteless\",\n    \"47\": \"Academic Fraud\",\n    \"48\": \"Automotive\",\n    \"49\": \"Forums/Message boards\",\n    \"50\": \"Non-Profits\",\n    \"51\": \"Podcasts\",\n    \"52\": \"Politics\",\n    \"53\": \"Religious\",\n    \"54\": \"Research/Reference\",\n    \"55\": \"Travel\",\n    \"57\": \"Anime/Manga/Webcomic\",\n    \"58\": \"Web Spam\",\n    \"59\": \"Typo Squatting\",\n    \"60\": \"Drive-by Downloads/Exploits\",\n    \"61\": \"Dynamic DNS\",\n    \"62\": \"Mobile Threats\",\n    \"63\": \"High Risk Sites and Locations\",\n    \"64\": \"Command and Control\",\n    \"65\": \"Command and Control\",\n    \"66\": \"Malware\",\n    \"67\": \"Malware\",\n    \"68\": \"Phishing\",\n    \"108\": \"Newly Seen Domains\",\n    \"109\": \"Potentially Harmful\",\n    \"110\": \"DNS Tunneling VPN\",\n    \"111\": \"Arts\",\n    \"112\": \"Astrology\",\n    \"113\": \"Computer Security\",\n    \"114\": \"Digital Postcards\",\n    \"115\": \"Dining and Drinking\",\n    \"116\": \"Dynamic and Residential\",\n    \"117\": \"Fashion\",\n    \"118\": \"File Transfer Services\",\n    \"119\": \"Freeware and Shareware\",\n    \"120\": \"Hacking\",\n    \"121\": \"Illegal Activities\",\n    \"122\": \"Illegal Downloads\",\n    \"123\": \"Infrastructure\",\n    \"124\": \"Internet Telephony\",\n    \"125\": \"Lotteries\",\n    \"126\": \"Mobile Phones\",\n    \"127\": \"Nature\",\n    \"128\": \"Online Trading\",\n    \"129\": \"Personal Sites\",\n    \"130\": \"Professional Networking\",\n    \"131\": \"Real Estate\",\n    \"132\": \"SaaS and B2B\",\n    \"133\": \"Safe for Kids\",\n    \"134\": \"Science and Technology\",\n    \"135\": \"Sex Education\",\n    \"136\": \"Social Science\",\n    \"137\": \"Society and Culture\",\n    \"138\": \"Software Updates\",\n    \"139\": \"Web Hosting\",\n    \"140\": \"Web Page Translation\",\n    \"141\": \"Organization Email\",\n    \"142\": \"Online Meetings\",\n    \"143\": \"Paranormal\",\n    \"144\": \"Personal VPN\",\n    \"145\": \"DIY Projects\",\n    \"146\": \"Hunting\",\n    \"147\": \"Military\",\n    \"150\": \"Cryptomining\"\n}"
-								},
-								{
-									"name": "Failure: bad creds",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/domains/categories",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"domains",
-												"categories"
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "raw",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 19:03:24 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/octet-stream"
-										},
-										{
-											"key": "Content-Length",
-											"value": "25"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\"error\":\"unauthorized\"}\n"
 								}
 							]
 						},
@@ -1322,6 +1322,64 @@
 							},
 							"response": [
 								{
+									"name": "Failure: bad creds",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/dnsdb/name/a/www.njrusmc.net.json",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"dnsdb",
+												"name",
+												"a",
+												"www.njrusmc.net.json"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 18:23:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"unauthorized\"\n}"
+								},
+								{
 									"name": "Success",
 									"originalRequest": {
 										"method": "GET",
@@ -1410,64 +1468,6 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"rrs_tf\": [\n        {\n            \"rrs\": [\n                {\n                    \"name\": \"www.njrusmc.net.\",\n                    \"ttl\": 5,\n                    \"type\": \"A\",\n                    \"rr\": \"52.216.244.35\",\n                    \"class\": \"IN\"\n                }\n            ],\n            \"first_seen\": \"2020-05-14\",\n            \"last_seen\": \"2020-05-14\"\n        },\n        {\n            \"rrs\": [\n                {\n                    \"name\": \"www.njrusmc.net.\",\n                    \"ttl\": 5,\n                    \"type\": \"A\",\n                    \"rr\": \"52.217.13.75\",\n                    \"class\": \"IN\"\n                }\n            ],\n            \"first_seen\": \"2020-04-14\",\n            \"last_seen\": \"2020-04-14\"\n        }\n    ],\n    \"features\": {\n        \"base_domain\": \"njrusmc.net\",\n        \"is_subdomain\": true,\n        \"age\": 69,\n        \"ttls_mean\": 5,\n        \"ttls_min\": 5,\n        \"ttls_max\": 5,\n        \"ttls_median\": 5,\n        \"ttls_stddev\": 0,\n        \"country_codes\": [\n            \"US\"\n        ],\n        \"country_count\": 1,\n        \"locations\": [\n            {\n                \"lat\": 39.048095703125,\n                \"lon\": -77.4728012084961\n            }\n        ],\n        \"locations_count\": 1,\n        \"asns\": [\n            16509\n        ],\n        \"asns_count\": 1,\n        \"non_routable\": false,\n        \"mail_exchanger\": false,\n        \"geo_distance_sum\": 0,\n        \"geo_distance_mean\": 0,\n        \"rips_stability\": 0.5,\n        \"rips\": 2,\n        \"div_rips\": 1,\n        \"ff_candidate\": false,\n        \"prefixes\": [\n            \"52.217.0.0\",\n            \"52.216.224.0\"\n        ],\n        \"prefixes_count\": 2,\n        \"cname\": false\n    }\n}"
-								},
-								{
-									"name": "Failure: bad creds",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/dnsdb/name/a/www.njrusmc.net.json",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"dnsdb",
-												"name",
-												"a",
-												"www.njrusmc.net.json"
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 18:23:22 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "25"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": \"unauthorized\"\n}"
 								}
 							]
 						},
@@ -2213,101 +2213,6 @@
 							},
 							"response": [
 								{
-									"name": "Success: text label",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://investigate.api.umbrella.com/domains/categorization/www.internetbadguys.com?showLabels",
-											"protocol": "https",
-											"host": [
-												"investigate",
-												"api",
-												"umbrella",
-												"com"
-											],
-											"path": [
-												"domains",
-												"categorization",
-												"www.internetbadguys.com"
-											],
-											"query": [
-												{
-													"key": "showLabels",
-													"value": null
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jun 2020 18:51:06 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "https://try.readme.io"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "Content-Length,Content-Range"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=2628000"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"www.internetbadguys.com\": {\n        \"status\": -1,\n        \"security_categories\": [\n            \"Malware\",\n            \"Phishing\"\n        ],\n        \"content_categories\": [\n            \"Computer Security\"\n        ]\n    }\n}"
-								},
-								{
 									"name": "Success: numeric label",
 									"originalRequest": {
 										"method": "GET",
@@ -2402,6 +2307,101 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"www.internetbadguys.com\": {\n        \"status\": -1,\n        \"security_categories\": [\n            \"66\",\n            \"68\"\n        ],\n        \"content_categories\": [\n            \"113\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Success: text label",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://investigate.api.umbrella.com/domains/categorization/www.internetbadguys.com?showLabels",
+											"protocol": "https",
+											"host": [
+												"investigate",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"domains",
+												"categorization",
+												"www.internetbadguys.com"
+											],
+											"query": [
+												{
+													"key": "showLabels",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Jun 2020 18:51:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://try.readme.io"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "Content-Length,Content-Range"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=2628000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"www.internetbadguys.com\": {\n        \"status\": -1,\n        \"security_categories\": [\n            \"Malware\",\n            \"Phishing\"\n        ],\n        \"content_categories\": [\n            \"Computer Security\"\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -2663,6 +2663,1136 @@
 				}
 			],
 			"description": "https://docs.umbrella.com/investigate-api/docs/introduction-to-cisco-investigate",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Management API",
+			"item": [
+				{
+					"name": "Secure Internet Gateway (SIG)",
+					"item": [
+						{
+							"name": "Get SIG tunnels",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{mgmt_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{mgmt_key}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+									"protocol": "https",
+									"host": [
+										"management",
+										"api",
+										"umbrella",
+										"com"
+									],
+									"path": [
+										"v1",
+										"organizations",
+										"{{org_id}}",
+										"tunnels"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success: after addition",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "413"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "11"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:53:49 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "9efb1ba1-b155-4fb2-80e2-88adc0345449"
+										},
+										{
+											"key": "Total-Distinct-Dc-Count",
+											"value": "0"
+										},
+										{
+											"key": "Total-Inactive-Item-Count",
+											"value": "0"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3bmGe-oAMFo-Q="
+										},
+										{
+											"key": "Total-Active-Item-Count",
+											"value": "0"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9f7d-0241511660707fbb260fb560;Sampled=0"
+										},
+										{
+											"key": "Total-Item-Count",
+											"value": "1"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 526904516,\n        \"organizationId\": 2532196,\n        \"name\": \"postman1\",\n        \"transport\": {\n            \"protocol\": \"IPSec\"\n        },\n        \"client\": {\n            \"deviceType\": \"ISR\",\n            \"authentication\": {\n                \"type\": \"PSK\",\n                \"parameters\": {\n                    \"id\": \"R1.njrusmc.net@2532196-526904516-umbrella.com\",\n                    \"modifiedAt\": \"2021-03-11T22:53:28.112821442Z\"\n                }\n            }\n        },\n        \"createdAt\": \"2021-03-11T22:53:28.129670054Z\",\n        \"modifiedAt\": \"2021-03-11T22:53:28.129670054Z\",\n        \"uri\": \"/v1/organizations/2532196/tunnels\",\n        \"meta\": {}\n    }\n]"
+								},
+								{
+									"name": "Success: with metadata",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/527110166",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels",
+												"527110166"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "762"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "34"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Mar 2021 18:14:27 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "987586ca-2600-4c04-a37e-2df643930ba3"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cMHUcE7ooAMF4Ow="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604e5282-1dc783de6351f7f31501fc3a;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 527110166,\n    \"organizationId\": 3911712,\n    \"name\": \"R1.njrusmc.net\",\n    \"transport\": {\n        \"protocol\": \"IPSec\"\n    },\n    \"client\": {\n        \"deviceType\": \"ISR\",\n        \"authentication\": {\n            \"type\": \"PSK\",\n            \"parameters\": {\n                \"id\": \"R1.njrusmc.net@3911712-527110166-umbrella.com\",\n                \"modifiedAt\": \"2021-03-14T18:10:25.650221721Z\"\n            }\n        }\n    },\n    \"createdAt\": \"2021-03-14T16:10:34.079873877Z\",\n    \"modifiedAt\": \"2021-03-14T16:10:34.079873877Z\",\n    \"uri\": \"/v1/organizations/3911712/tunnels/527110166\",\n    \"meta\": {\n        \"state\": {\n            \"time\": \"2021-03-14T18:13:34.397744981Z\",\n            \"status\": \"UP\",\n            \"dc\": \"ash1.edc\",\n            \"ikeState\": \"ESTABLISHED\",\n            \"ipsecState\": \"INSTALLED\",\n            \"peerId\": \"R1.njrusmc.net@3911712-527110166-umbrella.com\",\n            \"peerIp\": \"18.207.161.148\",\n            \"peerPort\": \"4500\",\n            \"localIp\": \"146.112.82.8\",\n            \"localPort\": \"4500\",\n            \"dcName\": \"Equinix Ashburn\",\n            \"dcDesc\": \"Ashburn, Virginia - US\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Success: empty",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "10"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:31:50 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "2fcbd2be-f5f0-41d7-971f-f2f6cc91c11a"
+										},
+										{
+											"key": "Total-Distinct-Dc-Count",
+											"value": "0"
+										},
+										{
+											"key": "Total-Inactive-Item-Count",
+											"value": "0"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC0NeFfOIAMF6MQ="
+										},
+										{
+											"key": "Total-Active-Item-Count",
+											"value": "0"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9a56-72c36def3fb6156e569ef444;Sampled=0"
+										},
+										{
+											"key": "Total-Item-Count",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "[]"
+								}
+							]
+						},
+						{
+							"name": "Create SIG tunnel",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{mgmt_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{mgmt_key}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"postman1\",\r\n    \"deviceType\": \"ISR\",\r\n    \"transport\": {\r\n        \"protocol\": \"IPSec\"\r\n    },\r\n    \"authentication\": {\r\n        \"type\": \"PSK\",\r\n        \"parameters\": {\r\n            \"idPrefix\": \"R1.njrusmc.net\",\r\n            \"secret\": \"ABCdef0123456789\"\r\n        }\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+									"protocol": "https",
+									"host": [
+										"management",
+										"api",
+										"umbrella",
+										"com"
+									],
+									"path": [
+										"v1",
+										"organizations",
+										"{{org_id}}",
+										"tunnels"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"postman1\",\r\n    \"deviceType\": \"ISR\",\r\n    \"transport\": {\r\n        \"protocol\": \"IPSec\"\r\n    },\r\n    \"authentication\": {\r\n        \"type\": \"PSK\",\r\n        \"parameters\": {\r\n            \"idPrefix\": \"R1.njrusmc.net\",\r\n            \"secret\": \"ABCdef0123456789\"\r\n        }\r\n    }\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "439"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2999"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "33"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:53:28 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "d007d3b4-c292-4aca-9715-b384e3b29224"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3YLFh8IAMFZew="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9f67-41474134610fcf043ab1ca1c;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 526904516,\n    \"organizationId\": 2532196,\n    \"name\": \"postman1\",\n    \"transport\": {\n        \"protocol\": \"IPSec\"\n    },\n    \"client\": {\n        \"deviceType\": \"ISR\",\n        \"authentication\": {\n            \"type\": \"PSK\",\n            \"parameters\": {\n                \"id\": \"R1.njrusmc.net@2532196-526904516-umbrella.com\",\n                \"secret\": \"ABCdef0123456789\",\n                \"modifiedAt\": \"2021-03-11T22:53:28.112821442Z\"\n            }\n        }\n    },\n    \"createdAt\": \"2021-03-11T22:53:28.129670054Z\",\n    \"modifiedAt\": \"2021-03-11T22:53:28.129670054Z\",\n    \"uri\": \"/v1/organizations/2532196/tunnels\",\n    \"meta\": {}\n}"
+								},
+								{
+									"name": "Failure: already exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"postman1\",\r\n    \"deviceType\": \"ISR\",\r\n    \"transport\": {\r\n        \"protocol\": \"IPSec\"\r\n    },\r\n    \"authentication\": {\r\n        \"type\": \"PSK\",\r\n        \"parameters\": {\r\n            \"idPrefix\": \"R1.njrusmc.net\",\r\n            \"secret\": \"ABCdef0123456789\"\r\n        }\r\n    }\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2998"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2998"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "27"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:53:33 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "19f3705c-cc9c-40bd-8418-34bea9f7fd66"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3ZDFjYIAMFe-w="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9f6d-5a2809d92fdce93f04078e41;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Tunnel Name must be unique.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Set tunnel IPsec PSK",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{mgmt_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{mgmt_key}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deprecateCurrentKeys\": false,\r\n    \"autoRotate\": false,\r\n    \"psk\": {\r\n        \"idPrefix\": \"R1.njrusmc.net\",\r\n        \"secret\": \"newPASS123456789\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516/keys",
+									"protocol": "https",
+									"host": [
+										"management",
+										"api",
+										"umbrella",
+										"com"
+									],
+									"path": [
+										"v1",
+										"organizations",
+										"{{org_id}}",
+										"tunnels",
+										"526904516",
+										"keys"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Failure: secret too short",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deprecateCurrentKeys\": false,\r\n    \"autoRotate\": false,\r\n    \"psk\": {\r\n        \"idPrefix\": \"R1.njrusmc.net\",\r\n        \"secret\": \"newPAS\"\r\n    }\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516/keys",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels",
+												"526904516",
+												"keys"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2995"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2995"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "43"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:54:17 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "a92ad00a-aef1-4e7c-bdbc-772f411d838e"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3f_HJGoAMF2ZA="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9f99-69164fb8373d7fdd6f62afcf;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"'psk.secret' must be at least 16 characters long\"\n}"
+								},
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deprecateCurrentKeys\": false,\r\n    \"autoRotate\": false,\r\n    \"psk\": {\r\n        \"idPrefix\": \"R1.njrusmc.net\",\r\n        \"secret\": \"newPASS123456789\"\r\n    }\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516/keys",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels",
+												"526904516",
+												"keys"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "454"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "53"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:54:08 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "509acf17-589c-469f-8d97-3db1c4faf106"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3ecGTlIAMFplQ="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9f8f-5d8aa7be7cbb7782379b2dfa;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 526904516,\n    \"organizationId\": 2532196,\n    \"name\": \"postman1\",\n    \"transport\": {\n        \"protocol\": \"IPSec\"\n    },\n    \"client\": {\n        \"deviceType\": \"ISR\",\n        \"authentication\": {\n            \"type\": \"PSK\",\n            \"parameters\": {\n                \"id\": \"R1.njrusmc.net@2532196-526904516-umbrella.com\",\n                \"secret\": \"newPASS123456789\",\n                \"modifiedAt\": \"2021-03-11T22:54:08.167240543Z\"\n            }\n        }\n    },\n    \"createdAt\": \"2021-03-11T22:53:28.129670054Z\",\n    \"modifiedAt\": \"2021-03-11T22:53:28.129670054Z\",\n    \"uri\": \"/v1/organizations/2532196/tunnels/526904516/keys\",\n    \"meta\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete SIG tunnel",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{mgmt_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{mgmt_key}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"detachPolicies\": true\r\n}"
+								},
+								"url": {
+									"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516",
+									"protocol": "https",
+									"host": [
+										"management",
+										"api",
+										"umbrella",
+										"com"
+									],
+									"path": [
+										"v1",
+										"organizations",
+										"{{org_id}}",
+										"tunnels",
+										"526904516"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"detachPolicies\": true\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels",
+												"526904516"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "41"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2998"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2998"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "19"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:55:42 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "559e4424-4c2d-4214-ae31-5a848f6df11b"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3tIET4IAMF0bA="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9fed-1c8883f46447f2e726e2f494;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tunnel deleted successfully\"\n}"
+								},
+								{
+									"name": "Failure: already deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"detachPolicies\": true\r\n}"
+										},
+										"url": {
+											"raw": "https://management.api.umbrella.com/v1/organizations/{{org_id}}/tunnels/526904516",
+											"protocol": "https",
+											"host": [
+												"management",
+												"api",
+												"umbrella",
+												"com"
+											],
+											"path": [
+												"v1",
+												"organizations",
+												"{{org_id}}",
+												"tunnels",
+												"526904516"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-RateLimit-Limit-minute",
+											"value": "3000"
+										},
+										{
+											"key": "X-RateLimit-Remaining-minute",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Limit",
+											"value": "3000"
+										},
+										{
+											"key": "RateLimit-Remaining",
+											"value": "2997"
+										},
+										{
+											"key": "RateLimit-Reset",
+											"value": "13"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Mar 2021 22:55:47 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "b73a1763-54a3-4a6d-bdb8-b4644bc3922d"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "cC3uHE6qIAMFS2A="
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-604a9ff3-6f539d0838ff1dc717621ac0;Sampled=0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Tunnel not found.\"\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"description": "https://docs.umbrella.com/umbrella-api/docs/network-device-management",
 			"event": [
 				{
 					"listen": "prerequest",
