@@ -1,5 +1,5 @@
 # Cisco Network Services Orchestrator (NSO)
-Postman collection to interact with the Cisco NSO RESTCONF API.
+Postman collection to interact with the Cisco NSO RESTCONF and JSON RPC APIs.
 
 ## Usage
 Be sure to check the folder descriptions for a summary of each workflow,
@@ -23,7 +23,7 @@ There are three environments included with the collection:
 You can add custom environments for your own networks as you see fit.
 
 ## Copyright
-Copyright 2021 Nicholas Russo.
+Copyright 2022 Nicholas Russo.
 
 Consumers may download and edit any document in this collection for personal
 use only. Downloading and editing any document in this collection for
