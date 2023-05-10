@@ -3,13 +3,16 @@ Postman collection to interact with the Cisco ISE APIs:
   * External RESTful Services (ERS)
   * pxGrid Control
   * pxGrid REST/data collection
-  * Initial setup for pxGrid websockets/STOMP for streaming telemetry
+  * Initial setup for pxGrid 2.0 websockets/STOMP for streaming telemetry
   * Monitoring API (mnt)
 
 ## Usage
 Be sure to check the folder descriptions for a summary of each workflow,
 and note that each request has at least one "example" showing the response
 format.
+
+Also, check out the websocket-specific collections for pxGrid 2.0
+interaction.
 
 ## Environments
 There are two environments included with the collection,
@@ -26,7 +29,7 @@ There are two environments included with the collection,
 You can add custom environments for your own networks as you see fit.
 
 ## Copyright
-Copyright 2021 Nicholas Russo.
+Copyright 2023 Nicholas Russo.
 
 Consumers may download and edit any document in this collection for personal
 use only. Downloading and editing any document in this collection for

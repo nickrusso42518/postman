@@ -1,9 +1,11 @@
 {
 	"info": {
-		"_postman_id": "fa5b6605-4e09-40c8-800c-3546038cc112",
+		"_postman_id": "1886a5b1-a16f-42d0-b872-8b5fc37697df",
 		"name": "Cisco ISE",
-		"description": "ISE supports two different APIs: ERS and pxGrid.\nCheck the subfolder descriptions for the appropriate documentation links.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"description": "ISE supports two different APIs: ERS and pxGrid.  \nCheck the subfolder descriptions for the appropriate documentation links.\n\nRecommended setup for DevNet sandbox ISE instances:\n\n1. Administration > pxGrid Services > Settings\n    - enable \"Allow password based account creation\"\n2. Administration > System > Settings > Protocols > Radius\n    - disable \"Suppress Repeated Failed Clients\"\n    - disable \"Suppress repeated successful authentications\"\n3. If sending RADIUS messages from your DevBox,  \n    add it as a NAD, or enable the default device.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14123647",
+		"_collection_link": "https://www.postman.com/njrusmc/workspace/public-collections/collection/14123647-1886a5b1-a16f-42d0-b872-8b5fc37697df?action=share&creator=14123647&source=collection_link"
 	},
 	"item": [
 		{
@@ -59,116 +61,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Failure: bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"NetworkDevice\": {\n            \"name\": \"RAVPN\",\n            \"id\": \"123\",\n            \"description\": \"Simulated Globomantics switches\",\n            \"modelName\": \"3650\",\n            \"authenticationSettings\": {\n                \"networkProtocol\": \"RADIUS\",\n                \"radiusSharedSecret\": \"globo123\",\n                \"enableKeyWrap\": false,\n                \"keyEncryptionKey\": \"\",\n                \"keyInputFormat\": \"ASCII\"\n            },\n            \"profileName\": \"Cisco\",\n            \"coaPort\": 1700,\n            \"NetworkDeviceIPList\": [\n                {\n                    \"ipaddress\": \"192.168.0.0\",\n                    \"mask\": 16\n                }\n            ],\n            \"NetworkDeviceGroupList\": [\n                \"Location#All Locations\",\n                \"IPSEC#Is IPSEC Device#No\",\n                \"Device Type#All Device Types\"\n            ]\n        }\n    }\n}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "9060",
-									"path": [
-										"ers",
-										"config",
-										"networkdevice"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONIDSSO=8511841AAA9BF1FA806FE1F5D57A4EE8; Path=/; Secure; HttpOnly"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "APPSESSIONID=CECE21C0F232C21238D649C88A3852A9; Path=/ers; Secure; HttpOnly"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-WebKit-CSP",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:11:14 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"POST-create-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"Invalid JSON Input: Unexpected character ('{' (code 123)): was expecting double-quote to start field name\\n at [Source: java.io.StringReader@336bffe3; line: 3, column: 10]\",\n                \"type\": \"ERROR\",\n                \"code\": \"Application resource validation exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -372,6 +264,116 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"POST-create-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"Network Device Create failed: Device Name Already Exist\",\n                \"type\": \"ERROR\",\n                \"code\": \"Application resource validation exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Failure: bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"NetworkDevice\": {\n            \"name\": \"RAVPN\",\n            \"id\": \"123\",\n            \"description\": \"Simulated Globomantics switches\",\n            \"modelName\": \"3650\",\n            \"authenticationSettings\": {\n                \"networkProtocol\": \"RADIUS\",\n                \"radiusSharedSecret\": \"globo123\",\n                \"enableKeyWrap\": false,\n                \"keyEncryptionKey\": \"\",\n                \"keyInputFormat\": \"ASCII\"\n            },\n            \"profileName\": \"Cisco\",\n            \"coaPort\": 1700,\n            \"NetworkDeviceIPList\": [\n                {\n                    \"ipaddress\": \"192.168.0.0\",\n                    \"mask\": 16\n                }\n            ],\n            \"NetworkDeviceGroupList\": [\n                \"Location#All Locations\",\n                \"IPSEC#Is IPSEC Device#No\",\n                \"Device Type#All Device Types\"\n            ]\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "9060",
+									"path": [
+										"ers",
+										"config",
+										"networkdevice"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONIDSSO=8511841AAA9BF1FA806FE1F5D57A4EE8; Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "APPSESSIONID=CECE21C0F232C21238D649C88A3852A9; Path=/ers; Secure; HttpOnly"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-WebKit-CSP",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:11:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"POST-create-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"Invalid JSON Input: Unexpected character ('{' (code 123)): was expecting double-quote to start field name\\n at [Source: java.io.StringReader@336bffe3; line: 3, column: 10]\",\n                \"type\": \"ERROR\",\n                \"code\": \"Application resource validation exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -783,6 +785,101 @@
 					},
 					"response": [
 						{
+							"name": "Failure: already deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "9060",
+									"path": [
+										"ers",
+										"config",
+										"networkdevice",
+										"a17e61a0-c6c6-11ea-b0f0-02ad37c1e915"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-WebKit-CSP",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:16:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"DELETE-delete-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"The specified resource does not exist\",\n                \"type\": \"ERROR\",\n                \"code\": \"Resource not found exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "DELETE",
@@ -884,101 +981,6 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"name": "Failure: already deleted",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "https://{{ise_host}}:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "9060",
-									"path": [
-										"ers",
-										"config",
-										"networkdevice",
-										"a17e61a0-c6c6-11ea-b0f0-02ad37c1e915"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, must-revalidate"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-WebKit-CSP",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:16:22 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"ERSResponse\": {\n        \"operation\": \"DELETE-delete-networkdevice\",\n        \"messages\": [\n            {\n                \"title\": \"The specified resource does not exist\",\n                \"type\": \"ERROR\",\n                \"code\": \"Resource not found exception\"\n            }\n        ],\n        \"link\": {\n            \"rel\": \"related\",\n            \"href\": \"https://10.10.20.70:9060/ers/config/networkdevice/a17e61a0-c6c6-11ea-b0f0-02ad37c1e915\",\n            \"type\": \"application/xml\"\n        }\n    }\n}"
 						}
 					]
 				}
@@ -1006,11 +1008,137 @@
 			]
 		},
 		{
-			"name": "pxGrid Services",
+			"name": "pxGrid 2.0 Services",
 			"item": [
+				{
+					"name": "Version",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{ise_host}}:8910/pxgrid/control/version",
+							"protocol": "https",
+							"host": [
+								"{{ise_host}}"
+							],
+							"port": "8910",
+							"path": [
+								"pxgrid",
+								"control",
+								"version"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/version",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"version"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 May 2023 12:06:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "\"2.0\""
+						}
+					]
+				},
 				{
 					"name": "Account Create",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1026,7 +1154,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nodeName\": \"{{username}}\"\n}"
+							"raw": "{\n    \"nodeName\": \"{{pxgrid_username}}\"\n}"
 						},
 						"url": {
 							"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountCreate",
@@ -1128,6 +1256,92 @@
 							],
 							"cookie": [],
 							"body": ""
+						},
+						{
+							"name": "Failure: password-based users disabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nodeName\": \"{{pxgrid_username}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountCreate",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"AccountCreate"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 May 2023 11:49:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": null
 						},
 						{
 							"name": "Success",
@@ -1268,6 +1482,92 @@
 					},
 					"response": [
 						{
+							"name": "Success: enabled",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountActivate",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"AccountActivate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 17:57:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accountState\": \"ENABLED\",\n    \"version\": \"2.0.3.6\"\n}"
+						},
+						{
 							"name": "Failure: bad creds",
 							"originalRequest": {
 								"method": "POST",
@@ -1360,92 +1660,6 @@
 							],
 							"cookie": [],
 							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Message</b> Unauthorized</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
-						},
-						{
-							"name": "Success: enabled",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/control/AccountActivate",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"control",
-										"AccountActivate"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 17:57:52 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"accountState\": \"ENABLED\",\n    \"version\": \"2.0.3.6\"\n}"
 						},
 						{
 							"name": "Success: pending",
@@ -1670,11 +1884,105 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"services\": [\n        {\n            \"name\": \"com.cisco.ise.radius\",\n            \"nodeName\": \"ise-mnt-ise24\",\n            \"properties\": {\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"restBaseUrl\": \"https://ise24.abc.inc:8910/pxgrid/ise/radius\",\n                \"failureTopic\": \"/topic/com.cisco.ise.radius.failure\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure: unknown service",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"com.cisco.ise.radius2\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"ServiceLookup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 May 2023 12:45:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"services\": []\n}"
 						}
 					]
 				},
 				{
-					"name": "Access Secret for RADIUS",
+					"name": "Service Lookup for session",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -1706,7 +2014,393 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"peerNodeName\": \"ise-mnt-ise24\"\n}"
+							"raw": "{\n    \"name\": \"com.cisco.ise.session\"\n}"
+						},
+						"url": {
+							"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+							"protocol": "https",
+							"host": [
+								"{{ise_host}}"
+							],
+							"port": "8910",
+							"path": [
+								"pxgrid",
+								"control",
+								"ServiceLookup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"com.cisco.ise.session\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"ServiceLookup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 May 2023 11:55:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"services\": [\n        {\n            \"name\": \"com.cisco.ise.session\",\n            \"nodeName\": \"~ise-mnt-ise-1\",\n            \"properties\": {\n                \"sessionTopic\": \"/topic/com.cisco.ise.session\",\n                \"groupTopic\": \"/topic/com.cisco.ise.session.group\",\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"restBaseURL\": \"https://ise-1.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\",\n                \"restBaseUrl\": \"https://ise-1.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\"\n            }\n        },\n        {\n            \"name\": \"com.cisco.ise.session\",\n            \"nodeName\": \"~ise-mnt-ise-2\",\n            \"properties\": {\n                \"sessionTopic\": \"/topic/com.cisco.ise.session\",\n                \"groupTopic\": \"/topic/com.cisco.ise.session.group\",\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"restBaseURL\": \"https://ise-2.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\",\n                \"restBaseUrl\": \"https://ise-2.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Service Lookup for trustsec",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{pxgrid_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{pxgrid_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"com.cisco.ise.trustsec\"\n}"
+						},
+						"url": {
+							"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+							"protocol": "https",
+							"host": [
+								"{{ise_host}}"
+							],
+							"port": "8910",
+							"path": [
+								"pxgrid",
+								"control",
+								"ServiceLookup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"com.cisco.ise.session\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"ServiceLookup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 May 2023 11:55:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"services\": [\n        {\n            \"name\": \"com.cisco.ise.session\",\n            \"nodeName\": \"~ise-mnt-ise-1\",\n            \"properties\": {\n                \"sessionTopic\": \"/topic/com.cisco.ise.session\",\n                \"groupTopic\": \"/topic/com.cisco.ise.session.group\",\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"restBaseURL\": \"https://ise-1.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\",\n                \"restBaseUrl\": \"https://ise-1.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\"\n            }\n        },\n        {\n            \"name\": \"com.cisco.ise.session\",\n            \"nodeName\": \"~ise-mnt-ise-2\",\n            \"properties\": {\n                \"sessionTopic\": \"/topic/com.cisco.ise.session\",\n                \"groupTopic\": \"/topic/com.cisco.ise.session.group\",\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"restBaseURL\": \"https://ise-2.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\",\n                \"restBaseUrl\": \"https://ise-2.lab.devnetsandbox.local:8910/pxgrid/mnt/sd\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"com.cisco.ise.trustsec\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/control/ServiceLookup",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"control",
+										"ServiceLookup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 May 2023 11:57:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"services\": [\n        {\n            \"name\": \"com.cisco.ise.trustsec\",\n            \"nodeName\": \"~ise-mnt-ise-2\",\n            \"properties\": {\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"policyDownloadTopic\": \"/topic/com.cisco.ise.trustsec\"\n            }\n        },\n        {\n            \"name\": \"com.cisco.ise.trustsec\",\n            \"nodeName\": \"~ise-mnt-ise-1\",\n            \"properties\": {\n                \"wsPubsubService\": \"com.cisco.ise.pubsub\",\n                \"policyDownloadTopic\": \"/topic/com.cisco.ise.trustsec\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Access Secret for mnt node",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{pxgrid_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{pxgrid_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"peerNodeName\": \"~ise-mnt-ise-1\"\n}"
 						},
 						"url": {
 							"raw": "https://{{ise_host}}:8910/pxgrid/control/AccessSecret",
@@ -1808,6 +2502,334 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"secret\": \"5VmKZ4jRDtJdd6B3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get RADIUS failures",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{pxgrid_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{pxgrid_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
+							"protocol": "https",
+							"host": [
+								"{{ise_host}}"
+							],
+							"port": "8910",
+							"path": [
+								"pxgrid",
+								"ise",
+								"radius",
+								"getFailures"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: bad creds",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"com.cisco.ise.pubsub\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"ise",
+										"radius",
+										"getFailures"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "WWW-Authenticate",
+									"value": "Basic realm=\"Realm\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1048"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:03:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Message</b> Unauthorized</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
+						},
+						{
+							"name": "Success: empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"ise",
+										"radius",
+										"getFailures"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:06:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"failures\": []\n}"
+						},
+						{
+							"name": "Success: some data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"port": "8910",
+									"path": [
+										"pxgrid",
+										"ise",
+										"radius",
+										"getFailures"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jul 2020 18:07:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"failures\": [\n        {\n            \"id\": \"1594815525760379\",\n            \"timestamp\": \"2020-07-15T18:07:02.245Z\",\n            \"failureReason\": \"22040 Wrong password or invalid shared secret\",\n            \"messageCode\": 5400,\n            \"userName\": \"user\",\n            \"serverName\": \"ise24\",\n            \"nasName\": \"RAVPN\",\n            \"accessService\": \"Default Network Access\",\n            \"authenticationMethod\": \"PAP_ASCII\",\n            \"authenticationProtocol\": \"PAP_ASCII\",\n            \"deviceType\": \"All Device Types\",\n            \"location\": \"All Locations\",\n            \"response\": \"{RadiusPacketType=AccessReject; AuthenticationResult=Failed; }\",\n            \"responseTime\": 2,\n            \"executionSteps\": [\n                \"11001\",\n                \"11017\",\n                \"11015\",\n                \"11117\",\n                \"15049\",\n                \"15008\",\n                \"22040\",\n                \"22002\",\n                \"11003\"\n            ],\n            \"credentialCheck\": \"PAP_ASCII\",\n            \"policySetName\": \"Default\"\n        },\n        {\n            \"id\": \"1594815525760377\",\n            \"timestamp\": \"2020-07-15T18:07:02.156Z\",\n            \"failureReason\": \"22040 Wrong password or invalid shared secret\",\n            \"messageCode\": 5400,\n            \"userName\": \"user\",\n            \"serverName\": \"ise24\",\n            \"nasName\": \"RAVPN\",\n            \"accessService\": \"Default Network Access\",\n            \"authenticationMethod\": \"PAP_ASCII\",\n            \"authenticationProtocol\": \"PAP_ASCII\",\n            \"deviceType\": \"All Device Types\",\n            \"location\": \"All Locations\",\n            \"response\": \"{RadiusPacketType=AccessReject; AuthenticationResult=Failed; }\",\n            \"responseTime\": 3,\n            \"executionSteps\": [\n                \"11001\",\n                \"11017\",\n                \"11015\",\n                \"11117\",\n                \"15049\",\n                \"15008\",\n                \"22040\",\n                \"22002\",\n                \"11003\"\n            ],\n            \"credentialCheck\": \"PAP_ASCII\",\n            \"policySetName\": \"Default\"\n        },\n        {\n            \"id\": \"1594815525760375\",\n            \"timestamp\": \"2020-07-15T18:07:02.07Z\",\n            \"failureReason\": \"22040 Wrong password or invalid shared secret\",\n            \"messageCode\": 5400,\n            \"userName\": \"user\",\n            \"serverName\": \"ise24\",\n            \"nasName\": \"RAVPN\",\n            \"accessService\": \"Default Network Access\",\n            \"authenticationMethod\": \"PAP_ASCII\",\n            \"authenticationProtocol\": \"PAP_ASCII\",\n            \"deviceType\": \"All Device Types\",\n            \"location\": \"All Locations\",\n            \"response\": \"{RadiusPacketType=AccessReject; AuthenticationResult=Failed; }\",\n            \"responseTime\": 4,\n            \"executionSteps\": [\n                \"11001\",\n                \"11017\",\n                \"11015\",\n                \"11117\",\n                \"15049\",\n                \"15008\",\n                \"22040\",\n                \"22002\",\n                \"11003\"\n            ],\n            \"credentialCheck\": \"PAP_ASCII\",\n            \"policySetName\": \"Default\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1982,7 +3004,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"peerNodeName\": \"ise-pubsub-ise24\"\n}"
+							"raw": "{\n    \"peerNodeName\": \"~ise-pubsub-ise-1\"\n}"
 						},
 						"url": {
 							"raw": "https://{{ise_host}}:8910/pxgrid/control/AccessSecret",
@@ -2086,320 +3108,6 @@
 							"body": "{\n    \"secret\": \"I9dREEh3fuP4YqjC\"\n}"
 						}
 					]
-				},
-				{
-					"name": "Get RADIUS failures",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{pxgrid_secret}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{pxgrid_username}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{}"
-						},
-						"url": {
-							"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
-							"protocol": "https",
-							"host": [
-								"{{ise_host}}"
-							],
-							"port": "8910",
-							"path": [
-								"pxgrid",
-								"ise",
-								"radius",
-								"getFailures"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Success: empty",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"ise",
-										"radius",
-										"getFailures"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:06:38 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\"failures\":[]}"
-						},
-						{
-							"name": "Success: some data",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"ise",
-										"radius",
-										"getFailures"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:07:29 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\"failures\":[{\"id\":\"1594815525760379\",\"timestamp\":\"2020-07-15T18:07:02.245Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":2,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"},{\"id\":\"1594815525760377\",\"timestamp\":\"2020-07-15T18:07:02.156Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":3,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"},{\"id\":\"1594815525760375\",\"timestamp\":\"2020-07-15T18:07:02.07Z\",\"failureReason\":\"22040 Wrong password or invalid shared secret\",\"messageCode\":5400,\"userName\":\"user\",\"serverName\":\"ise24\",\"nasName\":\"RAVPN\",\"accessService\":\"Default Network Access\",\"authenticationMethod\":\"PAP_ASCII\",\"authenticationProtocol\":\"PAP_ASCII\",\"deviceType\":\"All Device Types\",\"location\":\"All Locations\",\"response\":\"{RadiusPacketType\\u003dAccessReject; AuthenticationResult\\u003dFailed; }\",\"responseTime\":4,\"executionSteps\":[\"11001\",\"11017\",\"11015\",\"11117\",\"15049\",\"15008\",\"22040\",\"22002\",\"11003\"],\"credentialCheck\":\"PAP_ASCII\",\"policySetName\":\"Default\"}]}"
-						},
-						{
-							"name": "Failure: bad creds",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"com.cisco.ise.pubsub\"\n}"
-								},
-								"url": {
-									"raw": "https://{{ise_host}}:8910/pxgrid/ise/radius/getFailures",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"port": "8910",
-									"path": [
-										"pxgrid",
-										"ise",
-										"radius",
-										"getFailures"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "WWW-Authenticate",
-									"value": "Basic realm=\"Realm\""
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html;charset=utf-8"
-								},
-								{
-									"key": "Content-Language",
-									"value": "en"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1048"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 18:03:40 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Message</b> Unauthorized</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
-						}
-					]
 				}
 			],
 			"description": "https://developer.cisco.com/docs/pxgrid",
@@ -2462,6 +3170,65 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Failure: bad creds",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Version",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Version"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Basic realm=\"Authentication required\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1014"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 12:53:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
+						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -2540,65 +3307,6 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<product name=\"Cisco Identity Services Engine\">\n    <version>2.7.0.356</version>\n    <type_of_node>0</type_of_node>\n</product>"
-						},
-						{
-							"name": "Failure: bad creds",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Version",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Version"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "WWW-Authenticate",
-									"value": "Basic realm=\"Authentication required\""
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html;charset=utf-8"
-								},
-								{
-									"key": "Content-Language",
-									"value": "en"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1014"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 12:53:49 GMT"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Description</b> The request has not been applied because it lacks valid authentication credentials for the target resource.</p><hr class=\"line\" /><h3></h3></body></html>"
 						}
 					]
 				},
@@ -2638,6 +3346,78 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Success: VPN client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Session/ActiveCount",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Session",
+										"ActiveCount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 13:49:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionCount>\n    <count>1</count>\n</sessionCount>"
+						},
 						{
 							"name": "Success: empty",
 							"originalRequest": {
@@ -2717,78 +3497,6 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionCount>\n    <count>0</count>\n</sessionCount>"
-						},
-						{
-							"name": "Success: VPN client",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Session/ActiveCount",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Session",
-										"ActiveCount"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 13:49:24 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "100"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionCount>\n    <count>1</count>\n</sessionCount>"
 						}
 					]
 				},
@@ -3126,87 +3834,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: VPN client",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Session/MACAddress/00:50:56:A9:8F:4E",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Session",
-										"MACAddress",
-										"00:50:56:A9:8F:4E"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 13:51:59 GMT"
-								},
-								{
-									"key": "vary",
-									"value": "accept-encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <passed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">true</passed>\n    <failed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</failed>\n    <user_name>officer</user_name>\n    <nas_ip_address>198.18.133.100</nas_ip_address>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400001000602a7bd8</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <network_device_name>ASAv-vpn</network_device_name>\n    <acs_server>ise</acs_server>\n    <authentication_method>MSCHAPV2</authentication_method>\n    <authentication_protocol>MSCHAPV2</authentication_protocol>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T13:49:13.379Z</auth_acs_timestamp>\n    <execution_steps>11001,11017,15049,15008,15048,15048,15041,22072,15013,24210,24216,15013,24430,24325,24313,24319,24323,24343,24402,22037,24715,15036,24209,24217,15048,15048,24432,24325,24313,24319,24323,24355,24416,15048,15016,22081,22080,11002</execution_steps>\n    <response>{Class=CACS:c612856400001000602a7bd8:ise/402770034/24; cisco-av-pair=cts:security-group-tag=0011-21; MS-CHAP2-Success=00:53:3d:35:38:33:39:44:38:43:35:35:33:32:30:43:37:41:37:33:37:38:42:38:31:39:39:41:36:30:44:39:36:38:34:30:30:43:38:35:32:42:35; LicenseTypes=1; }</response>\n    <audit_session_id>c612856400001000602a7bd8</audit_session_id>\n    <posture_status></posture_status>\n    <selected_azn_profiles>TIER2Users</selected_azn_profiles>\n    <message_code>5200</message_code>\n    <auth_acsview_timestamp>2021-02-15T13:49:13.379Z</auth_acsview_timestamp>\n    <auth_id>1613395457273148</auth_id>\n    <identity_store>ad-2016</identity_store>\n    <cts_security_group>TIER2Users</cts_security_group>\n    <location>All Locations#dCloud</location>\n    <device_type>All Device Types#Security Devices#VPN</device_type>\n    <response_time>457</response_time>\n    <other_attr_string>:!:ConfigVersionId=76:!:DestinationPort=1645:!:Protocol=Radius:!:NAS-Port=4096:!:Tunnel-Client-Endpoint=(tag=0) 198.19.10.36:!:MS-CHAP-Challenge=d0:35:ad:95:f4:03:3b:1b:2f:1c:1e:c7:ef:5a:ee:8e:!:MS-CHAP2-Response=00:00:64:ea:0c:9e:58:31:24:40:67:4b:b6:2e:96:0b:4c:64:00:00:00:00:00:00:00:00:d1:f6:2d:1e:5f:9d:b1:b3:1d:fd:7a:ca:5e:be:ee:80:6f:05:1a:e2:d7:a6:9f:75:!:CVPN3000/ASA/PIX7x-Tunnel-Group-Name=DefaultWEBVPNGroup:!:NetworkDeviceProfileId=8ade1f15-aef1-4a9a-8158-d02e835179db:!:IsThirdPartyDeviceFlow=false:!:CVPN3000/ASA/PIX7x-Client-Type=2:!:AcsSessionID=ise/402770034/24:!:SelectedAuthenticationIdentityStores=Internal Users:!:SelectedAuthenticationIdentityStores=All_AD_Join_Points:!:SelectedAuthenticationIdentityStores=Guest Users:!:AuthenticationStatus=AuthenticationPassed:!:IdentityPolicyMatchedRule=Default:!:AuthorizationPolicyMatchedRule=Tier2 Users:!:ISEPolicySetName=Remote Access VPN:!:IdentitySelectionMatchedRule=Default:!:AD-User-Resolved-Identities=officer@dcloud.cisco.com:!:AD-User-Candidate-Identities=officer@dcloud.cisco.com:!:AD-User-Join-Point=DCLOUD.CISCO.COM:!:AD-User-Resolved-DNs=CN=Officer,OU=Demo Users,DC=dcloud,DC=cisco,DC=com:!:AD-User-DNS-Domain=dcloud.cisco.com:!:AD-User-NetBios-Name=DCLOUD:!:IsMachineIdentity=false:!:UserAccountControl=66048:!:AD-User-SamAccount-Name=officer:!:AD-User-Qualified-Name=officer@dcloud.cisco.com:!:DTLSSupport=Unknown:!:Network Device Profile=Cisco:!:Location=Location#All Locations#dCloud:!:Device Type=Device Type#All Device Types#Security Devices#VPN:!:ExternalGroups=S-1-5-21-3064548688-3193819538-1298560677-1271:!:IdentityAccessRestricted=false:!:StepData=\"4= Normalised Radius.RadiusFlowType (4 times)\",\"5= DEVICE.Device Type\",\"7=All_User_ID_Stores\",\"8=Internal Users\",\"11=All_AD_Join_Points\",\"12=All_AD_Join_Points\",\"13=officer\",\"14=dcloud.cisco.com\",\"15=dcloud.cisco.com\",\"17=officer@dcloud.cisco.com\",\"18=All_AD_Join_Points\",\"24= Session.ANCPolicy (4 times)\",\"25= Radius.NAS-Port-Type\",\"0=ad-2016\",\"1=officer\",\"2=dcloud.cisco.com\",\"3=dcloud.cisco.com\",\"5=dcloud.cisco.com\",\"6=ad-2016\",\"33= ad-2016.ExternalGroups\"=StepData:!:RADIUS Username=officer:!:Device IP Address=198.18.133.100:!:CPMSessionID=c612856400001000602a7bd8:!:Called-Station-ID=198.19.10.100:!:CiscoAVPair=mdm-tlv=device-platform=win,mdm-tlv=device-mac=00-50-56-a9-8f-4e,mdm-tlv=device-platform-version=10.0.14393 ,mdm-tlv=device-public-mac=00-50-56-a9-8f-4e,mdm-tlv=ac-user-agent=AnyConnect Windows 4.9.04053,mdm-tlv=device-type=VMware, Inc. VMware Virtual Platform,mdm-tlv=device-uid-global=68616875A273996ED3A21E26B8371A168FAAF526,mdm-tlv=device-uid=F14ADF3139770E9AAD19D617F97976019D9EC6B72FF7580C749D36CFA8F73098,audit-session-id=c612856400001000602a7bd8,ip:source-ip=198.19.10.36,coa-push=true</other_attr_string>\n    <acct_id>1613395457273151</acct_id>\n    <acct_acs_timestamp>2021-02-15T13:49:18.132Z</acct_acs_timestamp>\n    <acct_acsview_timestamp>2021-02-15T13:49:18.132Z</acct_acsview_timestamp>\n    <acct_session_id>EC700001</acct_session_id>\n    <acct_status_type>Interim-Update</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <acct_authentic>RADIUS</acct_authentic>\n    <acct_delay_time>0</acct_delay_time>\n    <framed_protocol>PPP</framed_protocol>\n    <started xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</started>\n    <stopped xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</stopped>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
-						},
-						{
 							"name": "Success: disconnected",
 							"originalRequest": {
 								"method": "GET",
@@ -3355,6 +3982,87 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mnt-rest-result>\n    <http-code>500</http-code>\n    <cpm-code>34110</cpm-code>\n    <description>Server has encountered error while processing the REST request</description>\n    <module-name>MnT</module-name>\n    <internal-error-info>Error in generating XML output. Error message = Session data is not available for 00:50:56:A9:8F:4F.</internal-error-info>\n    <requested-operation>Get By Type</requested-operation>\n    <resource-id>N/A</resource-id>\n    <resource-name>N/A</resource-name>\n    <resource-type>RESTSDStatus</resource-type>\n    <status>SERVER_ERROR</status>\n</mnt-rest-result>"
+						},
+						{
+							"name": "Success: VPN client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Session/MACAddress/00:50:56:A9:8F:4E",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Session",
+										"MACAddress",
+										"00:50:56:A9:8F:4E"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 13:51:59 GMT"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <passed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">true</passed>\n    <failed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</failed>\n    <user_name>officer</user_name>\n    <nas_ip_address>198.18.133.100</nas_ip_address>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400001000602a7bd8</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <network_device_name>ASAv-vpn</network_device_name>\n    <acs_server>ise</acs_server>\n    <authentication_method>MSCHAPV2</authentication_method>\n    <authentication_protocol>MSCHAPV2</authentication_protocol>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T13:49:13.379Z</auth_acs_timestamp>\n    <execution_steps>11001,11017,15049,15008,15048,15048,15041,22072,15013,24210,24216,15013,24430,24325,24313,24319,24323,24343,24402,22037,24715,15036,24209,24217,15048,15048,24432,24325,24313,24319,24323,24355,24416,15048,15016,22081,22080,11002</execution_steps>\n    <response>{Class=CACS:c612856400001000602a7bd8:ise/402770034/24; cisco-av-pair=cts:security-group-tag=0011-21; MS-CHAP2-Success=00:53:3d:35:38:33:39:44:38:43:35:35:33:32:30:43:37:41:37:33:37:38:42:38:31:39:39:41:36:30:44:39:36:38:34:30:30:43:38:35:32:42:35; LicenseTypes=1; }</response>\n    <audit_session_id>c612856400001000602a7bd8</audit_session_id>\n    <posture_status></posture_status>\n    <selected_azn_profiles>TIER2Users</selected_azn_profiles>\n    <message_code>5200</message_code>\n    <auth_acsview_timestamp>2021-02-15T13:49:13.379Z</auth_acsview_timestamp>\n    <auth_id>1613395457273148</auth_id>\n    <identity_store>ad-2016</identity_store>\n    <cts_security_group>TIER2Users</cts_security_group>\n    <location>All Locations#dCloud</location>\n    <device_type>All Device Types#Security Devices#VPN</device_type>\n    <response_time>457</response_time>\n    <other_attr_string>:!:ConfigVersionId=76:!:DestinationPort=1645:!:Protocol=Radius:!:NAS-Port=4096:!:Tunnel-Client-Endpoint=(tag=0) 198.19.10.36:!:MS-CHAP-Challenge=d0:35:ad:95:f4:03:3b:1b:2f:1c:1e:c7:ef:5a:ee:8e:!:MS-CHAP2-Response=00:00:64:ea:0c:9e:58:31:24:40:67:4b:b6:2e:96:0b:4c:64:00:00:00:00:00:00:00:00:d1:f6:2d:1e:5f:9d:b1:b3:1d:fd:7a:ca:5e:be:ee:80:6f:05:1a:e2:d7:a6:9f:75:!:CVPN3000/ASA/PIX7x-Tunnel-Group-Name=DefaultWEBVPNGroup:!:NetworkDeviceProfileId=8ade1f15-aef1-4a9a-8158-d02e835179db:!:IsThirdPartyDeviceFlow=false:!:CVPN3000/ASA/PIX7x-Client-Type=2:!:AcsSessionID=ise/402770034/24:!:SelectedAuthenticationIdentityStores=Internal Users:!:SelectedAuthenticationIdentityStores=All_AD_Join_Points:!:SelectedAuthenticationIdentityStores=Guest Users:!:AuthenticationStatus=AuthenticationPassed:!:IdentityPolicyMatchedRule=Default:!:AuthorizationPolicyMatchedRule=Tier2 Users:!:ISEPolicySetName=Remote Access VPN:!:IdentitySelectionMatchedRule=Default:!:AD-User-Resolved-Identities=officer@dcloud.cisco.com:!:AD-User-Candidate-Identities=officer@dcloud.cisco.com:!:AD-User-Join-Point=DCLOUD.CISCO.COM:!:AD-User-Resolved-DNs=CN=Officer,OU=Demo Users,DC=dcloud,DC=cisco,DC=com:!:AD-User-DNS-Domain=dcloud.cisco.com:!:AD-User-NetBios-Name=DCLOUD:!:IsMachineIdentity=false:!:UserAccountControl=66048:!:AD-User-SamAccount-Name=officer:!:AD-User-Qualified-Name=officer@dcloud.cisco.com:!:DTLSSupport=Unknown:!:Network Device Profile=Cisco:!:Location=Location#All Locations#dCloud:!:Device Type=Device Type#All Device Types#Security Devices#VPN:!:ExternalGroups=S-1-5-21-3064548688-3193819538-1298560677-1271:!:IdentityAccessRestricted=false:!:StepData=\"4= Normalised Radius.RadiusFlowType (4 times)\",\"5= DEVICE.Device Type\",\"7=All_User_ID_Stores\",\"8=Internal Users\",\"11=All_AD_Join_Points\",\"12=All_AD_Join_Points\",\"13=officer\",\"14=dcloud.cisco.com\",\"15=dcloud.cisco.com\",\"17=officer@dcloud.cisco.com\",\"18=All_AD_Join_Points\",\"24= Session.ANCPolicy (4 times)\",\"25= Radius.NAS-Port-Type\",\"0=ad-2016\",\"1=officer\",\"2=dcloud.cisco.com\",\"3=dcloud.cisco.com\",\"5=dcloud.cisco.com\",\"6=ad-2016\",\"33= ad-2016.ExternalGroups\"=StepData:!:RADIUS Username=officer:!:Device IP Address=198.18.133.100:!:CPMSessionID=c612856400001000602a7bd8:!:Called-Station-ID=198.19.10.100:!:CiscoAVPair=mdm-tlv=device-platform=win,mdm-tlv=device-mac=00-50-56-a9-8f-4e,mdm-tlv=device-platform-version=10.0.14393 ,mdm-tlv=device-public-mac=00-50-56-a9-8f-4e,mdm-tlv=ac-user-agent=AnyConnect Windows 4.9.04053,mdm-tlv=device-type=VMware, Inc. VMware Virtual Platform,mdm-tlv=device-uid-global=68616875A273996ED3A21E26B8371A168FAAF526,mdm-tlv=device-uid=F14ADF3139770E9AAD19D617F97976019D9EC6B72FF7580C749D36CFA8F73098,audit-session-id=c612856400001000602a7bd8,ip:source-ip=198.19.10.36,coa-push=true</other_attr_string>\n    <acct_id>1613395457273151</acct_id>\n    <acct_acs_timestamp>2021-02-15T13:49:18.132Z</acct_acs_timestamp>\n    <acct_acsview_timestamp>2021-02-15T13:49:18.132Z</acct_acsview_timestamp>\n    <acct_session_id>EC700001</acct_session_id>\n    <acct_status_type>Interim-Update</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <acct_authentic>RADIUS</acct_authentic>\n    <acct_delay_time>0</acct_delay_time>\n    <framed_protocol>PPP</framed_protocol>\n    <started xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</started>\n    <stopped xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</stopped>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
 						}
 					]
 				},
@@ -3395,87 +4103,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success: VPN client",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Session/UserName/officer",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Session",
-										"UserName",
-										"officer"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 13:53:02 GMT"
-								},
-								{
-									"key": "vary",
-									"value": "accept-encoding"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <passed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">true</passed>\n    <failed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</failed>\n    <user_name>officer</user_name>\n    <nas_ip_address>198.18.133.100</nas_ip_address>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400001000602a7bd8</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <network_device_name>ASAv-vpn</network_device_name>\n    <acs_server>ise</acs_server>\n    <authentication_method>MSCHAPV2</authentication_method>\n    <authentication_protocol>MSCHAPV2</authentication_protocol>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T13:49:13.379Z</auth_acs_timestamp>\n    <execution_steps>11001,11017,15049,15008,15048,15048,15041,22072,15013,24210,24216,15013,24430,24325,24313,24319,24323,24343,24402,22037,24715,15036,24209,24217,15048,15048,24432,24325,24313,24319,24323,24355,24416,15048,15016,22081,22080,11002</execution_steps>\n    <response>{Class=CACS:c612856400001000602a7bd8:ise/402770034/24; cisco-av-pair=cts:security-group-tag=0011-21; MS-CHAP2-Success=00:53:3d:35:38:33:39:44:38:43:35:35:33:32:30:43:37:41:37:33:37:38:42:38:31:39:39:41:36:30:44:39:36:38:34:30:30:43:38:35:32:42:35; LicenseTypes=1; }</response>\n    <audit_session_id>c612856400001000602a7bd8</audit_session_id>\n    <posture_status></posture_status>\n    <selected_azn_profiles>TIER2Users</selected_azn_profiles>\n    <message_code>5200</message_code>\n    <auth_acsview_timestamp>2021-02-15T13:49:13.379Z</auth_acsview_timestamp>\n    <auth_id>1613395457273148</auth_id>\n    <identity_store>ad-2016</identity_store>\n    <cts_security_group>TIER2Users</cts_security_group>\n    <location>All Locations#dCloud</location>\n    <device_type>All Device Types#Security Devices#VPN</device_type>\n    <response_time>457</response_time>\n    <other_attr_string>:!:ConfigVersionId=76:!:DestinationPort=1645:!:Protocol=Radius:!:NAS-Port=4096:!:Tunnel-Client-Endpoint=(tag=0) 198.19.10.36:!:MS-CHAP-Challenge=d0:35:ad:95:f4:03:3b:1b:2f:1c:1e:c7:ef:5a:ee:8e:!:MS-CHAP2-Response=00:00:64:ea:0c:9e:58:31:24:40:67:4b:b6:2e:96:0b:4c:64:00:00:00:00:00:00:00:00:d1:f6:2d:1e:5f:9d:b1:b3:1d:fd:7a:ca:5e:be:ee:80:6f:05:1a:e2:d7:a6:9f:75:!:CVPN3000/ASA/PIX7x-Tunnel-Group-Name=DefaultWEBVPNGroup:!:NetworkDeviceProfileId=8ade1f15-aef1-4a9a-8158-d02e835179db:!:IsThirdPartyDeviceFlow=false:!:CVPN3000/ASA/PIX7x-Client-Type=2:!:AcsSessionID=ise/402770034/24:!:SelectedAuthenticationIdentityStores=Internal Users:!:SelectedAuthenticationIdentityStores=All_AD_Join_Points:!:SelectedAuthenticationIdentityStores=Guest Users:!:AuthenticationStatus=AuthenticationPassed:!:IdentityPolicyMatchedRule=Default:!:AuthorizationPolicyMatchedRule=Tier2 Users:!:ISEPolicySetName=Remote Access VPN:!:IdentitySelectionMatchedRule=Default:!:AD-User-Resolved-Identities=officer@dcloud.cisco.com:!:AD-User-Candidate-Identities=officer@dcloud.cisco.com:!:AD-User-Join-Point=DCLOUD.CISCO.COM:!:AD-User-Resolved-DNs=CN=Officer,OU=Demo Users,DC=dcloud,DC=cisco,DC=com:!:AD-User-DNS-Domain=dcloud.cisco.com:!:AD-User-NetBios-Name=DCLOUD:!:IsMachineIdentity=false:!:UserAccountControl=66048:!:AD-User-SamAccount-Name=officer:!:AD-User-Qualified-Name=officer@dcloud.cisco.com:!:DTLSSupport=Unknown:!:Network Device Profile=Cisco:!:Location=Location#All Locations#dCloud:!:Device Type=Device Type#All Device Types#Security Devices#VPN:!:ExternalGroups=S-1-5-21-3064548688-3193819538-1298560677-1271:!:IdentityAccessRestricted=false:!:StepData=\"4= Normalised Radius.RadiusFlowType (4 times)\",\"5= DEVICE.Device Type\",\"7=All_User_ID_Stores\",\"8=Internal Users\",\"11=All_AD_Join_Points\",\"12=All_AD_Join_Points\",\"13=officer\",\"14=dcloud.cisco.com\",\"15=dcloud.cisco.com\",\"17=officer@dcloud.cisco.com\",\"18=All_AD_Join_Points\",\"24= Session.ANCPolicy (4 times)\",\"25= Radius.NAS-Port-Type\",\"0=ad-2016\",\"1=officer\",\"2=dcloud.cisco.com\",\"3=dcloud.cisco.com\",\"5=dcloud.cisco.com\",\"6=ad-2016\",\"33= ad-2016.ExternalGroups\"=StepData:!:RADIUS Username=officer:!:Device IP Address=198.18.133.100:!:CPMSessionID=c612856400001000602a7bd8:!:Called-Station-ID=198.19.10.100:!:CiscoAVPair=mdm-tlv=device-platform=win,mdm-tlv=device-mac=00-50-56-a9-8f-4e,mdm-tlv=device-platform-version=10.0.14393 ,mdm-tlv=device-public-mac=00-50-56-a9-8f-4e,mdm-tlv=ac-user-agent=AnyConnect Windows 4.9.04053,mdm-tlv=device-type=VMware, Inc. VMware Virtual Platform,mdm-tlv=device-uid-global=68616875A273996ED3A21E26B8371A168FAAF526,mdm-tlv=device-uid=F14ADF3139770E9AAD19D617F97976019D9EC6B72FF7580C749D36CFA8F73098,audit-session-id=c612856400001000602a7bd8,ip:source-ip=198.19.10.36,coa-push=true</other_attr_string>\n    <acct_id>1613395457273151</acct_id>\n    <acct_acs_timestamp>2021-02-15T13:49:18.132Z</acct_acs_timestamp>\n    <acct_acsview_timestamp>2021-02-15T13:49:18.132Z</acct_acsview_timestamp>\n    <acct_session_id>EC700001</acct_session_id>\n    <acct_status_type>Interim-Update</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <acct_authentic>RADIUS</acct_authentic>\n    <acct_delay_time>0</acct_delay_time>\n    <framed_protocol>PPP</framed_protocol>\n    <started xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</started>\n    <stopped xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</stopped>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
-						},
 						{
 							"name": "Failure: not found",
 							"originalRequest": {
@@ -3625,6 +4252,87 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <user_name>officer</user_name>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400002000602a7f15</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <acs_server>ise</acs_server>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T14:04:16.850Z</auth_acs_timestamp>\n    <audit_session_id>c612856400002000602a7f15</audit_session_id>\n    <posture_status></posture_status>\n    <nas_ipv6_address></nas_ipv6_address>\n    <other_attr_string></other_attr_string>\n    <acct_acs_timestamp>2021-02-15T14:03:06.196Z</acct_acs_timestamp>\n    <acct_session_id>EC700002</acct_session_id>\n    <acct_status_type>Stop</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
+						},
+						{
+							"name": "Success: VPN client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Session/UserName/officer",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Session",
+										"UserName",
+										"officer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 13:53:02 GMT"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <passed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">true</passed>\n    <failed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</failed>\n    <user_name>officer</user_name>\n    <nas_ip_address>198.18.133.100</nas_ip_address>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400001000602a7bd8</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <network_device_name>ASAv-vpn</network_device_name>\n    <acs_server>ise</acs_server>\n    <authentication_method>MSCHAPV2</authentication_method>\n    <authentication_protocol>MSCHAPV2</authentication_protocol>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T13:49:13.379Z</auth_acs_timestamp>\n    <execution_steps>11001,11017,15049,15008,15048,15048,15041,22072,15013,24210,24216,15013,24430,24325,24313,24319,24323,24343,24402,22037,24715,15036,24209,24217,15048,15048,24432,24325,24313,24319,24323,24355,24416,15048,15016,22081,22080,11002</execution_steps>\n    <response>{Class=CACS:c612856400001000602a7bd8:ise/402770034/24; cisco-av-pair=cts:security-group-tag=0011-21; MS-CHAP2-Success=00:53:3d:35:38:33:39:44:38:43:35:35:33:32:30:43:37:41:37:33:37:38:42:38:31:39:39:41:36:30:44:39:36:38:34:30:30:43:38:35:32:42:35; LicenseTypes=1; }</response>\n    <audit_session_id>c612856400001000602a7bd8</audit_session_id>\n    <posture_status></posture_status>\n    <selected_azn_profiles>TIER2Users</selected_azn_profiles>\n    <message_code>5200</message_code>\n    <auth_acsview_timestamp>2021-02-15T13:49:13.379Z</auth_acsview_timestamp>\n    <auth_id>1613395457273148</auth_id>\n    <identity_store>ad-2016</identity_store>\n    <cts_security_group>TIER2Users</cts_security_group>\n    <location>All Locations#dCloud</location>\n    <device_type>All Device Types#Security Devices#VPN</device_type>\n    <response_time>457</response_time>\n    <other_attr_string>:!:ConfigVersionId=76:!:DestinationPort=1645:!:Protocol=Radius:!:NAS-Port=4096:!:Tunnel-Client-Endpoint=(tag=0) 198.19.10.36:!:MS-CHAP-Challenge=d0:35:ad:95:f4:03:3b:1b:2f:1c:1e:c7:ef:5a:ee:8e:!:MS-CHAP2-Response=00:00:64:ea:0c:9e:58:31:24:40:67:4b:b6:2e:96:0b:4c:64:00:00:00:00:00:00:00:00:d1:f6:2d:1e:5f:9d:b1:b3:1d:fd:7a:ca:5e:be:ee:80:6f:05:1a:e2:d7:a6:9f:75:!:CVPN3000/ASA/PIX7x-Tunnel-Group-Name=DefaultWEBVPNGroup:!:NetworkDeviceProfileId=8ade1f15-aef1-4a9a-8158-d02e835179db:!:IsThirdPartyDeviceFlow=false:!:CVPN3000/ASA/PIX7x-Client-Type=2:!:AcsSessionID=ise/402770034/24:!:SelectedAuthenticationIdentityStores=Internal Users:!:SelectedAuthenticationIdentityStores=All_AD_Join_Points:!:SelectedAuthenticationIdentityStores=Guest Users:!:AuthenticationStatus=AuthenticationPassed:!:IdentityPolicyMatchedRule=Default:!:AuthorizationPolicyMatchedRule=Tier2 Users:!:ISEPolicySetName=Remote Access VPN:!:IdentitySelectionMatchedRule=Default:!:AD-User-Resolved-Identities=officer@dcloud.cisco.com:!:AD-User-Candidate-Identities=officer@dcloud.cisco.com:!:AD-User-Join-Point=DCLOUD.CISCO.COM:!:AD-User-Resolved-DNs=CN=Officer,OU=Demo Users,DC=dcloud,DC=cisco,DC=com:!:AD-User-DNS-Domain=dcloud.cisco.com:!:AD-User-NetBios-Name=DCLOUD:!:IsMachineIdentity=false:!:UserAccountControl=66048:!:AD-User-SamAccount-Name=officer:!:AD-User-Qualified-Name=officer@dcloud.cisco.com:!:DTLSSupport=Unknown:!:Network Device Profile=Cisco:!:Location=Location#All Locations#dCloud:!:Device Type=Device Type#All Device Types#Security Devices#VPN:!:ExternalGroups=S-1-5-21-3064548688-3193819538-1298560677-1271:!:IdentityAccessRestricted=false:!:StepData=\"4= Normalised Radius.RadiusFlowType (4 times)\",\"5= DEVICE.Device Type\",\"7=All_User_ID_Stores\",\"8=Internal Users\",\"11=All_AD_Join_Points\",\"12=All_AD_Join_Points\",\"13=officer\",\"14=dcloud.cisco.com\",\"15=dcloud.cisco.com\",\"17=officer@dcloud.cisco.com\",\"18=All_AD_Join_Points\",\"24= Session.ANCPolicy (4 times)\",\"25= Radius.NAS-Port-Type\",\"0=ad-2016\",\"1=officer\",\"2=dcloud.cisco.com\",\"3=dcloud.cisco.com\",\"5=dcloud.cisco.com\",\"6=ad-2016\",\"33= ad-2016.ExternalGroups\"=StepData:!:RADIUS Username=officer:!:Device IP Address=198.18.133.100:!:CPMSessionID=c612856400001000602a7bd8:!:Called-Station-ID=198.19.10.100:!:CiscoAVPair=mdm-tlv=device-platform=win,mdm-tlv=device-mac=00-50-56-a9-8f-4e,mdm-tlv=device-platform-version=10.0.14393 ,mdm-tlv=device-public-mac=00-50-56-a9-8f-4e,mdm-tlv=ac-user-agent=AnyConnect Windows 4.9.04053,mdm-tlv=device-type=VMware, Inc. VMware Virtual Platform,mdm-tlv=device-uid-global=68616875A273996ED3A21E26B8371A168FAAF526,mdm-tlv=device-uid=F14ADF3139770E9AAD19D617F97976019D9EC6B72FF7580C749D36CFA8F73098,audit-session-id=c612856400001000602a7bd8,ip:source-ip=198.19.10.36,coa-push=true</other_attr_string>\n    <acct_id>1613395457273151</acct_id>\n    <acct_acs_timestamp>2021-02-15T13:49:18.132Z</acct_acs_timestamp>\n    <acct_acsview_timestamp>2021-02-15T13:49:18.132Z</acct_acsview_timestamp>\n    <acct_session_id>EC700001</acct_session_id>\n    <acct_status_type>Interim-Update</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <acct_authentic>RADIUS</acct_authentic>\n    <acct_delay_time>0</acct_delay_time>\n    <framed_protocol>PPP</framed_protocol>\n    <started xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</started>\n    <stopped xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</stopped>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
 						}
 					]
 				},
@@ -3665,79 +4373,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Success: disconnected",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Session/IPAddress/198.18.133.100",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Session",
-										"IPAddress",
-										"198.18.133.100"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 14:04:58 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1094"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <user_name>officer</user_name>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400002000602a7f15</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <acs_server>ise</acs_server>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T14:04:16.850Z</auth_acs_timestamp>\n    <audit_session_id>c612856400002000602a7f15</audit_session_id>\n    <posture_status></posture_status>\n    <nas_ipv6_address></nas_ipv6_address>\n    <other_attr_string></other_attr_string>\n    <acct_acs_timestamp>2021-02-15T14:03:06.196Z</acct_acs_timestamp>\n    <acct_session_id>EC700002</acct_session_id>\n    <acct_status_type>Stop</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
-						},
 						{
 							"name": "Success: VPN client",
 							"originalRequest": {
@@ -3818,6 +4453,79 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <passed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">true</passed>\n    <failed xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</failed>\n    <user_name>officer</user_name>\n    <nas_ip_address>198.18.133.100</nas_ip_address>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400001000602a7bd8</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <network_device_name>ASAv-vpn</network_device_name>\n    <acs_server>ise</acs_server>\n    <authentication_method>MSCHAPV2</authentication_method>\n    <authentication_protocol>MSCHAPV2</authentication_protocol>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T13:49:13.379Z</auth_acs_timestamp>\n    <execution_steps>11001,11017,15049,15008,15048,15048,15041,22072,15013,24210,24216,15013,24430,24325,24313,24319,24323,24343,24402,22037,24715,15036,24209,24217,15048,15048,24432,24325,24313,24319,24323,24355,24416,15048,15016,22081,22080,11002</execution_steps>\n    <response>{Class=CACS:c612856400001000602a7bd8:ise/402770034/24; cisco-av-pair=cts:security-group-tag=0011-21; MS-CHAP2-Success=00:53:3d:35:38:33:39:44:38:43:35:35:33:32:30:43:37:41:37:33:37:38:42:38:31:39:39:41:36:30:44:39:36:38:34:30:30:43:38:35:32:42:35; LicenseTypes=1; }</response>\n    <audit_session_id>c612856400001000602a7bd8</audit_session_id>\n    <posture_status></posture_status>\n    <selected_azn_profiles>TIER2Users</selected_azn_profiles>\n    <message_code>5200</message_code>\n    <auth_acsview_timestamp>2021-02-15T13:49:13.379Z</auth_acsview_timestamp>\n    <auth_id>1613395457273148</auth_id>\n    <identity_store>ad-2016</identity_store>\n    <cts_security_group>TIER2Users</cts_security_group>\n    <location>All Locations#dCloud</location>\n    <device_type>All Device Types#Security Devices#VPN</device_type>\n    <response_time>457</response_time>\n    <other_attr_string>:!:ConfigVersionId=76:!:DestinationPort=1645:!:Protocol=Radius:!:NAS-Port=4096:!:Tunnel-Client-Endpoint=(tag=0) 198.19.10.36:!:MS-CHAP-Challenge=d0:35:ad:95:f4:03:3b:1b:2f:1c:1e:c7:ef:5a:ee:8e:!:MS-CHAP2-Response=00:00:64:ea:0c:9e:58:31:24:40:67:4b:b6:2e:96:0b:4c:64:00:00:00:00:00:00:00:00:d1:f6:2d:1e:5f:9d:b1:b3:1d:fd:7a:ca:5e:be:ee:80:6f:05:1a:e2:d7:a6:9f:75:!:CVPN3000/ASA/PIX7x-Tunnel-Group-Name=DefaultWEBVPNGroup:!:NetworkDeviceProfileId=8ade1f15-aef1-4a9a-8158-d02e835179db:!:IsThirdPartyDeviceFlow=false:!:CVPN3000/ASA/PIX7x-Client-Type=2:!:AcsSessionID=ise/402770034/24:!:SelectedAuthenticationIdentityStores=Internal Users:!:SelectedAuthenticationIdentityStores=All_AD_Join_Points:!:SelectedAuthenticationIdentityStores=Guest Users:!:AuthenticationStatus=AuthenticationPassed:!:IdentityPolicyMatchedRule=Default:!:AuthorizationPolicyMatchedRule=Tier2 Users:!:ISEPolicySetName=Remote Access VPN:!:IdentitySelectionMatchedRule=Default:!:AD-User-Resolved-Identities=officer@dcloud.cisco.com:!:AD-User-Candidate-Identities=officer@dcloud.cisco.com:!:AD-User-Join-Point=DCLOUD.CISCO.COM:!:AD-User-Resolved-DNs=CN=Officer,OU=Demo Users,DC=dcloud,DC=cisco,DC=com:!:AD-User-DNS-Domain=dcloud.cisco.com:!:AD-User-NetBios-Name=DCLOUD:!:IsMachineIdentity=false:!:UserAccountControl=66048:!:AD-User-SamAccount-Name=officer:!:AD-User-Qualified-Name=officer@dcloud.cisco.com:!:DTLSSupport=Unknown:!:Network Device Profile=Cisco:!:Location=Location#All Locations#dCloud:!:Device Type=Device Type#All Device Types#Security Devices#VPN:!:ExternalGroups=S-1-5-21-3064548688-3193819538-1298560677-1271:!:IdentityAccessRestricted=false:!:StepData=\"4= Normalised Radius.RadiusFlowType (4 times)\",\"5= DEVICE.Device Type\",\"7=All_User_ID_Stores\",\"8=Internal Users\",\"11=All_AD_Join_Points\",\"12=All_AD_Join_Points\",\"13=officer\",\"14=dcloud.cisco.com\",\"15=dcloud.cisco.com\",\"17=officer@dcloud.cisco.com\",\"18=All_AD_Join_Points\",\"24= Session.ANCPolicy (4 times)\",\"25= Radius.NAS-Port-Type\",\"0=ad-2016\",\"1=officer\",\"2=dcloud.cisco.com\",\"3=dcloud.cisco.com\",\"5=dcloud.cisco.com\",\"6=ad-2016\",\"33= ad-2016.ExternalGroups\"=StepData:!:RADIUS Username=officer:!:Device IP Address=198.18.133.100:!:CPMSessionID=c612856400001000602a7bd8:!:Called-Station-ID=198.19.10.100:!:CiscoAVPair=mdm-tlv=device-platform=win,mdm-tlv=device-mac=00-50-56-a9-8f-4e,mdm-tlv=device-platform-version=10.0.14393 ,mdm-tlv=device-public-mac=00-50-56-a9-8f-4e,mdm-tlv=ac-user-agent=AnyConnect Windows 4.9.04053,mdm-tlv=device-type=VMware, Inc. VMware Virtual Platform,mdm-tlv=device-uid-global=68616875A273996ED3A21E26B8371A168FAAF526,mdm-tlv=device-uid=F14ADF3139770E9AAD19D617F97976019D9EC6B72FF7580C749D36CFA8F73098,audit-session-id=c612856400001000602a7bd8,ip:source-ip=198.19.10.36,coa-push=true</other_attr_string>\n    <acct_id>1613395457273151</acct_id>\n    <acct_acs_timestamp>2021-02-15T13:49:18.132Z</acct_acs_timestamp>\n    <acct_acsview_timestamp>2021-02-15T13:49:18.132Z</acct_acsview_timestamp>\n    <acct_session_id>EC700001</acct_session_id>\n    <acct_status_type>Interim-Update</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <acct_authentic>RADIUS</acct_authentic>\n    <acct_delay_time>0</acct_delay_time>\n    <framed_protocol>PPP</framed_protocol>\n    <started xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</started>\n    <stopped xsi:type=\"xs:boolean\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">false</stopped>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
+						},
+						{
+							"name": "Success: disconnected",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Session/IPAddress/198.18.133.100",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Session",
+										"IPAddress",
+										"198.18.133.100"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 14:04:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1094"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<sessionParameters>\n    <user_name>officer</user_name>\n    <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n    <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n    <cpmsession_id>c612856400002000602a7f15</cpmsession_id>\n    <destination_ip_address>198.18.133.27</destination_ip_address>\n    <device_ip_address>198.18.133.100</device_ip_address>\n    <acs_server>ise</acs_server>\n    <framed_ip_address>198.18.140.100</framed_ip_address>\n    <auth_acs_timestamp>2021-02-15T14:04:16.850Z</auth_acs_timestamp>\n    <audit_session_id>c612856400002000602a7f15</audit_session_id>\n    <posture_status></posture_status>\n    <nas_ipv6_address></nas_ipv6_address>\n    <other_attr_string></other_attr_string>\n    <acct_acs_timestamp>2021-02-15T14:03:06.196Z</acct_acs_timestamp>\n    <acct_session_id>EC700002</acct_session_id>\n    <acct_status_type>Stop</acct_status_type>\n    <acct_input_octets>0</acct_input_octets>\n    <acct_output_octets>0</acct_output_octets>\n    <acct_input_packets>0</acct_input_packets>\n    <acct_output_packets>0</acct_output_packets>\n    <endpoint_policy>Workstation</endpoint_policy>\n</sessionParameters>"
 						},
 						{
 							"name": "Failure: not found",
@@ -3938,81 +4646,6 @@
 					},
 					"response": [
 						{
-							"name": "Success: VPN client",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/Session/Active/SessionID/c612856400001000602a7bd8/0",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"Session",
-										"Active",
-										"SessionID",
-										"c612856400001000602a7bd8",
-										"0"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 13:55:56 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "679"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<activeSessionList noOfActiveSession=\"1\">\n    <activeSession>\n        <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n        <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n        <session_state_bit>0</session_state_bit>\n        <session_source>0</session_source>\n        <acct_session_time>0</acct_session_time>\n        <nas_ip_address>198.18.133.100</nas_ip_address>\n        <framed_ipv6_address/>\n        <auth_method>MSCHAPV2</auth_method>\n        <auth_protocol>MSCHAPV2</auth_protocol>\n        <endpoint_policy>Workstation</endpoint_policy>\n        <server>ise</server>\n        <paks_in>0</paks_in>\n        <paks_out>0</paks_out>\n        <bytes_in>0</bytes_in>\n        <bytes_out>0</bytes_out>\n    </activeSession>\n</activeSessionList>"
-						},
-						{
 							"name": "Failure: not found",
 							"originalRequest": {
 								"method": "GET",
@@ -4086,6 +4719,81 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<activeSessionList noOfActiveSession=\"0\"/>"
+						},
+						{
+							"name": "Success: VPN client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/Session/Active/SessionID/c612856400001000602a7bd8/0",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"Session",
+										"Active",
+										"SessionID",
+										"c612856400001000602a7bd8",
+										"0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 13:55:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "679"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<activeSessionList noOfActiveSession=\"1\">\n    <activeSession>\n        <calling_station_id>00:50:56:A9:8F:4E</calling_station_id>\n        <orig_calling_station_id>198.19.10.36</orig_calling_station_id>\n        <session_state_bit>0</session_state_bit>\n        <session_source>0</session_source>\n        <acct_session_time>0</acct_session_time>\n        <nas_ip_address>198.18.133.100</nas_ip_address>\n        <framed_ipv6_address/>\n        <auth_method>MSCHAPV2</auth_method>\n        <auth_protocol>MSCHAPV2</auth_protocol>\n        <endpoint_policy>Workstation</endpoint_policy>\n        <server>ise</server>\n        <paks_in>0</paks_in>\n        <paks_out>0</paks_out>\n        <bytes_in>0</bytes_in>\n        <bytes_out>0</bytes_out>\n    </activeSession>\n</activeSessionList>"
 						}
 					]
 				},
@@ -4247,6 +4955,83 @@
 					},
 					"response": [
 						{
+							"name": "Success: REAUTH_TYPE_RERUN 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/CoA/Reauth/ise.securitydemo.net/00:50:56:A9:8F:4E/2/198.18.133.100/198.18.133.27",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"CoA",
+										"Reauth",
+										"ise.securitydemo.net",
+										"00:50:56:A9:8F:4E",
+										"2",
+										"198.18.133.100",
+										"198.18.133.27"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 14:01:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<remoteCoA requestType=\"reauth\">\n    <results>true</results>\n</remoteCoA>"
+						},
+						{
 							"name": "Success: REAUTH_TYPE_LAST 1",
 							"originalRequest": {
 								"method": "GET",
@@ -4306,6 +5091,83 @@
 								{
 									"key": "Date",
 									"value": "Mon, 15 Feb 2021 14:00:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<remoteCoA requestType=\"reauth\">\n    <results>true</results>\n</remoteCoA>"
+						},
+						{
+							"name": "Success: REAUTH_TYPE_DEFAULT 0",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/admin/API/mnt/CoA/Reauth/ise.securitydemo.net/00:50:56:A9:8F:4E/0/198.18.133.100/198.18.133.27",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"admin",
+										"API",
+										"mnt",
+										"CoA",
+										"Reauth",
+										"ise.securitydemo.net",
+										"00:50:56:A9:8F:4E",
+										"0",
+										"198.18.133.100",
+										"198.18.133.27"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Feb 2021 14:00:26 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -4403,160 +5265,6 @@
 							],
 							"cookie": [],
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mnt-rest-result>\n    <http-code>400</http-code>\n    <cpm-code>34110</cpm-code>\n    <description>Server has encountered error while processing the REST request</description>\n    <module-name>MnT</module-name>\n    <internal-error-info>Invalid reuath type value. Reauth type value is between 0 and 2.</internal-error-info>\n    <requested-operation>Get By Type</requested-operation>\n    <resource-id>N/A</resource-id>\n    <resource-name>N/A</resource-name>\n    <resource-type>CoAResult</resource-type>\n    <status>CLIENT_ERROR</status>\n</mnt-rest-result>"
-						},
-						{
-							"name": "Success: REAUTH_TYPE_DEFAULT 0",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/CoA/Reauth/ise.securitydemo.net/00:50:56:A9:8F:4E/0/198.18.133.100/198.18.133.27",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"CoA",
-										"Reauth",
-										"ise.securitydemo.net",
-										"00:50:56:A9:8F:4E",
-										"0",
-										"198.18.133.100",
-										"198.18.133.27"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 14:00:26 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "122"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<remoteCoA requestType=\"reauth\">\n    <results>true</results>\n</remoteCoA>"
-						},
-						{
-							"name": "Success: REAUTH_TYPE_RERUN 2",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{ise_host}}/admin/API/mnt/CoA/Reauth/ise.securitydemo.net/00:50:56:A9:8F:4E/2/198.18.133.100/198.18.133.27",
-									"protocol": "https",
-									"host": [
-										"{{ise_host}}"
-									],
-									"path": [
-										"admin",
-										"API",
-										"mnt",
-										"CoA",
-										"Reauth",
-										"ise.securitydemo.net",
-										"00:50:56:A9:8F:4E",
-										"2",
-										"198.18.133.100",
-										"198.18.133.27"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "font-src 'self' data:; default-src 'self' *.walkme.com *.walkmeusercontent.com; script-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.walkme.com *.walkmeusercontent.com 'unsafe-inline'; img-src 'self' *.walkme.com *.walkmeusercontent.com data:;"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 15 Feb 2021 14:01:10 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/xml;charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "122"
-								},
-								{
-									"key": "Server",
-									"value": ""
-								}
-							],
-							"cookie": [],
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<remoteCoA requestType=\"reauth\">\n    <results>true</results>\n</remoteCoA>"
 						}
 					]
 				},
