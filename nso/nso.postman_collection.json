@@ -64,13 +64,10 @@
 									}
 								],
 								"url": {
-									"raw": "https://10.10.20.49/restconf/data/tailf-ncs:devices/device=dist-rtr01",
+									"raw": "https://{{nso}}/restconf/data/tailf-ncs:devices/device=dist-rtr01",
 									"protocol": "https",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
 									"path": [
 										"restconf",
@@ -490,13 +487,10 @@
 									}
 								],
 								"url": {
-									"raw": "https://10.10.20.49/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface",
+									"raw": "https://{{nso}}/restconf/data/tailf-ncs:devices/device=dist-rtr01/config/tailf-ned-cisco-ios:interface",
 									"protocol": "https",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
 									"path": [
 										"restconf",
@@ -7035,15 +7029,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://10.10.20.49:443/restconf/data/tailf-ncs:services/radius-service:radius-service",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"restconf",
 										"data",
@@ -7276,15 +7267,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://10.10.20.49:443/restconf/data/tailf-ncs:services/radius-service:radius-service",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"restconf",
 										"data",
@@ -7489,15 +7477,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://10.10.20.49:443/restconf/data/tailf-ncs:services/radius-service:radius-service",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"restconf",
 										"data",
@@ -7620,15 +7605,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://10.10.20.49:443/restconf/data/tailf-ncs:devices/device=dist-rtr02/config/tailf-ned-cisco-ios:radius",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=dist-rtr02/config/tailf-ned-cisco-ios:radius",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"restconf",
 										"data",
@@ -7835,15 +7817,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://10.10.20.49:443/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service=EMEA",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"restconf",
 										"data",
@@ -8082,6 +8061,1933 @@
 			]
 		},
 		{
+			"name": "MDT Service (6.1)",
+			"item": [
+				{
+					"name": "Get available services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:49:45 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:49:29 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-204964-625645+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "2081abca-2c1b-42f0-8643-0c51d0fe4e1c"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ncs:services\": {\n        \"service-type\": [\n            {\n                \"name\": \"/mdt:mdt\"\n            }\n        ],\n        \"global-settings\": {\n            \"collect-forward-diff\": true\n        },\n        \"logging\": {\n            \"logger\": [\n                {\n                    \"name\": \"default\",\n                    \"log-entry-level\": \"info\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Perform sync-from",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/sync-from",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:devices",
+								"device=xrv_sbx",
+								"sync-from"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/sync-from",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=xrv_sbx",
+										"sync-from"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:55:58 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "255dbf8d-741e-4c00-964b-a36a2aeb8f8f"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ncs:output\": {\n        \"result\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Perform sync-to",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/sync-to",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:devices",
+								"device=xrv_sbx",
+								"sync-to"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/sync-to",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=xrv_sbx",
+										"sync-to"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:56:31 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "9d484203-b9f8-4341-a6bc-52d6ed5411f8"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ncs:output\": {\n        \"result\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create MDT for XE CPU util",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 1,\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"mdt:mdt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: bad URL",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 1,\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:services",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:45:28 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "606ac2a0-bacd-4c24-b07d-6355c8d228e9"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ietf-restconf:errors\": {\n        \"error\": [\n            {\n                \"error-type\": \"application\",\n                \"error-tag\": \"invalid-value\",\n                \"error-message\": \"uri keypath not found\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: unsync'ed NED",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 1,\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:45:59 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "5613949d-9bd8-4083-8db0-d37b9b630a5b"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ietf-restconf:errors\": {\n        \"error\": [\n            {\n                \"error-type\": \"application\",\n                \"error-tag\": \"operation-failed\",\n                \"error-path\": \"/mdt:mdt\",\n                \"error-message\": \"Network Element Driver: device csr08: out of sync\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 1,\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:47:08 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:47:13 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-204828-853758+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "86b430a1-845c-4a4d-85e7-8fcd37d855f4"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create MDT for XE memory utill",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"radius-service:radius-service\": [\n        {\n            \"region\": \"AMER\",\n            \"device\": [\n                \"dist-rtr01\"\n            ],\n            \"ip-address\": \"192.0.2.55\",\n            \"port\": {\n                \"auth\": 998,\n                \"acct\": 999\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:services/radius-service:radius-service",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:services",
+								"radius-service:radius-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 2,\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\",\n            \"sample\": 2000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:49:24 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:49:29 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-204964-625645+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "6500f8ff-b1ce-4b5e-abef-90fb843ab411"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create MDT for XR CPU util",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 3,\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"mdt:mdt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: unsync'ed NED",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 3,\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:52:46 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "cf16412c-5e43-416e-a0e1-24695407c934"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ietf-restconf:errors\": {\n        \"error\": [\n            {\n                \"error-type\": \"application\",\n                \"error-tag\": \"operation-failed\",\n                \"error-path\": \"/mdt:mdt\",\n                \"error-message\": \"Network Element Driver: device xrv_sbx: out of sync\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failure: feature not supported",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 3,\n            \"device\": [\n                \"xrv11\"\n            ],\n            \"xpath\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:53:08 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "6021af4f-48c7-4d64-8ac0-534b5e9b247b"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ietf-restconf:errors\": {\n        \"error\": [\n            {\n                \"error-type\": \"application\",\n                \"error-tag\": \"operation-failed\",\n                \"error-path\": \"/mdt:mdt\",\n                \"error-message\": \"External error in the NED implementation for device xrv11: command: telemetry model-driven\\r\\n: ^\\r\\n% Invalid input detected at '^' marker.\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 3,\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:56:50 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:56:59 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205410-819277+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "d3d48f7e-9929-43fc-8686-40d487427440"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create MDT for XR memory util",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 4,\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"mdt:mdt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/yang-data+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 4,\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:57:10 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:57:18 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205430-549091+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "f731fc95-460e-4687-8f82-9317dbf65e06"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get MDT serv inst",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"mdt:mdt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:57:29 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:57:18 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205430-549091+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "6064f784-cd15-4542-b827-81d4f9a434f0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mdt:mdt\": [\n        {\n            \"sub_id\": 1,\n            \"modified\": {\n                \"devices\": [\n                    \"csr02\",\n                    \"csr08\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"csr02\",\n                    \"csr08\"\n                ]\n            },\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        },\n        {\n            \"sub_id\": 2,\n            \"modified\": {\n                \"devices\": [\n                    \"csr02\",\n                    \"csr08\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"csr02\",\n                    \"csr08\"\n                ]\n            },\n            \"device\": [\n                \"csr02\",\n                \"csr08\"\n            ],\n            \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\",\n            \"sample\": 2000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        },\n        {\n            \"sub_id\": 3,\n            \"modified\": {\n                \"devices\": [\n                    \"xrv_sbx\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"xrv_sbx\"\n                ]\n            },\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        },\n        {\n            \"sub_id\": 4,\n            \"modified\": {\n                \"devices\": [\n                    \"xrv_sbx\"\n                ]\n            },\n            \"directly-modified\": {\n                \"devices\": [\n                    \"xrv_sbx\"\n                ]\n            },\n            \"device\": [\n                \"xrv_sbx\"\n            ],\n            \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\",\n            \"sample\": 1000,\n            \"rx_ip\": \"192.168.5.22\",\n            \"rx_port\": 50051\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm RADIUS config",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/config/tailf-ned-cisco-ios-xr:telemetry",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"tailf-ncs:devices",
+								"device=xrv_sbx",
+								"config",
+								"tailf-ned-cisco-ios-xr:telemetry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: XE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=csr08/config/tailf-ned-cisco-ios:telemetry",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=csr08",
+										"config",
+										"tailf-ned-cisco-ios:telemetry"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 09:58:01 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:57:18 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205430-549091+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "8f8ac178-ff24-4cc7-a311-768a200d9b8a"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios:telemetry\": {\n        \"ietf\": {\n            \"subscription\": [\n                {\n                    \"id\": 1,\n                    \"encoding\": \"encode-kvgpb\",\n                    \"filter\": {\n                        \"xpath\": \"/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization\"\n                    },\n                    \"source-address\": \"10.0.0.8\",\n                    \"stream\": \"yang-push\",\n                    \"update-policy\": {\n                        \"periodic\": 1000\n                    },\n                    \"receiver\": {\n                        \"ip\": {\n                            \"address\": [\n                                {\n                                    \"address\": \"192.168.5.22\",\n                                    \"port\": 50051,\n                                    \"protocol\": \"grpc-tcp\"\n                                }\n                            ]\n                        }\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"encoding\": \"encode-kvgpb\",\n                    \"filter\": {\n                        \"xpath\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\"\n                    },\n                    \"source-address\": \"10.0.0.8\",\n                    \"stream\": \"yang-push\",\n                    \"update-policy\": {\n                        \"periodic\": 2000\n                    },\n                    \"receiver\": {\n                        \"ip\": {\n                            \"address\": [\n                                {\n                                    \"address\": \"192.168.5.22\",\n                                    \"port\": 50051,\n                                    \"protocol\": \"grpc-tcp\"\n                                }\n                            ]\n                        }\n                    }\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "Success: XR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/tailf-ncs:devices/device=xrv_sbx/config/tailf-ned-cisco-ios-xr:telemetry",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"tailf-ncs:devices",
+										"device=xrv_sbx",
+										"config",
+										"tailf-ned-cisco-ios-xr:telemetry"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 10:00:40 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 09:57:18 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205430-549091+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "2680ccb7-45df-45ef-a6c3-2f8f5e3c4e2f"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tailf-ned-cisco-ios-xr:telemetry\": {\n        \"model-driven\": {\n            \"destination-group\": [\n                {\n                    \"id\": \"3\",\n                    \"address-family\": {\n                        \"ipv4\": [\n                            {\n                                \"address\": \"192.168.5.22\",\n                                \"port\": 50051,\n                                \"encoding\": \"self-describing-gpb\",\n                                \"protocol\": {\n                                    \"grpc\": {\n                                        \"no-tls\": [\n                                            null\n                                        ]\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"id\": \"4\",\n                    \"address-family\": {\n                        \"ipv4\": [\n                            {\n                                \"address\": \"192.168.5.22\",\n                                \"port\": 50051,\n                                \"encoding\": \"self-describing-gpb\",\n                                \"protocol\": {\n                                    \"grpc\": {\n                                        \"no-tls\": [\n                                            null\n                                        ]\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"sensor-group\": [\n                {\n                    \"id\": \"3\",\n                    \"sensor-path\": [\n                        {\n                            \"name\": \"/Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"4\",\n                    \"sensor-path\": [\n                        {\n                            \"name\": \"/memory-ios-xe-oper:memory-statistics/memory-statistic\"\n                        }\n                    ]\n                }\n            ],\n            \"subscription\": [\n                {\n                    \"id\": \"3\",\n                    \"sensor-group-id\": [\n                        {\n                            \"name\": \"3\",\n                            \"sample-interval\": 10000\n                        }\n                    ],\n                    \"destination-id\": [\n                        {\n                            \"name\": \"3\"\n                        }\n                    ],\n                    \"source-interface\": {\n                        \"Loopback\": 0\n                    }\n                },\n                {\n                    \"id\": \"4\",\n                    \"sensor-group-id\": [\n                        {\n                            \"name\": \"4\",\n                            \"sample-interval\": 10000\n                        }\n                    ],\n                    \"destination-id\": [\n                        {\n                            \"name\": \"4\"\n                        }\n                    ],\n                    \"source-interface\": {\n                        \"Loopback\": 0\n                    }\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete loopback serv inst",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt=1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{nso}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"mdt:mdt=1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: cannot delete all",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 10:01:52 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/yang-data+json"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "fb60fabd-d76e-4333-bc35-e51fcf220428"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ietf-restconf:errors\": {\n        \"error\": [\n            {\n                \"error-type\": \"application\",\n                \"error-tag\": \"invalid-value\",\n                \"error-message\": \"Operation not allowed.\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/yang-data+json, application/vnd.yang.collection+json, application/yang-patch+json"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{nso}}:{{port}}/restconf/data/mdt:mdt=1",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{nso}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"restconf",
+										"data",
+										"mdt:mdt=1"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jul 2023 10:02:11 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 01 Jul 2023 10:02:16 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, must-revalidate, proxy-revalidate"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1688-205731-983406+json\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "X-Cisco-NSO-Trace-ID",
+									"value": "fa25c1b6-eaf2-41c0-bb92-866cc522caf0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; block-all-mixed-content; base-uri 'self'; frame-ancestors 'none';"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Creation of a model-driven telemetry (MDT) service supported on XE and XR. Developed on NSO 6.1 which changes the URLs a bit. Similar flow to the previous package examples.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "JSON RPC API",
 			"item": [
 				{
@@ -8140,7 +10046,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"login\",\r\n    \"params\": {\r\n        \"user\": \"developer\",\r\n        \"passwd\": \"C1sco12345\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"login\",\r\n    \"params\": {\r\n        \"user\": \"{{username}}\",\r\n        \"passwd\": \"{{password}}\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8148,15 +10054,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://10.10.20.49:443/jsonrpc",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/jsonrpc",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"jsonrpc"
 									]
@@ -8478,15 +10381,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://10.10.20.49:443/jsonrpc",
-									"protocol": "https",
+									"raw": "{{proto}}://{{nso}}:{{port}}/jsonrpc",
+									"protocol": "{{proto}}",
 									"host": [
-										"10",
-										"10",
-										"20",
-										"49"
+										"{{nso}}"
 									],
-									"port": "443",
+									"port": "{{port}}",
 									"path": [
 										"jsonrpc"
 									]
