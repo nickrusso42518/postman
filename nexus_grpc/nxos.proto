@@ -1,0 +1,409 @@
+// Copyright 2016, Cisco Systems Inc.
+// All rights reserved.
+
+syntax = "proto3";
+
+package NXOSExtensibleManagabilityService;
+
+// Service provided by Cisco NX-OS gRPC Agent
+service gRPCConfigOper {
+
+    // Retrieves the specified YANG configuration data subset from the
+    // source datastore
+    rpc GetConfig(GetConfigArgs) returns(stream GetConfigReply) {};
+
+    // Retrieves the specified YANG operational data from the source datastore
+    rpc GetOper(GetOperArgs) returns(stream GetOperReply) {};
+
+    // Retrieves the specified YANG configuration and operational data
+    // subset from the source datastore
+    rpc Get(GetArgs) returns(stream GetReply){};
+
+    // Writes the specified YANG data subset to the target datastore
+    rpc EditConfig(EditConfigArgs) returns(EditConfigReply) {};
+
+    // Starts a new session between the client and server and acquires a
+    // unique session ID
+    rpc StartSession(SessionArgs) returns(SessionReply) {};
+
+    // Requests graceful termination of a session
+    rpc CloseSession(CloseSessionArgs) returns (CloseSessionReply) {};
+
+    // Forces the termination of a session
+    rpc KillSession(KillArgs) returns(KillReply) {};
+
+// Unsupported; reserved for future
+    rpc DeleteConfig(DeleteConfigArgs) returns(DeleteConfigReply) {};
+
+    // Unsupported; reserved for future
+    rpc CopyConfig(CopyConfigArgs) returns(CopyConfigReply) {};
+
+    // Unsupported; reserved for future
+    rpc Lock(LockArgs) returns(LockReply) {};
+
+    // Unsupported; reserved for future
+    rpc UnLock(UnLockArgs) returns(UnLockReply) {};
+
+    // Unsupported; reserved for future
+    rpc Commit(CommitArgs) returns(CommitReply) {};
+
+    // Unsupported; reserved for future
+    rpc Validate(ValidateArgs) returns(ValidateReply) {};
+
+    // Unsupported; reserved for future
+    rpc Abort(AbortArgs) returns(AbortReply) {};
+
+}
+
+message GetConfigArgs
+{
+    // JSON-encoded YANG data to be retrieved
+    string YangPath = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+
+    // (Optional) Specifies the source datastore; only "running" is supported.
+    // Default is "running".
+    string Source = 3;
+}
+
+message GetConfigReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // JSON-encoded YANG data that was retrieved
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message GetOperArgs
+{
+    // JSON-encoded YANG data to be retrieved
+    string YangPath = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+}
+
+message GetOperReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // JSON-encoded YANG data that was retrieved
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message GetArgs
+{
+    // JSON-encoded YANG data to be retrieved
+    string YangPath=1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+}
+
+message GetReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // JSON-encoded YANG data that was retrieved
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message EditConfigArgs
+{
+    // JSON-encoded YANG data to be edited
+    string YangPath = 1;
+
+    // Specifies the operation to perform on teh configuration datastore with
+    // the YangPath data.  Possible values are:
+    //   create
+    //   merge
+    //   replace
+    //   delete
+    //   remove
+    // If not specified, default value is "merge".
+    string Operation = 2;
+
+    // A unique session ID acquired from a call to StartSession().
+    // For stateless operation, this value should be set to 0.
+    int64 SessionID = 3;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 4;
+
+    // (Optional) Specifies the target datastore; only "running" is supported.
+    // Default is "running".
+    string Target = 5;
+
+    // Specifies the default operation on the given object while traversing
+    // the configuration tree.
+    // The following operations are possible:
+    //   merge:     merges the configuration data with the target datastore;
+    //              this is the default.
+    //   replace:   replaces the configuration data with the target datastore.
+    //   none:      target datastore is unaffected during the traversal until
+    //              the specified object is reached.
+    string DefOp = 6;
+
+    // Specifies the action to be performed in the event of an error during
+    // configuration.  Possible values are:
+    //   stop
+    //   roll-back
+    //   continue
+    // Default is "roll-back".
+    string ErrorOp = 7;
+}
+
+message EditConfigReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If EditConfig is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message DeleteConfigArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    // For stateless operation, this value should be set to 0.
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+
+    // (Optional) Specifies the target datastore; only "running" is supported.
+    // Default is "running".
+    string Target = 3;
+}
+
+message DeleteConfigReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If DeleteConfig is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message CopyConfigArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    // For stateless operation, this value should be set to 0.
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+
+    // (Optional) Specifies the source datastore; only "running" is supported.
+    // Default is "running".
+    string Source = 3;
+
+    // (Optional) Specifies the target datastore; only "running" is supported.
+    // Default is "running".
+    string Target = 4;
+}
+
+message CopyConfigReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If CopyConfig is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message LockArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID=2;
+
+    // (Optional) Specifies the target datastore; only "running" is supported.
+    // Default is "running".
+    string Target = 3;
+}
+
+message LockReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If Lock is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message UnLockArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+
+    // (Optional) Specifies the target datastore; only "running" is supported.
+    // Default is "running".
+    string Target = 3;
+}
+
+message UnLockReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If UnLock is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message SessionArgs
+{
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 1;
+}
+
+message SessionReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+    int64 SessionID = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message CloseSessionArgs
+{
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 1;
+
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 2;
+}
+
+message CloseSessionReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If CloseSession is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message KillArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    int64 SessionIDToKill = 2;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 3;
+}
+
+message KillReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If Kill is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message ValidateArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+}
+
+message ValidateReply
+{
+    // The request ID specified in the request.
+    int64 ReqID = 1;
+
+    // If Validate is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message CommitArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+}
+
+message CommitReply
+{
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 1;
+
+    // If Commit is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
+
+message AbortArgs
+{
+    // A unique session ID acquired from a call to StartSession().
+    int64 SessionID = 1;
+
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 2;
+}
+
+message AbortReply
+{
+    // (Optional) Specifies the request ID.  Default value is 0.
+    int64 ReqID = 1;
+
+    // If Abort is successful, YangData contains a JSON-encoded "ok" response.
+    string YangData = 2;
+
+    // JSON-encoded error information when request fails
+    string Errors = 3;
+}
