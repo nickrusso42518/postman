@@ -1,0 +1,2277 @@
+{
+	"info": {
+		"_postman_id": "765febec-48b3-4d21-a12a-6c51b8ab8933",
+		"name": "Cisco UCS IMC",
+		"description": "Cisco Unified Computing System (UCS) Integrated Management Controller (IMC) API examples. Documentation: [https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/c/sw/api/3_0/b_Cisco_IMC_REST_API_guide_301/m_redfish_api_examples.html#id_14844__section_1D6B7F9919B344F3B344CC4BF59C4CFB](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/c/sw/api/3_0/b_Cisco_IMC_REST_API_guide_301/m_redfish_api_examples.html#id_14844__section_1D6B7F9919B344F3B344CC4BF59C4CFB)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14123647",
+		"_collection_link": "https://www.postman.com/njrusmc/workspace/public-collections/collection/14123647-765febec-48b3-4d21-a12a-6c51b8ab8933?action=share&source=collection_link&creator=14123647"
+	},
+	"item": [
+		{
+			"name": "Get redfish version (noauth)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:33:38 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"v1\": \"/redfish/v1/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get redfish services (noauth)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:33:50 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "940"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Chassis\": {\n        \"@odata.id\": \"/redfish/v1/Chassis\"\n    },\n    \"@odata.id\": \"/redfish/v1/\",\n    \"JSONSchemas\": {\n        \"@odata.id\": \"/redfish/v1/JSONSchemas\"\n    },\n    \"RedfishVersion\": \"1.0.0\",\n    \"EventService\": {\n        \"@odata.id\": \"/redfish/v1/EventService\"\n    },\n    \"Systems\": {\n        \"@odata.id\": \"/redfish/v1/Systems\"\n    },\n    \"Description\": \"Root Service\",\n    \"Name\": \"Cisco RESTful Root Service\",\n    \"Links\": {\n        \"Sessions\": {\n            \"@odata.id\": \"/redfish/v1/SessionService/Sessions\"\n        }\n    },\n    \"TaskService\": {\n        \"@odata.id\": \"/redfish/v1/TaskService\"\n    },\n    \"Managers\": {\n        \"@odata.id\": \"/redfish/v1/Managers\"\n    },\n    \"@odata.type\": \"#ServiceRoot.1.0.0.ServiceRoot\",\n    \"SessionService\": {\n        \"@odata.id\": \"/redfish/v1/SessionService\"\n    },\n    \"@odata.context\": \"/redfish/v1/$metadata#ServiceRoot\",\n    \"Id\": \"RootService\",\n    \"AccountService\": {\n        \"@odata.id\": \"/redfish/v1/AccountService\"\n    },\n    \"MessageRegistry\": {\n        \"@odata.id\": \"/redfish/v1/MessageRegistry\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get redfish metadata (noauth)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/$metadata",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"$metadata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/$metadata",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"$metadata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:36:18 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml, text/xml"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12016"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.-->\n<edmx:Edmx xmlns:edmx=\"http://docs.oasis-open.org/odata/ns/edmx\" Version=\"4.0\">\n    <edmx:Reference Uri=\"http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml\">\n        <edmx:Include Namespace=\"Org.OData.Core.V1\" Alias=\"OData\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/Resource.xml\">\n        <edmx:Include Namespace=\"Resource.1.0.0\" />\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/RedfishExtensions.xml\">\n        <edmx:Include Namespace=\"RedfishExtensions.1.0.0\" Alias=\"Redfish\"/>\n        <edmx:Include Namespace=\"Validation.1.0.0\" Alias=\"Validation\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/EventService.xml\">\n        <edmx:Include Namespace=\"EventService\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/AccountService.xml\">\n        <edmx:Include Namespace=\"AccountService\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.xml\">\n        <edmx:Include Namespace=\"ComputerSystemCollection\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/ChassisCollection.xml\">\n        <edmx:Include Namespace=\"ChassisCollection\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/ManagerCollection.xml\">\n        <edmx:Include Namespace=\"ManagerCollection\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/TaskService.xml\">\n        <edmx:Include Namespace=\"TaskService\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/SessionService.xml\">\n        <edmx:Include Namespace=\"SessionService\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/Message.xml\">\n        <edmx:Include Namespace=\"Message\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/JsonSchemaFileCollection.xml\">\n        <edmx:Include Namespace=\"JsonSchemaFileCollection\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/MessageRegistryFileCollection.xml\">\n        <edmx:Include Namespace=\"MessageRegistryFileCollection\"/>\n    </edmx:Reference>\n    <edmx:Reference Uri=\"http://redfish.dmtf.org/schemas/v1/SessionCollection.xml\">\n        <edmx:Include Namespace=\"SessionCollection\"/>\n    </edmx:Reference>\n    <edmx:DataServices>\n        <Schema xmlns=\"http://docs.oasis-open.org/odata/ns/edm\" Namespace=\"ServiceRoot\">\n            <EntityType Name=\"ServiceRoot\" BaseType=\"Resource.1.0.0.Resource\">\n                <Annotation Term=\"OData.Description\" String=\"This object represents the root Redfish service.\"/>\n                <Annotation Term=\"OData.LongDescription\" String=\"This object represents the root Redfish service.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification.\"/>\n            </EntityType>\n        </Schema>\n        <Schema xmlns=\"http://docs.oasis-open.org/odata/ns/edm\" Namespace=\"ServiceRoot.1.0.0\">\n            <EntityContainer Name=\"ServiceContainer\">\n                <Singleton Name=\"Service\" Type=\"ServiceRoot.ServiceRoot\"/>\n                <Singleton Name=\"Systems\" Type=\"ComputerSystemCollection.ComputerSystemCollection\"/>\n                <Singleton Name=\"Chassis\" Type=\"ChassisCollection.ChassisCollection\"/>\n                <Singleton Name=\"Managers\" Type=\"ManagerCollection.ManagerCollection\"/>\n                <Singleton Name=\"Tasks\" Type=\"TaskService.TaskService\"/>\n                <Singleton Name=\"AccountService\" Type=\"AccountService.AccountService\"/>\n                <Singleton Name=\"SessionService\" Type=\"SessionService.SessionService\"/>\n                <Singleton Name=\"EventService\" Type=\"EventService.EventService\"/>\n                <Singleton Name=\"Registries\" Type=\"MessageRegistryFileCollection.MessageRegistryFileCollection\"/>\n                <Singleton Name=\"JsonSchemas\" Type=\"JsonSchemaFileCollection.JsonSchemaFileCollection\"/>\n                <Singleton Name=\"Sessions\" Type=\"SessionCollection.SessionCollection\"/>\n            </EntityContainer>\n            <EntityType Name=\"ServiceRoot\" BaseType=\"ServiceRoot.ServiceRoot\">\n                <Annotation Term=\"OData.Description\" String=\"This object represents the root Redfish service.\"/>\n                <Annotation Term=\"OData.LongDescription\" String=\"This object represents the root Redfish service.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification.\"/>\n                <Property Name=\"RedfishVersion\" Type=\"Edm.String\" Nullable=\"false\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"The version of the Redfish service\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The value of this string shall represent the version of the Redfish service.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification. \"/>\n                    <Annotation Term=\"Validation.Pattern\" String=\"^\\\\d+\\\\.\\\\d+\\\\.\\\\d+$\"/>\n                </Property>\n                <Property Name=\"UUID\" Type=\"Resource.UUID\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"Unique identifier for a service instance. When SSDP is used, this value should be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery. \"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The value of this string shall represent the id of the Redfish service instance.  The format of this string shall be a 32-byte value in the form 8-4-4-4-12.  If SSDP is used, this value shall be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery. RFC4122 describes methods that can be used to create a UUID value. The value should be considered to be opaque. Client software should only treat the overall value as a universally unique identifier and should not interpret any sub-fields within the UUID.\"/>\n                </Property>\n                <NavigationProperty Name=\"Systems\" Type=\"ComputerSystemCollection.ComputerSystemCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to a collection of Systems.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This object shall only contain a reference to a collection of resources that comply to the Systems schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"Chassis\" Type=\"ChassisCollection.ChassisCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to a collection of Chassis.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This object shall only contain a reference to a collection of resources that comply to the Chassis schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"Managers\" Type=\"ManagerCollection.ManagerCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to a collection of Managers.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This object shall only contain a reference to a collection of resources that comply to the Managers schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"Tasks\" Type=\"TaskService.TaskService\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to the Task Service.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The classes structure shall only contain a reference to a resource that complies to the TaskService schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"SessionService\" Type=\"SessionService.SessionService\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to the Sessions Service.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The classes structure shall only contain a reference to a resource that complies to the SessionService schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"AccountService\" Type=\"AccountService.AccountService\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to the Account Service.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The classes structure shall only contain a reference to a resource that complies to the AccountService schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"EventService\" Type=\"EventService.EventService\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to the EventService.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"The classes structure shall only contain a reference to a resource that complies to the EventService schema.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"Registries\" Type=\"MessageRegistryFileCollection.MessageRegistryFileCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to a collection of Registries.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This object shall contain a reference to Message Registry.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <NavigationProperty Name=\"JsonSchemas\" Type=\"JsonSchemaFileCollection.JsonSchemaFileCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"This is a link to a collection of Json-Schema files.\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This object shall only contain a reference to a collection of resources that comply to the SchemaFile schema where the files are Json-Schema files.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n                <Property Name=\"Links\" Type=\"ServiceRoot.1.0.0.Links\" Nullable=\"false\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"The links object contains the links to other resources that are related to this resource.\"/>\n                    <Annotation Term=\"Redfish.Required\"/>\n                </Property>\n            </EntityType>\n            <ComplexType Name=\"Links\" BaseType=\"Resource.Links\">\n                <NavigationProperty Name=\"Sessions\" Type=\"SessionCollection.SessionCollection\">\n                    <Annotation Term=\"OData.Permissions\" EnumMember=\"OData.Permissions/Read\"/>\n                    <Annotation Term=\"OData.Description\" String=\"Link to a collection of Sessions\"/>\n                    <Annotation Term=\"OData.LongDescription\" String=\"This property shall contain the link to a collection of Sessions.\"/>\n                    <Annotation Term=\"OData.AutoExpandReferences\"/>\n                </NavigationProperty>\n            </ComplexType>\n        </Schema>\n    </edmx:DataServices>\n</edmx:Edmx>"
+				}
+			]
+		},
+		{
+			"name": "Get redfish odata (noauth)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/odata",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"odata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/odata",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"odata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:36:55 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1043"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Value\": [\n        {\n            \"url\": \"/redfish/v1\",\n            \"name\": \"Service\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/Systems\",\n            \"name\": \"Systems\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/Chassis\",\n            \"name\": \"Chassis\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/Managers\",\n            \"name\": \"Managers\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/TaskService\",\n            \"name\": \"TaskService\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/EventService\",\n            \"name\": \"EventService\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/AccountService\",\n            \"name\": \"AccountService\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/SessionService\",\n            \"name\": \"SessionService\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/JSONSchemas\",\n            \"name\": \"JSONSchemas\",\n            \"kind\": \"Singleton\"\n        },\n        {\n            \"url\": \"/redfish/v1/MessageRegistry\",\n            \"name\": \"MessageRegistry\",\n            \"kind\": \"Singleton\"\n        }\n    ],\n    \"@odata.context\": \"/redfish/v1/$metadata\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get authc token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"{{username}}\",\r\n    \"Password\": \"{{password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/SessionService/Sessions",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"SessionService",
+						"Sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: API disabled",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"{{username}}\",\r\n    \"Password\": \"{{password}}\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/SessionService/Sessions",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"SessionService",
+								"Sessions"
+							]
+						}
+					},
+					"status": "Service Unavailable",
+					"code": 503,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:03:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "194"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": {\n  \"code\": \"ServiceUnavailable\",\n  \"message\": {\n      \"lang\": \"en-us\",\n      \"value\": \"REDFISH Service is disabled. Use CIMC WebUI/CLI/XMLAPI to enable REDFISH Service.\"\n   }\n }\n}\n"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"{{username}}\",\r\n    \"Password\": \"{{password}}\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/SessionService/Sessions",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"SessionService",
+								"Sessions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:06:23 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "X-Auth-Token",
+							"value": "f41f68f560446444c5644556c806448c"
+						},
+						{
+							"key": "Status",
+							"value": "201"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"@odata.id\": \"/redfish/v1/SessionService/Sessions/6\",\n    \"Description\": \"Session of user: admin\",\n    \"Name\": \"User Session #6\",\n    \"Id\": 6\n}"
+				}
+			]
+		},
+		{
+			"name": "Get chassis info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Chassis",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Chassis"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Chassis",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Chassis"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:09:05 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [\n        {\n            \"@odata.id\": \"/redfish/v1/Chassis/1\"\n        }\n    ],\n    \"Description\": \"Collection of Chassis\",\n    \"@odata.type\": \"#Chassis.1.0.0.ChassisCollection\",\n    \"@odata.id\": \"/redfish/v1/Chassis\",\n    \"Members@odata.count\": 1,\n    \"Name\": \"Chassis Collection\",\n    \"@odata.context\": \"/redfish/v1/$metadata#Chassis\"\n}"
+				},
+				{
+					"name": "Failure: no authc token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Chassis",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Chassis"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:09:14 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "403"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"code\": \"Forbidden\",\n        \"message\": \"Session authentication failed\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get systems",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Systems",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Systems"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Systems",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Systems"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:21:06 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "333"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [\n        {\n            \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH\"\n        }\n    ],\n    \"Description\": \"Collection of Computer Systems\",\n    \"@odata.type\": \"#Cisco_ComputerSystemCollection\",\n    \"@odata.id\": \"/redfish/v1/Systems\",\n    \"Members@odata.count\": 1,\n    \"Name\": \"Computer System Collection\",\n    \"@odata.context\": \"/redfish/v1/$metadata#Systems\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get system details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Systems/FCH2114V1PH",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Systems",
+						"FCH2114V1PH"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Systems/FCH2114V1PH",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Systems",
+								"FCH2114V1PH"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:21:50 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1897"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"SerialNumber\": \"FCH2114V1PH\",\n    \"Boot\": {\n        \"BootSourceOverrideTarget\": \"None\",\n        \"BootSourceOverrideTarget@Redfish.AllowableValues\": [\n            \"None\",\n            \"Pxe\",\n            \"Floppy\",\n            \"Cd\",\n            \"Hdd\",\n            \"BiosSetup\",\n            \"Diags\"\n        ],\n        \"BootSourceOverrideEnabled@Redfish.AllowableValues\": [\n            \"Once\",\n            \"Continuous\",\n            \"Disabled\"\n        ],\n        \"BootSourceOverrideEnabled\": \"Disabled\"\n    },\n    \"Id\": \"FCH2114V1PH\",\n    \"AssetTag\": \"Unknown\",\n    \"PowerState\": \"On\",\n    \"SystemType\": \"Physical\",\n    \"ProcessorSummary\": {\n        \"Model\": \"Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz\",\n        \"Count\": 2\n    },\n    \"HostName\": \"AbrahamESXI1\",\n    \"MemorySummary\": {\n        \"TotalSystemMemoryGiB\": 576,\n        \"State\": {\n            \"HealthRollup\": \"OK\",\n            \"Health\": \"OK\"\n        }\n    },\n    \"Processors\": {\n        \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH/Processors\"\n    },\n    \"Description\": \"\",\n    \"Links\": {\n        \"CooledBy\": [\n            \"/redfish/v1/Chassis/1/Thermal\"\n        ],\n        \"Chassis\": [\n            \"/redfish/v1/Chassis/1\"\n        ],\n        \"PoweredBy\": [\n            \"/redfish/v1/Chassis/1/Power\"\n        ],\n        \"ManagedBy\": [\n            \"/redfish/v1/Managers/CIMC\"\n        ]\n    },\n    \"SimpleStorage\": {\n        \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH/SimpleStorage\"\n    },\n    \"UUID\": \"D5B49CCC-3619-43E0-89BA-4734EE3EFD4C\",\n    \"Status\": {\n        \"State\": \"Enabled\",\n        \"Health\": \"Ok\"\n    },\n    \"BiosVersion\": \"C220M4.3.0.3c.0.0831170216\",\n    \"Name\": \"UCS C220 M4S\",\n    \"LogServices\": {\n        \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH/LogServices\"\n    },\n    \"Actions\": {\n        \"#System.Reset\": {\n            \"Target\": \"/redfish/v1/Systems/FCH2114V1PH/Actions/System.Reset\",\n            \"ResetType@Redfish.AllowableValues\": [\n                \"On\",\n                \"ForceOff\",\n                \"GracefulShutdown\",\n                \"ForceRestart\",\n                \"Nmi\"\n            ]\n        }\n    },\n    \"@odata.context\": \"/redfish/v1/$metadata#Systems/Members/$entity\",\n    \"@odata.type\": \"#Cisco_ComputerSystem\",\n    \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH\",\n    \"Manufacturer\": \"Cisco Systems\",\n    \"IndicatorLED\": \"Off\",\n    \"Model\": \"UCS C220 M4S\",\n    \"EthernetInterfaces\": {\n        \"@odata.id\": \"/redfish/v1/Systems/FCH2114V1PH/EthernetInterfaces\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get session service info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/SessionService",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"SessionService"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/SessionService",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"SessionService"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:19:58 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "442"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"@odata.id\": \"/redfish/v1/SessionService\",\n    \"Status\": {\n        \"State\": \"Enabled\",\n        \"Health\": \"Ok\",\n        \"HealthRollup\": \"Ok\"\n    },\n    \"Name\": \"Session Service\",\n    \"@odata.context\": \"/redfish/v1/$metadata#SessionService\",\n    \"@odata.type\": \"#SessionService.1.0.0\",\n    \"SessionTimeout\": 1800,\n    \"ServiceEnabled\": true,\n    \"Sessions\": {\n        \"@odata.id\": \"/redfish/v1/SessionService/Sessions\"\n    },\n    \"Id\": \"SessionService\",\n    \"Description\": \"Session Service\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get sessions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/SessionService/Sessions",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"SessionService",
+						"Sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/SessionService/Sessions",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"SessionService",
+								"Sessions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:20:22 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [\n        {\n            \"@odata.id\": \"/redfish/v1/SessionService/Sessions/6\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/SessionService/Sessions/5\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/SessionService/Sessions/4\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/SessionService/Sessions/3\"\n        }\n    ],\n    \"Description\": \"Collection of Sessions\",\n    \"@odata.type\": \"#SessionCollection.1.0.0.SessionCollection\",\n    \"@odata.id\": \"/redfish/v1/SessionService/Sessions\",\n    \"Members@odata.count\": 4,\n    \"Name\": \"Session Collection\",\n    \"@odata.context\": \"/redfish/v1/$metadata#SessionService/Sessions\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get task service info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"TaskService",
+						"Tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"TaskService",
+								"Tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:16:41 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "620"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [\n        {\n            \"@odata.id\": \"/redfish/v1/TaskService/Tasks/BmcFwUpdate\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/TaskService/Tasks/BiosFwUpdate\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/TaskService/Tasks/BmcTechSupportExport\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/TaskService/Tasks/ImportBmcConfig\"\n        },\n        {\n            \"@odata.id\": \"/redfish/v1/TaskService/Tasks/ExportBmcConfig\"\n        }\n    ],\n    \"Description\": \"Tasks\",\n    \"@odata.type\": \"#TaskCollection.1.0.0.TaskCollection\",\n    \"@odata.id\": \"/redfish/v1/TaskService/Tasks\",\n    \"Members@odata.count\": 5,\n    \"Name\": \"Tasks\",\n    \"@odata.context\": \"/redfish/v1/$metadata#TaskService/Tasks\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get BIOS FW task info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/BiosFwUpdate",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"TaskService",
+						"Tasks",
+						"BiosFwUpdate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/BiosFwUpdate",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"TaskService",
+								"Tasks",
+								"BiosFwUpdate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:17:30 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"@odata.id\": \"/redfish/v1/TaskService/Tasks/BiosFwUpdate\",\n    \"Name\": \"Task BiosFwUpdate\",\n    \"@odata.context\": \"/redfish/v1/$metadata#TaskService/Tasks/Members/$entity\",\n    \"TaskStatus\": \"OK\",\n    \"@odata.type\": \"#Task.1.0.0\",\n    \"Id\": \"BiosFwUpdate\",\n    \"TaskState\": \"Completed\",\n    \"Oem\": {\n        \"FWVersion\": \"C220M4.2.0.13g.0.1113162259\",\n        \"UpdateStatus\": \"None, OK\"\n    },\n    \"Description\": \"BIOS firmware version\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get event service info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/EventService",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"EventService"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/EventService",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"EventService"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:15:07 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "929"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Subscriptions\": {\n        \"@odata.id\": \"/redfish/v1/EventService/Subscriptions\"\n    },\n    \"Id\": \"EventService\",\n    \"Status\": {\n        \"State\": \"Disabled\",\n        \"Health\": \"OK\"\n    },\n    \"Name\": \"Event Service\",\n    \"ServiceEnabled\": false,\n    \"Description\": \"Event Service represents the properties for the service\",\n    \"@odata.context\": \"/redfish/v1/$metadata#EventService\",\n    \"@odata.type\": \"#EventService.1.0.0\",\n    \"DeliveryRetryIntervalInSeconds\": 30,\n    \"DeliveryRetryAttempts\": 3,\n    \"@odata.id\": \"/redfish/v1/EventService\",\n    \"Actions\": {\n        \"#EventService.SubmitTestEvent\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"Redfish\"\n            ],\n            \"Target\": \"/redfish/v1/EventService/Actions/EventService.SubmitTestEvent\",\n            \"Context@Redfish.AllowableValues\": [\n                \"Context string\"\n            ],\n            \"Destination@Redfish.AllowableValues\": [\n                \"Valid Remote HTTP server path\"\n            ],\n            \"EventType@Redfish.AllowableValues\": [\n                \"Alert\"\n            ]\n        }\n    },\n    \"EventTypesForSubscription\": [\n        \"Alert\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get event subscriptions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/EventService/Subscriptions",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"EventService",
+						"Subscriptions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/EventService/Subscriptions",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"EventService",
+								"Subscriptions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:15:38 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "328"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [],\n    \"Description\": \"List of Event subscriptions\",\n    \"@odata.type\": \"#EventService.1.0.0.EventDestinationCollection\",\n    \"@odata.id\": \"/redfish/v1/EventService/Subscriptions\",\n    \"Members@odata.count\": 0,\n    \"Name\": \"Event Subscriptions Collection\",\n    \"@odata.context\": \"/redfish/v1/$metadata#EventService/Subscriptions\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get manager info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Managers",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Managers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: bad URL",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Manager",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Manager"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:12:44 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "404"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"code\": \"ResourceNotFound\",\n        \"message\": \"The resource /redfish/v1/Manager does not exist\"\n    }\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Managers",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Managers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:12:55 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Members\": [\n        {\n            \"@odata.id\": \"/redfish/v1/Managers/CIMC\"\n        }\n    ],\n    \"Description\": \"Collection of Managers\",\n    \"@odata.type\": \"#Manager.1.0.0.ManagerCollection\",\n    \"@odata.id\": \"/redfish/v1/Managers\",\n    \"Members@odata.count\": 1,\n    \"Name\": \"Manager Collection\",\n    \"@odata.context\": \"/redfish/v1/$metadata#Managers\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get manager CIMC info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Managers",
+						"CIMC"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Managers",
+								"CIMC"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:14:08 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4274"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"DateTimeLocalOffset\": \"UTC-0700\",\n    \"Id\": \"CIMC\",\n    \"Links\": {\n        \"ManagerForChassis\": [\n            \"/redfish/v1/Chassis/1\"\n        ],\n        \"ManagerForServers\": [\n            \"/redfish/v1/Systems/FCH2114V1PH\"\n        ]\n    },\n    \"ManagerType\": \"CIMC\",\n    \"@odata.context\": \"/redfish/v1/$metadata#Managers/Members/$entity\",\n    \"@odata.id\": \"/redfish/v1/Managers/CIMC\",\n    \"VirtualMedia\": {\n        \"@odata.id\": \"/redfish/v1/Managers/CIMC/VirtualMedia\"\n    },\n    \"Description\": \"\",\n    \"LogServices\": {\n        \"@odata.id\": \"/redfish/v1/Managers/CIMC/LogServices\"\n    },\n    \"SerialInterfaces\": {\n        \"@odata.id\": \"/redfish/v1/Managers/CIMC/SerialInterfaces\"\n    },\n    \"FirmwareVersion\": \"3.0(3f)\",\n    \"UUID\": \"D5B49CCC-3619-43E0-89BA-4734EE3EFD4C\",\n    \"Status\": {\n        \"State\": \"Enabled\",\n        \"Health\": \"OK\"\n    },\n    \"ManagerNetworkProtocol\": {\n        \"@odata.id\": \"/redfish/v1/Managers/CIMC/ManagerNetworkProtocol\"\n    },\n    \"Name\": \"Cisco Integrated Management Controller\",\n    \"Actions\": {\n        \"#Oem.ImportBmcConfig\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"TFTP\",\n                \"SCP\",\n                \"SFTP\",\n                \"FTP\",\n                \"HTTP\"\n            ],\n            \"Passphrase@Redfish.AllowableValues\": [\n                \"Passphrase\"\n            ],\n            \"RemoteUsername@Redfish.AllowableValues\": [\n                \"Remote Server Username\"\n            ],\n            \"RemotePath@Redfish.AllowableValues\": [\n                \"Valid Remote Share Path\"\n            ],\n            \"RemoteHostname@Redfish.AllowableValues\": [\n                \"Valid Hostname/IP Address\"\n            ],\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Oem.ImportBmcConfig\",\n            \"RemotePassword@Redfish.AllowableValues\": [\n                \"Remote Server Password\"\n            ]\n        },\n        \"#Oem.BmcFwUpdate\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"TFTP\",\n                \"SCP\",\n                \"SFTP\",\n                \"FTP\",\n                \"HTTP\"\n            ],\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Oem.BmcFwUpdate\",\n            \"RemoteUsername@Redfish.AllowableValues\": [\n                \"Remote Server Username\"\n            ],\n            \"RemotePath@Redfish.AllowableValues\": [\n                \"Valid Remote Share Path\"\n            ],\n            \"RemoteHostname@Redfish.AllowableValues\": [\n                \"Valid Hostname/IP Address\"\n            ],\n            \"RemotePassword@Redfish.AllowableValues\": [\n                \"Remote Server Password\"\n            ]\n        },\n        \"#Manager.Reset\": {\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Manager.Reset\",\n            \"ResetType@Redfish.AllowableValues\": [\n                \"ForceRestart\"\n            ]\n        },\n        \"#Oem.BiosFwUpdate\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"TFTP\",\n                \"SCP\",\n                \"SFTP\",\n                \"FTP\",\n                \"HTTP\"\n            ],\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Oem.BiosFwUpdate\",\n            \"RemoteUsername@Redfish.AllowableValues\": [\n                \"Remote Server Username\"\n            ],\n            \"RemotePath@Redfish.AllowableValues\": [\n                \"Valid Remote Share Path\"\n            ],\n            \"RemoteHostname@Redfish.AllowableValues\": [\n                \"Valid Hostname/IP Address\"\n            ],\n            \"RemotePassword@Redfish.AllowableValues\": [\n                \"Remote Server Password\"\n            ]\n        },\n        \"#Oem.ExportBmcConfig\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"TFTP\",\n                \"SCP\",\n                \"SFTP\",\n                \"FTP\",\n                \"HTTP\"\n            ],\n            \"Passphrase@Redfish.AllowableValues\": [\n                \"Passphrase\"\n            ],\n            \"RemoteUsername@Redfish.AllowableValues\": [\n                \"Remote Server Username\"\n            ],\n            \"RemotePath@Redfish.AllowableValues\": [\n                \"Valid Remote Share Path\"\n            ],\n            \"RemoteHostname@Redfish.AllowableValues\": [\n                \"Valid Hostname/IP Address\"\n            ],\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Oem.ExportBmcConfig\",\n            \"RemotePassword@Redfish.AllowableValues\": [\n                \"Remote Server Password\"\n            ]\n        },\n        \"#Oem.BmcTechSupportExport\": {\n            \"Protocol@Redfish.AllowableValues\": [\n                \"TFTP\",\n                \"SCP\",\n                \"SFTP\",\n                \"FTP\",\n                \"HTTP\"\n            ],\n            \"Target\": \"/redfish/v1/Managers/CIMC/Actions/Oem.BmcTechSupportExport\",\n            \"RemoteUsername@Redfish.AllowableValues\": [\n                \"Remote Server Username\"\n            ],\n            \"RemotePath@Redfish.AllowableValues\": [\n                \"Valid Remote Share Path\"\n            ],\n            \"RemoteHostname@Redfish.AllowableValues\": [\n                \"Valid Hostname/IP Address\"\n            ],\n            \"RemotePassword@Redfish.AllowableValues\": [\n                \"Remote Server Password\"\n            ]\n        }\n    },\n    \"ServiceEntryPointUUID\": \"D5B49CCC-3619-43E0-89BA-4734EE3EFD4C\",\n    \"DateTime\": \"Wed Oct 11 12:14:09 2023\",\n    \"@odata.type\": \"#Manager.1.0.0.Manager\",\n    \"GraphicalConsole\": {\n        \"MaxConcurrentSessions\": 4,\n        \"ConnectTypesSupported\": [\n            \"KVMIP\",\n            \"WebUI\"\n        ],\n        \"ServiceEnabled\": true\n    },\n    \"CommandShell\": {\n        \"MaxConcurrentSessions\": 4,\n        \"ConnectTypesSupported\": [\n            \"SSH\",\n            \"Telnet\",\n            \"IPMI\",\n            \"XML API\"\n        ],\n        \"ServiceEnabled\": true\n    },\n    \"SerialConsole\": {\n        \"MaxConcurrentSessions\": 4,\n        \"ConnectTypesSupported\": [\n            \"SSH\",\n            \"Telnet\",\n            \"IPMI\",\n            \"XML API\"\n        ],\n        \"ServiceEnabled\": true\n    },\n    \"Model\": \"UCSC-C220-M4S\",\n    \"EthernetInterfaces\": {\n        \"@odata.id\": \"/redfish/v1/Managers/CIMC/EthernetInterfaces\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Export config",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RemoteHostname\": \"192.0.2.1\",\r\n    \"RemotePath\": \"/home/backups/imc_config.xml\",\r\n    \"Passphrase\": \"pass123\",\r\n    \"Protocol\": \"scp\",\r\n    \"RemoteUsername\": \"scpuser\",\r\n    \"RemotePassword\": \"scppass\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC/Actions/Oem.ExportBmcConfig",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Managers",
+						"CIMC",
+						"Actions",
+						"Oem.ExportBmcConfig"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: unreachable",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"RemoteHostname\": \"192.0.2.1\",\r\n    \"RemotePath\": \"/home/backups/imc_config.xml\",\r\n    \"Passphrase\": \"pass123\",\r\n    \"Protocol\": \"scp\",\r\n    \"RemoteUsername\": \"scpuser\",\r\n    \"RemotePassword\": \"scppass\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC/Actions/Oem.ExportBmcConfig",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Managers",
+								"CIMC",
+								"Actions",
+								"Oem.ExportBmcConfig"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:24:40 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "400"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Remote Hostname is not reachable\",\n        \"code\": \"BadRequest\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get config export status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/ExportBmcConfig",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"TaskService",
+						"Tasks",
+						"ExportBmcConfig"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: status none",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/ExportBmcConfig",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"TaskService",
+								"Tasks",
+								"ExportBmcConfig"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:30:25 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"@odata.id\": \"/redfish/v1/TaskService/Tasks/ExportBmcConfig\",\n    \"Name\": \"Task ExportBmcConfig\",\n    \"@odata.context\": \"/redfish/v1/$metadata#TaskService/Tasks/Members/$entity\",\n    \"TaskStatus\": \"OK\",\n    \"@odata.type\": \"#Task.1.0.0\",\n    \"Id\": \"ExportBmcConfig\",\n    \"TaskState\": \"Completed\",\n    \"Oem\": {\n        \"ExportStatus\": \"None\"\n    },\n    \"Description\": \"Export BMC Configuration\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Export tech support",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RemoteHostname\": \"192.0.2.1\",\r\n    \"RemotePath\": \"/home/backups/imc_tech.tar.gz\",\r\n    \"Protocol\": \"scp\",\r\n    \"RemoteUsername\": \"scpuser\",\r\n    \"RemotePassword\": \"scppass\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC/Actions/Oem.BmcTechSupportExport",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Managers",
+						"CIMC",
+						"Actions",
+						"Oem.BmcTechSupportExport"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: too many args",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"RemoteHostname\": \"192.0.2.1\",\r\n    \"RemotePath\": \"/home/backups/imc_config.xml\",\r\n    \"Passphrase\": \"pass123\",\r\n    \"Protocol\": \"scp\",\r\n    \"RemoteUsername\": \"scpuser\",\r\n    \"RemotePassword\": \"scppass\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/Managers/CIMC/Actions/Oem.BmcTechSupportExport",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"Managers",
+								"CIMC",
+								"Actions",
+								"Oem.BmcTechSupportExport"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 12:52:57 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "400"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"message\": \"Invalid number of arguments to perform CIMC Tech Support Export\",\n        \"code\": \"BadRequest\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get tech support export status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{auth_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/BmcTechSupportExport",
+					"protocol": "https",
+					"host": [
+						"{{imc_host}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"TaskService",
+						"Tasks",
+						"BmcTechSupportExport"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure: remote IP not pingable",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{imc_host}}/redfish/v1/TaskService/Tasks/BmcTechSupportExport",
+							"protocol": "https",
+							"host": [
+								"{{imc_host}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"TaskService",
+								"Tasks",
+								"BmcTechSupportExport"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Monkey"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Oct 2023 14:19:18 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "Chunked"
+						},
+						{
+							"key": "Status",
+							"value": "200"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "552"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"@odata.id\": \"/redfish/v1/TaskService/Tasks/BmcTechSupportExport\",\n    \"Name\": \"Task BmcTechSupportExport\",\n    \"@odata.context\": \"/redfish/v1/$metadata#TaskService/Tasks/Members/$entity\",\n    \"TaskStatus\": \"OK\",\n    \"@odata.type\": \"#Task.1.0.0\",\n    \"Id\": \"BmcTechSupportExport\",\n    \"TaskState\": \"Exception\",\n    \"Oem\": {\n        \"RemoteHostName\": \"192.168.40.151\",\n        \"RemotePath\": \"ESXI1-20231011-101919.tar.gz\",\n        \"ExportStatus\": \"Remote IP not pingable.\",\n        \"Protocol\": \"tftp\",\n        \"RemoteUsername\": \"admin\"\n    },\n    \"Description\": \"BMC Technical Support Export\"\n}"
+				}
+			]
+		}
+	]
+}
