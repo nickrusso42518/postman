@@ -1,0 +1,2117 @@
+{
+	"info": {
+		"_postman_id": "44223963-604e-499f-9b72-03ab025f4089",
+		"name": "GNS3",
+		"description": "API documentation:\n\n[https://gns3-server.readthedocs.io/en/stable/](https://gns3-server.readthedocs.io/en/stable/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14123647",
+		"_collection_link": "https://www.postman.com/njrusmc/workspace/public-collections/collection/14123647-44223963-604e-499f-9b72-03ab025f4089?action=share&source=collection_link&creator=14123647"
+	},
+	"item": [
+		{
+			"name": "Get version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/version",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"version"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/version",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"version"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/version"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:28:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"local\": true,\n    \"version\": \"2.2.44.1\"\n}"
+				},
+				{
+					"name": "Failure: not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/versionf",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"versionf"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:28:32 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 aiohttp/3.8.6"
+						}
+					],
+					"cookie": [],
+					"body": "404: Not Found"
+				}
+			]
+		},
+		{
+			"name": "Get computes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/computes",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"computes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/computes",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"computes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/computes"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1647"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:28:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"capabilities\": {\n            \"node_types\": [\n                \"cloud\",\n                \"ethernet_hub\",\n                \"ethernet_switch\",\n                \"nat\",\n                \"vpcs\",\n                \"virtualbox\",\n                \"dynamips\",\n                \"frame_relay_switch\",\n                \"atm_switch\",\n                \"qemu\",\n                \"vmware\",\n                \"traceng\"\n            ],\n            \"platform\": \"win32\",\n            \"version\": \"2.2.44.1\"\n        },\n        \"compute_id\": \"local\",\n        \"connected\": true,\n        \"cpu_usage_percent\": 7,\n        \"host\": \"localhost\",\n        \"last_error\": null,\n        \"memory_usage_percent\": 60.7,\n        \"name\": \"CSCO-W-PW0437NB\",\n        \"port\": 3080,\n        \"protocol\": \"http\",\n        \"user\": \"admin\"\n    },\n    {\n        \"capabilities\": {\n            \"node_types\": [\n                \"cloud\",\n                \"ethernet_hub\",\n                \"ethernet_switch\",\n                \"nat\",\n                \"vpcs\",\n                \"virtualbox\",\n                \"dynamips\",\n                \"frame_relay_switch\",\n                \"atm_switch\",\n                \"qemu\",\n                \"vmware\",\n                \"traceng\",\n                \"docker\",\n                \"iou\"\n            ],\n            \"platform\": \"linux\",\n            \"version\": \"2.2.44.1\"\n        },\n        \"compute_id\": \"vm\",\n        \"connected\": true,\n        \"cpu_usage_percent\": 60.8,\n        \"host\": \"192.168.120.128\",\n        \"last_error\": null,\n        \"memory_usage_percent\": 9.3,\n        \"name\": \"GNS3 VM (GNS3_2244)\",\n        \"port\": 80,\n        \"protocol\": \"http\",\n        \"user\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Subscribe to controller notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/notifications",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get node templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/templates",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"templates"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/templates",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"templates"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/templates"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4894"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:30:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"auto_delete_disks\": true,\n        \"builtin\": false,\n        \"category\": \"router\",\n        \"compute_id\": \"local\",\n        \"console_auto_start\": false,\n        \"console_type\": \"telnet\",\n        \"default_name_format\": \"R{0}\",\n        \"disk0\": 0,\n        \"disk1\": 0,\n        \"exec_area\": 64,\n        \"idlemax\": 500,\n        \"idlepc\": \"0x60c09aa0\",\n        \"idlesleep\": 30,\n        \"image\": \"C:\\\\Users\\\\nickrus\\\\GNS3\\\\images\\\\IOS\\\\c3725-adventerprisek9-mz.124-15.T14.image\",\n        \"iomem\": 5,\n        \"mac_addr\": \"\",\n        \"mmap\": true,\n        \"name\": \"c3725\",\n        \"nvram\": 256,\n        \"platform\": \"c3725\",\n        \"private_config\": \"\",\n        \"ram\": 384,\n        \"slot0\": \"GT96100-FE\",\n        \"slot1\": \"NM-1FE-TX\",\n        \"slot2\": \"NM-16ESW\",\n        \"sparsemem\": true,\n        \"startup_config\": \"ios_base_startup-config.txt\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"system_id\": \"FTX0945W0MY\",\n        \"template_id\": \"e78a35e7-bed3-4efb-8b11-c468645118f3\",\n        \"template_type\": \"dynamips\",\n        \"usage\": \"\",\n        \"wic0\": \"WIC-2T\",\n        \"wic1\": \"\",\n        \"wic2\": \"\"\n    },\n    {\n        \"builtin\": false,\n        \"category\": \"router\",\n        \"compute_id\": \"vm\",\n        \"console_auto_start\": false,\n        \"console_type\": \"telnet\",\n        \"default_name_format\": \"R{0}\",\n        \"ethernet_adapters\": 1,\n        \"l1_keepalives\": false,\n        \"name\": \"L3IOU\",\n        \"nvram\": 128,\n        \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n        \"private_config\": \"\",\n        \"ram\": 384,\n        \"serial_adapters\": 1,\n        \"startup_config\": \"iou_l3_base_startup-config.txt\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n        \"template_type\": \"iou\",\n        \"usage\": \"\",\n        \"use_default_iou_values\": false\n    },\n    {\n        \"builtin\": false,\n        \"category\": \"switch\",\n        \"compute_id\": \"vm\",\n        \"console_auto_start\": false,\n        \"console_type\": \"telnet\",\n        \"default_name_format\": \"SW{0}\",\n        \"ethernet_adapters\": 4,\n        \"l1_keepalives\": false,\n        \"name\": \"L2IOU\",\n        \"nvram\": 128,\n        \"path\": \"i86bi_linux_l2-adventerprisek9-ms.high_iron_20171101\",\n        \"private_config\": \"\",\n        \"ram\": 512,\n        \"serial_adapters\": 0,\n        \"startup_config\": \"iou_l2_base_startup-config.txt\",\n        \"symbol\": \":/symbols/multilayer_switch.svg\",\n        \"template_id\": \"4fc0fc75-f58a-4b4f-ad7a-3113c8c0fb03\",\n        \"template_type\": \"iou\",\n        \"usage\": \"\",\n        \"use_default_iou_values\": false\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"guest\",\n        \"compute_id\": null,\n        \"default_name_format\": \"Cloud{0}\",\n        \"name\": \"Cloud\",\n        \"symbol\": \":/symbols/cloud.svg\",\n        \"template_id\": \"39e257dc-8412-3174-b6b3-0ee3ed6a43e9\",\n        \"template_type\": \"cloud\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"guest\",\n        \"compute_id\": null,\n        \"default_name_format\": \"NAT{0}\",\n        \"name\": \"NAT\",\n        \"symbol\": \":/symbols/cloud.svg\",\n        \"template_id\": \"df8f4ea9-33b7-3e96-86a2-c39bc9bb649c\",\n        \"template_type\": \"nat\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"guest\",\n        \"compute_id\": null,\n        \"default_name_format\": \"PC{0}\",\n        \"name\": \"VPCS\",\n        \"properties\": {\n            \"base_script_file\": \"vpcs_base_config.txt\"\n        },\n        \"symbol\": \":/symbols/vpcs_guest.svg\",\n        \"template_id\": \"19021f99-e36f-394d-b4a1-8aaa902ab9cc\",\n        \"template_type\": \"vpcs\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"switch\",\n        \"compute_id\": null,\n        \"console_type\": \"none\",\n        \"default_name_format\": \"Switch{0}\",\n        \"name\": \"Ethernet switch\",\n        \"symbol\": \":/symbols/ethernet_switch.svg\",\n        \"template_id\": \"1966b864-93e7-32d5-965f-001384eec461\",\n        \"template_type\": \"ethernet_switch\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"switch\",\n        \"compute_id\": null,\n        \"default_name_format\": \"Hub{0}\",\n        \"name\": \"Ethernet hub\",\n        \"symbol\": \":/symbols/hub.svg\",\n        \"template_id\": \"b4503ea9-d6b6-3695-9fe4-1db3b39290b0\",\n        \"template_type\": \"ethernet_hub\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"switch\",\n        \"compute_id\": null,\n        \"default_name_format\": \"FRSW{0}\",\n        \"name\": \"Frame Relay switch\",\n        \"symbol\": \":/symbols/frame_relay_switch.svg\",\n        \"template_id\": \"dd0f6f3a-ba58-3249-81cb-a1dd88407a47\",\n        \"template_type\": \"frame_relay_switch\"\n    },\n    {\n        \"builtin\": true,\n        \"category\": \"switch\",\n        \"compute_id\": null,\n        \"default_name_format\": \"ATMSW{0}\",\n        \"name\": \"ATM switch\",\n        \"symbol\": \":/symbols/atm_switch.svg\",\n        \"template_id\": \"aaa764e2-b383-300f-8a0e-3493bbfdb7d2\",\n        \"template_type\": \"atm_switch\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"project1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"project1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "578"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:31:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"auto_close\": true,\n    \"auto_open\": false,\n    \"auto_start\": false,\n    \"drawing_grid_size\": 25,\n    \"filename\": \"project1.gns3\",\n    \"grid_size\": 75,\n    \"name\": \"project1\",\n    \"path\": \"C:\\\\Users\\\\nickrus\\\\GNS3\\\\projects\\\\527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"scene_height\": 1000,\n    \"scene_width\": 2000,\n    \"show_grid\": false,\n    \"show_interface_labels\": false,\n    \"show_layers\": false,\n    \"snap_to_grid\": false,\n    \"status\": \"opened\",\n    \"supplier\": null,\n    \"variables\": null,\n    \"zoom\": 100\n}"
+				},
+				{
+					"name": "Failure: missing body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "208"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:32:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"JSON schema error with API request '/v2/projects' and JSON data '{}': 'name' is a required property\",\n    \"method\": \"POST\",\n    \"path\": \"/v2/projects\",\n    \"request\": {},\n    \"status\": 400\n}"
+				},
+				{
+					"name": "Failure: already exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"project1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:32:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Project \\\"project1\\\" already exists\",\n    \"status\": 409\n}"
+				}
+			]
+		},
+		{
+			"name": "Get projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1305"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:34:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"auto_close\": true,\n        \"auto_open\": false,\n        \"auto_start\": false,\n        \"drawing_grid_size\": 25,\n        \"filename\": \"ancc_base.gns3\",\n        \"grid_size\": 75,\n        \"name\": \"ancc_base\",\n        \"path\": \"C:\\\\Users\\\\nickrus\\\\GNS3\\\\projects\\\\ancc_base\",\n        \"project_id\": \"96e0c2fc-d12b-462e-8ace-11ca6d2bdd24\",\n        \"scene_height\": 1000,\n        \"scene_width\": 2000,\n        \"show_grid\": false,\n        \"show_interface_labels\": false,\n        \"show_layers\": false,\n        \"snap_to_grid\": false,\n        \"status\": \"closed\",\n        \"supplier\": null,\n        \"variables\": null,\n        \"zoom\": 100\n    },\n    {\n        \"auto_close\": true,\n        \"auto_open\": false,\n        \"auto_start\": false,\n        \"drawing_grid_size\": 25,\n        \"filename\": \"project1.gns3\",\n        \"grid_size\": 75,\n        \"name\": \"project1\",\n        \"path\": \"C:\\\\Users\\\\nickrus\\\\GNS3\\\\projects\\\\527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"scene_height\": 1000,\n        \"scene_width\": 2000,\n        \"show_grid\": false,\n        \"show_interface_labels\": false,\n        \"show_layers\": false,\n        \"snap_to_grid\": false,\n        \"status\": \"opened\",\n        \"supplier\": null,\n        \"variables\": null,\n        \"zoom\": 100\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Subscribe to project notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/notifications",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete project",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/a03206e7-82cd-4ab7-a582-05ef1ea89b47",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"a03206e7-82cd-4ab7-a582-05ef1ea89b47"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/a03206e7-82cd-4ab7-a582-05ef1ea89b47",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"a03206e7-82cd-4ab7-a582-05ef1ea89b47"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:47:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Failure: project not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/a03206e7-82cd-4ab7-a582-05ef1ea89b47",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"a03206e7-82cd-4ab7-a582-05ef1ea89b47"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:47:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Project ID a03206e7-82cd-4ab7-a582-05ef1ea89b47 doesn't exist\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "Add node from template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"R02\",\n    \"compute_id\": \"vm\",\n    \"x\": 100,\n    \"y\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/842bd8b6-7f07-4c42-92bd-b7067fda4b3b",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"templates",
+						"842bd8b6-7f07-4c42-92bd-b7067fda4b3b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success: R01",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"R01\",\n    \"compute_id\": \"vm\",\n    \"x\": 0,\n    \"y\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/842bd8b6-7f07-4c42-92bd-b7067fda4b3b",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"templates",
+								"842bd8b6-7f07-4c42-92bd-b7067fda4b3b"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/templates/{template_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3916"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:36:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"command_line\": \"\",\n    \"compute_id\": \"vm\",\n    \"console\": 5000,\n    \"console_auto_start\": false,\n    \"console_host\": \"192.168.120.128\",\n    \"console_type\": \"telnet\",\n    \"custom_adapters\": [],\n    \"first_port_name\": null,\n    \"height\": 45,\n    \"label\": {\n        \"rotation\": 0,\n        \"style\": null,\n        \"text\": \"R01\",\n        \"x\": null,\n        \"y\": -32\n    },\n    \"locked\": false,\n    \"name\": \"R01\",\n    \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/84a7253a-8691-48d5-a016-d3b09423a65d\",\n    \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n    \"node_type\": \"iou\",\n    \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n    \"port_segment_size\": 4,\n    \"ports\": [\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/0\",\n            \"port_number\": 0,\n            \"short_name\": \"e0/0\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/1\",\n            \"port_number\": 1,\n            \"short_name\": \"e0/1\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/2\",\n            \"port_number\": 2,\n            \"short_name\": \"e0/2\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/3\",\n            \"port_number\": 3,\n            \"short_name\": \"e0/3\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/0\",\n            \"port_number\": 0,\n            \"short_name\": \"s1/0\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/1\",\n            \"port_number\": 1,\n            \"short_name\": \"s1/1\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/2\",\n            \"port_number\": 2,\n            \"short_name\": \"s1/2\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/3\",\n            \"port_number\": 3,\n            \"short_name\": \"s1/3\"\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"properties\": {\n        \"application_id\": 1,\n        \"ethernet_adapters\": 1,\n        \"l1_keepalives\": false,\n        \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n        \"nvram\": 128,\n        \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n        \"ram\": 384,\n        \"serial_adapters\": 1,\n        \"usage\": \"\",\n        \"use_default_iou_values\": false\n    },\n    \"status\": \"stopped\",\n    \"symbol\": \":/symbols/router.svg\",\n    \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n    \"width\": 66,\n    \"x\": 0,\n    \"y\": 0,\n    \"z\": 1\n}"
+				},
+				{
+					"name": "Success: R02",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"R02\",\n    \"compute_id\": \"vm\",\n    \"x\": 100,\n    \"y\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/842bd8b6-7f07-4c42-92bd-b7067fda4b3b",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"templates",
+								"842bd8b6-7f07-4c42-92bd-b7067fda4b3b"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/templates/{template_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3918"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:40:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"command_line\": \"\",\n    \"compute_id\": \"vm\",\n    \"console\": 5001,\n    \"console_auto_start\": false,\n    \"console_host\": \"192.168.120.128\",\n    \"console_type\": \"telnet\",\n    \"custom_adapters\": [],\n    \"first_port_name\": null,\n    \"height\": 45,\n    \"label\": {\n        \"rotation\": 0,\n        \"style\": null,\n        \"text\": \"R02\",\n        \"x\": null,\n        \"y\": -32\n    },\n    \"locked\": false,\n    \"name\": \"R02\",\n    \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n    \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n    \"node_type\": \"iou\",\n    \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n    \"port_segment_size\": 4,\n    \"ports\": [\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/0\",\n            \"port_number\": 0,\n            \"short_name\": \"e0/0\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/1\",\n            \"port_number\": 1,\n            \"short_name\": \"e0/1\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/2\",\n            \"port_number\": 2,\n            \"short_name\": \"e0/2\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0/3\",\n            \"port_number\": 3,\n            \"short_name\": \"e0/3\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/0\",\n            \"port_number\": 0,\n            \"short_name\": \"s1/0\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/1\",\n            \"port_number\": 1,\n            \"short_name\": \"s1/1\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/2\",\n            \"port_number\": 2,\n            \"short_name\": \"s1/2\"\n        },\n        {\n            \"adapter_number\": 1,\n            \"data_link_types\": {\n                \"Cisco HDLC\": \"DLT_C_HDLC\",\n                \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                \"Frame Relay\": \"DLT_FRELAY\"\n            },\n            \"link_type\": \"serial\",\n            \"name\": \"Serial1/3\",\n            \"port_number\": 3,\n            \"short_name\": \"s1/3\"\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"properties\": {\n        \"application_id\": 2,\n        \"ethernet_adapters\": 1,\n        \"l1_keepalives\": false,\n        \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n        \"nvram\": 128,\n        \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n        \"ram\": 384,\n        \"serial_adapters\": 1,\n        \"usage\": \"\",\n        \"use_default_iou_values\": false\n    },\n    \"status\": \"stopped\",\n    \"symbol\": \":/symbols/router.svg\",\n    \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n    \"width\": 66,\n    \"x\": 100,\n    \"y\": 0,\n    \"z\": 1\n}"
+				},
+				{
+					"name": "Success: Etherswitch",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"SW1\",\n    \"compute_id\": \"vm\",\n    \"x\": 100,\n    \"y\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/1966b864-93e7-32d5-965f-001384eec461",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"templates",
+								"1966b864-93e7-32d5-965f-001384eec461"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/templates/{template_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4402"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:52:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"command_line\": null,\n    \"compute_id\": \"vm\",\n    \"console\": 5002,\n    \"console_auto_start\": false,\n    \"console_host\": \"192.168.120.128\",\n    \"console_type\": \"none\",\n    \"custom_adapters\": [],\n    \"first_port_name\": null,\n    \"height\": 32,\n    \"label\": {\n        \"rotation\": 0,\n        \"style\": null,\n        \"text\": \"SW1\",\n        \"x\": null,\n        \"y\": -26\n    },\n    \"locked\": false,\n    \"name\": \"SW1\",\n    \"node_directory\": null,\n    \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n    \"node_type\": \"ethernet_switch\",\n    \"port_name_format\": \"Ethernet{0}\",\n    \"port_segment_size\": 0,\n    \"ports\": [\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet0\",\n            \"port_number\": 0,\n            \"short_name\": \"e0\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet1\",\n            \"port_number\": 1,\n            \"short_name\": \"e1\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet2\",\n            \"port_number\": 2,\n            \"short_name\": \"e2\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet3\",\n            \"port_number\": 3,\n            \"short_name\": \"e3\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet4\",\n            \"port_number\": 4,\n            \"short_name\": \"e4\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet5\",\n            \"port_number\": 5,\n            \"short_name\": \"e5\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet6\",\n            \"port_number\": 6,\n            \"short_name\": \"e6\"\n        },\n        {\n            \"adapter_number\": 0,\n            \"data_link_types\": {\n                \"Ethernet\": \"DLT_EN10MB\"\n            },\n            \"link_type\": \"ethernet\",\n            \"name\": \"Ethernet7\",\n            \"port_number\": 7,\n            \"short_name\": \"e7\"\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"properties\": {\n        \"ports_mapping\": [\n            {\n                \"name\": \"Ethernet0\",\n                \"port_number\": 0,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet1\",\n                \"port_number\": 1,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet2\",\n                \"port_number\": 2,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet3\",\n                \"port_number\": 3,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet4\",\n                \"port_number\": 4,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet5\",\n                \"port_number\": 5,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet6\",\n                \"port_number\": 6,\n                \"type\": \"access\",\n                \"vlan\": 1\n            },\n            {\n                \"name\": \"Ethernet7\",\n                \"port_number\": 7,\n                \"type\": \"access\",\n                \"vlan\": 1\n            }\n        ]\n    },\n    \"status\": \"started\",\n    \"symbol\": \":/symbols/ethernet_switch.svg\",\n    \"template_id\": \"1966b864-93e7-32d5-965f-001384eec461\",\n    \"width\": 72,\n    \"x\": 100,\n    \"y\": 100,\n    \"z\": 1\n}"
+				},
+				{
+					"name": "Failure: too many params",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"R01\",\n    \"compute_id\": \"vm\",\n    \"console\": 5001,\n    \"x\": 0,\n    \"y\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/842bd8b6-7f07-4c42-92bd-b7067fda4b3b",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"templates",
+								"842bd8b6-7f07-4c42-92bd-b7067fda4b3b"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/templates/{template_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "542"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:35:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"JSON schema error with API request '/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/templates/842bd8b6-7f07-4c42-92bd-b7067fda4b3b' and JSON data '{'name': 'R01', 'compute_id': 'vm', 'console': 5001, 'x': 0, 'y': 0}': Additional properties are not allowed ('console' was unexpected)\",\n    \"method\": \"POST\",\n    \"path\": \"/v2/projects/{project_id}/templates/{template_id}\",\n    \"request\": {\n        \"compute_id\": \"vm\",\n        \"console\": 5001,\n        \"name\": \"R01\",\n        \"x\": 0,\n        \"y\": 0\n    },\n    \"status\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "Get nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"nodes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success: stopped",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14425"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:53:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"command_line\": \"/opt/gns3/images/IOU/i86bi_linux-adventerprisek9-ms.156-3.M3a -e 1 -s 1 -n 128 -m 384 1\",\n        \"compute_id\": \"vm\",\n        \"console\": 5000,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"telnet\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 45,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"R01\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"R01\",\n        \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/84a7253a-8691-48d5-a016-d3b09423a65d\",\n        \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n        \"node_type\": \"iou\",\n        \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n        \"port_segment_size\": 4,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0/0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/1\",\n                \"port_number\": 1,\n                \"short_name\": \"e0/1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/2\",\n                \"port_number\": 2,\n                \"short_name\": \"e0/2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/3\",\n                \"port_number\": 3,\n                \"short_name\": \"e0/3\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/0\",\n                \"port_number\": 0,\n                \"short_name\": \"s1/0\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/1\",\n                \"port_number\": 1,\n                \"short_name\": \"s1/1\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/2\",\n                \"port_number\": 2,\n                \"short_name\": \"s1/2\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/3\",\n                \"port_number\": 3,\n                \"short_name\": \"s1/3\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"application_id\": 1,\n            \"ethernet_adapters\": 1,\n            \"l1_keepalives\": false,\n            \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n            \"nvram\": 128,\n            \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n            \"ram\": 384,\n            \"serial_adapters\": 1,\n            \"usage\": \"\",\n            \"use_default_iou_values\": false\n        },\n        \"status\": \"stopped\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n        \"width\": 66,\n        \"x\": 4,\n        \"y\": -3,\n        \"z\": 1\n    },\n    {\n        \"command_line\": \"/opt/gns3/images/IOU/i86bi_linux-adventerprisek9-ms.156-3.M3a -e 1 -s 1 -n 128 -m 384 2\",\n        \"compute_id\": \"vm\",\n        \"console\": 5001,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"telnet\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 45,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"R02\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"R02\",\n        \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n        \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n        \"node_type\": \"iou\",\n        \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n        \"port_segment_size\": 4,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0/0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/1\",\n                \"port_number\": 1,\n                \"short_name\": \"e0/1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/2\",\n                \"port_number\": 2,\n                \"short_name\": \"e0/2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/3\",\n                \"port_number\": 3,\n                \"short_name\": \"e0/3\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/0\",\n                \"port_number\": 0,\n                \"short_name\": \"s1/0\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/1\",\n                \"port_number\": 1,\n                \"short_name\": \"s1/1\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/2\",\n                \"port_number\": 2,\n                \"short_name\": \"s1/2\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/3\",\n                \"port_number\": 3,\n                \"short_name\": \"s1/3\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"application_id\": 2,\n            \"ethernet_adapters\": 1,\n            \"l1_keepalives\": false,\n            \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n            \"nvram\": 128,\n            \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n            \"ram\": 384,\n            \"serial_adapters\": 1,\n            \"usage\": \"\",\n            \"use_default_iou_values\": false\n        },\n        \"status\": \"stopped\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n        \"width\": 66,\n        \"x\": 100,\n        \"y\": 0,\n        \"z\": 1\n    },\n    {\n        \"command_line\": null,\n        \"compute_id\": \"vm\",\n        \"console\": 5002,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"none\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 32,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"SW1\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"SW1\",\n        \"node_directory\": null,\n        \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n        \"node_type\": \"ethernet_switch\",\n        \"port_name_format\": \"Ethernet{0}\",\n        \"port_segment_size\": 0,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet1\",\n                \"port_number\": 1,\n                \"short_name\": \"e1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet2\",\n                \"port_number\": 2,\n                \"short_name\": \"e2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet3\",\n                \"port_number\": 3,\n                \"short_name\": \"e3\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet4\",\n                \"port_number\": 4,\n                \"short_name\": \"e4\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet5\",\n                \"port_number\": 5,\n                \"short_name\": \"e5\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet6\",\n                \"port_number\": 6,\n                \"short_name\": \"e6\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet7\",\n                \"port_number\": 7,\n                \"short_name\": \"e7\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"ports_mapping\": [\n                {\n                    \"name\": \"Ethernet0\",\n                    \"port_number\": 0,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet1\",\n                    \"port_number\": 1,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet2\",\n                    \"port_number\": 2,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet3\",\n                    \"port_number\": 3,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet4\",\n                    \"port_number\": 4,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet5\",\n                    \"port_number\": 5,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet6\",\n                    \"port_number\": 6,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet7\",\n                    \"port_number\": 7,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                }\n            ]\n        },\n        \"status\": \"started\",\n        \"symbol\": \":/symbols/ethernet_switch.svg\",\n        \"template_id\": \"1966b864-93e7-32d5-965f-001384eec461\",\n        \"width\": 72,\n        \"x\": 100,\n        \"y\": 100,\n        \"z\": 1\n    }\n]"
+				},
+				{
+					"name": "Success: started",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14425"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:56:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"command_line\": \"/opt/gns3/images/IOU/i86bi_linux-adventerprisek9-ms.156-3.M3a -e 1 -s 1 -n 128 -m 384 1\",\n        \"compute_id\": \"vm\",\n        \"console\": 5000,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"telnet\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 45,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"R01\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"R01\",\n        \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/84a7253a-8691-48d5-a016-d3b09423a65d\",\n        \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n        \"node_type\": \"iou\",\n        \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n        \"port_segment_size\": 4,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0/0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/1\",\n                \"port_number\": 1,\n                \"short_name\": \"e0/1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/2\",\n                \"port_number\": 2,\n                \"short_name\": \"e0/2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/3\",\n                \"port_number\": 3,\n                \"short_name\": \"e0/3\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/0\",\n                \"port_number\": 0,\n                \"short_name\": \"s1/0\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/1\",\n                \"port_number\": 1,\n                \"short_name\": \"s1/1\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/2\",\n                \"port_number\": 2,\n                \"short_name\": \"s1/2\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/3\",\n                \"port_number\": 3,\n                \"short_name\": \"s1/3\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"application_id\": 1,\n            \"ethernet_adapters\": 1,\n            \"l1_keepalives\": false,\n            \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n            \"nvram\": 128,\n            \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n            \"ram\": 384,\n            \"serial_adapters\": 1,\n            \"usage\": \"\",\n            \"use_default_iou_values\": false\n        },\n        \"status\": \"started\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n        \"width\": 66,\n        \"x\": 4,\n        \"y\": -3,\n        \"z\": 1\n    },\n    {\n        \"command_line\": \"/opt/gns3/images/IOU/i86bi_linux-adventerprisek9-ms.156-3.M3a -e 1 -s 1 -n 128 -m 384 2\",\n        \"compute_id\": \"vm\",\n        \"console\": 5001,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"telnet\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 45,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"R02\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"R02\",\n        \"node_directory\": \"/opt/gns3/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/project-files/iou/4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n        \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n        \"node_type\": \"iou\",\n        \"port_name_format\": \"Ethernet{segment0}/{port0}\",\n        \"port_segment_size\": 4,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0/0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/1\",\n                \"port_number\": 1,\n                \"short_name\": \"e0/1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/2\",\n                \"port_number\": 2,\n                \"short_name\": \"e0/2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0/3\",\n                \"port_number\": 3,\n                \"short_name\": \"e0/3\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/0\",\n                \"port_number\": 0,\n                \"short_name\": \"s1/0\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/1\",\n                \"port_number\": 1,\n                \"short_name\": \"s1/1\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/2\",\n                \"port_number\": 2,\n                \"short_name\": \"s1/2\"\n            },\n            {\n                \"adapter_number\": 1,\n                \"data_link_types\": {\n                    \"Cisco HDLC\": \"DLT_C_HDLC\",\n                    \"Cisco PPP\": \"DLT_PPP_SERIAL\",\n                    \"Frame Relay\": \"DLT_FRELAY\"\n                },\n                \"link_type\": \"serial\",\n                \"name\": \"Serial1/3\",\n                \"port_number\": 3,\n                \"short_name\": \"s1/3\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"application_id\": 2,\n            \"ethernet_adapters\": 1,\n            \"l1_keepalives\": false,\n            \"md5sum\": \"473cd2ae1bfbe4485501e47134bf6063\",\n            \"nvram\": 128,\n            \"path\": \"i86bi_linux-adventerprisek9-ms.156-3.M3a\",\n            \"ram\": 384,\n            \"serial_adapters\": 1,\n            \"usage\": \"\",\n            \"use_default_iou_values\": false\n        },\n        \"status\": \"started\",\n        \"symbol\": \":/symbols/router.svg\",\n        \"template_id\": \"842bd8b6-7f07-4c42-92bd-b7067fda4b3b\",\n        \"width\": 66,\n        \"x\": 100,\n        \"y\": 0,\n        \"z\": 1\n    },\n    {\n        \"command_line\": null,\n        \"compute_id\": \"vm\",\n        \"console\": 5002,\n        \"console_auto_start\": false,\n        \"console_host\": \"192.168.120.128\",\n        \"console_type\": \"none\",\n        \"custom_adapters\": [],\n        \"first_port_name\": null,\n        \"height\": 32,\n        \"label\": {\n            \"rotation\": 0,\n            \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n            \"text\": \"SW1\",\n            \"x\": 12,\n            \"y\": -25\n        },\n        \"locked\": false,\n        \"name\": \"SW1\",\n        \"node_directory\": null,\n        \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n        \"node_type\": \"ethernet_switch\",\n        \"port_name_format\": \"Ethernet{0}\",\n        \"port_segment_size\": 0,\n        \"ports\": [\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet0\",\n                \"port_number\": 0,\n                \"short_name\": \"e0\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet1\",\n                \"port_number\": 1,\n                \"short_name\": \"e1\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet2\",\n                \"port_number\": 2,\n                \"short_name\": \"e2\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet3\",\n                \"port_number\": 3,\n                \"short_name\": \"e3\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet4\",\n                \"port_number\": 4,\n                \"short_name\": \"e4\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet5\",\n                \"port_number\": 5,\n                \"short_name\": \"e5\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet6\",\n                \"port_number\": 6,\n                \"short_name\": \"e6\"\n            },\n            {\n                \"adapter_number\": 0,\n                \"data_link_types\": {\n                    \"Ethernet\": \"DLT_EN10MB\"\n                },\n                \"link_type\": \"ethernet\",\n                \"name\": \"Ethernet7\",\n                \"port_number\": 7,\n                \"short_name\": \"e7\"\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"properties\": {\n            \"ports_mapping\": [\n                {\n                    \"name\": \"Ethernet0\",\n                    \"port_number\": 0,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet1\",\n                    \"port_number\": 1,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet2\",\n                    \"port_number\": 2,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet3\",\n                    \"port_number\": 3,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet4\",\n                    \"port_number\": 4,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet5\",\n                    \"port_number\": 5,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet6\",\n                    \"port_number\": 6,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                },\n                {\n                    \"name\": \"Ethernet7\",\n                    \"port_number\": 7,\n                    \"type\": \"access\",\n                    \"vlan\": 1\n                }\n            ]\n        },\n        \"status\": \"started\",\n        \"symbol\": \":/symbols/ethernet_switch.svg\",\n        \"template_id\": \"1966b864-93e7-32d5-965f-001384eec461\",\n        \"width\": 72,\n        \"x\": 104,\n        \"y\": 138,\n        \"z\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete node",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/c8129a99-35d3-4410-861e-53466ec61ca8",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"nodes",
+						"c8129a99-35d3-4410-861e-53466ec61ca8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/c8129a99-35d3-4410-861e-53466ec61ca8",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes",
+								"c8129a99-35d3-4410-861e-53466ec61ca8"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes/{node_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:40:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Failure: does not exist",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/c8129a99-35d3-4410-861e-53466ec61ca8",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes",
+								"c8129a99-35d3-4410-861e-53466ec61ca8"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes/{node_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:40:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Node ID c8129a99-35d3-4410-861e-53466ec61ca8 doesn't exist\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "Add links to nodes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 2\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"links"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success: R01-R02 eth0/0",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1012"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:44:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"capture_compute_id\": null,\n    \"capture_file_name\": null,\n    \"capture_file_path\": null,\n    \"capturing\": false,\n    \"filters\": {},\n    \"link_id\": \"4e74839e-a4dd-4541-9176-405dd74c2410\",\n    \"link_style\": {},\n    \"link_type\": \"ethernet\",\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/0\"\n            },\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/0\"\n            },\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 0\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"suspend\": false\n}"
+				},
+				{
+					"name": "Success: R01-R02 ser1/0",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 1,\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 1,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1010"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:45:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"capture_compute_id\": null,\n    \"capture_file_name\": null,\n    \"capture_file_path\": null,\n    \"capturing\": false,\n    \"filters\": {},\n    \"link_id\": \"3373a421-dd05-44b6-bbd2-f9d8e15bde57\",\n    \"link_style\": {},\n    \"link_type\": \"serial\",\n    \"nodes\": [\n        {\n            \"adapter_number\": 1,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"1/0\"\n            },\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 1,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"1/0\"\n            },\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 0\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"suspend\": false\n}"
+				},
+				{
+					"name": "Success: R01-SW1 eth0/1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 1\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1012"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:54:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"capture_compute_id\": null,\n    \"capture_file_name\": null,\n    \"capture_file_path\": null,\n    \"capturing\": false,\n    \"filters\": {},\n    \"link_id\": \"956ee494-10c3-442c-9364-348c52151394\",\n    \"link_style\": {},\n    \"link_type\": \"ethernet\",\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/1\"\n            },\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 1\n        },\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/1\"\n            },\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 1\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"suspend\": false\n}"
+				},
+				{
+					"name": "Success: R02-SW1 et0/2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 2\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1012"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:55:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"capture_compute_id\": null,\n    \"capture_file_name\": null,\n    \"capture_file_path\": null,\n    \"capturing\": false,\n    \"filters\": {},\n    \"link_id\": \"a7e230a7-64e5-4b95-86d7-b747b20bc342\",\n    \"link_style\": {},\n    \"link_type\": \"ethernet\",\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/2\"\n            },\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 2\n        },\n        {\n            \"adapter_number\": 0,\n            \"label\": {\n                \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                \"text\": \"0/2\"\n            },\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 2\n        }\n    ],\n    \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n    \"suspend\": false\n}"
+				},
+				{
+					"name": "Failure: bad node ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"c8129a99-35d3-4410-861e-53466ec61ca8\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:43:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Node ID c8129a99-35d3-4410-861e-53466ec61ca8 doesn't exist\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "Failure: bad adapter number",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 7,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:44:30 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Port 7/0 for R02 not found\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "Failure: port in use",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n            \"port_number\": 2\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n            \"port_number\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:55:29 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Port is already used\",\n    \"status\": 409\n}"
+				}
+			]
+		},
+		{
+			"name": "Get links",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"links"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3428"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:55:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"capture_compute_id\": null,\n        \"capture_file_name\": null,\n        \"capture_file_path\": null,\n        \"capturing\": false,\n        \"filters\": {},\n        \"link_id\": \"4e74839e-a4dd-4541-9176-405dd74c2410\",\n        \"link_style\": {},\n        \"link_type\": \"ethernet\",\n        \"nodes\": [\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/0\"\n                },\n                \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n                \"port_number\": 0\n            },\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/0\"\n                },\n                \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n                \"port_number\": 0\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"suspend\": false\n    },\n    {\n        \"capture_compute_id\": null,\n        \"capture_file_name\": null,\n        \"capture_file_path\": null,\n        \"capturing\": false,\n        \"filters\": {},\n        \"link_id\": \"956ee494-10c3-442c-9364-348c52151394\",\n        \"link_style\": {},\n        \"link_type\": \"ethernet\",\n        \"nodes\": [\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/1\"\n                },\n                \"node_id\": \"84a7253a-8691-48d5-a016-d3b09423a65d\",\n                \"port_number\": 1\n            },\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/1\"\n                },\n                \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n                \"port_number\": 1\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"suspend\": false\n    },\n    {\n        \"capture_compute_id\": null,\n        \"capture_file_name\": null,\n        \"capture_file_path\": null,\n        \"capturing\": false,\n        \"filters\": {},\n        \"link_id\": \"a7e230a7-64e5-4b95-86d7-b747b20bc342\",\n        \"link_style\": {},\n        \"link_type\": \"ethernet\",\n        \"nodes\": [\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/2\"\n                },\n                \"node_id\": \"4db44a5d-ffb6-4806-9c14-27bbf2b18d0e\",\n                \"port_number\": 2\n            },\n            {\n                \"adapter_number\": 0,\n                \"label\": {\n                    \"style\": \"font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;\",\n                    \"text\": \"0/2\"\n                },\n                \"node_id\": \"ce08a502-eb22-421b-9aca-39e133c49aee\",\n                \"port_number\": 2\n            }\n        ],\n        \"project_id\": \"527e0af2-a0b0-4b93-af5e-a8823ed7373a\",\n        \"suspend\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete link",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links/3373a421-dd05-44b6-bbd2-f9d8e15bde57",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"links",
+						"3373a421-dd05-44b6-bbd2-f9d8e15bde57"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links/3373a421-dd05-44b6-bbd2-f9d8e15bde57",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links",
+								"3373a421-dd05-44b6-bbd2-f9d8e15bde57"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links/{link_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:45:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Failure: link not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"f124dec0-830a-451e-a314-be50bbd58a00\",\n            \"port_number\": 0\n        },\n        {\n            \"adapter_number\": 0,\n            \"node_id\": \"83892a4d-aea0-4350-8b3e-d0af3713da74\",\n            \"port_number\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/links/3373a421-dd05-44b6-bbd2-f9d8e15bde57",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"links",
+								"3373a421-dd05-44b6-bbd2-f9d8e15bde57"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/links/{link_id}"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:46:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Link ID 3373a421-dd05-44b6-bbd2-f9d8e15bde57 doesn't exist\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "Start nodes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/start",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"nodes",
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/start",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes",
+								"start"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes/start"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:49:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Stop nodes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/stop",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{gns3_host}}"
+					],
+					"port": "{{gns3_port}}",
+					"path": [
+						"v2",
+						"projects",
+						"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+						"nodes",
+						"stop"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{gns3_host}}:{{gns3_port}}/v2/projects/527e0af2-a0b0-4b93-af5e-a8823ed7373a/nodes/stop",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{gns3_host}}"
+							],
+							"port": "{{gns3_port}}",
+							"path": [
+								"v2",
+								"projects",
+								"527e0af2-a0b0-4b93-af5e-a8823ed7373a",
+								"nodes",
+								"stop"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Route",
+							"value": "/v2/projects/{project_id}/nodes/stop"
+						},
+						{
+							"key": "Server",
+							"value": "Python/3.10 GNS3/2.2.44.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 20:50:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
